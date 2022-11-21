@@ -9,9 +9,27 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  db test. </P>
 
-이름
 <input type="text" id="name" name="name">
+<input type="button" id="test" value="test"></input>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$("#test").click(function(){
+	$.ajax({
+		method : "get",
+		url : "/controller/views/test",
+		data: "name="+ $("#name").val(),
+		success : function(){
+			alert("haha");
+		},error: function(err){
+			console.log(err);
+		}
+		
+	});
+});
+
+</script>
 </body>
 </html>

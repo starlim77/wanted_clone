@@ -1,0 +1,156 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 위아래 가운데 */
+  height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* header 아래 밑줄 */
+  background-color: #fff; /* 배경 */
+  position: fixed; /* header 고정 */
+  z-index: 1; /* header 고정 */
+  white-space: nowrap; /* 한줄 유지 */
+}
+
+.nav-bar {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: auto;
+}
+
+.nav-bar__hamberger {
+  /*  width: 10px; */
+  /*   height: 100%; */
+  /*   margin: 0 auto;  */
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar__hamberger-icon-container {
+  display: flex;
+  align-items: center;
+  margin-right: -70px;
+  width: 100px;
+}
+
+.nav-bar__hamberger-icon {
+  width: 17px;
+  height: 14px;
+  margin-top: 20px;
+}
+
+.nav-bar__hamberger-icon-container > li {
+  float: left;
+  width: 25%;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.nav-bar__hamberger-icon-container > li:hover .nav-bar__hamberger__menu {
+  left: 0;
+  background: #fff;
+  width: 150px;
+  /* display:block; */
+}
+
+.nav-bar__hamberger-icon-container > li a:hover {
+  background: white;
+  color: blue;
+}
+.nav-bar__hamberger__menu {
+  position: absolute;
+  top: 50px;
+  left: -9999px;
+  background: #ccc;
+  width: 130px;
+  font-size: 13px;
+  overflow: scroll;
+}
+/* .nav-bar__menu-list__category__link:hover > :visited {
+   border-bottom: 3px solid blue;
+ } */
+.nav-bar__hamberger__menu > li {
+  position: relative;
+}
+.nav-bar__hamberger__menu > li:hover .nav-bar__hamberger__submenu {
+  left: 100%;
+}
+
+.nav-bar__hamberger__menu > li a,
+.nav-bar__hamberger__submenu > li a {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.nav-bar__hamberger__submenu {
+  position: absolute;
+  top: 0;
+  background: white;
+  width: 100%;
+  left: -9999px;
+
+  /*left: 100%;*/
+
+  /*display: none;*/
+}
+
+.nav-bar__hamberger__submenu > li a:hover {
+  background: white;
+  color: blue;
+}
+
+.nav-bar__main-logo__img {
+  height: 17px;
+  margin-right: 90px;
+}
+
+.nav-bar__menu-list__category {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-bar__menu-list__service {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-bar__menu-list__category__link {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-bar__menu-list__service {
+  font-size: 18px;
+  margin-left: 100px;
+}
+
+.nav-bar__menu-list__service__list {
+  margin: 0 10px;
+}
+
+.nav-bar__menu-list__service__list__profile-img {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 1px;
+  width: 28px;
+}
+
+.nav-bar__menu-list__service__list__corperation-service {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 8px 8px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-bar__menu-list__category__link:hover {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
