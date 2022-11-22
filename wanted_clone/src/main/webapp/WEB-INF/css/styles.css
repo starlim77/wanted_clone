@@ -6,10 +6,10 @@
 
 /* Screens */
 @import "screens/index/insight.css";
+@import "community/community_container.css";
 
 body {
-  /* width: 100%; */
-  background-color: white;
+  /* width: 100%; */	
   font-family: Pretendard, Pretendard JP, Pretendard Std, -apple-system,
     system-ui, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial,
     Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji,

@@ -13,7 +13,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@PropertySource("classpath:spring/db.properties")
+@PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 public class SpringConfiguration {
 //	private String driverClassName = "oracle.jdbc.driver.OracleDriver";
@@ -50,8 +50,8 @@ public class SpringConfiguration {
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
-		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("spring/testMapper.xml"));
+		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject();
 	}
