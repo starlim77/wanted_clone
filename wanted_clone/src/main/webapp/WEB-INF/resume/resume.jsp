@@ -178,7 +178,7 @@
 
 			<!-- resume -->
 			<div class="resume">
-				<div id="my-new-resume" onclick="location.href=''">
+				<div id="my-new-resume" onclick="location.href='resumeForm'">
 					<div id="my-new-resume__img">
 						<i class="fa-regular fa-clone fa-xl" id="new-resume-icon"></i>
 					</div>

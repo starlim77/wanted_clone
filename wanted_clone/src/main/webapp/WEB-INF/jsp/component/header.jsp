@@ -69,7 +69,7 @@
          <li><a class="nav-bar__menu-list__category__link" href="#">채용
          </a></li>
          <li><a class="nav-bar__menu-list__category__link" href="#">직군별 연봉</a></li>
-             <li><a class="nav-bar__menu-list__category__link" href="resume/resume">이력서</a>
+             <li><a class="nav-bar__menu-list__category__link" href="resume/">이력서</a>
          </li>
          <li><a class="nav-bar__menu-list__category__link" href="#">커뮤니티</a>
          </li>
