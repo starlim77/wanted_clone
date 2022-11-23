@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <!-- header 상단 메뉴 바 -->
+ <style>
+/* @import url("/controller/css/component/nav-bar.css") */
+@import url("/controller/css/component/header.css")
+@import url("/controller/css/component/reset.css")
+</style>
    <div class="header">
       <div class="nav-bar">
          <ul class="nav-bar__hamberger">
@@ -8,7 +13,7 @@
             <div class="nav-bar__hamberger-icon-container">
                <li>
                   <a href="#"> <img class="nav-bar__hamberger-icon"
-                     src="img/nav_bar_hamberger_icon.webp"
+                     src="/controller/img/nav_bar_hamberger_icon.webp"
                      alt="nav_bar_hamberger_icon" />
                   </a>
                   <ul class="nav-bar__hamberger__menu">
@@ -57,7 +62,7 @@
                   <!-- 네비게이션바 메인 로고 -->
                   <a href="index.html"> <!-- 캡쳐도구로 잘라서 넣어 상하 정렬이 맞지 않는 상태 추후 수정 예정 -->
                      <img class="nav-bar__main-logo__img"
-                     src="img/logo/nav_bar_logo.png" alt="nav_bar_logo" />
+                     src="/controller/img/logo/nav_bar_logo.png" alt="nav_bar_logo" />
                   </a>
                </h1>
          </ul>
@@ -72,7 +77,7 @@
                연봉</a></li>
          <li><a class="nav-bar__menu-list__category__link" href="#">이력서</a>
          </li>
-         <li><a class="nav-bar__menu-list__category__link" href="#">커뮤니티</a>
+         <li><a class="nav-bar__menu-list__category__link" href="community/communityForm">커뮤니티</a>
          </li>
       </ul>
       <!-- 
@@ -86,7 +91,7 @@
          </a></li>
          <li class="nav-bar__menu-list__service__list"><a href="#"> <img
                class="nav-bar__menu-list__service__list__profile-img"
-               src="img/profile_default.png" alt="profile_default" />
+               src="/controller/img/profile_default.png" alt="profile_default" />
          </a></li>
          <li><a href="#">
                <div class="nav-bar__menu-list__service__list__corperation-service">기업서비스</div>

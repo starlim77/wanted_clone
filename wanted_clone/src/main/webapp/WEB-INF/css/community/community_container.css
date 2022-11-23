@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+body{
+    background-color: #f8f8f8;
+}
+
+.container{
+    padding-top: 110px;
+    width: 1080px;
+    margin: 0 auto;
+    display: flex;
+}
+.container_sub{
+    width:  250px;
+    height: auto;
+    position: flex;
+    box-sizing: border-box;
+   
+}
+.container_sub__my_community__body{
+    height: 123px;
+    width: 250px;
+    border: 0.5px solid #e2e2e2;
+    background-color: white;
+    position: fixed;
+}
+
+.container_main__body{
+    margin-left: 2%;
+    width: 73%;
+    /* display: flex; */
+    
+}
+
+.container_main__body__theme{
+    border: 0.5px solid #e2e2e2;
+    background-color: white;
+    width: 788px;
+    height: 80px;
+    display: flex;
+    position: fixed;
+}
+/* --------------------------------- */
+
+.container_main__body__best_hit {
+    margin-top: 10%;
+    display: flex;
+    border: 0.5px solid #e2e2e2;
+    background-color: white;
+    height: 250px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.container_main__body__boardwrite {
+    margin-top: 2px;
+    display: flex;
+    border: 0.5px solid #e2e2e2;
+    background-color: white;
+    height: 110px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+#container_main__body__boardwrite {
+    background: none;
+    width: 85%;
+    font-size: 11pt;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.5px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 20px;
+}
+.container_main__body__boardwrite__user_icon{
+    display: none;
+    background-color: #a7a0a0;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    /* display: flex;  유저 아이콘이 있으면 들어오면서 display를 줘서 none을 없애면서 flex*/
+    z-index: 0;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#container_main__body__boardwrite,.container_main__body__best_hit__title_page > i:hover {
+    cursor: pointer;
+}
+.container_main__body__best_hit__title{
+    width: 92%;
+    /* border: 1px solid red; */
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+.container_main__body__best_hit__title > h2 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container_main__body__best_hit__title > h2 > i {
+    color : gold;
+    width: 20px;
+    height: auto;
+}
+
+.container_main__body__best_hit__title_page_number{
+    font-size: 6pt;
+}
+
+
+.container_main__body__best_hit__title_page{
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+}
+.container_main__body__best_hit__content{
+  display: flex;
+  height: 70%;
+  /* border: 1px solid green; */
+  justify-content: space-evenly;
+  
+}
+.container_main__body__best_hit__content__example{
+    height: 85%;
+    width: 30%;
+    background-color: rgb(249, 235, 249);
+    border-radius: 7px;
+}
+
+.container_main__body__best_hit__content__example__title {
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    color: #9c9b9b;
+    font-family: Pretendard;
+    font-size: 11pt;
+    font-weight: 900;
+}
+
+.container_sub__my_community__body__title {
+    color: #9c9b9b;
+    font-family: Pretendard;
+    font-size: 11pt;
+    font-weight: 700;
+    width: 80%;
+    margin-left: 10%;
+    height: 35%;
+    display: flex;
+    align-items: flex-end;
+}
+.container_sub__my_community__body__profile {
+    margin: 0 10%;
+    height: 65%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container_sub__my_community__body__profile:hover{
+    cursor: pointer;
+}
+.container_sub__my_community__body__profile__img{
+    background-color: #a7a0a0;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    z-index: 0;
+    align-items: center;
+    justify-content: space-around;
+}
+#container_sub__my_community__body__profile__img{
+    color: white;
+}
+.container_sub__my_community__body__profile__login_condition{
+    color: #363636;
+    font-family: Pretendard;
+    font-size: 11pt;
+    font-weight: 900;
+}
+
+#container_sub__my_community__body__profile__tag {
+    color: #9c9b9b;
+    width: 20px;
+    height: auto;
+}
+
+.container_main__body__boardlist{
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    margin-top: 2px;
+    
+}
