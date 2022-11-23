@@ -7,6 +7,11 @@ pageEncoding="UTF-8"%>
     <meta charset="UTF-8" />
     <title>원티드 - 나다운 일의 시작</title>
     <link rel="icon" href="./img/favicon-192x192.png" />
+    <style type="text/css">
+    	#insight-div{
+    		margin-top: -19vh; 
+    	}
+    </style>
   </head>
   <body>
     <!-- header 상단 메뉴 바 -->
@@ -16,8 +21,11 @@ pageEncoding="UTF-8"%>
 
       <p>${id}</p>
       <!-- <section>   insight -->
+	<jsp:include page="./jsp/component/banner.jsp"></jsp:include>
+      <!-- <section>   insight -->
+	<div id="insight-div">
       <jsp:include page="./jsp/component/insight.jsp"></jsp:include>
-
+	</div>
       <!-- <section>크리에이터 추천</section>
       <section>3분만에 읽는 아티클</section>
       <section>커리어 성장을 위한 맞춤 이벤트</section>
