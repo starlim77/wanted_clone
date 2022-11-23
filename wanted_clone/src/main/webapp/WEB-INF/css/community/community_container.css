@@ -191,3 +191,11 @@ body{
     width: 20px;
     height: auto;
 }
+
+.container_main__body__boardlist{
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    margin-top: 2px;
+    
+}

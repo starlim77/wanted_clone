@@ -64,9 +64,13 @@
             </svg>
           </button>
         </div>
+        <div class="container_main__body__boardlist"></div>
     </div>
 </container>
 
 <script src="https://kit.fontawesome.com/1f61694686.js" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.6.1.min.js"></script><!-- CDN 방식 -->
+<script type="text/javascript" src="../js/communityForm.js"></script>
+
 </body>
 </html>	
