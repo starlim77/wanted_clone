@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
     		margin-top: -19vh; 
     	}
     </style>
-  </head>
+ 
   <body>
     <!-- header 상단 메뉴 바 -->
     <jsp:include page="./jsp/component/header.jsp"></jsp:include>
