@@ -1,20 +1,21 @@
 var id;
 
 // 회원 유무 확인
-$("#loginIdBtn").click(function () {
-  id = $("#id").val();
+$(".loginform-id__div__input-submit").click(function () {
+  id = $(".loginform-id__div__input-id").val();
   if (!id) {
-    $("#idDiv").html("입력하세요");
+    $("#idDiv").html("아이디를 입력하세요");
     return;
   }
   $.ajax({
     type: "post",
     url: "/controller/user/checkId",
-    data: "id=" + $("#id").val(),
+    data: "id=" + id,
     success: function (data) {
       var userDTO = data;
       if (userDTO == "") {
         $(".loginform-id").hide();
+        $("#signup-id").val(id);
         $(".loginform-signup").show();
       } else {
         $(".loginform-id").hide();
@@ -28,14 +29,14 @@ $("#loginIdBtn").click(function () {
 });
 
 //회원가입
-$("#signUpBtn").click(function () {
+$(".loginform-signup__signup-btn").click(function () {
   $.ajax({
     type: "post",
     url: "/controller/user/signUp",
     data: $(".loginform-signup__form").serialize(),
     success: function () {
       alert("회원가입이 완료되었습니다");
-      location.href = "/controller/user/login";
+      location.href = "/controller/user/loginForm";
     },
     error: function (err) {
       console.log(err);
@@ -44,8 +45,8 @@ $("#signUpBtn").click(function () {
 });
 
 // 로그인
-$("#loginPwdBtn").click(function () {
-  var pwd = $("#loginPwd").val();
+$(".loginform-pwd__input-next").click(function () {
+  var pwd = $(".loginform-pwd__input-pwd").val();
   $.ajax({
     type: "post",
     url: "/controller/user/login",
@@ -63,32 +64,30 @@ $("#loginPwdBtn").click(function () {
   });
 });
 
-//카카오 소셜 로그인
-$(".loginform-id__div__sns-login__kakao-login").click(function () {
-  loginWithKakao();
-});
+// //카카오 소셜 로그인
+// $(".loginform-id__div__sns-login__kakao-login").click(function () {
+//   loginWithKakao();
+// });
 
-function loginWithKakao() {
-  Kakao.Auth.authorize({
-    redirectUri: "http://localhost:8080/controller/user/loginForm",
-  });
-}
+// function loginWithKakao() {
+//   Kakao.Auth.authorize({
+//     redirectUri: "http://localhost:8080/controller/user/loginForm",
+//   });
+// }
 
-$(function () {
+// $(function () {
+//   Kakao.Auth.setAccessToken("${ACCESS_TOKEN}");
+//   if (Kakao.Auth.getAccessToken()) {
+//     console.log("hah");
+//   }
 
-  Kakao.Auth.setAccessToken('${ACCESS_TOKEN}');
-  if(Kakao.Auth.getAccessToken()){
-  	console.log("hah");
-  }
-  
-  Kakao.API.request({
-    url: '/v2/user/me',
-  })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    
-});
+//   Kakao.API.request({
+//     url: "/v2/user/me",
+//   })
+//     .then(function (response) {
+//       console.log(response);
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// });
