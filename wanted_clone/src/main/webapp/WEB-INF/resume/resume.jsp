@@ -7,14 +7,22 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/styles.css">
 <style>
+#resume-container{
+	display: flex;
+	overflow: hidden;
+	flex-wrap: wrap;
+}
 #banner-wrap {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding-top: 100px;
+	padding-left: 100px;
+	padding-right: 100px; text-align : center;
+	width: 90%;
 	text-align: center;
-	width: 100%;
 }
+
 #banner-btn {
 	width: 70vw;
 	height: 12vh;
@@ -26,6 +34,7 @@
 	padding-left: 3vw;
 	padding-right: 5vw;
 }
+
 #banner-btn__txt {
 	display: inline-block;
 	position: absolute;
@@ -70,42 +79,73 @@
 	left: 15%;
 }
 
-#resume-txt{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    top: 30%;
-    height: 2%;
+#resume-txt {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	top: 30%;
+	height: 2%;
 	position: absolute;
 	padding-bottom: 3%;
 	width: 70vw;
-	
 }
-#resume-txt:after{
+
+#resume-txt:after {
 	display: none;
 	float: none;
-	content: "";	
+	content: "";
 }
-#space{
-	width: 82%; 
-	display: flex; 
-	
-}
-.resume{
+
+#space {
+	width: 82%;
 	display: flex;
-	text-align: center;
-	justify-content: center;
+}
+
+.resume {
+	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-}
-#my-new-resume{
 	position: relative;
-	height: 190px;
-	width: 250px;;
-	margin: 20px, 10px;
-	border: 1px solid  #dbdbdb;
-	background-color: white;
+	padding-top: 100px;
+	padding-left: 55px;
+	padding-right: 55px;
 }
+
+#my-new-resume {
+	position: relative; 
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-content: center;
+	height : 190px;
+	width: 190px;;
+	margin: 20px, 10px;
+	border: 2px solid #dbdbdb;
+	background-color: white;
+	height: 190px;
+	cursor: pointer;
+}
+#my-new-resume__img{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	border: 2px solid #dbdbdb;
+	width: 40%;
+	height: 40%;
+	margin: auto;
+	border-radius: 50%;
+	background-color: #3366FF;
+}
+#new-resume-icon{
+	margin: auto;
+	color: white;
+}
+.my-new-resume__txt{
+	margin-bottom: 10%; 
+	height: 20%; 
+	
+}
+
 </style>
 </head>
 <body>
@@ -113,34 +153,52 @@
 	<div>
 		<jsp:include page="../jsp/component/header.jsp"></jsp:include>
 	</div>
-	<!-- banner -->
-	<div id="banner-wrap">
-		<div id="banner">
-			<button id="banner-btn">
-				<h5 id="banner-btn__txt">이력서 작성이 쉬워진다! 1분 만에 채워지는 경력정보</h5>
-				<div id="banner-btn__img">
-					<img alt="" src="/controller/img/resume/trio.webp">
-				</div>
-				<div id="banner-btn__inner-btn">
-					<div id="banner-btn__inner-btn__txt">내 경력 불러오기</div>
-				</div>
-			</button>
-		</div>
-		<!-- *************** -->
-		<div id="resume-txt">
-			최근 문서
-			<div id="space"></div>
-			<div id="resume-intro">
-				<a href="#">원티드 이력서 소개</a>
+	<div id="resume-container">
+		<!-- banner -->
+		<div id="banner-wrap">
+			<div id="banner">
+				<button id="banner-btn">
+					<h5 id="banner-btn__txt">이력서 작성이 쉬워진다! 1분 만에 채워지는 경력정보</h5>
+					<div id="banner-btn__img">
+						<img alt="" src="/controller/img/resume/trio.webp">
+					</div>
+					<div id="banner-btn__inner-btn">
+						<div id="banner-btn__inner-btn__txt">내 경력 불러오기</div>
+					</div>
+				</button>
 			</div>
-		</div>
-	
-	<!-- resume -->
-		<div class="resume">
-			<div id="my-new-resume">
-				
+			<!-- *************** -->
+			<div id="resume-txt">
+				최근 문서
+				<div id="space"></div>
+				<div id="resume-intro">
+					<a href="#">원티드 이력서 소개</a>
+				</div>
+			</div>
+
+			<!-- resume -->
+			<div class="resume">
+				<div id="my-new-resume" onclick="location.href=''">
+					<div id="my-new-resume__img">
+						<i class="fa-regular fa-clone fa-xl" id="new-resume-icon"></i>
+					</div>
+					<div class="my-new-resume__txt">
+						<h3>새 이력서 작성</h3>
+					</div>	
+				</div>
 			</div>
 		</div>
 	</div>
+	
+	 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	    <script
+      src="https://kit.fontawesome.com/1f61694686.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>
