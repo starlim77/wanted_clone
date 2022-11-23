@@ -14,8 +14,8 @@ pageEncoding="UTF-8"%>
     <article>
       <!-- <section>banner</section> -->
 
+      <p>${id}</p>
       <!-- <section>   insight -->
-
       <jsp:include page="./jsp/component/insight.jsp"></jsp:include>
 
       <!-- <section>크리에이터 추천</section>
@@ -115,6 +115,6 @@ pageEncoding="UTF-8"%>
       integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
       crossorigin="anonymous"
     ></script>
-    <script src="./js/insight__nav-bar.js"></script>
+    <script src="./js/component/insight__nav-bar.js"></script>
   </body>
 </html>

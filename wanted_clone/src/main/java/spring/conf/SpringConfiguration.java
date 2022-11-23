@@ -55,7 +55,7 @@ public class SpringConfiguration {
 		
 		return sqlSessionFactoryBean.getObject();
 	}
-
+	
 	@Bean
 	public DataSourceTransactionManager transactionManager() {
 		return new DataSourceTransactionManager(dataSource());

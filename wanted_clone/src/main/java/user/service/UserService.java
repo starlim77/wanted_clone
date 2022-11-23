@@ -1,13 +1,12 @@
-package user.dao;
+package user.service;
 
 import user.bean.UserDTO;
 
-public interface UserDAO {
+public interface UserService {
 	
 	public UserDTO checkId(String id);
 
 	public UserDTO login(UserDTO userDTO);
 
 	public void signUp(UserDTO userDTO);
-
 }

@@ -1,43 +1,47 @@
 package user.controller;
 
-import java.util.List;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import user.bean.UserDTO;
-import user.dao.UserDAO;
+import user.service.UserService;
 
-
+//@Controller
+@RequestMapping(value = "user")
 @Component
-@Controller
-@RequestMapping(value="views")
 public class UserController {
 	
 	@Autowired
-	UserDAO userDAO;
+	private UserService userService;
 	
-//	@GetMapping(value="/user/writeForm")
-	@GetMapping(value="list")
-	public void writeForm(@ModelAttribute UserDTO userDTO, Model model) {
-		
-		userDAO.write(userDTO);
+	@RequestMapping(value = "loginForm")
+	public String loginForm() {
+		return "jsp/user/loginForm";
 	}
-
+	
+	@RequestMapping(value = "checkId")
+	@ResponseBody
+	public UserDTO checkId(@RequestParam String id) {
+		return userService.checkId(id);
+	}
+	
+	@RequestMapping(value = "login")
+	@ResponseBody
+	public UserDTO login(@ModelAttribute UserDTO userDTO) {
+		System.out.println(userDTO.getPwd());
+		return userService.login(userDTO);
+	}
+	
+	@RequestMapping(value = "signUp")
+	@ResponseBody
+	public void signUp(@ModelAttribute UserDTO userDTO) {
+		userService.signUp(userDTO);
+	}
+	
 }
-
-
-
-
-
-
-

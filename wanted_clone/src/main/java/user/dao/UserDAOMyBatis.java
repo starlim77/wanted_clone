@@ -1,7 +1,5 @@
 package user.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,47 +10,28 @@ import user.bean.UserDTO;
 @Repository
 @Transactional
 public class UserDAOMyBatis implements UserDAO {
+
+
 	@Autowired
 	private SqlSession sqlSession;
 	
-	
 	@Override
-	public void write(UserDTO userDTO) {
-		System.out.println("작성 바로 직전 : "+userDTO);
-		sqlSession.insert("userSQL.write",userDTO);
-		
+	public UserDTO checkId(String id) {
+		UserDTO userDTO = null;
+		userDTO = sqlSession.selectOne("userSQL.checkId" ,id);
+		return userDTO;
 	}
 
-
 	@Override
-	public List<UserDTO> getUserList() {
-		
-		return sqlSession.selectList("userSQL.getUserList");
+	public UserDTO login(UserDTO userDTO) {
+		UserDTO userDTOLogin = null;
+		userDTOLogin = sqlSession.selectOne("userSQL.login", userDTO);
+		return userDTOLogin;
 	}
 
-
 	@Override
-	public UserDTO getUser(String id) {
-		
-		return sqlSession.selectOne("userSQL.getUser",id);
+	public void signUp(UserDTO userDTO) {
+		sqlSession.insert("userSQL.signUp", userDTO);
 	}
 
-
-	@Override
-	public void update(UserDTO userDTO) {
-		sqlSession.update("userSQL.update",userDTO);
-		
-	}
-
-
-	@Override
-	public void delete(String id) {
-		sqlSession.delete("userSQL.delete",id);
-		
-	}
-
-
-
-
-	
 }

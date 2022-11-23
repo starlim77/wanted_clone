@@ -476,7 +476,7 @@
              </div>
            </a>
          </li>
-         <li>
+      <!--    <li>
            <a class="insight__content__list__card" href="#">
              <div>
                <img
@@ -504,7 +504,7 @@
                </div>
              </div>
            </a>
-         </li>
+         </li> -->
        </ul>
        <div class="insight__content__more-content">
          <span class="insight__content__more-content__open"
