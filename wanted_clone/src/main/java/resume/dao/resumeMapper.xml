@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="resumeSQL">
+  
+  	<insert id="resumeWrite" parameterType="resume.bean.ResumeDTO">
+  		insert into resume values
+  		(resume_seq.nextval, #{formName}, #{id}, #{name},
+  		#{tel}, #{introduce}, #{career}, #{education}, #{award}, 
+  		#{language}, #{portfolio}, #{writing}, sysdate)
+  	</insert>
+  	
+  	<insert id="fileUpload" parameterType="java.util.Map">
+  		insert into resume(resume_seq, formName, id, name, tel, fileName, filePath) 
+  		values(resume_seq.nextval, #{formName}, #{id}, #{name}, #{tel}, #{fileName},#{filePath})
+  	</insert>
+  	
+  	<select id="getResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
+  		select * from resume where id = #{id}
+  	</select>
+  </mapper>
