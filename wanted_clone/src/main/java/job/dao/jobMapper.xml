@@ -4,10 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="jobSQL">
   	
-  	<select id="checkId"  resultType="job.bean.UserDTO">
-  		select * from (select rownum rn, b.* 
-                  from (select * from job order by seq desc) b)
-    where rn >= #{1} and rn <= #{16}
+  	<select id="getJobList"  resultType="job.bean.JobDTO">
+  	<![CDATA[
+  	select * from (select rownum rn, b.* 
+                  from (select * from job ) b)
+    where rn >= 1 and rn <= 16 order by seq desc
+       ]]>
   	</select>
   	
   

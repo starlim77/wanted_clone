@@ -84,7 +84,10 @@
   font-size: 18px;
   color: rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.05);
-  /* pointer-events: none; */
+}
+.loginform-id__div__input-submit-enable {
+  background-color: #3366ff;
+  color: white;
 }
 .loginform-id__div__input-id::placeholder {
   font-size: 18px;

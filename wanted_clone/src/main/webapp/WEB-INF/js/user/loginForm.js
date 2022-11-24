@@ -1,4 +1,18 @@
-$(function () {});
+$(function () {
+  $(".loginform-id__div__input-submit").attr("disabled", true);
+
+  setInterval(function () {
+    var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+    if ($(".loginform-id__div__input-id").val() != "") {
+      $(".loginform-id__div__input-submit").addClass(
+        "loginform-id__div__input-submit-enable"
+      );
+      $(".loginform-id__div__input-submit").attr("disabled", false);
+      return;
+    }
+  }, 1000);
+});
 
 var id;
 // 회원 유무 확인

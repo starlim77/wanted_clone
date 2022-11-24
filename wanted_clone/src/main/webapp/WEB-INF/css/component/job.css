@@ -116,31 +116,33 @@
 }
 
 .job__content {
-  margin-top: 10px;
   display: flex;
   justify-content: center;
-  width: 80%;
+  margin: 10px auto;
+  width: 1065px;
   position: relative;
 }
 .job__content__list {
   display: flex;
-  justify-content: space-between;
+  gap: 21.5px;
+  justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
 }
 .job__content__list > li {
   display: block;
-  width: 23.5%;
+  width: 250px;
 }
 .job__content__list__card {
-  margin-top: 30px;
   display: block;
-  width: 100%;
+  margin-top: 30px;
 }
 .job__content__list__card__img {
-  width: 100%;
+  width: 250px;
+  height: 190px;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 10%);
 }
 .job__content__list__card__letter__position {
   font-size: 16px;
@@ -148,17 +150,18 @@
   line-height: 130%;
 }
 .job__content__list__card__letter__company {
+  margin-top: 10px;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 130%;
 }
 .job__content__list__card__letter__response {
-  font-size: 13px;
-  color: #008080;
-  border-color: #008080;
+  font-size: 11px;
+  color: #00adae;
+  border: 1px solid #00adae;
   background-color: white;
-  border-width: thin;
-  margin-top: 10px;
+  margin-top: 2px;
+  font-weight: 700;
 }
 .job__content__list__card__letter__location {
   font-size: 14px;

@@ -12,4 +12,8 @@
 	<context:component-scan base-package="user.dao"></context:component-scan>
 	<context:component-scan base-package="user.service"></context:component-scan>
 	
+	<context:component-scan base-package="job.dao"></context:component-scan>
+	<context:component-scan base-package="job.service"></context:component-scan>
+	
+	
 </beans>
