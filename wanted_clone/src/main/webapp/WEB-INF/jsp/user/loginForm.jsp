@@ -28,7 +28,7 @@
             <input class="loginform-id__div__input-submit" type="button" value="이메일로 계속하기"></input>
             <p class="loginform-id__div__or">또는</p>
             <div class="loginform-id__div__sns-login">
-                <div>
+                <div class="loginform-id__div__sns-login__kakao">
                     <img src="" alt="kakao">
                     <span>Kakao</span>
                 </div>
@@ -59,7 +59,7 @@
         </div>
 
     </section>
-
+    <!-- 회원가입 -->
     <section class="loginform-signup">
         <form class="loginform-signup__form" action="">
             <div class="loginform-signup__header">
@@ -109,9 +109,10 @@
         </form>
     </section>
     
+    <!-- 로그인 -->
     <section class="loginform-pwd">
         <div class="loginform-pwd__header">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i class="loginform-pwd__header__cancel-btn fa-solid fa-chevron-left"></i>
             이메일로 로그인
         </div>
         <div class="loginform-pwd__input-name">비밀번호</div>
@@ -133,8 +134,7 @@
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.1/kakao.min.js"
         integrity="sha384-eKjgHJ9+vwU/FCSUG3nV1RKFolUXLsc6nLQ2R1tD0t4YFPCvRmkcF8saIfOZNWf/" crossorigin="anonymous">
     </script>
-    <script>
-    Kakao.init('894dddd5929cb9481f751a3bd0c05a42');
+ 
     </script>
     <script src="../js/user/loginForm.js"></script>
     </body>

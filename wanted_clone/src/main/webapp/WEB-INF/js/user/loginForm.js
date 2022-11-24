@@ -1,5 +1,6 @@
-var id;
+$(function () {});
 
+var id;
 // 회원 유무 확인
 $(".loginform-id__div__input-submit").click(function () {
   id = $(".loginform-id__div__input-id").val();
@@ -43,6 +44,14 @@ $(".loginform-signup__signup-btn").click(function () {
     },
   });
 });
+//회원가입 뒤로가기
+$(".loginform-signup__header__cancel-btn").click(function () {
+  if (
+    confirm("회원가입을 취소하고 이전 화면으로 되돌아갑니다. 계속하시겠어요?")
+  ) {
+    location.href = "/controller/user/loginForm";
+  }
+});
 
 // 로그인
 $(".loginform-pwd__input-next").click(function () {
@@ -63,31 +72,62 @@ $(".loginform-pwd__input-next").click(function () {
     },
   });
 });
+//로그인 뒤로가기
+$(".loginform-pwd__header__cancel-btn").click(function () {
+  location.href = "/controller/user/loginForm";
+});
 
-// //카카오 소셜 로그인
-// $(".loginform-id__div__sns-login__kakao-login").click(function () {
+// 휴대폰 인증
+$(".loginform-signup__tel__certify__get-certify").click(function () {
+  $.ajax({
+    type: "post",
+    url: "/controller/user/smsCertify",
+    data: "tel=" + $(".loginform-signup__tel__certify__telnum").val(),
+    success: function (data) {
+      console.log(data);
+    },
+    error: function (err) {
+      console.log(err);
+    },
+  });
+});
+
+//
+//
+//카카오 소셜 로그인
+// $(".loginform-id__div__sns-login__kakao").click(function () {
 //   loginWithKakao();
 // });
 
 // function loginWithKakao() {
+//   const scope = "account_email";
+//   Kakao.Auth.login({
+//     scope,
+//     success: function (response) {
+//       Kakao.Auth.setAccessToken(response.access_token);
+//       alert(Kakao.Auth.getAccessToken());
+//     },
+//   });
+
 //   Kakao.Auth.authorize({
 //     redirectUri: "http://localhost:8080/controller/user/loginForm",
 //   });
 // }
 
 // $(function () {
-//   Kakao.Auth.setAccessToken("${ACCESS_TOKEN}");
-//   if (Kakao.Auth.getAccessToken()) {
-//     console.log("hah");
-//   }
+//   Kakao.Auth.setAccessToken();
 
+//   alert(Kakao.Auth.getAccessToken());
 //   Kakao.API.request({
 //     url: "/v2/user/me",
-//   })
-//     .then(function (response) {
-//       console.log(response);
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
+//     // data: {
+//     //   property_keys: ["kakao_account.email"],
+//     // },
+//     success: function (response) {
+//       alert("hahahahhaha");
+//     },
+//     fail: function (err) {
+//       console.log(err);
+//     },
+//   });
 // });

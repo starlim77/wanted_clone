@@ -21,7 +21,7 @@ public class UserController {
 	
 	@RequestMapping(value = "loginForm")
 	public String loginForm() {
-		return "jsp/user/loginForm";
+		return "user/loginForm";
 	}
 	
 	@RequestMapping(value = "checkId")
@@ -41,6 +41,12 @@ public class UserController {
 	@ResponseBody
 	public void signUp(@ModelAttribute UserDTO userDTO) {
 		userService.signUp(userDTO);
+	}
+	
+	@RequestMapping(value = "smsCertify")
+	@ResponseBody
+	public String smsCertify(@RequestParam String tel) {
+		return userService.smsCertify(tel);
 	}
 	
 }
