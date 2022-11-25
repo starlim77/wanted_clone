@@ -12,6 +12,14 @@
        ]]>
   	</select>
   	
+  	<select id="moreJobList"  parameterType="java.util.Map" resultType="job.bean.JobDTO">
+  	<![CDATA[
+  	select * from (select rownum rn, b.* 
+                  from (select * from job ) b)
+    where rn >= #{startNum} and rn <= #{endNum} order by seq desc
+       ]]>
+  	</select>
+  	
   
   	
   </mapper>

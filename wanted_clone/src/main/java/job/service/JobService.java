@@ -6,6 +6,8 @@ import job.bean.JobDTO;
 
 public interface JobService {
 
-	List<JobDTO> getJobList();
+	public List<JobDTO> getJobList();
+
+	public List<JobDTO> moreJobList(String scrollPg);
 
 }

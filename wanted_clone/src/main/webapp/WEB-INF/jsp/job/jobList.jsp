@@ -165,8 +165,10 @@ pageEncoding="UTF-8"%>
 	          </a>
 	        </li>
       	</c:forEach>
+      	
       </ul>
     </div>
+    <input type="hidden" value="2" id="scrollPg" />
 
     <script
       src="https://kit.fontawesome.com/1f61694686.js"
