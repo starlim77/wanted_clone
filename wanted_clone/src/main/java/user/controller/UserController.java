@@ -22,7 +22,7 @@ public class UserController {
 	
 	@RequestMapping(value = "loginForm")
 	public String loginForm() {
-		return "jsp/user/loginForm";
+		return "user/loginForm";
 	}
 	
 	@RequestMapping(value = "checkId")

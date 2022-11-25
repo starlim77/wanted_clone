@@ -10,13 +10,13 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <!-- header 상단 메뉴 바 -->
-    <jsp:include page="./jsp/component/header.jsp"></jsp:include>
+    <jsp:include page="./component/header.jsp"></jsp:include>
     <article>
       <!-- <section>banner</section> -->
 
       <p>${id}</p>
       <!-- <section>   insight -->
-      <jsp:include page="./jsp/component/insight.jsp"></jsp:include>
+      <jsp:include page="./component/insight.jsp"></jsp:include>
 
       <!-- <section>크리에이터 추천</section>
       <section>3분만에 읽는 아티클</section>
@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
 
     <!-- footer -->
 
-    <jsp:include page="./jsp/component/footer.jsp"></jsp:include>
+    <jsp:include page="./component/footer.jsp"></jsp:include>
 
     <%-- <%@ include file="./jsp/component/footer.jsp" %> --%>
     <!-- 	<footer class="footer">

@@ -1,9 +1,9 @@
 CREATE TABLE COMMUNITY (
 						seq number PRIMARY KEY,
-						id VARCHAR2(20) NOT NULL,
+						id_ VARCHAR2(20) NOT NULL,
                         title VARCHAR2(50) not null,
-                        content VARCHAR2(500) not null,
+                        content_ VARCHAR2(500) not null,
                         theme VARCHAR2(20) not null,
-                        comment VARCHAR2(200),
+                        comment_ VARCHAR2(200),
                         like_count number check (like_count >= 0),
                         view_count number check (view_count >= 0));

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="communitySQL">
+
+	<select id="bestBoard" parameterType="java.util.Map" resultType="community.bean.CommunityDTO">
+		<![CDATA[select * from 
+            (select rownum rn,tt.* from
+            (select seq,id_,title,theme,view_count from community where view_count is not null order by 5 desc)tt)
+        where rn >= #{startNum} and rn <= #{endNum}]]>
+	
+	</select>
+
+	<select id="boardList" parameterType="java.util.Map" resultType="community.bean.CommunityDTO">
+		<![CDATA[select * from 
+            (select rownum rn,tt.* from
+            (select seq,id_,title,content_,theme,view_count,like_count from community order by 1 desc)tt)
+        where rn >= #{startNum} and rn <= #{endNum}]]>
+	
+	</select>
+
+</mapper>

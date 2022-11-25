@@ -6,14 +6,10 @@
 @import "component/insight.css";
 
 /* Screens */
-<<<<<<< HEAD
-@import "user/loginForm.css";
 
-body {
-  /* width: 100%; */
-  /* background-color: white; */
-@import "screens/index/insight.css";
+@import "user/loginForm.css";
 @import "community/community_container.css";
+
 
 body {
   /* width: 100%; */	
