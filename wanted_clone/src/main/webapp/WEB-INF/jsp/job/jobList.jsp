@@ -142,8 +142,7 @@ pageEncoding="UTF-8"%>
 	              <img
 	                class="job__content__list__card__img"
 	                src="${jobDTO.img}"
-	                alt="img"
-	              />
+	                 />
 	            </div>
 	            <div class="job__content__list__card__letter">
 	              <div class="job__content__list__card__letter__position">
@@ -152,9 +151,9 @@ pageEncoding="UTF-8"%>
 	              <div class="job__content__list__card__letter__company">
 	                ${jobDTO.company}
 	              </div>
-	              <button class="job__content__list__card__letter__response">
-	                응답률 매우 높음
-	              </button>
+	              <input type="button" class="job__content__list__card__letter__response" value="응답률 매우 높음 ">
+	                
+                </input>
 	              <div class="job__content__list__card__letter__location">
 	                ${jobDTO.location}
 	              </div>

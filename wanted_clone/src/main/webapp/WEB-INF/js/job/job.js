@@ -76,8 +76,9 @@ $(".job__nav-bar__aside__recommand").click(function () {
 });
 
 $(window).scroll(function () { 
-	if($(window).scrollTop() >= $(document).height() - $(window).height()) {
-		//alert("무한");
+
+	if($(window).scrollTop() >= $(document).height() - $(window).height()-100) {
+	
 		$.ajax({
 			type:'post',
 			url:'/controller/job/moreJobList',
@@ -99,6 +100,7 @@ $(window).scroll(function () {
 				var img = $('<img>');
 				img.addClass('job__content__list__card__img');
 				img.attr('src',data[i].img);
+				
 								
 				//card__letter
 				var card__letter = $('<div>');
@@ -115,9 +117,9 @@ $(window).scroll(function () {
 				company.html(data[i].company);
 				
 				//response
-				var response = $('<button>');
+				var response = $('<input>');
 				response.addClass('job__content__list__card__letter__response');
-				
+				response.val("응답률 매우 높음")
 				//location
 				var location = $('<div>');
 				location.addClass('job__content__list__card__letter__location');
@@ -143,6 +145,7 @@ $(window).scroll(function () {
 		});
 	}
 });
+
 
 
 

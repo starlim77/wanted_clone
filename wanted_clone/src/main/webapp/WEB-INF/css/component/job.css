@@ -160,8 +160,10 @@
   color: #00adae;
   border: 1px solid #00adae;
   background-color: white;
+  width: 90px;
   margin-top: 2px;
   font-weight: 700;
+  text-align:center
 }
 .job__content__list__card__letter__location {
   font-size: 14px;
