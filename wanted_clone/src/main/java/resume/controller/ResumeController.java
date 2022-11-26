@@ -40,6 +40,7 @@ public class ResumeController {
 	}
 
 	@PostMapping(value = "resumeWrite")
+	@ResponseBody
 	public void resumeWrite(@ModelAttribute ResumeDTO resumeDTO) {
 		System.out.println(resumeDTO);
 		resumeDAO.resumeWrite(resumeDTO);

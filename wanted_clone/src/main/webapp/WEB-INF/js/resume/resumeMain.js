@@ -21,7 +21,6 @@ $("#portfolio").change(function(){
 	});
 });
 
-// TODO list로 가져와서 새로운 resume div 만드는지 확인 필요
 	$(function() {
 		$.ajax({
 			url: "/controller/resume/getResumeList",
