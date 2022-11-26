@@ -10,4 +10,6 @@ public interface JobService {
 
 	public List<JobDTO> moreJobList(String scrollPg);
 
+	JobDTO jobBoard(String seq);
+	
 }

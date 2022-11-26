@@ -5,11 +5,11 @@
   <mapper namespace="jobSQL">
   	
   	<select id="getJobList"  resultType="job.bean.JobDTO">
-  	<![CDATA[
-  	select * from (select rownum rn, b.* 
-                  from (select * from job ) b)
-    where rn >= 1 and rn <= 16 order by seq desc
-       ]]>
+	  	<![CDATA[
+		  	select * from (select rownum rn, b.* 
+		                  from (select * from job ) b order by seq desc)
+		    where rn >= 1 and rn <= 16 order by seq desc
+	       ]]>
   	</select>
   	
   	<select id="moreJobList"  parameterType="java.util.Map" resultType="job.bean.JobDTO">
@@ -20,6 +20,8 @@
        ]]>
   	</select>
   	
+  	<select id="jobBoard" parameterType="String" resultType="job.bean.JobDTO">  		
+  		select * from job where seq = #{seq}
+  	</select>
   
-  	
   </mapper>

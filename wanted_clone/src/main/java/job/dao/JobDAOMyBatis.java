@@ -39,4 +39,8 @@ public class JobDAOMyBatis implements JobDAO {
 		
 		return moreJobList;
 	}
+	
+	public JobDTO jobBoard(String seq) {
+		return sqlSession.selectOne("jobSQL.jobBoard", seq);
+	}
 }

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!-- header 상단 메뉴 바 -->
+ 
    <div class="header">
       <div class="nav-bar">
          <ul class="nav-bar__hamberger">
@@ -84,6 +86,17 @@
          <li class="nav-bar__menu-list__service__list"><a href="#"> <i
                class="fa-regular fa-bell"></i>
          </a></li>
+         <c:if test="${id==null}">
+         	<li class="nav-bar__menu-list__service__list">
+         		<input type="button" value="로그인/회원가입" onclick="location.href='/controller/user/loginForm'">
+         	</li>
+         </c:if>
+           <c:if test="${id!=null}">
+         	<li class="nav-bar__menu-list__service__list">
+         		<input type="button" value="로그아웃" onclick="logout()">
+         	</li>
+         </c:if>
+         
          <li class="nav-bar__menu-list__service__list"><a href="#"> <img
                class="nav-bar__menu-list__service__list__profile-img"
                src="img/profile_default.png" alt="profile_default" />
@@ -92,8 +105,6 @@
                <div class="nav-bar__menu-list__service__list__corperation-service">기업서비스</div>
          </a></li>
       </ul>
-
-      <div></div>
    </div>
    <!-- nav-bar -->
    </div>

@@ -9,5 +9,5 @@ create table job(
 
 
 insert into 
-job(img, subject, company, location, reward) 
-values('test', 'subject', 'company', '한국/서울','1000000');
+job(seq, img, subject, company, location, reward) 
+values(jobseq.nextval ,'test', 'subject', 'company', '한국/서울','1000000');

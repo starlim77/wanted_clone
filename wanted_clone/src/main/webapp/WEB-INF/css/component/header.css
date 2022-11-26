@@ -1,15 +1,17 @@
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center; /* 위아래 가운데 */
   height: 50px;
+  width:1065px;
+  margin : 0 auto;
   top: 0;
   left: 0;
   right: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* header 아래 밑줄 */
   background-color: #fff; /* 배경 */
   position: fixed; /* header 고정 */
-  z-index: 1; /* header 고정 */
+  z-index: 3; /* header 고정 */
   white-space: nowrap; /* 한줄 유지 */
 }
 

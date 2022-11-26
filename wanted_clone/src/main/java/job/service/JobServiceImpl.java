@@ -27,6 +27,11 @@ public class JobServiceImpl implements JobService {
 	public List<JobDTO> moreJobList(String scrollPg) {
 		// TODO Auto-generated method stub
 		return jobDAO.moreJobList(scrollPg);
+		
+	}
+		
+	public JobDTO jobBoard(String seq) {
+		return jobDAO.jobBoard(seq);
 	}
 
 }

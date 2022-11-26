@@ -41,10 +41,12 @@ public class UserServiceImpl implements UserService {
 	public UserDTO login(UserDTO userDTO) {
 		UserDTO userDTOLogin = userDAO.login(userDTO);
 		
+		if(userDTOLogin!=null) {
 		httpSession.setAttribute("id", userDTOLogin.getId());
 		httpSession.setAttribute("name", userDTOLogin.getName());
 		httpSession.setAttribute("sortnum", userDTOLogin.getSortnum());
-		
+		httpSession.setAttribute("tel", userDTOLogin.getTel());
+		}
 		return userDAO.login(userDTO);
 	}
 
@@ -171,6 +173,11 @@ public class UserServiceImpl implements UserService {
 			encodeBase64String = e.toString();
 		}
 	  return encodeBase64String;
+	}
+
+	@Override
+	public void logout() {
+		httpSession.invalidate();
 	}
 
 }

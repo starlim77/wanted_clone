@@ -39,4 +39,19 @@ public class JobController {
 	}
 	
 	
+	@RequestMapping(value = "jobBoard")
+	public ModelAndView jobBoard(@RequestParam String seq) {
+		JobDTO jobDTO = jobService.jobBoard(seq);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("jobDTO", jobDTO);
+		
+		return mav;
+	}
+	
+	
+	
+	
+	
+	
 }

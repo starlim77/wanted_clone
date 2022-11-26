@@ -115,6 +115,7 @@ pageEncoding="UTF-8"%>
       integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
       crossorigin="anonymous"
     ></script>
+    <script src="./js/component/header.js"></script>
     <script src="./js/component/insight__nav-bar.js"></script>
   </body>
 </html>

@@ -33,16 +33,8 @@
                     <span>Kakao</span>
                 </div>
                 <div>
-                    <img src="" alt="kakao">
-                    <span>Facebook</span>
-                </div>
-                <div>
-                    <img src="" alt="kakao">
-                    <span>Google</span>
-                </div>
-                <div>
-                    <img src="" alt="kakao">
-                    <span>Apple</span>
+                    <img src="" alt="naver">
+                    <span>Naver</span>
                 </div>
             </div>
             <hr class="loginform-id__div__hr">
@@ -77,11 +69,13 @@
                     <input class="loginform-signup__tel__certify__telnum loginform-signup__input" type="text" name="tel"  placeholder="(예시) 01013245768">
                     <input class="loginform-signup__tel__certify__get-certify loginform-signup__input" type="button" value="인증번호 받기">
                 </div>
-                <input class="loginform-signup__input" type="text" placeholder="인증번호를 입력해주세요">
+                <input class="loginform-signup__input" id="certify" type="text" placeholder="인증번호를 입력해주세요">
+                <div id="certifyDiv"></div>
             </div>
             <div class="loginform-signup__input-name">비밀번호</div>
-            <input class="loginform-signup__input" type="password" name="pwd" placeholder="비밀번호를 입력해주세요.">
-            <input class="loginform-signup__input" type="password" placeholder="비밀번호를 다시 한번 입력해주세요.">
+            <input class="loginform-signup__input" id="pwd" type="password" name="pwd" placeholder="비밀번호를 입력해주세요.">
+            <input class="loginform-signup__input" id="repwd" type="password" placeholder="비밀번호를 다시 한번 입력해주세요.">
+            <div id="pwdDiv"></div>
             <p class="loginform-signup__pwd-p">영문 대소문자, 숫자, 특수문자를 3가지 이상으로 조합해 8자 이상 <br>16자 이하로 입력해주세요.</p>
             <div class="loginform-signup__agree">
                 <ul>
