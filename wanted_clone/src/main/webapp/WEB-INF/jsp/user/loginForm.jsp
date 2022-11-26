@@ -28,21 +28,13 @@
             <input class="loginform-id__div__input-submit" type="button" value="이메일로 계속하기"></input>
             <p class="loginform-id__div__or">또는</p>
             <div class="loginform-id__div__sns-login">
-                <div>
+                <div class="loginform-id__div__sns-login__kakao">
                     <img src="" alt="kakao">
                     <span>Kakao</span>
                 </div>
                 <div>
-                    <img src="" alt="kakao">
-                    <span>Facebook</span>
-                </div>
-                <div>
-                    <img src="" alt="kakao">
-                    <span>Google</span>
-                </div>
-                <div>
-                    <img src="" alt="kakao">
-                    <span>Apple</span>
+                    <img src="" alt="naver">
+                    <span>Naver</span>
                 </div>
             </div>
             <hr class="loginform-id__div__hr">
@@ -59,7 +51,7 @@
         </div>
 
     </section>
-
+    <!-- 회원가입 -->
     <section class="loginform-signup">
         <form class="loginform-signup__form" action="">
             <div class="loginform-signup__header">
@@ -77,11 +69,13 @@
                     <input class="loginform-signup__tel__certify__telnum loginform-signup__input" type="text" name="tel"  placeholder="(예시) 01013245768">
                     <input class="loginform-signup__tel__certify__get-certify loginform-signup__input" type="button" value="인증번호 받기">
                 </div>
-                <input class="loginform-signup__input" type="text" placeholder="인증번호를 입력해주세요">
+                <input class="loginform-signup__input" id="certify" type="text" placeholder="인증번호를 입력해주세요">
+                <div id="certifyDiv"></div>
             </div>
             <div class="loginform-signup__input-name">비밀번호</div>
-            <input class="loginform-signup__input" type="password" name="pwd" placeholder="비밀번호를 입력해주세요.">
-            <input class="loginform-signup__input" type="password" placeholder="비밀번호를 다시 한번 입력해주세요.">
+            <input class="loginform-signup__input" id="pwd" type="password" name="pwd" placeholder="비밀번호를 입력해주세요.">
+            <input class="loginform-signup__input" id="repwd" type="password" placeholder="비밀번호를 다시 한번 입력해주세요.">
+            <div id="pwdDiv"></div>
             <p class="loginform-signup__pwd-p">영문 대소문자, 숫자, 특수문자를 3가지 이상으로 조합해 8자 이상 <br>16자 이하로 입력해주세요.</p>
             <div class="loginform-signup__agree">
                 <ul>
@@ -109,9 +103,10 @@
         </form>
     </section>
     
+    <!-- 로그인 -->
     <section class="loginform-pwd">
         <div class="loginform-pwd__header">
-            <i class="fa-solid fa-chevron-left"></i>
+            <i class="loginform-pwd__header__cancel-btn fa-solid fa-chevron-left"></i>
             이메일로 로그인
         </div>
         <div class="loginform-pwd__input-name">비밀번호</div>
@@ -133,8 +128,7 @@
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.1/kakao.min.js"
         integrity="sha384-eKjgHJ9+vwU/FCSUG3nV1RKFolUXLsc6nLQ2R1tD0t4YFPCvRmkcF8saIfOZNWf/" crossorigin="anonymous">
     </script>
-    <script>
-    Kakao.init('894dddd5929cb9481f751a3bd0c05a42');
+ 
     </script>
     <script src="../js/user/loginForm.js"></script>
     </body>

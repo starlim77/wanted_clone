@@ -34,7 +34,7 @@ public class UserController {
 	@RequestMapping(value = "login")
 	@ResponseBody
 	public UserDTO login(@ModelAttribute UserDTO userDTO) {
-		System.out.println(userDTO.getPwd());
+//		System.out.println(userDTO.getPwd());
 		return userService.login(userDTO);
 	}
 	
@@ -42,6 +42,18 @@ public class UserController {
 	@ResponseBody
 	public void signUp(@ModelAttribute UserDTO userDTO) {
 		userService.signUp(userDTO);
+	}
+	
+	@RequestMapping(value = "smsCertify")
+	@ResponseBody
+	public String smsCertify(@RequestParam String tel) {
+		return userService.smsCertify(tel);
+	}
+	
+	@RequestMapping(value = "logout")
+	public String signUp() {
+		userService.logout();
+		return "index";
 	}
 	
 }

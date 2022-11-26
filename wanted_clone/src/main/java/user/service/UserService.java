@@ -9,4 +9,8 @@ public interface UserService {
 	public UserDTO login(UserDTO userDTO);
 
 	public void signUp(UserDTO userDTO);
+
+	public String smsCertify(String tel);
+
+	public void logout();
 }
