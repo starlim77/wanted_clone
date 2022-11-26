@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import community.bean.CommunityDTO;
 import community.dao.CommunityDAO;
@@ -15,7 +16,7 @@ public class CommunityServiceImple implements CommunityService {
 
 	@Autowired
 	private CommunityDAO communityDAO;
-	
+
 	@Autowired
 	private HttpSession session;
 	
@@ -38,6 +39,14 @@ public class CommunityServiceImple implements CommunityService {
 	@Override
 	public List<CommunityDTO> boardList(String scrollPg) {
 		return communityDAO.boardList(scrollPg);
+	}
+
+	@Override
+	public void boardWrite(CommunityDTO communityDTO) {
+		String id = (String) session.getAttribute("id");
+		communityDTO.setId_(id);
+		
+		communityDAO.boardWrite(communityDTO);
 	}
 
 }

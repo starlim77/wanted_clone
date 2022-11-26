@@ -41,4 +41,9 @@ public class CommunityMybatis implements CommunityDAO {
 		return sqlSession.selectList("communitySQL.boardList",map);
 	}
 
+	@Override
+	public void boardWrite(CommunityDTO communityDTO) {
+		sqlSession.insert("communitySQL.boardWrite",communityDTO);
+	}
+
 }

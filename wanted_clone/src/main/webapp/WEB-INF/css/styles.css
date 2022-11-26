@@ -9,7 +9,7 @@
 
 @import "user/loginForm.css";
 @import "community/community_container.css";
-
+@import "community/community_write.css";
 
 body {
   /* width: 100%; */	

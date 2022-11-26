@@ -10,4 +10,6 @@ public interface CommunityDAO {
 
 	public List<CommunityDTO> boardList(String scrollPg);
 
+	public void boardWrite(CommunityDTO communityDTO);
+
 }

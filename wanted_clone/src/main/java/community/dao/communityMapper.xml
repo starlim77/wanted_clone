@@ -21,4 +21,9 @@
 	
 	</select>
 
+	<insert id="boardWrite">
+		insert into community (seq,id_,title,content_,theme,view_count,like_count)
+		 values (community_seq.NEXTVAL,#{id_},#{title},#{content_},'sad',0,0)
+	</insert>
+
 </mapper>

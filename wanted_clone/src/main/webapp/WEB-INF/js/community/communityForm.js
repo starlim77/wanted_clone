@@ -69,7 +69,6 @@ $(function(){
 	}
 	
 	//무한스크롤 전 게시물 뿌리기
-	function haha(){
 	$.ajax({
 		type: 'post',
 		url: '/controller/community/boardList',
@@ -134,7 +133,6 @@ $(function(){
 		}
 
 	});
-	
 
 	//무한스크롤 이벤트 구현
 	$(window).scroll(function(){
@@ -207,10 +205,10 @@ $(function(){
 				}
 			}); //ajax
 		}//if
-	});	
+	});//무한 스크롤
 	
-	
-	
+
+
 });
 
 

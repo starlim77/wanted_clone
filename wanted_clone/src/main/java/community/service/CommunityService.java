@@ -12,4 +12,6 @@ public interface CommunityService {
 
 	public List<CommunityDTO> boardList(String scrollPg);
 
+	public void boardWrite(CommunityDTO communityDTO);
+
 }

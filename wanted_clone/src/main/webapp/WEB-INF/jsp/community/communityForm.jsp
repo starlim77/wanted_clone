@@ -106,9 +106,28 @@
     <input type="hidden" id="scrollPg" value="1">
 </container>
 
+<div class="write_background"></div>
+
+ <div id="writebody">
+    <div class="writebody__top">
+        <div class="writebody__top__tag"></div>
+        <div class="writebody__top__submit">
+            <input type="button" id="writebody__writeBtn" value="등록하기" disabled="true">
+        </div>
+    </div>
+
+	<input class="writebody__title" placeholder="제목을 입력해주세요"> </input>
+    <hr class="write_hr">
+    <textarea class="writebody__content" placeholder="내용을 입력해주세요"></textarea>
+</div>
+
+
+
+
 <script src="https://kit.fontawesome.com/1f61694686.js" crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script><!-- CDN 방식 -->
 <script type="text/javascript" src="../js/community/communityForm.js"></script>
+<script type="text/javascript" src="../js/community/community_write.js"></script>
 
 </body>
 </html>	
