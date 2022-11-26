@@ -24,21 +24,17 @@ public class ResumeServiceImpl implements ResumeService{
 		sqlSession.insert("resumeSQL.resumeWrite", resumeDTO);
 	}
 	
-	// TODO file upload 확인 필요
 	@Override
 	public void fileUpload(Map<String, String> map) {
 		String id = (String) httpSession.getAttribute("id");
 		String name = (String) httpSession.getAttribute("name");
 		String tel = (String) httpSession.getAttribute("tel");
-		
 		map.put("id", id);
 		map.put("name", name);
 		map.put("tel", tel);
 		sqlSession.insert("resumeSQL.fileUpload", map);
-		
 	}
 
-	// TODO getResumeList로 ResumeList 가져오는지 확인 필요
 	@Override
 	public List<ResumeDTO> getResumeList() {
 		String id = (String) httpSession.getAttribute("id");

@@ -50,8 +50,6 @@ public class ResumeController {
 	public void fileUpload(@RequestParam MultipartFile portfolio, HttpSession session) {
 		String fileName = portfolio.getOriginalFilename();
 		String filePath = session.getServletContext().getRealPath("/WEB-INF/storage");
-		System.out.println(filePath);
-		System.out.println(fileName);
 		
 		File file = new File(filePath, fileName);
 		try {
@@ -59,16 +57,17 @@ public class ResumeController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		Map<String, String> map = new HashedMap<String, String>();
-		String portfolioString = "portfolio";
-		map.put("formName", portfolioString);
+		map.put("formName", fileName);
 		map.put("fileName", fileName);
 		map.put("filePath", filePath);
 		
 		resumeDAO.fileUpload(map);
 	}
 	
-	@RequestMapping(value = "getResumeList")
+	@GetMapping(value = "getResumeList")
+	@ResponseBody
 	public List<ResumeDTO> getResumeList() {
 		return resumeDAO.getResumeList();
 	}

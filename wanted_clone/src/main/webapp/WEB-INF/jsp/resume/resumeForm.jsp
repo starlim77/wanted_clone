@@ -32,13 +32,11 @@
                      이력서 이름
                     <input type="text" id="formName" name="formName" /><br>
                      아이디
-                    <input type="text" id="id" name="id" /><br>
+                    <input type="text" id="id" name="id" value=${id } /><br>
                      이름
-                    <input type="text" id="name" name="name" /><br>
-                     이메일
-                    <input type="text" id="email" name="email" /><br>
+                    <input type="text" id="name" name="name" value=${name } /><br>
                      전화번호
-                    <input type="text" id="phoneNum" name="phoneNum" /><br>
+                    <input type="text" id="tel" name="tel" value=${tel } /><br>
                      간단 소개글
                     <input type="text" id="introduce" name="introduce" /><br>
                      경력

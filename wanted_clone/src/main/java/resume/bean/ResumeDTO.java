@@ -1,7 +1,5 @@
 package resume.bean;
 
-import org.springframework.stereotype.Component;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,5 +18,7 @@ public class ResumeDTO {
 	private String language;
 	private String portfolio;
 	private String writing;
+	private String fileName;
+	private String filePath;
 	private String logtime;
 }

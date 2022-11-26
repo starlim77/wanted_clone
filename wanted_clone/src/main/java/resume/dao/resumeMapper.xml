@@ -5,10 +5,10 @@
   <mapper namespace="resumeSQL">
   
   	<insert id="resumeWrite" parameterType="resume.bean.ResumeDTO">
-  		insert into resume values
+  		insert into resume (RESUME_SEQ,formName, id, name, tel, introduce, career, education, award, language, writing, logtime) values
   		(resume_seq.nextval, #{formName}, #{id}, #{name},
   		#{tel}, #{introduce}, #{career}, #{education}, #{award}, 
-  		#{language}, #{portfolio}, #{writing}, sysdate)
+  		#{language}, #{writing}, sysdate)
   	</insert>
   	
   	<insert id="fileUpload" parameterType="java.util.Map">
@@ -17,6 +17,6 @@
   	</insert>
   	
   	<select id="getResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
-  		select * from resume where id = #{id}
+  		select formName, to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id}
   	</select>
   </mapper>

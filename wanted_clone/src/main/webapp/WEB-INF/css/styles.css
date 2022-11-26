@@ -8,6 +8,9 @@
 /* Screens */
 @import "user/loginForm.css";
 
+/* Resume */
+@import "resume/resumeMain.css";
+
 body {
   /* width: 100%; */
   /* background-color: white; */

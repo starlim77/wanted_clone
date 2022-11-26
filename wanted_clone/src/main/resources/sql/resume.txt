@@ -1,5 +1,5 @@
 create table resume (resume_seq number primary key,
-                    formName varchar(30) not null,
+                    formName varchar(500) not null,
                     id varchar2(40) not null,
                     name varchar2(10) not null,
                     tel varchar2(20) not null,
