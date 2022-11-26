@@ -8,6 +8,7 @@
 /* Screens */
 @import "user/loginForm.css";
 @import "component/job.css";
+@import "job/jobBoard.css";
 
 body {
   /* width: 100%; */

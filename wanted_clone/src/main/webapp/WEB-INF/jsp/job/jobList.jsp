@@ -137,7 +137,7 @@ pageEncoding="UTF-8"%>
       <ul class="job__content__list">
       	<c:forEach var="jobDTO" items="${jobList}">
 	        <li>
-	          <a class="job__content__list__card" href="#">
+	          <a class="job__content__list__card" href="/controller/job/jobBoard?seq=${jobDTO.seq}">
 	            <div>
 	              <img
 	                class="job__content__list__card__img"
@@ -159,7 +159,7 @@ pageEncoding="UTF-8"%>
 	                ${jobDTO.location}
 	              </div>
 	              <div class="job__content__list__card__reward">
-	                채용보상금 1,000,000원
+	                채용보상금 ${jobDTO.reward}원
 	              </div>
 	            </div>
 	          </a>

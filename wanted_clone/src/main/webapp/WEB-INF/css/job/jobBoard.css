@@ -1,0 +1,61 @@
+.jobboard__all-content {
+  display: flex;
+  width: 1065px;
+  gap: 25px;
+  margin: 0 auto;
+}
+
+.jobboard__all-content__information {
+  width: 700px;
+  background-color: yellow;
+}
+.jobboard__all-content__information > img {
+  width: 100%;
+  height: 490px;
+  margin-bottom: 60px;
+}
+.jobboard__all-content__information__detail {
+  background-color: blue;
+}
+
+.jobboard__apply {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  width: 340px;
+  height: 200px;
+  padding: 20px;
+}
+.jobboard__apply > h4 {
+  font-weight: 500;
+}
+.jobboard__apply__reward {
+  display: flex;
+  margin-top: 20px;
+}
+.jobboard__apply__reward span {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.jobboard__apply__reward p {
+  font-size: 15px;
+  margin-top: 12px;
+}
+.jobboard__apply > input {
+  border: 1px solid #3266fe;
+  border-radius: 60px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  margin-top: 30px;
+  background-color: #3266fe;
+  color: white;
+  cursor: pointer;
+}
+
+pre {
+  font-family: Pretendard, Pretendard JP, Pretendard Std, -apple-system,
+    system-ui, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial,
+    Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+  white-space: pre-wrap;
+}
