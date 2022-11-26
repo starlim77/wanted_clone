@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="jobSQL">
+  	
+  	<select id="getJobList"  resultType="job.bean.JobDTO">
+	  	<![CDATA[
+		  	select * from (select rownum rn, b.* 
+		                  from (select * from job ) b order by seq desc)
+		    where rn >= 1 and rn <= 16 order by seq desc
+	       ]]>
+  	</select>
+  	
+  	<select id="moreJobList"  parameterType="java.util.Map" resultType="job.bean.JobDTO">
+  	<![CDATA[
+  	select * from (select rownum rn, b.* 
+                  from (select * from job ) b)
+    where rn >= #{startNum} and rn <= #{endNum} order by seq desc
+       ]]>
+  	</select>
+  	
+  	<select id="jobBoard" parameterType="String" resultType="job.bean.JobDTO">  		
+  		select * from jobtest where seq = #{seq}
+  	</select>
+  
+  </mapper>

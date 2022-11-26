@@ -8,11 +8,21 @@
 /* Screens */
 
 @import "user/loginForm.css";
+
+
+@import "component/job.css";
+@import "job/jobBoard.css";
+
 @import "community/community_container.css";
 @import "community/community_write.css";
 
+
+/* Resume */
+@import "resume/resumeMain.css";
+
+
 body {
-  /* width: 100%; */	
+  /* width: 100%; */
   font-family: Pretendard, Pretendard JP, Pretendard Std, -apple-system,
     system-ui, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial,
     Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji,

@@ -4,15 +4,24 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-	
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+
 	<context:component-scan base-package="spring.conf"></context:component-scan>
 	<context:component-scan base-package="user.bean"></context:component-scan>
 	<context:component-scan base-package="user.dao"></context:component-scan>
 	<context:component-scan base-package="user.service" />
+
+
+	<context:component-scan base-package="job.dao"></context:component-scan>
+	<context:component-scan base-package="job.service"></context:component-scan>
 	
+
 	<context:component-scan base-package="community.bean" />
 	<context:component-scan base-package="community.dao" />
 	<context:component-scan base-package="community.service" />
+
+	<context:component-scan base-package="resume.dao"></context:component-scan>
+	<context:component-scan base-package="resume.service"></context:component-scan>
+
 </beans>

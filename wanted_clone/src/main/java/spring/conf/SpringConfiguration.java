@@ -20,7 +20,7 @@ public class SpringConfiguration {
 //	private String url = "jdbc:oracle:thin:@localhost:5151:xe";
 //	private String username = "c##java";
 //	private String password = "bit";
-	
+
 	@Value("${jdbc.driver}")
 	private String driver;
 	@Value("${jdbc.url}")
@@ -29,7 +29,7 @@ public class SpringConfiguration {
 	private String username;
 	@Value("${jdbc.password}")
 	private String password;
-		
+
 	@Bean
 	public BasicDataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
@@ -39,27 +39,28 @@ public class SpringConfiguration {
 		dataSource.setPassword(password);
 		return dataSource;
 	}
-	
+
 	@Bean
 	public SqlSessionTemplate sqlSession() throws Exception {
 		SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
 		return sqlSessionTemplate;
 	}
-	
+
 	@Bean
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
 		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"),
-												 new ClassPathResource("community/dao/communityMapper.xml"));
-		
+				                                 new ClassPathResource("job/dao/jobMapper.xml"),
+												 new ClassPathResource("community/dao/communityMapper.xml"),
+												new ClassPathResource("resume/dao/resumeMapper.xml"));
+
 		return sqlSessionFactoryBean.getObject();
 	}
-	
+
 	@Bean
 	public DataSourceTransactionManager transactionManager() {
 		return new DataSourceTransactionManager(dataSource());
 	}
 }
-
