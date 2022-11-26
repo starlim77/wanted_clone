@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -44,6 +45,7 @@ public class UserServiceImpl implements UserService {
 		if(userDTOLogin!=null) {
 		httpSession.setAttribute("id", userDTOLogin.getId());
 		httpSession.setAttribute("name", userDTOLogin.getName());
+		httpSession.setAttribute("tel", userDTOLogin.getTel());
 		httpSession.setAttribute("sortnum", userDTOLogin.getSortnum());
 		httpSession.setAttribute("tel", userDTOLogin.getTel());
 		}
@@ -51,6 +53,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@ResponseBody
 	public void signUp(UserDTO userDTO) {
 		
 		userDAO.signUp(userDTO);

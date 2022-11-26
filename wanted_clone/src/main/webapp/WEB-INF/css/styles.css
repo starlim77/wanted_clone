@@ -9,10 +9,15 @@
 
 @import "user/loginForm.css";
 
+
 @import "component/job.css";
 
 @import "community/community_container.css";
 @import "community/community_write.css";
+
+
+/* Resume */
+@import "resume/resumeMain.css";
 
 
 body {
