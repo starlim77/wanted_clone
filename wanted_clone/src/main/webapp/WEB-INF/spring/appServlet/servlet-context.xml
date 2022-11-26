@@ -31,6 +31,9 @@
 	<context:component-scan base-package="user.controller" />
 	<context:component-scan base-package="job.controller" />
 	
+	<context:component-scan base-package="community.controller" />
+
+
 	
 	
 </beans:beans>

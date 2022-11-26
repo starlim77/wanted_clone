@@ -11,6 +11,7 @@ import user.bean.UserDTO;
 @Transactional
 public class UserDAOMyBatis implements UserDAO {
 
+
 	@Autowired
 	private SqlSession sqlSession;
 	

@@ -9,4 +9,5 @@ public interface UserDAO {
 	public UserDTO login(UserDTO userDTO);
 
 	public void signUp(UserDTO userDTO);
+
 }

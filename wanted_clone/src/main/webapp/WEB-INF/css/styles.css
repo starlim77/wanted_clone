@@ -6,12 +6,17 @@
 @import "component/insight.css";
 
 /* Screens */
+
 @import "user/loginForm.css";
+
 @import "component/job.css";
+
+@import "community/community_container.css";
+@import "community/community_write.css";
+
 
 body {
   /* width: 100%; */
-  /* background-color: white; */
   font-family: Pretendard, Pretendard JP, Pretendard Std, -apple-system,
     system-ui, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial,
     Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji,
