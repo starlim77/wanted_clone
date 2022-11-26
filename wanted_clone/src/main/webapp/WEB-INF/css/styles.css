@@ -11,6 +11,7 @@
 
 
 @import "component/job.css";
+@import "job/jobBoard.css";
 
 @import "community/community_container.css";
 @import "community/community_write.css";

@@ -45,6 +45,7 @@ public class JobController {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("jobDTO", jobDTO);
+		mav.setViewName("job/jobBoard");
 		
 		return mav;
 	}
