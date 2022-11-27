@@ -12,3 +12,36 @@ create table resume (resume_seq number primary key,
                     fileName varchar2(500),
                     filePath varchar2(500),
                     logtime date default sysdate);
+                    
+                    
+create table career (career_seq number primary key,
+					id varchar2(40),
+					workDate varchar2(50),
+					companyName varchar2(100),
+					department varchar2(100),
+					position varchar2(100),
+					outcome varchar2(1000));
+					
+create sequence career_seq increment by 1 start with 1 nocycle nocache;
+
+
+create table award (award_seq number primary key,
+					id varchar2(40),
+					activityDate varchar2(50),
+					activityName varchar2(100),
+					datail varchar2(1000));
+
+create sequence award_seq increment by 1 start with 1 nocycle nocache;
+
+
+create table language (language_seq number primary key,
+					id varchar2(40),
+					languageName varchar2(100),
+					standard varchar2(50));
+					
+create sequence language_seq increment by 1 start with 1 nocycle nocache;
+
+create table link (link_seq number primary key,
+					link varchar2(1000));
+
+create sequence link_seq increment by 1 start with 1 nocycle nocache;					 

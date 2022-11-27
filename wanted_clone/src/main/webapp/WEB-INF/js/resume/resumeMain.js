@@ -65,22 +65,5 @@ $(function() {
 
 //작성중 이력서 페이지 접속
 $(document).on("click", ".old-resume", function(){
-	// alert($(this).children(".resume-box-top").children(".resume-box-top__h3").html());
-	// alert($(this).children(".resume-box-top").children(".resume-box-top__h3").text());
-	$.ajax({
-		url: "/controller/resume/getWritingResume",
-		type: "get",
-		data: "formName=" + $(this).children(".resume-box-top").children(".resume-box-top__h3").text(),
-		dataType: "json",
-		success: function(data){
-			alert(data.formName);
-			location.href="resumeForm?formName="+data.formName;
-		},
-		error: function(request, status, error, textStatus){
-			console.log("code: " + request.status);
-			console.log("message: " + request.responseText);
-			console.log("error: " + error);
-			console.log("textStatus: "+textStatus);
-		}
-	});
+	location.href="resumeForm?formName="+$(this).children(".resume-box-top").children(".resume-box-top__h3").text();
 });

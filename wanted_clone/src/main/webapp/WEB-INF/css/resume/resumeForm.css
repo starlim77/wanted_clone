@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+.resume-form-wrapper{
+	display: flex;
+	overflow: hidden;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.resume-form-cotainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 100px;
+	width: 1080px;
+	text-align: center;
+	border: 1px black;
+}
+.resumeForm-language-and-download{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.resumeForm-language-select{
+	text-align: left;
+	width: 120px;
+	height: 30px;
+}
+.resume-form{
+	width: 100%;
+	display: flex;
+	justify-content: left;
+}
+.resume-form__wrapper{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+.formName{
+	width: 100%;
+	border: 0px;
+	font-size: 50px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background-color: #f8f8f8;
+}
+.id, .name{
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 5px;
+	background-color: #f8f8f8;
+}
+.tel{
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 40px;
+	background-color: #f8f8f8;
+}
+.intorduce__txt{
+	display: flex;
+	text-align: left;
+	width: 100%;
+}
+.resume-form__introduce{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 30px;
+}
+.resume-form__describe{
+	display: flex;
+	justify-content: flex-start;
+	text-align: left;
+	align-items: center;
+	width: 100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 6px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	background-color: #e0f0fc;
+	color: #666;
+	font-size: 12px;
+}
+.resume-form__describe li {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.introduce-div{
+	width: 100%;
+	word-break: break-all;
+}
+.introduce{
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 30px;
+	background-color: #f8f8f8;
+	overflow: auto;
+	word-break: break-all;
+}
+.career, .education, .award, .language, .portfolio{
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	background-color: #f8f8f8;
+	margin-bottom: 40px;
+}
+.border{
+	height: 10px;
+	width: 100%;
+	background: url(/controller/img/resume/bg_topnav.png) repeat-x 170px;
+}
+
