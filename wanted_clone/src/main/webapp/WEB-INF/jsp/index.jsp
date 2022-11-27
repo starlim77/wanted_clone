@@ -21,11 +21,11 @@ pageEncoding="UTF-8"%>
 
       <p>${id}</p>
       <!-- <section>   insight -->
+	<jsp:include page="./component/banner.jsp"></jsp:include>
 
       <jsp:include page="./component/insight.jsp"></jsp:include>
 
 
-	<jsp:include page="./component/banner.jsp"></jsp:include>
       <!-- <section>   insight -->
 	
       <!-- <section>크리에이터 추천</section>

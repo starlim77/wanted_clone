@@ -30,7 +30,7 @@
             <div class="form-wrapper">
                 <div class="resume-name">
                      이력서 이름
-                    <input type="text" id="formName" name="formName" /><br>
+                    <input type="text" id="formName" name="formName" value=${param.formName} /><br>
                      아이디
                     <input type="text" id="id" name="id" value=${id } /><br>
                      이름
@@ -38,17 +38,17 @@
                      전화번호
                     <input type="text" id="tel" name="tel" value=${tel } /><br>
                      간단 소개글
-                    <input type="text" id="introduce" name="introduce" /><br>
+                    <input type="text" id="introduce" name="introduce" value=${param.introduce} /><br>
                      경력
-                    <input type="text" id="career" name="career" /><br>
+                    <input type="text" id="career" name="career" value=${career} /><br>
                      학력
-                    <input type="text" id="education" name="education" /><br>
+                    <input type="text" id="education" name="education" value=${education} /><br>
                      수상
-                    <input type="text" id="award" name="award" /><br>
+                    <input type="text" id="award" name="award" value=${award} /><br>
                      외국어
-                    <input type="text" id="language" name="language" /><br>
+                    <input type="text" id="language" name="language" value=${language} /><br>
                      파일 업로드
-                    <input type="text" id="portfolio" name="portfolio" /><br>
+                    <input type="text" id="portfolio" name="portfolio" value=${portfolio} /><br>
                      작성중
                     <input type="text" id="writing" name="writing" /><br>
                 </div>

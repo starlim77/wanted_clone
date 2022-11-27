@@ -40,5 +40,10 @@ public class ResumeServiceImpl implements ResumeService{
 		String id = (String) httpSession.getAttribute("id");
 		return sqlSession.selectList("resumeSQL.getResumeList", id);
 	}
+
+	@Override
+	public ResumeDTO getWritingResume(String formName) {
+		return sqlSession.selectOne("resumeSQL.getWritingResume", formName);
+	}
 	
 }

@@ -72,4 +72,12 @@ public class ResumeController {
 	public List<ResumeDTO> getResumeList() {
 		return resumeDAO.getResumeList();
 	}
+	
+	@GetMapping(value = "getWritingResume")
+	@ResponseBody
+	public ResumeDTO getWritingResume(String formName) {
+		System.out.println(formName);
+		
+		return resumeDAO.getWritingResume(formName);
+	}
 }
