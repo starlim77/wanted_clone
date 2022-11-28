@@ -92,13 +92,13 @@
          	</li>
          </c:if>
            <c:if test="${id!=null}">
-         	<li class="nav-bar__menu-list__service__list">
-         	<a href="#"> 
-         	<img
-               class="nav-bar__menu-list__service__list__profile-img"
-               src="/controller/img/profile_default.png" alt="profile_default" />    
-         	</a>
-         	<div class="nav-bar__menu-list__service__list__profile-popover">
+              <a href="#"> 
+                 <img
+                 class="nav-bar__menu-list__service__list__profile-img"
+                 src="/controller/img/profile_default.png" alt="profile_default" />    
+               </a>
+            <div class="nav-bar__menu-list__service__list__profile-popover__background"></div>
+            <div class="nav-bar__menu-list__service__list__profile-popover">
          		<ul class="nav-bar__menu-list__service__list__profile-popover__menu">
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
          			<a href="#">MY 원티드</a>
@@ -114,8 +114,6 @@
          	</li>
          </c:if>
 
-    
-         <div class="nav-bar__menu-list__service__list__profile-popover__background"></div>
          
          <li><a href="#">
                <div class="nav-bar__menu-list__service__list__corperation-service">기업서비스</div>
