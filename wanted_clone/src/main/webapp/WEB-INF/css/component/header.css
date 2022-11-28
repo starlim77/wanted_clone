@@ -136,6 +136,7 @@
 
 .nav-bar__menu-list__service__list {
   margin: 0 10px;
+  position: relative;
 }
 
 .nav-bar__menu-list__service__list__profile-img {
@@ -156,3 +157,27 @@
 .nav-bar__menu-list__category__link:hover {
   border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 }
+
+.nav-bar__menu-list__service__list__profile-popover__background {
+   position: absolute;
+    opacity: 0.3;
+    z-index: 1;
+    display: none;
+    top:0;
+
+} 
+
+.nav-bar__menu-list__service__list__profile-popover {
+	background-color: white;
+	height: 300px;
+	width: 200px;	
+	top: 50px;
+
+	right: 120;
+	position: absolute;
+	
+/* 	z-index: 3; */
+	display: block;
+	box-shadow: 5px 5px 5px 5px gray;
+}
+.pull.rd:after {content:""; position: absolute; top: -40px; right: 100px; border-left: 20px solid transparent; border-right: 20px solid transparent; border-bottom: 30px solid #ff0000;}

@@ -18,6 +18,7 @@ public class JobServiceImpl implements JobService {
 	@Autowired
 	private HttpSession httpSession;
 	
+	
 	@Override
 	public List<JobDTO> getJobList() {
 		return jobDAO.getJobList();
@@ -33,5 +34,6 @@ public class JobServiceImpl implements JobService {
 	public JobDTO jobBoard(String seq) {
 		return jobDAO.jobBoard(seq);
 	}
+
 
 }

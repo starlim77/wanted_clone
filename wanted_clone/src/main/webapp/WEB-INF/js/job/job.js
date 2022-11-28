@@ -76,8 +76,9 @@ $(".job__nav-bar__aside__recommand").click(function () {
 
 $(window).scroll(function () {
 
+	
 	if($(window).scrollTop() >= $(document).height() - $(window).height()-100) {
-
+		
 		$.ajax({
 			type:'post',
 			url:'/controller/job/moreJobList',
@@ -98,7 +99,7 @@ $(window).scroll(function () {
 				//img
 				var img = $('<img>');
 				img.addClass('job__content__list__card__img');
-				img.attr('src',data[i].img);
+				img.attr('src','../img/job/'+data[i].img);
 
 
 				//card__letter
@@ -127,7 +128,8 @@ $(window).scroll(function () {
 				//reward
 				var reward = $('<div>');
 				reward.addClass('job__content__list__card__letter__reward');
-
+				reward.html('채용보상금 ' + data[i].reward + '원');
+			
 				li.append(card.append(div.append(img)).append(card__letter.append
 				(position.append(company).append(response).append(location).append(reward))));
 

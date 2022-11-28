@@ -18,7 +18,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <div class="jobboard__all-content__information__detail">
             <span>${jobDTO.company}</span>
             <span class="jobboard__all-content__information__detail__location"
-              >| ${jobDTO.location}</span
+              > ${jobDTO.location}</span
             >
           </div>
           <div class="jobboard__all-content__content">
@@ -30,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
           <div class="jobboard__all-content__date-location"">
             <div>근무지역</div>
-            <div>${jobDTO.location}</div>
+            <div>${jobDTO.companylocation}</div>
           </div>
           <div>지도</div>
         </div>

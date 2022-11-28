@@ -2,11 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!-- header 상단 메뉴 바 -->
- <style>
-/* @import url("/controller/css/component/nav-bar.css") */
-@import url("/controller/css/component/header.css")
-@import url("/controller/css/component/reset.css")
-</style>
+
 
    <div class="header">
       <div class="nav-bar">
@@ -62,7 +58,7 @@
             <div class="nav-bar__main-logo-container">
                <h1 class="nav-bar__main-logo">
                   <!-- 네비게이션바 메인 로고 -->
-                  <a href="index.html"> <!-- 캡쳐도구로 잘라서 넣어 상하 정렬이 맞지 않는 상태 추후 수정 예정 -->
+                  <a href="http://localhost:8080/controller/"> <!-- 캡쳐도구로 잘라서 넣어 상하 정렬이 맞지 않는 상태 추후 수정 예정 -->
                      <img class="nav-bar__main-logo__img"
                      src="/controller/img/logo/nav_bar_logo.png" alt="nav_bar_logo" />
                   </a>
@@ -73,12 +69,12 @@
           nav-bar__menu-list
         -->
       <ul class="nav-bar__menu-list__category">
-         <li><a class="nav-bar__menu-list__category__link" href="#">채용
+         <li><a class="nav-bar__menu-list__category__link" href="http://localhost:8080/controller/job/jobList">채용
          </a></li>
          <li><a class="nav-bar__menu-list__category__link" href="#">직군별 연봉</a></li>
-             <li><a class="nav-bar__menu-list__category__link" href="resume/">이력서</a>
+             <li><a class="nav-bar__menu-list__category__link" href="http://localhost:8080/controller/resume/">이력서</a>
          </li>
-         <li><a class="nav-bar__menu-list__category__link" href="community/communityForm">커뮤니티</a>
+         <li><a class="nav-bar__menu-list__category__link" href="http://localhost:8080/controller/community/communityForm">커뮤니티</a>
          </li>
       </ul>
       <!--
@@ -97,14 +93,30 @@
          </c:if>
            <c:if test="${id!=null}">
          	<li class="nav-bar__menu-list__service__list">
-         		<input type="button" value="로그아웃" onclick="logout()">
+         	<a href="#"> 
+         	<img
+               class="nav-bar__menu-list__service__list__profile-img"
+               src="/controller/img/profile_default.png" alt="profile_default" />    
+         	</a>
+         	<div class="nav-bar__menu-list__service__list__profile-popover">
+         		<ul class="nav-bar__menu-list__service__list__profile-popover__menu">
+         			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
+         			<a href="#">MY 원티드</a>
+         			</li>
+         			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
+         			<a href="#">프로필</a>
+         			</li>
+         			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
+         			<a href="#">로그아웃</a>
+         			</li>
+         		</ul>
+         	</div>
          	</li>
          </c:if>
 
-         <li class="nav-bar__menu-list__service__list"><a href="#"> <img
-               class="nav-bar__menu-list__service__list__profile-img"
-               src="/controller/img/profile_default.png" alt="profile_default" />
-         </a></li>
+    
+         <div class="nav-bar__menu-list__service__list__profile-popover__background"></div>
+         
          <li><a href="#">
                <div class="nav-bar__menu-list__service__list__corperation-service">기업서비스</div>
          </a></li>

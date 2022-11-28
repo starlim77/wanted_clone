@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +14,9 @@ pageEncoding="UTF-8"%>
     <title>Wanted Job</title>
   </head>
   <body>
+  	<div>
+		<jsp:include page="../../jsp/component/header.jsp"></jsp:include>
+	</div>
     <div class="job">
       <article class="jobgroup__container">
         <div class="jobgroup__body">
@@ -141,7 +146,7 @@ pageEncoding="UTF-8"%>
 	            <div>
 	              <img
 	                class="job__content__list__card__img"
-	                src="${jobDTO.img}"
+	                src="../img/job/${jobDTO.img}"
 	                 />
 	            </div>
 	            <div class="job__content__list__card__letter">
@@ -158,7 +163,9 @@ pageEncoding="UTF-8"%>
 	                ${jobDTO.location}
 	              </div>
 	              <div class="job__content__list__card__reward">
-	                채용보상금 ${jobDTO.reward}원
+	                채용보상금 
+	                <fmt:formatNumber value="${jobDTO.reward}" pattern="#,###" />
+	              	원
 	              </div>
 	            </div>
 	          </a>
