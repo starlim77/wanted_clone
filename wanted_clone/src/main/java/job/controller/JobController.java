@@ -13,12 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import job.bean.JobDTO;
 import job.service.JobService;
+import resume.bean.ResumeDTO;
+import resume.service.ResumeService;
 
 @RequestMapping(value = "job")
 @Controller
 public class JobController {
 	@Autowired
 	private JobService jobService;
+	@Autowired
+	private ResumeService resumeService;
 	
 	@RequestMapping(value = "jobList")
 	public ModelAndView jobList(){
@@ -42,8 +46,10 @@ public class JobController {
 	@RequestMapping(value = "jobBoard")
 	public ModelAndView jobBoard(@RequestParam String seq) {
 		JobDTO jobDTO = jobService.jobBoard(seq);
+		List<ResumeDTO> list = resumeService.getAllResumeList();
 		
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
 		mav.addObject("jobDTO", jobDTO);
 		mav.setViewName("job/jobBoard");
 		
