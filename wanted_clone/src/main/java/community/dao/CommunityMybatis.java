@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import community.bean.CommentDTO;
 import community.bean.CommunityDTO;
 
 @Repository
@@ -44,6 +45,19 @@ public class CommunityMybatis implements CommunityDAO {
 	@Override
 	public void boardWrite(CommunityDTO communityDTO) {
 		sqlSession.insert("communitySQL.boardWrite",communityDTO);
+	}
+
+	@Override
+	public CommunityDTO getBoard(int seq) {
+
+		return sqlSession.selectOne("communitySQL.getBoard",seq);
+	}
+
+	@Override
+	public List<CommentDTO> getComment(int seq) {
+
+		return sqlSession.selectList("communitySQL.getComment",seq);
+
 	}
 
 }

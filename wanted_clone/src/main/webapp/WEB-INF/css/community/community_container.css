@@ -247,6 +247,9 @@ body{
     height: 250px;
     background-color: white;
 }
+.container_main__body__boardlist__content__content:hover{
+	cursor: pointer;
+}
 
 .container_main__body__boardlist__content__profile{
     width: 90%;

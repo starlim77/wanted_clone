@@ -20,12 +20,16 @@ $(function(){
 	});
 	
 
-	//my커뮤니티 눌렀을때
-	$('.container_sub__my_community__body__title').click(function(){});
-	
-	//글쓰기 눌렀을때
-	$('#container_main__body__boardwrite').click(function(){});
-	
+$('.container_main__body__boardlist__content__content').on("click", function(){
+	var haha = $(this).parent().find('input').val();
+	alert('awdawd');
+})
+
+
+$('.container_main__body__boardlist__content__content').click(function(){
+	alert("hahahahah");
+});
+
 
 	//페이지 왼쪽 눌렀을때	
 	$('.container_main__body__best_hit__title_page').children('.fa-circle-left').click(function(){
@@ -78,54 +82,59 @@ $(function(){
 			//console.log(JSON.stringify(data));
 			
 			for(let i in data){
-			
-				//전체 내용바디
-				var content = $('<div>');
-				content.addClass('container_main__body__boardlist__content');
-				
-				//프로필
-				var profile = $('<div>');
-				profile.addClass('container_main__body__boardlist__content__profile');
-				
-				//프로필사진
-				var profile_img = $('<img>');
-				profile_img.addClass('container_main__body__boardlist__content__profile_img');
-				profile_img.attr('src','../img/profile_default.png');
-				
-				//아이디
-				var span_id = $('<span>');
-				span_id.html('&nbsp;&nbsp;'+ data[i].id_ );
-				
-				//글 제목
-				var title = $('<div>');
-				title.addClass('container_main__body__boardlist__content__title');
-				title.html(data[i].title);
-				
-				//글 내용
-				var content_content = $('<div>');
-				content_content.addClass('container_main__body__boardlist__content__content');
-				content_content.html(data[i].content_);
-				
-				//글 태그
-				var tag = $('<div>');
-				tag.addClass('container_main__body__boardlist__content__tag');
-				tag.html(data[i].theme);
-				
-				//글 좋아요,댓글
-				var bottom = $('<div>');
-				bottom.addClass('container_main__body__boardlist__content__bottom');
-				bottom.html(data[i].like_count + ".." + data[i].view_count);
-				
-				//마지막 선
-				var hr = $('<div>');
-				hr.addClass('hr');
-				
-				content.append(profile.append(profile_img).append(span_id)).append(title)
-				.append(content_content).append(tag).append(bottom).append(hr);
-				
-				$('.container_main__body__boardlist').append(content);
-				
-			}//for문
+					
+						//전체 내용바디
+						var content = $('<div>');
+						content.addClass('container_main__body__boardlist__content');
+
+						//프로필
+						var profile = $('<div>');
+						profile.addClass('container_main__body__boardlist__content__profile');
+						
+						//프로필사진
+						var profile_img = $('<img>');
+						profile_img.addClass('container_main__body__boardlist__content__profile_img');
+						profile_img.attr('src','../img/profile_default.png');
+						
+						//아이디
+						var span_id = $('<span>');
+						span_id.html('&nbsp;&nbsp;'+ data[i].id_ );
+						
+						//글 제목
+						var title = $('<div>');
+						title.addClass('container_main__body__boardlist__content__title');
+						title.html(data[i].title);
+						
+						//글 내용
+						var content_content = $('<div>');
+						content_content.addClass('container_main__body__boardlist__content__content');
+						content_content.html(data[i].content_);
+						
+						//글 태그
+						var tag = $('<div>');
+						tag.addClass('container_main__body__boardlist__content__tag');
+						tag.html(data[i].theme);
+						
+						//글 좋아요,댓글
+						var bottom = $('<div>');
+						bottom.addClass('container_main__body__boardlist__content__bottom');
+						bottom.html(data[i].like_count + ".." + data[i].view_count);
+						
+						//마지막 선
+						var hr = $('<div>');
+						hr.addClass('hr');
+						
+						var a = $('<a>');
+						a.addClass('.hidden_seq')
+						a.attr('href','/controller/community/communityBoard?seq='+data[i].seq);
+						
+						a.append(content_content);
+						
+						content.append(profile.append(profile_img).append(span_id)).append(title)
+						.append(a).append(tag).append(bottom).append(hr);
+						
+						$('.container_main__body__boardlist').append(content);
+					}//for문
 			
 		},
 		error: function(err){
@@ -193,8 +202,14 @@ $(function(){
 						hr.addClass('hr');
 						
 						
+						var a = $('<a>');
+						a.addClass('.hidden_seq')
+						a.attr('href','/controller/community/communityBoard?seq='+data[i].seq);
+						
+						a.append(content_content);
+						
 						content.append(profile.append(profile_img).append(span_id)).append(title)
-						.append(content_content).append(tag).append(bottom).append(hr);
+						.append(a).append(tag).append(bottom).append(hr);
 						
 						$('.container_main__body__boardlist').append(content);
 					}//for문

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import community.bean.CommentDTO;
 import community.bean.CommunityDTO;
 import community.dao.CommunityDAO;
 
@@ -47,6 +48,16 @@ public class CommunityServiceImple implements CommunityService {
 		communityDTO.setId_(id);
 		
 		communityDAO.boardWrite(communityDTO);
+	}
+
+	@Override
+	public CommunityDTO getBoard(int seq) {
+		return communityDAO.getBoard(seq);
+	}
+
+	@Override
+	public List<CommentDTO> getComment(int seq) {
+		return communityDAO.getComment(seq);
 	}
 
 }
