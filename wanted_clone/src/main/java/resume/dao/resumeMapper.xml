@@ -19,4 +19,8 @@
   	<select id="getResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
   		select formName, to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id}
   	</select>
+  	
+  	<select id="getAllResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
+  		select resume_seq,formname,writing,filename,to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id} order by logtime desc
+  	</select>
   </mapper>

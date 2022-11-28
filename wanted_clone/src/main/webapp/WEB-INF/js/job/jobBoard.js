@@ -1,3 +1,4 @@
+//지도 API
 var geocoder = new kakao.maps.services.Geocoder();
 geocoder.addressSearch($("#companylocation").text(), function (result, status) {
   // 정상적으로 검색이 완료됐으면
@@ -28,4 +29,57 @@ geocoder.addressSearch($("#companylocation").text(), function (result, status) {
     var marker = new naver.maps.Marker(markerOptions);
     //   var mapDiv = document.getElementById("map");
   }
+});
+
+$(function () {
+  $(".jobboard__submit__content__file__checkbox > input").change(function () {
+    if (
+      $(".jobboard__submit__content__file__checkbox > input").is(":checked")
+    ) {
+      $(this)
+        .parent()
+        .parent()
+        .addClass("jobboard__submit__content__file__each-select");
+    } else {
+      $(this)
+        .parent()
+        .parent()
+        .removeClass("jobboard__submit__content__file__each-select");
+    }
+  });
+
+  //이력서 제출 화면 숨김
+  $(".jobboard__submit").hide();
+
+  //이력서 제출 버튼 비활성화
+  $(".jobboard__submit__submit-btn").prop("disabled", true);
+
+  //이력서 제출 버튼 활성화
+  setInterval(function () {
+    if (
+      $(".jobboard__submit__content__file__checkbox > input").is(":checked")
+    ) {
+      $(".jobboard__submit__submit-btn").prop("disabled", false);
+      $(".jobboard__submit__submit-btn").addClass(
+        "jobboard__submit__submit-btn-enable"
+      );
+    } else {
+      $(".jobboard__submit__submit-btn").prop("disabled", true);
+      $(".jobboard__submit__submit-btn").removeClass(
+        "jobboard__submit__submit-btn-enable"
+      );
+    }
+  }, 500);
+});
+
+// 지원하기 버튼 클릭
+$(".jobboard__apply__apply-btn").click(function () {
+  console.log("ha");
+  $(".jobboard__apply").hide();
+  $(".jobboard__submit").show();
+});
+
+$(".jobboard__submit__subject").click(function () {
+  $(".jobboard__submit").hide();
+  $(".jobboard__apply").show();
 });

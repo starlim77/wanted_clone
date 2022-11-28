@@ -47,7 +47,6 @@ public class UserServiceImpl implements UserService {
 		httpSession.setAttribute("name", userDTOLogin.getName());
 		httpSession.setAttribute("tel", userDTOLogin.getTel());
 		httpSession.setAttribute("sortnum", userDTOLogin.getSortnum());
-		httpSession.setAttribute("tel", userDTOLogin.getTel());
 		}
 		return userDAO.login(userDTO);
 	}
