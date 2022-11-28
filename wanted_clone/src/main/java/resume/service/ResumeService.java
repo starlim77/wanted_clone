@@ -16,5 +16,6 @@ public interface ResumeService {
 	List<ResumeDTO> getResumeList();
 
 	List<ResumeDTO> getAllResumeList();
+	ResumeDTO getWritingResume(String formName);
 
 }

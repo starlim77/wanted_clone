@@ -32,4 +32,9 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 		return resumeService.getResumeList();
 		
 	}
+
+	@Override
+	public ResumeDTO getWritingResume(String formName) {
+		return resumeService.getWritingResume(formName);
+	}
 }

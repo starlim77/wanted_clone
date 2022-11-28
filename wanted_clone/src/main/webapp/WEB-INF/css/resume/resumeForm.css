@@ -1,0 +1,302 @@
+@charset "UTF-8";
+
+.resume-form-wrapper{
+	display: flex;
+	overflow: hidden;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.resume-form-cotainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 100px;
+	width: 1080px;
+	text-align: center;
+	border: 1px black;
+}
+.resumeForm-language-and-download{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.resumeForm-language-select{
+	text-align: left;
+	width: 120px;
+	height: 30px;
+}
+.resume-form{
+	width: 100%;
+	display: flex;
+	justify-content: left;
+}
+.resume-form__wrapper{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+.formName{
+	width: 100%;
+	border: 0px;
+	font-size: 50px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background-color: #f8f8f8;
+}
+.id, .name{
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 5px;
+	background-color: #f8f8f8;
+}
+.tel{
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 40px;
+	background-color: #f8f8f8;
+}
+.introduce-wrapper{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	float: left;
+}
+.intorduce__txt{
+	display: flex;
+	text-align: left;
+	width: 100%;
+	margin-top: 10px;
+}
+.resume-form__introduce{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 30px;
+}
+.resume-form__describe{
+	display: flex;
+	justify-content: flex-start;
+	text-align: left;
+	align-items: center;
+	width: 100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 6px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	background-color: #e0f0fc;
+	color: #666;
+	font-size: 12px;
+}
+.resume-form__describe li {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.introduce-div{
+	width: 100%;
+	word-break: break-all;
+}
+.introduce{
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 30px;
+	background-color: #f8f8f8;
+	overflow: auto;
+	word-break: break-all;
+	font-family: Pretendard, Pretendard JP, Pretendard Std, -apple-system, system-ui, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial, Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+}
+.career, .education, .award, .language, .portfolio{
+	display: flex;
+	width: 100%;
+	border: 0px;
+	font-size: 15px;
+	background-color: #f8f8f8;
+	margin-bottom: 40px;
+}
+.border{
+	height: 10px;
+	width: 100%;
+	background: url(../../img/resume/bg_topnav.png) repeat-x 170px;
+}
+.add-btn-wrapper{
+	display: flex;
+	width: 100%;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #dfdede;
+}
+.add__btn{
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 80px;
+	border: 1px;
+	background-color: #f8f8f8;
+	color: #36f;
+	margin-bottom: 30px;
+}
+.add__btn img {
+	width: 12px;
+	margin-right: 5px;
+	filter: invert(43%) sepia(65%) saturate(6334%) hue-rotate(219deg) brightness(102%) contrast(101%);
+}
+.add__btn__txt{
+	height: 100%;
+	display: flex;
+	text-align: left;
+	font-size: 18px;
+}
+.add-career{
+	display: flex;
+	flex-flow: column;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 20px 0px;
+}
+.add-career__date{
+	display: flex;
+	height: 100%;
+	width: 18%;
+	align-items: flex-start;
+}
+.year{
+	width: 40px;
+	border: 0px;
+	height: 22px;
+	background-color: #f8f8f8;
+	font-size: 15px;
+}
+.month{
+	width: 27px;
+	border: 0px;
+	height: 22px;
+	background-color: #f8f8f8;
+	font-size: 15px;
+}
+.company-name{
+	display: flex;
+	width: 90%;
+	margin-bottom: 10px;
+}
+.company-name input{
+	width: 80%;
+	border: 0px;
+	background-color: #f8f8f8;
+	font-size: 20px;
+}
+.department-name{
+	display: flex;
+	border: 0px;
+	height: 30px;
+	background-color: #f8f8f8;
+	margin-bottom: 20px;
+}
+.department-name input{
+	width: 80%;
+	background-color: #f8f8f8;
+	border: 0;
+	font-size: 15px;
+}
+.add-detail-btn-wrapper{
+	display: flex;
+	width: 30%;
+}
+.add-career__btn{
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 150px;
+	border: 1px;
+	background-color: #f8f8f8;
+	color: #36f; 
+}
+.add-career__btn img{
+	display: flex;
+	width: 11px;
+	margin-right: 5px;
+	filter: invert(43%) sepia(65%) saturate(6334%) hue-rotate(219deg) brightness(102%) contrast(101%);
+}
+.detail-name{
+	display: flex;
+}
+.detail-name__input{
+	width: 60%;
+	background-color: #f8f8f8;
+	font-size: 15px;
+	border: 0;
+	margin: 10px 0;
+}
+.detail-date{
+	display: flex;
+}
+.detail-content{
+	display: flex;
+}
+.detail-content input{
+	width: 80%;
+	background-color: #f8f8f8;
+	font-size: 15px;
+	border: 0;
+}
+.education-wrapper{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.close-btn{
+	display: flex;
+	justify-content: center;
+	width: 5px;
+	border: 0;
+	background-color: #f8f8f8;
+}
+.language-name, .language-standard{
+	display: flex;
+	width: 200px;
+	height: 30px;
+	border: 0;
+	background-color: #f8f8f8;
+	color: #36f; 
+	font-size: 20px;
+}
+.language-standard{
+	width: 150px;
+	font-size: 15px;
+}
+.resume-form-footer{
+	display: flex;
+	position : fixed;
+	bottom: 0;
+	width: 100%;
+	justify-content: center;
+	align-items:center;
+	gap: 100px;
+	background-color:  #f8f8f8;
+	border-top: 1px solid #666;
+	height: 80px;
+}
+.tempSave, .save{
+	border: 0;
+	border-radius: 3vh;
+	width: 180px;
+	height: 50px;
+	background: #36f;
+	color: #fff;
+	font-size: 20px;
+}
+.tempSave{
+	background-color:  #f8f8f8;
+	border: 1px solid #36f;
+	color: #36f;
+}
+

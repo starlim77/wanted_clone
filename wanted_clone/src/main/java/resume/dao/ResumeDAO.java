@@ -14,4 +14,6 @@ public interface ResumeDAO {
 	void fileUpload(Map<String, String> map);
 
 	List<ResumeDTO> getResumeList();
+
+	ResumeDTO getWritingResume(String formName);
 }

@@ -17,7 +17,11 @@
   	</insert>
   	
   	<select id="getResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
-  		select formName, to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id}
+  		select formName, writing, to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id}
+  	</select>
+  	
+  	<select id="getWritingResume" parameterType="String" resultType="resume.bean.ResumeDTO">
+  		select * from resume where formName = #{formName} 
   	</select>
   	
   	<select id="getAllResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
