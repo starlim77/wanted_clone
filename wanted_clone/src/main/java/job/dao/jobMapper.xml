@@ -21,7 +21,7 @@
   	</select>
   	
   	<select id="jobBoard" parameterType="String" resultType="job.bean.JobDTO">  		
-  		select * from jobtest where seq = #{seq}
+  		select * from job where seq = #{seq}
   	</select>
   
   </mapper>
