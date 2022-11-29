@@ -15,4 +15,6 @@ public interface ResumeService {
 
 	List<ResumeDTO> getResumeList();
 
+	List<ResumeDTO> getAllResumeList();
+
 }

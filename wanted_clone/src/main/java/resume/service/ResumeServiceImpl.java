@@ -1,5 +1,6 @@
 package resume.service;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +40,12 @@ public class ResumeServiceImpl implements ResumeService{
 	public List<ResumeDTO> getResumeList() {
 		String id = (String) httpSession.getAttribute("id");
 		return sqlSession.selectList("resumeSQL.getResumeList", id);
+	}
+
+	@Override
+	public List<ResumeDTO> getAllResumeList() {
+		String id = (String) httpSession.getAttribute("id");
+		return sqlSession.selectList("resumeSQL.getAllResumeList", id);
 	}
 	
 }

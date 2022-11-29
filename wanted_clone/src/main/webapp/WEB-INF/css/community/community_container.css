@@ -1,126 +1,123 @@
 @charset "UTF-8";
 
-body{
-    background-color: #f8f8f8;
+/* body {
+  background-color: #f8f8f8;
+} */
+
+.container {
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+}
+.container_sub {
+  padding-top: 110px;
+  width: 250px;
+  height: auto;
+  position: flex;
+  box-sizing: border-box;
+}
+.container_sub__my_community__body {
+  height: 123px;
+  width: 250px;
+  border: 0.5px solid #e2e2e2;
+  background-color: white;
+  position: fixed;
 }
 
-.container{
-    width: 1080px;
-    margin: 0 auto;
-    display: flex;
+.container_main__body {
+  margin-left: 2%;
+  width: 73%;
+  /* display: flex; */
 }
-.container_sub{
-    padding-top: 110px;
-    width:  250px;
-    height: auto;
-    position: flex;
-    box-sizing: border-box;
-   
+.container_main__body__theme_body {
+  display: flex;
+  background-color: #f8f8f8;
+  position: fixed;
 }
-.container_sub__my_community__body{
-    height: 123px;
-    width: 250px;
-    border: 0.5px solid #e2e2e2;
-    background-color: white;
-    position: fixed;
-}
-
-.container_main__body{
-    margin-left: 2%;
-    width: 73%;
-    /* display: flex; */
-    
-}
-.container_main__body__theme_body{
-    display: flex;
-    background-color: #f8f8f8;
-    position: fixed;
-
-}
-.container_main__body__theme{
-    border: 0.5px solid #e2e2e2;
-    background-color: white;
-    width: 788px;
-    height: 80px;
-    margin-top: 110px;
+.container_main__body__theme {
+  border: 0.5px solid #e2e2e2;
+  background-color: white;
+  width: 788px;
+  height: 80px;
+  margin-top: 110px;
 }
 /* --------------------------------- */
 
 .container_main__body__best_hit {
-    margin-top: 24.6%;
-    display: flex;
-    border: 0.5px solid #e2e2e2;
-    background-color: white;
-    height: 250px;
-    width: 100%;
-    flex-direction: column;
+  margin-top: 24.6%;
+  display: flex;
+  border: 0.5px solid #e2e2e2;
+  background-color: white;
+  height: 250px;
+  width: 100%;
+  flex-direction: column;
 }
 
 .container_main__body__boardwrite {
-    margin-top: 1px;
-    display: flex;
-    border: 0.5px solid #e2e2e2;
-    background-color: white;
-    height: 110px;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    
+  margin-top: 1px;
+  display: flex;
+  border: 0.5px solid #e2e2e2;
+  background-color: white;
+  height: 110px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 #container_main__body__boardwrite {
-    background: none;
-    width: 85%;
-    font-size: 11pt;
-    height: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 0.5px solid #e2e2e2;
-    border-radius: 8px;
-    padding: 20px;
+  background: none;
+  width: 85%;
+  font-size: 11pt;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px solid #e2e2e2;
+  border-radius: 8px;
+  padding: 20px;
 }
-.container_main__body__boardwrite__user_icon{
-    display: none;
-    border-radius: 100%;
-    width: 35px;
-    height: 35px;
-    /* display: flex;  유저 아이콘이 있으면 들어오면서 display를 줘서 none을 없애면서 flex*/
+.container_main__body__boardwrite__user_icon {
+  display: none;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  /* display: flex;  유저 아이콘이 있으면 들어오면서 display를 줘서 none을 없애면서 flex*/
 }
 
-#container_main__body__boardwrite,.container_main__body__best_hit__title_page > i:hover {
-    cursor: pointer;
+#container_main__body__boardwrite,
+.container_main__body__best_hit__title_page > i:hover {
+  cursor: pointer;
 }
-.container_main__body__best_hit__title{
-    width: 92%;
-    /* border: 1px solid red; */
-    height: 30%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
+.container_main__body__best_hit__title {
+  width: 92%;
+  /* border: 1px solid red; */
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
 }
 .container_main__body__best_hit__title > h2 {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .container_main__body__best_hit__title > h2 > i {
-    color : gold;
-    width: 20px;
-    height: auto;
+  color: gold;
+  width: 20px;
+  height: auto;
 }
 
-.container_main__body__best_hit__title_page_number{
-    font-size: 6pt;
+.container_main__body__best_hit__title_page_number {
+  font-size: 6pt;
 }
 
-.container_main__body__best_hit__title_page{
-    width: 12%;
-    display: flex;
-    justify-content: space-between;
+.container_main__body__best_hit__title_page {
+  width: 12%;
+  display: flex;
+  justify-content: space-between;
 }
-.container_main__body__best_hit__content{
+.container_main__body__best_hit__content {
   display: flex;
   height: 70%;
   /* border: 1px solid green; */
@@ -128,181 +125,182 @@ body{
   width: 95%;
   margin-left: 2.5%;
 }
-.container_main__body__best_hit__content__example{
-    height: 85%;
-    width: 30%;
-    background-color: rgb(249, 235, 249);
-    border-radius: 7px;
+.container_main__body__best_hit__content__example {
+  height: 85%;
+  width: 30%;
+  background-color: rgb(249, 235, 249);
+  border-radius: 7px;
 }
 
 .container_main__body__best_hit__content__example__title {
-    height: 20%;
-    width: 90%;
-    margin-left: 10%;
-    display: flex;
-    align-items: flex-start;
-    color: #9c9b9b;
-    font-family: Pretendard;
-    font-size: 11pt;
-    font-weight: 900;
-    flex-direction: column;
-    justify-content: flex-end;
+  height: 20%;
+  width: 90%;
+  margin-left: 10%;
+  display: flex;
+  align-items: flex-start;
+  color: #9c9b9b;
+  font-family: Pretendard;
+  font-size: 11pt;
+  font-weight: 900;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .container_main__body__best_hit__content__example__content {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 7%;
-    height: 43%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 7%;
+  height: 43%;
 }
 .container_main__body__best_hit__content__example__id {
-    width: 90%;
-    margin-left: 10%;
-    height: 30%;
+  width: 90%;
+  margin-left: 10%;
+  height: 30%;
 }
 
 .container_sub__my_community__body__title {
-    color: #9c9b9b;
-    font-family: Pretendard;
-    font-size: 11pt;
-    font-weight: 700;
-    width: 80%;
-    margin-left: 10%;
-    height: 35%;
-    display: flex;
-    align-items: flex-end;
+  color: #9c9b9b;
+  font-family: Pretendard;
+  font-size: 11pt;
+  font-weight: 700;
+  width: 80%;
+  margin-left: 10%;
+  height: 35%;
+  display: flex;
+  align-items: flex-end;
 }
 .container_sub__my_community__body__profile {
-    margin: 0 10%;
-    height: 65%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  margin: 0 10%;
+  height: 65%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.container_sub__my_community__body__profile:hover{
-    cursor: pointer;
-}
-
-.container_sub__my_community__body__profile__img{
-    width: 35px;
-    height: 35px;
-    border-radius: 100%;
+.container_sub__my_community__body__profile:hover {
+  cursor: pointer;
 }
 
-.container_sub__my_community__body__profile__login_condition{
-    color: #363636;
-    font-family: Pretendard;
-    font-size: 11pt;
-    font-weight: 900;
-    width: 60%;
-    margin-left: 10px;
+.container_sub__my_community__body__profile__img {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+
+.container_sub__my_community__body__profile__login_condition {
+  color: #363636;
+  font-family: Pretendard;
+  font-size: 11pt;
+  font-weight: 900;
+  width: 60%;
+  margin-left: 10px;
 }
 
 #container_sub__my_community__body__profile__tag {
-    color: #9c9b9b;
-    width: 20px;
-    height: auto;
-    float: right;
+  color: #9c9b9b;
+  width: 20px;
+  height: auto;
+  float: right;
 }
-.container_main__body__boardlist{
-    width: 100%;
-    border: 0.5px solid #e2e2e2;
-    display: flex;
-    margin-top: 2px;
-    flex-direction: column;
+.container_main__body__boardlist {
+  width: 100%;
+  border: 0.5px solid #e2e2e2;
+  display: flex;
+  margin-top: 2px;
+  flex-direction: column;
 }
 .container_main__body__boardlist__recommand {
-    height: 100px;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 .container_main__body__boardlist__recommand__title {
-    height: 50%;
-    width: 95%;
-    margin-left: 4%;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15pt;
-    font-weight: 900;
+  height: 50%;
+  width: 95%;
+  margin-left: 4%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15pt;
+  font-weight: 900;
 }
 .container_main__body__boardlist__recommand__tag {
-    height: 40%;
-    width: 95%;
-    margin-left: 4%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 11pt;
-    font-weight: 900;
-    color: #9c9b9b;
+  height: 40%;
+  width: 95%;
+  margin-left: 4%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: 900;
+  color: #9c9b9b;
 }
 #heart {
-    color: red;
+  color: red;
 }
 /* ----------------------------------------------------------------- */
-.container_main__body__boardlist__content{
-    width: 100%;
-    height: 250px;
-    background-color: white;
+.container_main__body__boardlist__content {
+  width: 100%;
+  height: 250px;
+  background-color: white;
+}
+.container_main__body__boardlist__content__content:hover{
+	cursor: pointer;
 }
 
-.container_main__body__boardlist__content__profile{
-    width: 90%;
-    height: 30px;
-    margin-left: 2%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 10pt;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-
+.container_main__body__boardlist__content__profile {
+  width: 90%;
+  height: 30px;
+  margin-left: 2%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
-.container_main__body__boardlist__content__profile_img{
-    border-radius: 100%;
-    width: 35px;
-    height: 35px;
-
+.container_main__body__boardlist__content__profile_img {
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
 }
-.container_main__body__boardlist__content__title{
-    width: 87%;
-    height: 25px;
-    margin-left: 7%;
-    margin-top: 5px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15pt;
-    font-weight: 900;
+.container_main__body__boardlist__content__title {
+  width: 87%;
+  height: 25px;
+  margin-left: 7%;
+  margin-top: 5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15pt;
+  font-weight: 900;
 }
 
-.container_main__body__boardlist__content__content{
-    width: 87%;
-    height: 80px;
-    margin-left: 7%;
-    margin-top: 7px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 11pt;
-    font-weight: 700;
+.container_main__body__boardlist__content__content {
+  width: 87%;
+  height: 80px;
+  margin-left: 7%;
+  margin-top: 7px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
 }
 
-.container_main__body__boardlist__content__tag{
-    width: 87%;
-    height: 25px;
-    margin-left: 7%;
-    margin-top: 5px;
+.container_main__body__boardlist__content__tag {
+  width: 87%;
+  height: 25px;
+  margin-left: 7%;
+  margin-top: 5px;
 }
 
-.container_main__body__boardlist__content__bottom{
-    width: 87%;
-    height: 25px;
-    margin-left: 7%;
-    margin-top: 5px;
+.container_main__body__boardlist__content__bottom {
+  width: 87%;
+  height: 25px;
+  margin-left: 7%;
+  margin-top: 5px;
 }
 .hr {
-    width: 95%;
-    height: 0.1px;
-    background-color: #d9d9d9;
-    border: 0;
-    margin-left: 2.5%;
+  width: 95%;
+  height: 0.1px;
+  background-color: #d9d9d9;
+  border: 0;
+  margin-left: 2.5%;
 }

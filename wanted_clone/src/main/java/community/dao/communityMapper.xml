@@ -26,4 +26,12 @@
 		 values (community_seq.NEXTVAL,#{id_},#{title},#{content_},'sad',0,0)
 	</insert>
 
+	<select id="getBoard" parameterType="int" resultType="community.bean.CommunityDTO">
+		select id_,title,content_,theme,like_count from community where seq=#{seq}
+	</select>
+	
+	<select id="getComment" resultType="community.bean.CommentDTO">
+		select id_,comment_ from community_comment where seq=#{seq}
+	</select>
+
 </mapper>

@@ -1,5 +1,6 @@
 package job.service;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -31,8 +32,14 @@ public class JobServiceImpl implements JobService {
 		
 	}
 		
-	public JobDTO jobBoard(String seq) {
-		return jobDAO.jobBoard(seq);
+	public JobDTO jobBoard(String seq) { 
+		JobDTO jobDTOBoard = jobDAO.jobBoard(seq);
+//		채용보상금 컴마 표시 및 나누기
+		int reward = Integer.parseInt(jobDTOBoard.getReward());
+		reward = reward/2;
+		DecimalFormat df = new DecimalFormat("###,###");
+		jobDTOBoard.setReward(df.format(reward));
+		return jobDTOBoard;
 	}
 
 
