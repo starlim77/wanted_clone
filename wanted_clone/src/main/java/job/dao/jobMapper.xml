@@ -7,21 +7,33 @@
   	<select id="getJobList"  resultType="job.bean.JobDTO">
 	  	<![CDATA[
 		  	select * from (select rownum rn, b.* 
-		                  from (select * from job ) b order by seq desc)
-		    where rn >= 1 and rn <= 16 order by seq desc
+		                  from (select * from job order by seq desc) b )
+		    where rn >= 1 and rn <= 16
 	       ]]>
   	</select>
   	
-  	<select id="moreJobList"  parameterType="java.util.Map" resultType="job.bean.JobDTO">
-  	<![CDATA[
-  	select * from (select rownum rn, b.* 
-                  from (select * from job ) b)
-    where rn >= #{startNum} and rn <= #{endNum} order by seq desc
-       ]]>
+  	<select id="moreJobList"  parameterType="String" resultType="job.bean.JobDTO">
+	  	<![CDATA[
+	  	select * from (select rownum rn, b.* 
+		                  from (select * from job where seq < #{seq} order by seq desc) b )
+		    where rn >= 1 and rn <= 16
+	       ]]>
   	</select>
   	
   	<select id="jobBoard" parameterType="String" resultType="job.bean.JobDTO">  		
   		select * from job where seq = #{seq}
   	</select>
-  
+    
+    <select id="jobBoardJobList" parameterType="String" resultType="job.bean.JobDTO">
+    	<![CDATA[
+		  	select * from (select rownum rn, b.* 
+		                  from (select * from job where seq < #{seq} order by seq desc) b )
+		    where rn >= 1 and rn <= 16
+	       ]]>
+    </select>
+    
+    <select id="positionList" resultType="String">
+    	select position from job group by position order by position
+    </select>
+    
   </mapper>

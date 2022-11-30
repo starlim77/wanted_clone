@@ -74,75 +74,80 @@ $(".job__nav-bar__aside__recommand").click(function () {
   );
 });
 
+var checkScroll1 = 0;
+var checkScroll2 = 0;
+// 채용 공고 리스트 무한스크롤
 $(window).scroll(function () {
-
-	
-	if($(window).scrollTop() >= $(document).height() - $(window).height()-100) {
 		
-		$.ajax({
-			type:'post',
-			url:'/controller/job/moreJobList',
-			data:'scrollPg=' + $('#scrollPg').val(),
-			dataType:'JSON',
-			success:function(data){
-				console.log(JSON.stringify(data));
-
-			for(let i in data) {
-				var li = $('<li>');
-				var div = $('<div>');
-
-				//전체
-				var card = $('<a>');
-				card.addClass('job__content__list__card');
-				card.attr('href','#');
-
-				//img
-				var img = $('<img>');
-				img.addClass('job__content__list__card__img');
-				img.attr('src','../img/job/'+data[i].img);
-
-
-				//card__letter
-				var card__letter = $('<div>');
-				card__letter.addClass('job__content__list__card__letter');
-
-				//position
-				var position = $('<div>');
-				position.addClass('job__content__list__card__letter__position');
-				position.html(data[i].subject);
-
-				//company
-				var company = $('<div>');
-				company.addClass('job__content__list__card__letter__company');
-				company.html(data[i].company);
-
-				//response
-				var response = $('<input>');
-				response.addClass('job__content__list__card__letter__response');
-				response.val("응답률 매우 높음")
-				//location
-				var location = $('<div>');
-				location.addClass('job__content__list__card__letter__location');
-				location.html(data[i].location);
-
-				//reward
-				var reward = $('<div>');
-				reward.addClass('job__content__list__card__letter__reward');
-				reward.html('채용보상금 ' + data[i].reward + '원');
-			
-				li.append(card.append(div.append(img)).append(card__letter.append
-				(position.append(company).append(response).append(location).append(reward))));
-
-
-
-				$('.job__content__list').append(li);
-			}
-				var scrollNum = Number($('#scrollNum').val()) + 1;
-				$('#scrollNum').val(scrollNum);
-			},
-			error:function(err){
-				console.log(err);
-			}
-		});
-	}
+		if($(window).scrollTop() >= $(document).height() - $(window).height()-100 && checkScroll1==checkScroll2) {
+			checkScroll1++;
+			$.ajax({
+				type:'post',
+				url:'/controller/job/moreJobList',
+				data:'seq=' + $('.job__content__list > li:last-child > input[type="hidden"]').val(),
+				success:function(data){
+					console.log(JSON.stringify(data));
+					checkScroll2++;
+				
+				for(let i in data) {
+					var li = $('<li>');
+					
+					var a = $("<input>");
+					a.attr("type", "hidden");
+					a.val(data[i].seq);
+					li.append(a);
+					
+					var div = $('<div>');
+	
+					//전체
+					var card = $('<a>');
+					card.addClass('job__content__list__card');
+					card.attr('href','#');
+	
+					//img
+					var img = $('<img>');
+					img.addClass('job__content__list__card__img');
+					img.attr('src','../img/job/'+data[i].img);
+	
+	
+					//card__letter
+					var card__letter = $('<div>');
+					card__letter.addClass('job__content__list__card__letter');
+	
+					//position
+					var position = $('<div>');
+					position.addClass('job__content__list__card__letter__position');
+					position.html(data[i].subject);
+	
+					//company
+					var company = $('<div>');
+					company.addClass('job__content__list__card__letter__company');
+					company.html(data[i].company);
+	
+					//response
+					var response = $('<input>');
+					response.addClass('job__content__list__card__letter__response');
+					response.val("응답률 매우 높음")
+					//location
+					var location = $('<div>');
+					location.addClass('job__content__list__card__letter__location');
+					location.html(data[i].location);
+	
+					//reward
+					var reward = $('<div>');
+					reward.addClass('job__content__list__card__reward');
+					reward.html('채용보상금 ' + data[i].reward + ' 원');
+				
+					li.append(card.append(div.append(img)).append(card__letter.append
+					(position.append(company).append(response).append(location).append(reward))));
+					$('.job__content__list').append(li);
+				}
+					var scrollNum = Number($('#scrollNum').val()) + 1;
+					$('#scrollNum').val(scrollNum);
+				},
+				error:function(err){
+					console.log(err);
+				}
+			});
+		}
 });
