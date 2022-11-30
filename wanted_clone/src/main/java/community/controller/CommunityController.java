@@ -38,6 +38,7 @@ public class CommunityController {
 		return communityService.bestBoard(pg);
 	}
 	
+	
 	@PostMapping(value="boardList")
 	@ResponseBody
 	public List<CommunityDTO> boardList(@RequestParam("scrollPg") String scrollPg){

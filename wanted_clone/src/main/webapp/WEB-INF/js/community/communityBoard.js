@@ -13,12 +13,13 @@ $(function(){
 		data: 'seq=' + seq,
 		dataType: 'json',
 		success : function(data){
+			console.log(JSON.stringify(data))
 			$('.profile_id').text(data.id_);
 			$('.community_board__title').text(data.title);
 			$('.community_board__content').text(data.content_);
 			//태그 추가
 			$('.community_board__bottom__like > span').text(data.like_count);
-			
+			$('.community_board__bottom__coment > span').text(data.comment_);
 			console.log('로그인아이디 = ' + id );
 			console.log('아이디 = ' + data.id_ );
 			if(id == data.id_){
