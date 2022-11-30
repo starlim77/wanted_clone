@@ -18,7 +18,8 @@ pageEncoding="UTF-8"%>
 		<jsp:include page="../../jsp/component/header.jsp"></jsp:include>
 	</div>
 	
-    <div class="job">
+	
+    <!-- <div class="job">
       <article class="jobgroup__container">
         <div class="jobgroup__body">
           <div>
@@ -136,8 +137,9 @@ pageEncoding="UTF-8"%>
         <div class="job__nav-bar__all-category"></div>
       </div>
       <hr />
-    </div>
-
+    </div> -->
+	
+	
     <!-- 채용 공고 -->
     <div class="job__content">
       <ul class="job__content__list">
