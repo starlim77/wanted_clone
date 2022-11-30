@@ -15,13 +15,14 @@ commit;
 
 create table job(
 img varchar2(60),
+position varchar2(80),
 subject varchar2(80),
 company varchar2(30),
 location varchar2(30),
 content varchar2(15000),
 reward varchar2(30),
 companylocation varchar2(300),
-seq varchar2(30));
+seq number);
 
 select*from jobtest;
 

@@ -103,11 +103,13 @@
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
          			<a href="#">MY 원티드</a>
          			</li>
+         			<hr>
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
          			<a href="#">프로필</a>
          			</li>
+         			<hr>
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
-         			<a href="#">로그아웃</a>
+         			<a onclick="logout()">로그아웃</a>
          			</li>
          		</ul>
          	</div>
@@ -122,3 +124,9 @@
    </div>
    <!-- nav-bar -->
    </div>
+   <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+   <script src="/controller/js/component/header.js"></script>
