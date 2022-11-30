@@ -41,7 +41,6 @@ public class CommunityController {
 	@PostMapping(value="boardList")
 	@ResponseBody
 	public List<CommunityDTO> boardList(@RequestParam("scrollPg") String scrollPg){
-		
 		return communityService.boardList(scrollPg);
 	}
 	
@@ -90,4 +89,14 @@ public class CommunityController {
 		communityService.commentWrite(commentDTO);
 	}
 	
+	@PostMapping(value="likeBtn")
+	@ResponseBody
+	public void likeBtn(@RequestParam String like, @RequestParam String seq) {
+		communityService.likeBtn(like,seq);
+	}
+	
 }
+
+
+
+

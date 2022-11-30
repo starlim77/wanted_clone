@@ -49,8 +49,9 @@ public class CommunityMybatis implements CommunityDAO {
 
 	@Override
 	public CommunityDTO getBoard(int seq) {
-
-		return sqlSession.selectOne("communitySQL.getBoard",seq);
+		CommunityDTO communityDTO = sqlSession.selectOne("communitySQL.getBoard",seq);		
+		return communityDTO;
+		
 	}
 
 	@Override
@@ -81,6 +82,21 @@ public class CommunityMybatis implements CommunityDAO {
 	@Override
 	public void commentWrite(CommentDTO commentDTO) {
 		sqlSession.insert("communitySQL.commentWrite",commentDTO);
+		String seq = commentDTO.getSeq();
+		sqlSession.update("communitySQL.commentUp",seq);
+		
+	}
+
+	@Override
+	public void likeBtn(String like,String seq) {
+		boolean check = Boolean.parseBoolean(like);
+		if(check) {
+			sqlSession.update("communitySQL.likeUp",seq);
+		}else {
+			sqlSession.update("communitySQL.likeDown",seq);
+		}
+		
+		
 	}
 
 }

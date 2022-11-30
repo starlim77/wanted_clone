@@ -14,7 +14,7 @@
       <div class="board_body">
         <div class="community_board">
           <div class="community_board__profile">
-            <img class="profile_img" src="../img/profile_default.png" /><span class="profile_id">asd</span>
+            <img class="profile_img" src="../img/profile_default.png" /><span class="profile_id"></span>
           </div>
 		  <div id ="update_hidden_box">
 	          <div class="community_board__title">
@@ -36,7 +36,7 @@
 
           <div class="community_board__bottom">
             <div class="community_board__bottom__like"><i class="fa-regular fa-thumbs-up fa-2x"></i><span></span></div>
-            <div class="community_board__bottom__coment"><i class="fa-regular fa-comment fa-2x"></i><span></span>1</div>
+            <div class="community_board__bottom__coment"><i class="fa-regular fa-comment fa-2x"></i><span>1</span></div>
             <div class="community_board__bottom__blank"></div>
             <div class="community_board__bottom__icon">
               <i class="fa-regular fa-share-from-square fa-2x"></i><i class="fa-solid fa-ellipsis fa-2x"></i>
@@ -64,7 +64,7 @@
           
           <div class="community_comment__write">
             <div class="community_comment__profile">
-              <div class="community_comment__profile__name"><img class="profile_img" src="../img/profile_default.png" /><span></span></div>
+              <div class="community_comment__profile__name_user"><img class="profile_img" src="../img/profile_default.png" /><span></span></div>
               <i class="fa-solid fa-ellipsis fa-2x"></i>
             </div>
             <div class="community_comment__write__content_body">

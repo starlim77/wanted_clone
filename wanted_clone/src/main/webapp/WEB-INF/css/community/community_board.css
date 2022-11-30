@@ -138,7 +138,7 @@ body{
     height: 35px;
     display: flex;
 }
-.community_comment__profile__name{
+.community_comment__profile__name,.community_comment__profile__name_user{
     width: 95%;
     display: flex;
     align-items: center;
@@ -150,10 +150,12 @@ body{
     height: 35px;
 }
 
-.community_comment__profile__name > span {
+.community_comment__profile__name > span,.community_comment__profile__name_user > span {
     margin-left: 10px;
     font-weight: bold;
 }
+
+
 .community_comment__content{
     width: 700px;
     margin-top: 20px;

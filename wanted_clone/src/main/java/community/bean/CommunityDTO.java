@@ -12,6 +12,6 @@ public class CommunityDTO {
 	private int like_count; //좋아요
 	private int view_count; //조회수
 	private int seq; //게시글 순서
-	
+	private int comment_; //댓글수;
 
 }

@@ -23,4 +23,6 @@ public interface CommunityDAO {
 
 	public void commentWrite(CommentDTO commentDTO);
 
+	public void likeBtn(String like, String seq);
+
 }

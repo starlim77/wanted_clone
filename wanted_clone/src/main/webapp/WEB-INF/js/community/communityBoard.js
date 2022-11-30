@@ -13,7 +13,6 @@ $(function(){
 		data: 'seq=' + seq,
 		dataType: 'json',
 		success : function(data){
-			console.log(JSON.stringify(data));
 			$('.profile_id').text(data.id_);
 			$('.community_board__title').text(data.title);
 			$('.community_board__content').text(data.content_);
@@ -28,7 +27,7 @@ $(function(){
 			}
 			if(sortnum == '0'){$('#community_board__delete_btn').show();}
 			
-			$('.community_comment__profile__name > span').html(id);
+			$('.community_comment__profile__name_user > span').html(id);
 			
 		},
 		error: function(err){
@@ -124,6 +123,35 @@ $(function(){
 			
 			});
 		}
+	});
+	
+	
+	
+	//좋아요 버튼 클릭시
+	var like_btn = false;
+	$('.fa-thumbs-up').click(function(){
+		if(like_btn == false){
+			like_btn = true;
+			var count = Number($('.community_board__bottom__like > span').text()) + 1;
+		 	$('.community_board__bottom__like > span').html(count);
+		 	$('.community_board__bottom__like').css('color','red');
+		 	
+		}else{
+			like_btn = false;
+			var count = Number($('.community_board__bottom__like > span').text()) - 1;
+		 	$('.community_board__bottom__like > span').html(count);
+		 	$('.community_board__bottom__like').css('color','black');
+		}
+		
+		$.ajax({
+			type: 'post',
+			url: '/controller/community/likeBtn',
+			data: 'like=' + like_btn + '&seq=' + seq,
+			success:function(){},
+			error: function(err){
+				console.log(err);
+				}
+		});
 	});
 	
 

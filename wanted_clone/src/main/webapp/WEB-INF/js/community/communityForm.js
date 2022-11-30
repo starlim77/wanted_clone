@@ -139,7 +139,7 @@ $('.container_main__body__boardlist__content__content').click(function(){
 							comment.addClass('fa-regular fa-comment fa-lg');
 							div_comment.append(comment,span_comment);
 							
-							span_comment.html('0');
+							span_comment.html(data[i].comment_);
 							
 							
 							//마지막 선

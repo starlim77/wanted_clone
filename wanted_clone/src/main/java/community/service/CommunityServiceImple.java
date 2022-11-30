@@ -69,4 +69,10 @@ public class CommunityServiceImple implements CommunityService {
 		
 	}
 
+	@Override
+	public void likeBtn(String like,String seq) {
+		communityDAO.likeBtn(like,seq);
+		
+	}
+
 }
