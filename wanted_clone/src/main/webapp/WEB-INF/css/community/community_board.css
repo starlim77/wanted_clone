@@ -233,3 +233,12 @@ body{
 .community_board__title,.community_board__content{
 	border : none;
 }
+.community_board__theme_tag_item{
+    border-radius: 50px;
+    background: none;
+    border: 0.5px solid #e2e2e2;
+    height: 35px;
+    width: auto;
+    font-size: 11pt;
+    padding: 0 10px;
+}

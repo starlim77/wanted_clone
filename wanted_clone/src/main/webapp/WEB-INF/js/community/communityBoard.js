@@ -17,7 +17,16 @@ $(function(){
 			$('.profile_id').text(data.id_);
 			$('.community_board__title').text(data.title);
 			$('.community_board__content').text(data.content_);
+			
 			//태그 추가
+			var tag = $('<input>');
+			tag.addClass('community_board__theme_tag_item');
+			tag.attr('type','button');
+			tag.attr('value',data.theme);
+			
+			$('.community_board__theme_tag').append(tag);
+						
+			
 			$('.community_board__bottom__like > span').text(data.like_count);
 			$('.community_board__bottom__coment > span').text(data.comment_);
 			console.log('로그인아이디 = ' + id );

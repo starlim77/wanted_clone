@@ -26,7 +26,7 @@
 	          </div>
 		  </div>
           <div class="community_board__theme">
-              <div class="community_board__theme_tag">태그</div>
+              <div class="community_board__theme_tag"></div>
               <div class="community_board__theme_btn">
               	<input type="button" id="community_board__update_complete_btn" value="수정완료">
                 <input type="button" id="community_board__update_btn" value="글 수정하기">
@@ -36,7 +36,7 @@
 
           <div class="community_board__bottom">
             <div class="community_board__bottom__like"><i class="fa-regular fa-thumbs-up fa-2x"></i><span></span></div>
-            <div class="community_board__bottom__coment"><i class="fa-regular fa-comment fa-2x"></i><span>1</span></div>
+            <div class="community_board__bottom__coment"><i class="fa-regular fa-comment fa-2x"></i><span></span></div>
             <div class="community_board__bottom__blank"></div>
             <div class="community_board__bottom__icon">
               <i class="fa-regular fa-share-from-square fa-2x"></i><i class="fa-solid fa-ellipsis fa-2x"></i>
