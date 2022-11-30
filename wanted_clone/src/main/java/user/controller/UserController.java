@@ -24,6 +24,10 @@ public class UserController {
 	public String loginForm() {
 		return "user/loginForm";
 	}
+	@RequestMapping(value = "profil")
+	public String profil() {
+		return "user/profil";
+	}
 	
 	@RequestMapping(value = "checkId")
 	@ResponseBody
