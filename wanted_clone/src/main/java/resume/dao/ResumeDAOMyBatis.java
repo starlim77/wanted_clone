@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import resume.bean.CareerDTO;
 import resume.bean.ResumeDTO;
 import resume.service.ResumeService;
 
@@ -17,9 +18,6 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 	@Autowired
 	ResumeService resumeService;
 	
-	public void resumeWrite(ResumeDTO resumeDTO) {
-		resumeService.resumeWrite(resumeDTO);
-	}
 
 	@Override
 	public void fileUpload(Map<String, String> map) {
@@ -34,7 +32,29 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 	}
 
 	@Override
-	public ResumeDTO getWritingResume(String formName) {
-		return resumeService.getWritingResume(formName);
+	public ResumeDTO getWritingResume(String resumeSeq) {
+		return resumeService.getWritingResume(resumeSeq);
+	}
+
+	@Override
+	public void newResumeSave(ResumeDTO resumeDTO) {
+		resumeService.newResumeSave(resumeDTO);
+		
+	}
+
+	@Override
+	public void writingResumeSave(ResumeDTO resumeDTO) {
+		resumeService.writingResumeSave(resumeDTO);
+		
+	}
+
+	@Override
+	public void careerSave(CareerDTO careerDTO) {
+		resumeService.careerSave(careerDTO);
+	}
+
+	@Override
+	public List<CareerDTO> getCareer(String id) {
+		return resumeService.getCareer(id);
 	}
 }

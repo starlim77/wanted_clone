@@ -33,25 +33,29 @@ $(function() {
 				//topDiv
 				var resumeDiv = $(".resume");
 				var oldResumeDiv = $("<div/>").addClass("old-resume");
-				var h3DivHTML = $("<div/>").addClass("resume-box-top__h3").html(index.formName);
 				var pDivHTML = $("<div/>").addClass("resume-box-top__p").html(index.logtime);
-				var resumeBoxTop = $("<div/>").addClass("resume-box-top").append(h3DivHTML).append(pDivHTML);
-				
+				var resume_seqDiv = $("<div/>").addClass("resume_seqDiv").html(index.resume_seq);
 				//bottomDiv
 				var resumeBoxBottom = $("<div/>").addClass("resume-box-bottom");
-				// var resumeBoxBottom = $(".resume-box-bottom");
+
+				//작성중, 작성완료
 				if (index.writing === "0") {
+					var h3DivHTML = $("<div/>").addClass("resume-box-top__h3__writing").html(index.formName);
+					var resumeBoxTop = $("<div/>").addClass("resume-box-top").append(h3DivHTML).append(pDivHTML);
+					var resumeBoxBottom = $("<div/>").addClass("resume-box-bottom__writing");
 					resumeBoxBottom.html("작성중");
 				} else if (index.writing === "1") {
+					var h3DivHTML = $("<div/>").addClass("resume-box-top__h3").html(index.formName);
+					var resumeBoxTop = $("<div/>").addClass("resume-box-top").append(h3DivHTML).append(pDivHTML);
 					resumeBoxBottom.html("작성 완료");
 				} else if (index.writing === null){
+					var h3DivHTML = $("<div/>").addClass("resume-box-top__h3").html(index.formName);
+					var resumeBoxTop = $("<div/>").addClass("resume-box-top").append(h3DivHTML).append(pDivHTML);
 					resumeBoxBottom.html("<i class='fa-regular fa-file-lines'></i>&nbsp&nbsp&nbsp&nbsp첨부 완료");
-				} else {
-					resumeBoxBottom.html("aasdf");
-				}
+				} 
 				
 				//resumeDiv 생성
-				$(".resume__file-upload").after(oldResumeDiv.append(resumeBoxTop).append(resumeBoxBottom).prependTo(resumeDiv));
+				$(".resume__file-upload").after(oldResumeDiv.append(resumeBoxTop).append(resumeBoxBottom).append(resume_seqDiv).prependTo(resumeDiv));
 			});
 		},
 		error: function(request, status, error, textStatus){
@@ -65,5 +69,5 @@ $(function() {
 
 //작성중 이력서 페이지 접속
 $(document).on("click", ".old-resume", function(){
-	location.href="resumeForm?formName="+$(this).children(".resume-box-top").children(".resume-box-top__h3").text();
+	location.href="resumeForm?resumeSeq="+$(this).children(".resume_seqDiv").text();
 });

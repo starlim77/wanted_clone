@@ -4,10 +4,6 @@ create table resume (resume_seq number primary key,
                     name varchar2(10) not null,
                     tel varchar2(20) not null,
                     introduce varchar2(500),
-                    career varchar2(500),
-                    education varchar2(200),
-                    award varchar2(100),
-                    language varchar2(100),
                     writing number,
                     fileName varchar2(500),
                     filePath varchar2(500),
@@ -16,12 +12,18 @@ create table resume (resume_seq number primary key,
                     
 create table career (career_seq number primary key,
 					id varchar2(40),
-					workDate varchar2(50),
+					startWorkYear varchar2(10),
+                    startWorkMonth varchar2(10),
+                    endWorkYear varchar2(10),
+                    endWorkMonth varchar2(10),
 					companyName varchar2(100),
 					department varchar2(100),
-					position varchar2(100),
-					outcome varchar2(1000));
-alter table CAREER add outcomeContent varchar2 (1000);
+					outcome varchar2(1000),
+                    outcomeContent varchar2 (1000),
+                    startOutcomeYear varchar2(10),
+                    startOutcomeMonth varchar2(10),
+                    endOutcomeYear varchar2(10),
+                    endOutcomeMonth varchar2(10));
 create sequence career_seq increment by 1 start with 1 nocycle nocache;
 
 
