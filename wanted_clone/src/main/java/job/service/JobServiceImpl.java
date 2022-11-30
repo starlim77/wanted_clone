@@ -22,16 +22,23 @@ public class JobServiceImpl implements JobService {
 	
 	@Override
 	public List<JobDTO> getJobList() {
+		
 		return jobDAO.getJobList();
 	}
 
 	@Override
 	public List<JobDTO> moreJobList(String scrollPg) {
-		// TODO Auto-generated method stub
-		return jobDAO.moreJobList(scrollPg);
+		List<JobDTO> moreJobList = jobDAO.moreJobList(scrollPg);
+		for(JobDTO jobDTO : moreJobList) {
+		int reward = Integer.parseInt(jobDTO.getReward());	
+		DecimalFormat df = new DecimalFormat("#,###,###");
+		jobDTO.setReward(df.format(reward));
+		}				
+		return moreJobList;
 		
 	}
-		
+	
+	@Override	
 	public JobDTO jobBoard(String seq) { 
 		JobDTO jobDTOBoard = jobDAO.jobBoard(seq);
 //		채용보상금 컴마 표시 및 나누기

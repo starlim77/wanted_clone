@@ -19,28 +19,16 @@
                      <li><a href="#">개발</a>
                         <ul class="nav-bar__hamberger__submenu">
                            <li><a href="#">개발전체</a></li>
-                           <li><a href="#">웹개발자</a></li>
-                           <li><a href="#">서버 개발자</a></li>
-                           <li><a href="#">소프트웨어 엔지니어</a></li>
-                           <li><a href="#">프론트엔드 개발자</a></li>
-                           <li><a href="#">자바 개발자</a></li>
-                           <li><a href="#">안드로이드 개발자</a></li>
-                           <li><a href="#">C,C++ 개발자</a></li>
-                           <li><a href="#">Node.js 개발자</a></li>
+                           <li><a href="#">C 개발자</a></li>
                            <li><a href="#">ios 개발자</a></li>
-                           <li><a href="#">데이터 엔지니어</a></li>
-                           <li><a href="#">파이썬 개발자</a></li>
-                           <li><a href="#">시스템, 네트워크 관리자</a></li>
-                           <li><a href="#">DevOps/ 시스템 관리자</a></li>
-                           <li><a href="#">머신러닝 엔지니어</a></li>
-                           <li><a href="#">기술지원</a></li>
-                           <li><a href="#">개발 매니저</a></li>
-                           <li><a href="#">빅데이터 엔지니어</a></li>
-                           <li><a href="#">데이터 사이언티스트</a></li>
-                           <li><a href="#">QA,테스트 엔지니어</a></li>
-                           <li><a href="#">보안엔지니어</a></li>
-                           <li><a href="#">프로덕트 매니저</a></li>
-                           <li><a href="#">DBA</a></li>
+                           <li><a href="#">블록체인 엔지니어</a></li>
+                           <li><a href="#">서버 개발자</a></li>
+                           <li><a href="#">소프트웨어 개발자</a></li>
+                           <li><a href="#">안드로이드 개발자</a></li>
+                           <li><a href="#">웹 개발자</a></li>
+                           <li><a href="#">자바 개발자</a></li>
+                           <li><a href="#">파이썬 개발자</a></li>     
+                           <li><a href="#">풀스택 개발자</a></li>
                         </ul></li>
                      <li><a href="#">경영</a></li>
                      <li><a href="#">디자인</a></li>
@@ -92,30 +80,30 @@
          	</li>
          </c:if>
            <c:if test="${id!=null}">
-         	<li class="nav-bar__menu-list__service__list">
-         	<a href="#"> 
-         	<img
-               class="nav-bar__menu-list__service__list__profile-img"
-               src="/controller/img/profile_default.png" alt="profile_default" />    
-         	</a>
-         	<div class="nav-bar__menu-list__service__list__profile-popover">
+              <a href="#"> 
+                 <img
+                 class="nav-bar__menu-list__service__list__profile-img"
+                 src="/controller/img/profile_default.png" alt="profile_default" />    
+               </a>
+            <div class="nav-bar__menu-list__service__list__profile-popover__background"></div>
+            <div class="nav-bar__menu-list__service__list__profile-popover">
          		<ul class="nav-bar__menu-list__service__list__profile-popover__menu">
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
          			<a href="#">MY 원티드</a>
          			</li>
+         			<hr>
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
          			<a href="#">프로필</a>
          			</li>
+         			<hr>
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
-         			<a href="#">로그아웃</a>
+         			<a onclick="logout()">로그아웃</a>
          			</li>
          		</ul>
          	</div>
          	</li>
          </c:if>
 
-    
-         <div class="nav-bar__menu-list__service__list__profile-popover__background"></div>
          
          <li><a href="#">
                <div class="nav-bar__menu-list__service__list__corperation-service">기업서비스</div>
@@ -124,3 +112,9 @@
    </div>
    <!-- nav-bar -->
    </div>
+   <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+   <script src="/controller/js/component/header.js"></script>

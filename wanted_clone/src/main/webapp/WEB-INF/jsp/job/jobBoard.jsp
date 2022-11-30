@@ -37,6 +37,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
       </div>
 
+
+
       <div class="jobboard__apply">
         <h4>채용보상금</h4>
         <div class="jobboard__apply__reward">
@@ -51,6 +53,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
         <input class="jobboard__apply__apply-btn" type="button" value="지원하기" />
       </div>
+
+
 
       <div class="jobboard__submit">
         <div class="jobboard__submit__subject">
