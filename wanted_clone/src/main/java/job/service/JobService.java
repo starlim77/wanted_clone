@@ -8,9 +8,17 @@ public interface JobService {
 
 	public List<JobDTO> getJobList();
 
-	public List<JobDTO> moreJobList(String scrollPg);
+	public List<JobDTO> moreJobList(String seq);
 
 	JobDTO jobBoard(String seq);
+
+	public List<JobDTO> jobBoardJobList(String seq);
+
+	public List<String> positionList();
+
+	public List<JobDTO> getJobSortList(String jobsort);
+
+	public List<JobDTO> moreJobList(String seq, String jobsort);
 
 	
 	
