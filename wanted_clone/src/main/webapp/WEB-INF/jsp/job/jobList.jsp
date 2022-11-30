@@ -14,134 +14,57 @@ pageEncoding="UTF-8"%>
     <title>Wanted Job</title>
   </head>
   <body>
-  	<div>
-		<jsp:include page="../../jsp/component/header.jsp"></jsp:include>
-	</div>
-    <div class="job">
-      <article class="jobgroup__container">
-        <div class="jobgroup__body">
-          <div>
-            <button class="jobgroup__button">
-              <span class="jobgroup__title">전체</span>
-              <span class="jobgroup__title__button"><img /></span>
-            </button>
-          </div>
-          <div class="jobgroup__category">
-            <span class="jobgroup__category__button"></span>
-          </div>
-        </div>
-      </article>
-
-      <div class="job__nav-bar">
-        <div class="job__nav-bar__scroll-left-icon">
-          <i class="fa-solid fa-chevron-left"></i>
-        </div>
-        <ul class="job__nav-bar__list">
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(242, 251, 245)"
-            >
-              <span>연봉이 최고의 복지💰</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(243, 249, 254)"
-            >
-              <span>재택근무🏠</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(243, 242, 251)"
-            >
-              <span>퇴사율 10% 이하📌</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(246, 248, 238)"
-            >
-              <span>급성장 중📈</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(247, 242, 249)"
-            >
-              <span>병역특례</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(238, 250, 249)"
-            >
-              <span>50인 이하⬇</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(239, 241, 251)"
-            >
-              <span>50인 이상⬆</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(242, 251, 245)"
-            >
-              <span>자유로운 휴가🌴</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(243, 249, 254)"
-            >
-              <span>수평적 문화😍</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(243, 242, 251)"
-            >
-              <span>식사.간식 제공☕</span>
-            </button>
-          </li>
-          <li>
-            <button
-              class="job__nav-bar__list__button"
-              style="background: rgb(246, 248, 238)"
-            >
-              <span>일한만큼 받는 보상😝</span>
-            </button>
-          </li>
-        </ul>
-        <div class="job__nav-bar__scroll-right-icon">
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <div class="job__nav-bar__show-all-icon">
-          <i class="fa-solid fa-ellipsis"></i>
-        </div>
-        <div class="job__nav-bar__all-category"></div>
-      </div>
-      <hr />
-    </div>
+	<jsp:include page="../../jsp/component/header.jsp"></jsp:include>
+	
+	<section class="job__sort-bar">
+		<div class="job__sort-bar__content">
+			<ul class="job__sort-bar__content__all-list">
+				<li class="job__sort-bar__content__all-list__develop">
+					개발
+				</li>
+				<hr>
+				<li class="job__sort-bar__content__all-list__develop__job-list">
+					개발 전체
+					<div class="job__sort-bar__content__all-list__develop__job-list__icon">
+						<i class="fa-solid fa-chevron-down"></i>
+					</div>
+					
+				</li>
+			</ul>
+			<div class="job__sort-bar__content__sort-select">
+				<div class="job__sort-bar__content__sort-select__select-list">
+					<p>직무를 선택해 주세요. (최대 5개 선택 가능)</p>
+					<div>
+						<ul class="job__sort-bar__content__sort-select__select-list__ul">
+							<li>
+								<button class="job__sort-bar__content__sort-select__select-list__ul__button">
+									<span>개발 전체</span>
+								</button>
+								</li>
+							<c:forEach var="position" items="${positionList}">
+								<li>
+								<button class="job__sort-bar__content__sort-select__select-list__ul__button">
+									<span>${position}</span>
+								</button>
+								</li>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<input type="button" value="선택하기">
+				</div>
+			</div>
+		</div>
+		<hr>
+	</section>
 
     <!-- 채용 공고 -->
     <div class="job__content">
       <ul class="job__content__list">
       	<c:forEach var="jobDTO" items="${jobList}">
 	        <li>
+	          <input type="hidden" value="${jobDTO.seq}">
 	          <a class="job__content__list__card" href="/controller/job/jobBoard?seq=${jobDTO.seq}">
 	            <div>
 	              <img
@@ -174,8 +97,7 @@ pageEncoding="UTF-8"%>
       	
       </ul>
     </div>
-    <input type="hidden" value="2" id="scrollPg" />
-
+	<jsp:include page="../component/footer.jsp"></jsp:include>
     <script
       src="https://kit.fontawesome.com/1f61694686.js"
       crossorigin="anonymous"

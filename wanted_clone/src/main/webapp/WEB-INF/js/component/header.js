@@ -11,6 +11,8 @@ function logout(){
 }
 
 $(function(){
+	
+	console.log("asdf");
 
 	//로그인 유무 체크후 화면 띄우기
 	$('.nav-bar__menu-list__service__list__profile-img').click(function(){
@@ -35,3 +37,5 @@ $(function(){
 	       
 	});
 });
+
+

@@ -8,8 +8,12 @@ public interface JobDAO {
 
 	public List<JobDTO> getJobList();
 
-	public List<JobDTO> moreJobList(String scrollPg);
+	public List<JobDTO> moreJobList(String seq);
 
 	JobDTO jobBoard(String seq);
+
+	public List<JobDTO> jobBoardJobList(String seq);
+
+	public List<String> positionList();
 
 }

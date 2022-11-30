@@ -26,9 +26,15 @@ public class JobServiceImpl implements JobService {
 	}
 
 	@Override
-	public List<JobDTO> moreJobList(String scrollPg) {
-		// TODO Auto-generated method stub
-		return jobDAO.moreJobList(scrollPg);
+	public List<JobDTO> moreJobList(String seq) {
+		List<JobDTO> list = jobDAO.moreJobList(seq);
+		for(JobDTO jobDTO : list) {
+			int reward = Integer.parseInt(jobDTO.getReward());
+			DecimalFormat df = new DecimalFormat("#,###,###");
+			jobDTO.setReward(df.format(reward));
+		}
+		
+		return list;
 		
 	}
 		
@@ -40,6 +46,17 @@ public class JobServiceImpl implements JobService {
 		DecimalFormat df = new DecimalFormat("###,###");
 		jobDTOBoard.setReward(df.format(reward));
 		return jobDTOBoard;
+	}
+
+	@Override
+	public List<JobDTO> jobBoardJobList(String seq) {
+		List<JobDTO> list = jobDAO.jobBoardJobList(seq);
+		return list;
+	}
+
+	@Override
+	public List<String> positionList() {
+		return jobDAO.positionList();
 	}
 
 

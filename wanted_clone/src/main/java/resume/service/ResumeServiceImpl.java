@@ -45,7 +45,11 @@ public class ResumeServiceImpl implements ResumeService{
 	@Override
 	public List<ResumeDTO> getAllResumeList() {
 		String id = (String) httpSession.getAttribute("id");
-		return sqlSession.selectList("resumeSQL.getAllResumeList", id);
+		if(id!=null) {
+			return sqlSession.selectList("resumeSQL.getAllResumeList", id);
+		}else {
+			return null;
+		}
 	}
 	
 	@Override

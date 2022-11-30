@@ -8,6 +8,7 @@ import lombok.Setter;
 //@Getter
 @Data
 public class ResumeDTO {
+	private String resume_seq;
 	private String formName;
 	private String id;
 	private String name;
