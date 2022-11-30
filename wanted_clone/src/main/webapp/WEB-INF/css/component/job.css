@@ -82,6 +82,8 @@
 }
 .job__sort-bar__content__sort-select__select-list__ul {
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 .job__sort-bar__content__sort-select__select-list__ul__button {
     border: 1px solid #f2f5f7;
@@ -90,14 +92,13 @@
     font-size: 13px;
     color: rgba(0, 0, 0, 0.6);
     background-color: #f2f5f7;
-    margin-right: 8px;
     white-space: nowrap;
-    cursor:pointer;
+    cursor: pointer;
 }
-.job__sort-bar__content__sort-select__select-list__ul__button-selected{
-	border :1px solid #36f;
-	color: #36f;
-	background-color:white;
+.job__sort-bar__content__sort-select__select-list__ul__button-selected {
+    border: 1px solid #36f;
+    color: #36f;
+    background-color: white;
 }
 /* 
 .job {

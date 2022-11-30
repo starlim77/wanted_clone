@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
     <jsp:include page="./component/header.jsp"></jsp:include>
     <article>
       <!-- <section>banner</section> -->
-	<jsp:include page="./component/banner.jsp"></jsp:include>
+	  <!-- <jsp:include page="./component/banner.jsp"></jsp:include> -->
 
       <p>${id}</p>
       <!-- <section>   insight -->

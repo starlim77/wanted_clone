@@ -224,4 +224,3 @@ $(".job__sort-bar__content__sort-select__submit-btn").click(function(){
 	location.href="/controller/job/jobList?jobsort="+jobsort;
 });
 
-

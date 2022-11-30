@@ -5,6 +5,7 @@
 
 
    <div class="header">
+      <div class="header__container">
       <div class="nav-bar">
          <ul class="nav-bar__hamberger">
 
@@ -76,7 +77,7 @@
          </a></li>
          <c:if test="${id==null}">
          	<li class="nav-bar__menu-list__service__list">
-         		<input type="button" value="로그인/회원가입" onclick="location.href='/controller/user/loginForm'">
+         		<input type="button" value="회원가입/로그인" onclick="location.href='/controller/user/loginForm'" class="nav-bar__login-btn">
          	</li>
          </c:if>
            <c:if test="${id!=null}">
@@ -105,10 +106,11 @@
          </c:if>
 
 
-         <li><a href="#">
-               <div class="nav-bar__menu-list__service__list__corperation-service">기업서비스</div>
+         <li class="nav-bar__menu-list__service__list__corperation_btn"><a href="#" >
+               <div class="nav-bar__menu-list__service__list__corperation-service">기업 서비스</div>
          </a></li>
       </ul>
+   </div>
    </div>
    <!-- nav-bar -->
    </div>
