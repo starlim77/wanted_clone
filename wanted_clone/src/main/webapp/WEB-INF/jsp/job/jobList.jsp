@@ -17,6 +17,7 @@ pageEncoding="UTF-8"%>
   	<div>
 		<jsp:include page="../../jsp/component/header.jsp"></jsp:include>
 	</div>
+	
     <div class="job">
       <article class="jobgroup__container">
         <div class="jobgroup__body">

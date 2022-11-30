@@ -37,7 +37,8 @@ public class JobServiceImpl implements JobService {
 		return moreJobList;
 		
 	}
-		
+	
+	@Override	
 	public JobDTO jobBoard(String seq) { 
 		JobDTO jobDTOBoard = jobDAO.jobBoard(seq);
 //		채용보상금 컴마 표시 및 나누기
