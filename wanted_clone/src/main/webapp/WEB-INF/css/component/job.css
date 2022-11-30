@@ -84,7 +84,7 @@
     display: flex;
 }
 .job__sort-bar__content__sort-select__select-list__ul__button {
-    border: none;
+    border: 1px solid #f2f5f7;
     border-radius: 20px;
     padding: 8px 14px;
     font-size: 13px;
@@ -92,8 +92,14 @@
     background-color: #f2f5f7;
     margin-right: 8px;
     white-space: nowrap;
+    cursor:pointer;
 }
-
+.job__sort-bar__content__sort-select__select-list__ul__button-selected{
+	border :1px solid #36f;
+	color: #36f;
+	background-color:white;
+}
+/* 
 .job {
     margin: 200px auto;
     width: 1065px;
@@ -208,12 +214,12 @@
 .job__nav-bar__list__button:hover {
     background-color: #f8f8fa;
     cursor: pointer;
-}
+} */
 
 .job__content {
     display: flex;
     justify-content: center;
-    margin: 10px auto;
+    margin: 100px auto 10px auto;
     width: 1065px;
     position: relative;
 }
@@ -270,4 +276,5 @@
     display: flex;
     align-items: center;
     margin-top: 10px;
+    font-weight: 400;
 }

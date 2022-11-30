@@ -25,10 +25,17 @@ public class JobController {
 	private ResumeService resumeService;
 	
 	@RequestMapping(value = "jobList")
-	public ModelAndView jobList(){
-		List<JobDTO> jobList = jobService.getJobList();
-		List<String> positionList = jobService.positionList();		
+	public ModelAndView jobList(@RequestParam(required = false) String jobsort ){
+		List<JobDTO> jobList = null;
 		
+		System.out.println(jobsort);
+		if(jobsort == null){
+			jobList = jobService.getJobList();
+		}else{
+			jobList = jobService.getJobSortList(jobsort);
+		}
+		
+		List<String> positionList = jobService.positionList();		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("jobList",jobList);
@@ -40,11 +47,14 @@ public class JobController {
 	
 	@RequestMapping(value = "moreJobList")
 	@ResponseBody
-	public List<JobDTO> moreJobList(@RequestParam String seq){
+	public List<JobDTO> moreJobList(@RequestParam String seq, @RequestParam(required = false) String jobsort ){
 		System.out.println(seq);
-		return jobService.moreJobList(seq);
+		if(jobsort == null) {
+			return jobService.moreJobList(seq);
+		}else {
+			return jobService.moreJobList(seq, jobsort);
+		}
 	}
-	
 	
 	@RequestMapping(value = "jobBoard")
 	public ModelAndView jobBoard(@RequestParam String seq) {

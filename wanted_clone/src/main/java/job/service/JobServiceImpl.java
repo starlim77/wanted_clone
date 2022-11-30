@@ -59,5 +59,15 @@ public class JobServiceImpl implements JobService {
 		return jobDAO.positionList();
 	}
 
+	@Override
+	public List<JobDTO> getJobSortList(String jobsort) {
+		return jobDAO.getJobSortList(jobsort);
+	}
+
+	@Override
+	public List<JobDTO> moreJobList(String seq, String jobsort) {
+		return jobDAO.moreJobList(seq, jobsort);
+	}
+
 
 }

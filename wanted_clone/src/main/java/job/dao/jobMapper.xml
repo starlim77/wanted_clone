@@ -36,4 +36,28 @@
     	select position from job group by position order by position
     </select>
     
+     <select id="getJobSortList" parameterType="java.util.List" resultType="job.bean.JobDTO">
+		select * from (select rownum rn, b.* 
+		                  from (select * from job where position in 
+		                  <foreach collection="list" item="jobsort" open="(" close=")" separator=",">
+								#{jobsort}
+							</foreach>
+		                order by seq desc) b )
+		   <![CDATA[ where rn >= 1 and rn <= 16 ]]>
+		
+    </select> 
+    
+    <select id="moreJobListWithSort" parameterType="java.util.List" resultType="job.bean.JobDTO">
+    	
+	  	select * from (select rownum rn, b.* 
+		                  from (select * from job where seq<![CDATA[ < ]]> #{seq} and 
+		                  position in
+		                  <foreach collection="list" item="jobsort" open="(" close=")" separator=",">
+								#{jobsort}
+							</foreach>
+		                   order by seq desc) b )
+		   <![CDATA[ where rn >= 1 and rn <= 16  ]]>
+	      
+    </select>
+    
   </mapper>

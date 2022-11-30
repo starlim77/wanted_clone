@@ -61,5 +61,33 @@ public class JobDAOMyBatis implements JobDAO {
 	public List<String> positionList() {
 		return sqlSession.selectList("jobSQL.positionList");
 	}
+
+	@Override
+	public List<JobDTO> getJobSortList(String jobsort) {
+		String[] sort = jobsort.split("/");
+		
+		List<String> list = new ArrayList<String>();
+		for(int i=0; i<sort.length; i++) {
+			list.add(sort[i]);
+		}
+		
+		return sqlSession.selectList("jobSQL.getJobSortList",list);
+	}
+
+	@Override
+	public List<JobDTO> moreJobList(String seq, String jobsort) {
+		String[] sort = jobsort.split("/");
+		
+		List<String> list = new ArrayList<String>();
+		for(int i=0; i<sort.length; i++) {
+			list.add(sort[i]);
+		}
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("seq",seq);
+		map.put("list",list);
+		
+		return sqlSession.selectList("jobSQL.moreJobListWithSort", map);
+	}
 	
 }

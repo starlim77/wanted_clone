@@ -16,6 +16,8 @@ pageEncoding="UTF-8"%>
   <body>
 	<jsp:include page="../../jsp/component/header.jsp"></jsp:include>
 	
+	
+	
 	<section class="job__sort-bar">
 		<div class="job__sort-bar__content">
 			<ul class="job__sort-bar__content__all-list">
@@ -40,19 +42,19 @@ pageEncoding="UTF-8"%>
 								<button class="job__sort-bar__content__sort-select__select-list__ul__button">
 									<span>개발 전체</span>
 								</button>
-								</li>
+							</li>
 							<c:forEach var="position" items="${positionList}">
 								<li>
-								<button class="job__sort-bar__content__sort-select__select-list__ul__button">
-									<span>${position}</span>
-								</button>
+									<button class="job__sort-bar__content__sort-select__select-list__ul__button">
+										<span>${position}</span>
+									</button>
 								</li>
 							</c:forEach>
 						</ul>
 					</div>
 				</div>
 				<div>
-					<input type="button" value="선택하기">
+					<input class="job__sort-bar__content__sort-select__submit-btn" type="button" value="선택하기">
 				</div>
 			</div>
 		</div>
@@ -61,6 +63,7 @@ pageEncoding="UTF-8"%>
 
     <!-- 채용 공고 -->
     <div class="job__content">
+    	<input type="hidden" id="jobsort" value="${param.jobsort}">
       <ul class="job__content__list">
       	<c:forEach var="jobDTO" items="${jobList}">
 	        <li>

@@ -16,4 +16,8 @@ public interface JobDAO {
 
 	public List<String> positionList();
 
+	public List<JobDTO> getJobSortList(String jobsort);
+
+	public List<JobDTO> moreJobList(String seq, String jobsort);
+
 }
