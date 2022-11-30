@@ -144,7 +144,7 @@ $('.container_main__body__boardlist__content__content').click(function(){
 							
 							//마지막 선
 							var hr = $('<div>');
-							hr.addClass('hr');
+							hr.addClass('boardList_hr');
 							
 							var a = $('<a>');
 							a.addClass('.hidden_seq')

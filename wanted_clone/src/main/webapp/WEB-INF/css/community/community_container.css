@@ -313,6 +313,14 @@
   border: 0;
   margin-left: 2.5%;
 }
+.boardList_hr {
+  width: 95%;
+  height: 0.1px;
+  background-color: #d9d9d9;
+  border: 0;
+  margin-left: 2.5%;
+  margin-top: 14px;
+}
 .fa-thumbs-up,.fa-comment{
     width: 25px;
     height: 25px;
