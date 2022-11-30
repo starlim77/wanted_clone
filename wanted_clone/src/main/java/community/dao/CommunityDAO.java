@@ -17,4 +17,12 @@ public interface CommunityDAO {
 
 	public List<CommentDTO> getComment(int seq);
 
+	public void deleteBoard(int seq);
+
+	public void updateBoard(int seq, String title, String content);
+
+	public void commentWrite(CommentDTO commentDTO);
+
+	public void likeBtn(String like, String seq);
+
 }

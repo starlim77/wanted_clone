@@ -31,11 +31,6 @@ public class CommunityController {
 		return "/community/communityForm";	
 	}
 	
-	@PostMapping(value="checkId")
-	@ResponseBody
-	public String checkId(){
-		return communityService.checkId();
-	}
 	
 	@PostMapping(value="bestBoard")
 	@ResponseBody
@@ -43,10 +38,10 @@ public class CommunityController {
 		return communityService.bestBoard(pg);
 	}
 	
+	
 	@PostMapping(value="boardList")
 	@ResponseBody
 	public List<CommunityDTO> boardList(@RequestParam("scrollPg") String scrollPg){
-		
 		return communityService.boardList(scrollPg);
 	}
 	
@@ -63,7 +58,6 @@ public class CommunityController {
 	@ResponseBody
 	public ModelAndView communityBoard(@RequestParam int seq) {
 		List<CommentDTO> commentList = communityService.getComment(seq);
-		System.out.println("코멘트리스트" + commentList);
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("commentList",commentList);
@@ -78,11 +72,32 @@ public class CommunityController {
 		return communityService.getBoard(seq);
 	}
 	
-//	@PostMapping(value="getComment")
-//	@ResponseBody
-//	public List<CommentDTO> getComment(@RequestParam int seq){
-//		return communityService.getComment(seq);
-//	}
+	@PostMapping(value="deleteBoard")
+	@ResponseBody
+	public void deleteBoard(@RequestParam int seq) {
+		communityService.deleteBoard(seq);
+	}
 	
+	@PostMapping(value="updateBoard")
+	@ResponseBody
+	public void updateBoard(@RequestParam int seq,@RequestParam String title,@RequestParam String content_) {
+		communityService.updateBoard(seq,title,content_);
+	}
+	
+	@PostMapping(value="commentWrite")
+	@ResponseBody
+	public void commentWrite(@ModelAttribute CommentDTO commentDTO) {
+		communityService.commentWrite(commentDTO);
+	}
+	
+	@PostMapping(value="likeBtn")
+	@ResponseBody
+	public void likeBtn(@RequestParam String like, @RequestParam String seq) {
+		communityService.likeBtn(like,seq);
+	}
 	
 }
+
+
+
+

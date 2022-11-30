@@ -120,7 +120,7 @@
     <hr class="write_hr">
     <textarea class="writebody__content" placeholder="내용을 입력해주세요"></textarea>
 </div>
-
+<input type="hidden" id="session_id" value="${id }">
 
 
 

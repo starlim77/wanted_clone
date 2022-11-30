@@ -45,6 +45,53 @@ body{
     height: 50px;
     display: flex;
 }
+.community_board__theme_tag{
+    width: 65%;
+}
+.community_board__theme_btn{
+	display:flex;
+    width: 35%;
+    justify-content: center;
+}
+#community_board__update_btn{
+    border-radius: 50px;
+    border: 1px solid #e2e2e2;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #a4a4a4;
+    background: none;
+    display:none;
+    height: 30px;
+}
+
+#community_board__delete_btn{
+    border-radius: 50px;
+    border: 1px solid #e2e2e2;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #a4a4a4;
+    background: none;
+    display:none;
+    height: 30px;
+}
+
+#community_board__update_complete_btn{
+    border-radius: 100px;
+    border: 2px solid #e2e2e2;
+    font-size: 8pt;
+    font-weight: 700;
+    color: #a4a4a4;
+    background: none;
+    width: 60px;
+    display:none;
+    height: 30px;
+}
+
+#community_board__update_btn,#community_board__delete_btn,#community_board__update_complete_btn:hover {
+    cursor: pointer;
+}
+
+
 .community_board__bottom{
     margin-top: 70px;
     width: 100%;
@@ -55,8 +102,8 @@ body{
 .community_board__content{
     margin-top: 40px;
     width: 100%;
-    border: 1px solid black;
     height: auto;
+    word-break:break-word;
 }
 .community_board__bottom__like,.community_board__bottom__coment{
     width : 80px;
@@ -91,7 +138,7 @@ body{
     height: 35px;
     display: flex;
 }
-.community_comment__profile__name{
+.community_comment__profile__name,.community_comment__profile__name_user{
     width: 95%;
     display: flex;
     align-items: center;
@@ -103,10 +150,12 @@ body{
     height: 35px;
 }
 
-.community_comment__profile__name > span {
+.community_comment__profile__name > span,.community_comment__profile__name_user > span {
     margin-left: 10px;
     font-weight: bold;
 }
+
+
 .community_comment__content{
     width: 700px;
     margin-top: 20px;
@@ -179,4 +228,17 @@ body{
     font-weight: 900;
     color: black;
     background: none;
+}
+
+.community_board__title,.community_board__content{
+	border : none;
+}
+.community_board__theme_tag_item{
+    border-radius: 50px;
+    background: none;
+    border: 0.5px solid #e2e2e2;
+    height: 35px;
+    width: auto;
+    font-size: 11pt;
+    padding: 0 10px;
 }

@@ -16,7 +16,7 @@
 	<select id="boardList" parameterType="java.util.Map" resultType="community.bean.CommunityDTO">
 		<![CDATA[select * from 
             (select rownum rn,tt.* from
-            (select seq,id_,title,content_,theme,view_count,like_count from community order by 1 desc)tt)
+            (select seq,id_,title,content_,theme,view_count,like_count,comment_ from community order by 1 desc)tt)
         where rn >= #{startNum} and rn <= #{endNum}]]>
 	
 	</select>
@@ -27,11 +27,42 @@
 	</insert>
 
 	<select id="getBoard" parameterType="int" resultType="community.bean.CommunityDTO">
-		select id_,title,content_,theme,like_count from community where seq=#{seq}
+		select id_,title,content_,theme,like_count,comment_ from community where seq=#{seq}
 	</select>
 	
 	<select id="getComment" resultType="community.bean.CommentDTO">
 		select id_,comment_ from community_comment where seq=#{seq}
 	</select>
-
+	
+	<delete id="deleteBoardForm">
+		delete from community where seq = #{seq}
+	</delete>
+	
+	<delete id="deleteBoardComment">
+		delete from community_comment where seq = #{seq}
+	</delete>
+	
+	<delete id="updateBoard" parameterType="java.util.Map">
+		update community set title=#{title},content_= #{content_} where seq = #{seq}
+	</delete>
+	
+	<insert id="commentWrite" parameterType="community.bean.CommentDTO">
+		insert into community_comment values(#{seq},#{id_},#{comment_})
+	</insert>
+	
+	<update id="commentUp">
+		update community set comment_ = comment_+1 where seq = #{seq}
+	</update>
+	
+	<update id="likeUp">
+		update community set like_count=like_count+1 where seq = #{seq}
+	</update>
+	
+	<update id="likeDown">
+		update community set like_count=like_count-1 where seq = #{seq}
+	</update>
+	
+	<select id="commentCount" resultType="java.lang.Integer">
+		select count(seq) from community_comment where seq = #{seq}
+	</select>
 </mapper>
