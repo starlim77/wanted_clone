@@ -1,23 +1,15 @@
 $(function(){
-
+	var id = $('#session_id').val();
+	
 	//로그인 유무 체크후 화면 띄우기
 	$('#container_main__body__boardwrite').click(function(){
-		$.ajax({
-			type:'post',
-			url:'/controller/community/checkId',
-			success: function(data){
-				if(data != ""){
-					 $(".write_background").show();
-				     $("#writebody").show();
-				     document.body.style= 'overflow: hidden';
-				}else{
-					alert('로그인 후 서비스를 이용해주세요!');
-				}
-			},
-			error: function(err){
-				console.log(err);
-			}
-		});
+		if(id != ""){
+			$(".write_background").show();
+		    $("#writebody").show();
+		    document.body.style= 'overflow: hidden';
+		}else{
+			alert('로그인 후 서비스를 이용해주세요!');
+		}
 	
 
 	});

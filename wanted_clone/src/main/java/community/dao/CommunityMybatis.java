@@ -60,4 +60,27 @@ public class CommunityMybatis implements CommunityDAO {
 
 	}
 
+	@Override
+	public void deleteBoard(int seq) {
+		sqlSession.delete("communitySQL.deleteBoardForm",seq);
+		sqlSession.delete("communitySQL.deleteBoardComment",seq);
+		
+	}
+
+	@Override
+	public void updateBoard(int seq, String title, String content) {
+		Map<String,String> map = new HashMap<String,String>();
+		map.put("seq", Integer.toString(seq));
+		map.put("title", title);
+		map.put("content_", content);
+		sqlSession.update("communitySQL.updateBoard",map);
+		
+		
+	}
+
+	@Override
+	public void commentWrite(CommentDTO commentDTO) {
+		sqlSession.insert("communitySQL.commentWrite",commentDTO);
+	}
+
 }

@@ -4,6 +4,5 @@ CREATE TABLE COMMUNITY (
                         title VARCHAR2(50) not null,
                         content_ VARCHAR2(500) not null,
                         theme VARCHAR2(20) not null,
-                        comment_ VARCHAR2(200),
                         like_count number check (like_count >= 0),
                         view_count number check (view_count >= 0));

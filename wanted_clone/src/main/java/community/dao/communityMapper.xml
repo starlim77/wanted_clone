@@ -33,5 +33,20 @@
 	<select id="getComment" resultType="community.bean.CommentDTO">
 		select id_,comment_ from community_comment where seq=#{seq}
 	</select>
-
+	
+	<delete id="deleteBoardForm">
+		delete from community where seq = #{seq}
+	</delete>
+	
+	<delete id="deleteBoardComment">
+		delete from community_comment where seq = #{seq}
+	</delete>
+	
+	<delete id="updateBoard" parameterType="java.util.Map">
+		update community set title=#{title},content_= #{content_} where seq = #{seq}
+	</delete>
+	
+	<insert id="commentWrite" parameterType="community.bean.CommentDTO">
+		insert into community_comment values(#{seq},#{id_},#{comment_})
+	</insert>
 </mapper>

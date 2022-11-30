@@ -21,15 +21,6 @@ public class CommunityServiceImple implements CommunityService {
 	@Autowired
 	private HttpSession session;
 	
-	@Override
-	public String checkId() {
-		
-		String name = (String) session.getAttribute("name");
-		if(name != null) {
-			return name;
-		}else
-			return "";
-	}
 
 	@Override
 	public List<CommunityDTO> bestBoard(String pg) {
@@ -58,6 +49,24 @@ public class CommunityServiceImple implements CommunityService {
 	@Override
 	public List<CommentDTO> getComment(int seq) {
 		return communityDAO.getComment(seq);
+	}
+
+	@Override
+	public void deleteBoard(int seq) {
+		communityDAO.deleteBoard(seq);
+		
+	}
+
+	@Override
+	public void updateBoard(int seq, String title, String content) {
+		communityDAO.updateBoard(seq,title,content);
+		
+	}
+
+	@Override
+	public void commentWrite(CommentDTO commentDTO) {
+		communityDAO.commentWrite(commentDTO);
+		
 	}
 
 }

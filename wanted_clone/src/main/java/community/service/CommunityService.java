@@ -7,8 +7,6 @@ import community.bean.CommunityDTO;
 
 public interface CommunityService {
 
-	public String checkId();
-
 	public List<CommunityDTO> bestBoard(String pg);
 
 	public List<CommunityDTO> boardList(String scrollPg);
@@ -18,5 +16,11 @@ public interface CommunityService {
 	public CommunityDTO getBoard(int seq);
 
 	public List<CommentDTO> getComment(int seq);
+
+	public void deleteBoard(int seq);
+
+	public void updateBoard(int seq, String title, String content);
+
+	public void commentWrite(CommentDTO commentDTO);
 
 }
