@@ -151,6 +151,7 @@
     margin-top: 7%;
     height: 43%;
     word-break: break-word;
+    overflow: hidden;
 }
 .container_main__body__best_hit__content__example__id {
   width: 90%;
@@ -330,4 +331,5 @@
     background: none;
     border:  0.5px solid #e2e2e2;
     height: 22px;
+    margin-left: 7px;
 }

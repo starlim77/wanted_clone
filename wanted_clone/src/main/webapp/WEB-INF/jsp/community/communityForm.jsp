@@ -52,21 +52,27 @@
           <div class="container_main__body__best_hit__content">
           
             <div class="container_main__body__best_hit__content__example">
-              <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
-                <div class="container_main__body__best_hit__content__example__content"></div>
+                <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
+                <a>
+               		<div class="container_main__body__best_hit__content__example__content"></div>
+               	</a>
                 <div class="container_main__body__best_hit__content__example__id"></div>
             </div>
 
             <div class="container_main__body__best_hit__content__example">
-              <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
-                <div class="container_main__body__best_hit__content__example__content"></div>
+	            <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
+                <a>
+               		<div class="container_main__body__best_hit__content__example__content"></div>
+               	</a>
                 <div class="container_main__body__best_hit__content__example__id"></div>
             </div>
 
             <div class="container_main__body__best_hit__content__example">
-              <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
-                <div class="container_main__body__best_hit__content__example__content"></div>
-                <div class="container_main__body__best_hit__content__example__id"></div>
+              	<div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
+               	<a>
+               		<div class="container_main__body__best_hit__content__example__content"></div>
+               	</a>
+               	<div class="container_main__body__best_hit__content__example__id"></div>
             </div>
           </div>
         </div>

@@ -13,19 +13,26 @@ $(function(){
 		data: 'seq=' + seq,
 		dataType: 'json',
 		success : function(data){
-			console.log(JSON.stringify(data))
 			$('.profile_id').text(data.id_);
 			$('.community_board__title').text(data.title);
 			$('.community_board__content').text(data.content_);
 			
 			//태그 추가
-			var tag = $('<input>');
-			tag.addClass('community_board__theme_tag_item');
-			tag.attr('type','button');
-			tag.attr('value',data.theme);
+	
+			var words = (data.theme).split(';');
 			
-			$('.community_board__theme_tag').append(tag);
-						
+			for(var word in words){
+				//태그1인분 만들기
+				var tag = $('<input>');
+				tag.attr('type','button')
+				tag.addClass('community_board__theme_tag_item');
+				tag.val(words[word]);
+
+				$('.community_board__theme_tag').append(tag);
+			
+			
+			}
+			
 			
 			$('.community_board__bottom__like > span').text(data.like_count);
 			$('.community_board__bottom__coment > span').text(data.comment_);

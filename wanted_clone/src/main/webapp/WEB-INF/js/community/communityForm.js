@@ -56,6 +56,7 @@ $('.container_main__body__boardlist__content__content').click(function(){
 				for(var i=0; i < 3; i++){
 				$('.container_main__body__best_hit__content__example__content').eq(i-1).text(data[i].title);
 				$('.container_main__body__best_hit__content__example__id').eq(i-1).text(data[i].id_);
+				$('.container_main__body__best_hit__content__example > a').eq(i-1).attr('href','/controller/community/communityBoard?seq='+data[i].seq);
 				}
 				
 			},
@@ -109,12 +110,20 @@ $('.container_main__body__boardlist__content__content').click(function(){
 							var tag = $('<div>');
 							tag.addClass('container_main__body__boardlist__content__tag');
 							
-							//태그1인분 만들기
-							var tag_item = $('<input>');
-							tag_item.attr('type','button')
-							tag_item.addClass('content__tag');
-							tag_item.val(data[i].theme);
-
+							var words = (data[i].theme).split(';');
+							
+							for(var word in words){
+								//태그1인분 만들기
+								var tag_item = $('<input>');
+								tag_item.attr('type','button')
+								tag_item.addClass('content__tag');
+								tag_item.val(words[word]);
+	
+								tag.append(tag_item);
+							
+							
+							}
+							
 							
 							
 							//글 좋아요,댓글
@@ -151,7 +160,6 @@ $('.container_main__body__boardlist__content__content').click(function(){
 							a.attr('href','/controller/community/communityBoard?seq='+data[i].seq);
 							
 							bottom.append(div_like,div_comment);
-							tag.append(tag_item);
 							a.append(content_content);
 							
 							content.append(profile.append(profile_img).append(span_id)).append(title)
