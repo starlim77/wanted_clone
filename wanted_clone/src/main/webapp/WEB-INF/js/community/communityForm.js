@@ -9,7 +9,7 @@ $(function(){
 	
 	//첫 시작화면 아이디 체크.
 	if(id != ""){
-		$('.container_sub__my_community__body__profile__login_condition').children('span').empty().text(id);
+		$('.container_sub__my_community__body__profile__login_condition > a').children('span').empty().text(id);
 		$('.container_main__body__boardwrite__user_icon').css('display','flex');
 	}
 	
@@ -55,7 +55,7 @@ $('.container_main__body__boardlist__content__content').click(function(){
 			success: function(data){
 				for(var i=0; i < 3; i++){
 				$('.container_main__body__best_hit__content__example__content').eq(i-1).text(data[i].title);
-				$('.container_main__body__best_hit__content__example__id > span').eq(i-1).text(data[i].id_);
+				$('.container_main__body__best_hit__content__example__id > a > span').eq(i-1).text(data[i].id_);
 				$('.container_main__body__best_hit__content__example > a').eq(i-1).attr('href','/controller/community/communityBoard?seq='+data[i].seq);
 				}
 				

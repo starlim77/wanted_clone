@@ -22,7 +22,7 @@
 
 
         <div class="container_sub__my_community__body__profile__login_condition">
-          <span>로그인 해주세요.</span>
+          <a href = '/controller/user/loginForm'><span>로그인 해주세요.</span></a>
         </div>
         <i id="container_sub__my_community__body__profile__tag" class="fa-solid fa-angle-right fa-lg"></i>
       </div>
