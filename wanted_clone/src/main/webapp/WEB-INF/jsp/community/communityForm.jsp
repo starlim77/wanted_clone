@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body id="communityBody">
 <jsp:include page="../component/header.jsp"></jsp:include>
 
 
@@ -53,18 +53,24 @@
           
             <div class="container_main__body__best_hit__content__example">
                 <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
-                <a>
+               	<a>
                		<div class="container_main__body__best_hit__content__example__content"></div>
                	</a>
-                <div class="container_main__body__best_hit__content__example__id"></div>
+               	<div class="container_main__body__best_hit__content__example__id">
+               		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
+               		<span></span>
+           		</div>
             </div>
 
             <div class="container_main__body__best_hit__content__example">
-	            <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
-                <a>
+	           <div class="container_main__body__best_hit__content__example__title"><span>조회수 TOP</span></div>
+               	<a>
                		<div class="container_main__body__best_hit__content__example__content"></div>
                	</a>
-                <div class="container_main__body__best_hit__content__example__id"></div>
+               	<div class="container_main__body__best_hit__content__example__id">
+               		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
+               		<span></span>
+           		</div>
             </div>
 
             <div class="container_main__body__best_hit__content__example">
@@ -72,9 +78,15 @@
                	<a>
                		<div class="container_main__body__best_hit__content__example__content"></div>
                	</a>
-               	<div class="container_main__body__best_hit__content__example__id"></div>
+               	<div class="container_main__body__best_hit__content__example__id">
+               		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
+               		<span></span>
+           		</div>
+           		
             </div>
+            
           </div>
+          
         </div>
         
         <div class="container_main__body__boardwrite">
@@ -114,18 +126,41 @@
 
 <div class="write_background"></div>
 
- <div id="writebody">
-    <div class="writebody__top">
-        <div class="writebody__top__tag"></div>
-        <div class="writebody__top__submit">
-            <input type="button" id="writebody__writeBtn" value="등록하기" disabled="true">
-        </div>
-    </div>
+    <div id="writebody">
+       <div class="writebody__top">
+           <div class="writebody__top__tag">
+                <i class="fa-regular fa-square-plus fa-2x"></i>
+                <section id="button_section">
+                    <div id ="write_tag">
+                        <ul class="write_tag__ul">
+                            <li>
+                                <input type="button" class="write_tag__ul__button" value="커리어고민">
+                                <input type="button" class="write_tag__ul__button" value="취업/이직">
+                                <input type="button" class="write_tag__ul__button" value="회사생활">
+                                <input type="button" class="write_tag__ul__button" value="인간관계">
+                                <input type="button" class="write_tag__ul__button" value="개발">
+                                <input type="button" class="write_tag__ul__button" value="데이터">
+                                <input type="button" class="write_tag__ul__button" value="마케팅">
+                                <input type="button" class="write_tag__ul__button" value="컨텐츠 제작">
+                                <input type="button" class="write_tag__ul__button" value="IT/기술">
+                                <input type="button" class="write_tag__ul__button" value="리더쉽">
+                                <input type="button" class="write_tag__ul__button" value="조직문화">
+                                <span> * 1~3 개를 선택해주세요</span>
+                            </li>
+                        </ul>    
+                    </div>
+                </section>
+           </div>
+           <div class="writebody__top__submit">
+               <input type="button" id="writebody__writeBtn" value="등록하기" disabled="true">
+           </div>
+       </div>
+   
+       <input class="writebody__title" placeholder="제목을 입력해주세요"> </input>
+       <hr class="write_hr">
+       <textarea class="writebody__content" placeholder="내용을 입력해주세요"></textarea>
 
-	<input class="writebody__title" placeholder="제목을 입력해주세요"> </input>
-    <hr class="write_hr">
-    <textarea class="writebody__content" placeholder="내용을 입력해주세요"></textarea>
-</div>
+</div> 
 <input type="hidden" id="session_id" value="${id }">
 
 

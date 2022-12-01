@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body id="communityBody">
 <jsp:include page="../component/header.jsp"></jsp:include>
     <container>
       <div class="board_body">
