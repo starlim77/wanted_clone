@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import resume.bean.CareerDTO;
+import resume.bean.EducationDTO;
 import resume.bean.ResumeDTO;
 
 @Controller
@@ -74,6 +75,16 @@ public class ResumeServiceImpl implements ResumeService{
 	public List<CareerDTO> getCareer(String id) {
 		System.out.println(id);
 		return sqlSession.selectList("resumeSQL.getCareer",id);
+	}
+
+	@Override
+	public List<CareerDTO> getEducation(String id) {
+		return sqlSession.selectList("resumeSQL.getEducation", id);
+	}
+
+	@Override
+	public void educationSave(EducationDTO educationDTO) {
+		sqlSession.insert("resumeSQL.educationSave", educationDTO);
 	}
 
 }

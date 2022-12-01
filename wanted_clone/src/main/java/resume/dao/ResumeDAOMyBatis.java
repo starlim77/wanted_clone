@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import resume.bean.CareerDTO;
+import resume.bean.EducationDTO;
 import resume.bean.ResumeDTO;
 import resume.service.ResumeService;
 
@@ -56,5 +57,15 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 	@Override
 	public List<CareerDTO> getCareer(String id) {
 		return resumeService.getCareer(id);
+	}
+
+	@Override
+	public List<CareerDTO> getEducation(String id) {
+		return resumeService.getEducation(id);
+	}
+
+	@Override
+	public void educationSave(EducationDTO educationDTO) {
+		resumeService.educationSave(educationDTO);
 	}
 }

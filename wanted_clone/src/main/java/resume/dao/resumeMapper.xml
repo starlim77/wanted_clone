@@ -45,6 +45,14 @@
   	</insert>
   	
   	<select id="getCareer" parameterType="String" resultType="resume.bean.CareerDTO">
-  		select * from career where id = #{id}
+  		select * from career where id = #{id} order by career_seq
+  	</select>
+  	
+  	<insert id="educationSave" parameterType="resume.bean.EducationDTO">
+  		insert into education values (education_seq.nextval, #{id}, #{educationStartYear}, #{educationStartMonth}, #{educationEndYear}, #{educationEndMonth}, #{schoolName}, #{major}, #{content})
+  	</insert>
+  	
+  	<select id="getEducation" parameterType="String" resultType="resume.bean.CareerDTO">
+  		select * from education where id = #{id} order by education_seq
   	</select>
   </mapper>

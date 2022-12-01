@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import resume.bean.CareerDTO;
+import resume.bean.EducationDTO;
 import resume.bean.ResumeDTO;
 import resume.dao.ResumeDAO;
 
@@ -93,6 +94,18 @@ public class ResumeController {
 	@ResponseBody
 	public List<CareerDTO> getCareer(String id) {
 		return resumeDAO.getCareer(id);
+	}
+	
+	@PostMapping(value = "educationSave")
+	@ResponseBody
+	public void educationSave(EducationDTO educationDTO) {
+		System.out.println(educationDTO.getId());
+		resumeDAO.educationSave(educationDTO);
+	}
+	@PostMapping(value = "getEducation")
+	@ResponseBody
+	public List<CareerDTO> getEducation(String id) {
+		return resumeDAO.getEducation(id);
 	}
 	
 	

@@ -47,7 +47,10 @@ create sequence link_seq increment by 1 start with 1 nocycle nocache;
 
 create table education (education_seq number primary key,
 						id varchar2(40),
-						educationDate varchar2(50),
+						educationStartYear varchar2(10),
+                        educationStartMonth varchar2(10),
+                        educationEndYear varchar2(10),
+                        educationEndMonth varchar2(10),
 						schoolName varchar2(50),
 						major varchar2(100),
 						content varchar(50));

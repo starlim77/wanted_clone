@@ -71,7 +71,7 @@
                     <input type="text" class="career" name="career" value=${career} ><br>
                     
                         <!-- 경력 추가 버튼 -->
-                        <div class="add-btn-wrapper">
+                        <div class="career-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img alt="" src="/controller/img/resume/plus-solid.svg">
                                 <div class="add__btn__txt">
@@ -152,7 +152,7 @@
                         </div>
                         <input type="text" class="education" name="education" value=${education} ><br>
                         <!-- 학력 추가 버튼 -->
-                        <div class="add-btn-wrapper">
+                        <div class="education-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img alt="" src="/controller/img/resume/plus-solid.svg">
                                 <div class="add__btn__txt">
@@ -205,7 +205,7 @@
                     </div>
                    <input type="text" class="award" name="award" value=${award} ><br>
                    <!-- 수상 추가 버튼 -->
-                   <div class="add-btn-wrapper">
+                   <div class="award-add-btn-wrapper">
                     <button type="button" class="add__btn">
                         <img alt="" src="/controller/img/resume/plus-solid.svg">
                         <div class="add__btn__txt">
@@ -248,7 +248,7 @@
                         </ul>
                     </div>
                     <input type="text" class="language" name="language" value=${language} ><br>
-                        <div class="add-btn-wrapper">
+                        <div class="language-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img alt="" src="/controller/img/resume/plus-solid.svg">
                                 <div class="add__btn__txt">
@@ -297,7 +297,7 @@
                             </ul>
                         </div>
                         <!-- 링크 추가 버튼 -->
-                        <div class="add-btn-wrapper">
+                        <div class="link-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img alt="" src="/controller/img/resume/plus-solid.svg">
                                 <div class="add__btn__txt">
