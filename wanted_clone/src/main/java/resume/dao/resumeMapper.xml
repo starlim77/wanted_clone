@@ -52,7 +52,31 @@
   		insert into education values (education_seq.nextval, #{id}, #{educationStartYear}, #{educationStartMonth}, #{educationEndYear}, #{educationEndMonth}, #{schoolName}, #{major}, #{content})
   	</insert>
   	
-  	<select id="getEducation" parameterType="String" resultType="resume.bean.CareerDTO">
+  	<select id="getEducation" parameterType="String" resultType="resume.bean.EducationDTO">
   		select * from education where id = #{id} order by education_seq
+  	</select>
+  	
+  	<insert id="activitySave" parameterType="resume.bean.AwardDTO">
+  		insert into award values (award_seq.nextval, #{id}, #{activityYear}, #{activityMonth}, #{activityName}, #{detail})
+  	</insert>
+  	
+  	<select id="getAward" parameterType="String" resultType="resume.bean.AwardDTO">
+  		select * from award where id = #{id} order by award_seq
+  	</select>
+  	
+  	<insert id="languageSave" parameterType="resume.bean.LanguageDTO">
+  		insert into language values (language_seq.nextval, #{id}, #{languageName}, #{standard})
+  	</insert>
+  	
+  	<select id="getLanguage" parameterType="String" resultType="resume.bean.LanguageDTO">
+  		select * from language where id = #{id} order by language_seq 	
+  	</select>
+  	
+  	<insert id="linkSave" parameterType="resume.bean.LinkDTO">
+  		insert into link values (link_seq.nextval, #{id}, #{link})
+  	</insert>
+  	
+  	<select id="getLink" parameterType="String" resultType="resume.bean.LinkDTO">
+  		select * from link where id = #{id}
   	</select>
   </mapper>

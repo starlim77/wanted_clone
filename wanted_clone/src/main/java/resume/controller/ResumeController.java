@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.collections4.map.HashedMap;
+import org.apache.ibatis.annotations.Lang;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +20,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import resume.bean.AwardDTO;
 import resume.bean.CareerDTO;
 import resume.bean.EducationDTO;
+import resume.bean.LanguageDTO;
+import resume.bean.LinkDTO;
 import resume.bean.ResumeDTO;
 import resume.dao.ResumeDAO;
 
@@ -102,12 +106,46 @@ public class ResumeController {
 		System.out.println(educationDTO.getId());
 		resumeDAO.educationSave(educationDTO);
 	}
+	
 	@PostMapping(value = "getEducation")
 	@ResponseBody
-	public List<CareerDTO> getEducation(String id) {
+	public List<EducationDTO> getEducation(String id) {
 		return resumeDAO.getEducation(id);
 	}
 	
+	@PostMapping(value = "activitySave")
+	@ResponseBody
+	public void activitySave(AwardDTO awardDTO) {
+		resumeDAO.activitySave(awardDTO);
+	}
 	
+	@PostMapping(value = "getAward")
+	@ResponseBody
+	public List<EducationDTO> getAward(String id) {
+		return resumeDAO.getAward(id);
+	}
 	
+	@PostMapping(value = "languageSave")
+	@ResponseBody
+	public void languageSave(LanguageDTO languageDTO) {
+		resumeDAO.languageSave(languageDTO);
+	}
+	
+	@PostMapping(value = "getLanguage")
+	@ResponseBody
+	public List<LanguageDTO> getLanguage(String id) {
+		return resumeDAO.getLanguage(id);
+	}
+	
+	@PostMapping(value = "linkSave")
+	@ResponseBody
+	public void linkSave(LinkDTO linkDTO) {
+		resumeDAO.linkSave(linkDTO);
+	}
+	
+	@PostMapping(value = "getLink")
+	@ResponseBody
+	public List<LanguageDTO> getLink(String id) {
+		return resumeDAO.getLink(id);
+	}
 }

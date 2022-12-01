@@ -5,8 +5,11 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import resume.bean.AwardDTO;
 import resume.bean.CareerDTO;
 import resume.bean.EducationDTO;
+import resume.bean.LanguageDTO;
+import resume.bean.LinkDTO;
 import resume.bean.ResumeDTO;
 
 public interface ResumeDAO {
@@ -24,9 +27,23 @@ public interface ResumeDAO {
 	void careerSave(CareerDTO careerDTO);
 
 	List<CareerDTO> getCareer(String id);
-
-	List<CareerDTO> getEducation(String id);
-
+	
 	void educationSave(EducationDTO educationDTO);
+
+	List<EducationDTO> getEducation(String id);
+
+	void activitySave(AwardDTO awardDTO);
+
+	List<EducationDTO> getAward(String id);
+
+	void languageSave(LanguageDTO languageDTO);
+
+	List<LanguageDTO> getLanguage(String id);
+
+	void linkSave(LinkDTO linkDTO);
+
+	List<LanguageDTO> getLink(String id);
+
+
 
 }

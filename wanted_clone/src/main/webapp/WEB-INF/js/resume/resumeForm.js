@@ -156,9 +156,72 @@ $(".submit-btn").click(function(){
             }
         });
     } else if(this.value === "2"){
-        alert(this.value)
+        var dateInput = $(this).parent().siblings(".add-career__date").find("input");
+        var activityNameInput = $(this).parent().siblings(".company-name").find("input");
+        var detailInput = $(this).parent().siblings(".department-name").find("input");
+
+        $.ajax({
+            url: "/controller/resume/activitySave",
+            type: "post",
+            data: {
+                "activityYear" : dateInput.eq(0).val(),
+                "activityMonth" : dateInput.eq(1).val(),
+                "id" : $(".id").val(),
+                "activityName" : activityNameInput.val(),
+                "detail": detailInput.val(),
+            },
+            success: function(){
+                location.reload();
+            },
+            error: function(request, status, error, textStatus){
+                console.log("code: " + request.status);
+                console.log("message: " + request.responseText);
+                console.log("error: " + error);
+                console.log("textStatus: "+textStatus);
+            }
+        });
     } else if(this.value === "3"){
-        alert(this.value)
+        var dateInput = $(this).parent().siblings(".company-name").find("select");
+        var activityNameInput = $(this).parent().siblings(".department-name").find("select");
+
+        $.ajax({
+            url: "/controller/resume/languageSave",
+            type: "post",
+            data: {
+                "languageName" : dateInput.val(),
+                "standard" : activityNameInput.val(),
+                "id" : $(".id").val(),
+            },
+            success: function(){
+                location.reload();
+            },
+            error: function(request, status, error, textStatus){
+                console.log("code: " + request.status);
+                console.log("message: " + request.responseText);
+                console.log("error: " + error);
+                console.log("textStatus: "+textStatus);
+            }
+        });
+    } else if(this.value === "4"){
+        var linkInput = $(this).parent().siblings(".company-name").find("input");
+
+        $.ajax({
+            url: "/controller/resume/linkSave",
+            type: "post",
+            data: {
+                "link" : linkInput.val(),
+                "id" : $(".id").val()
+            },
+            success: function(){
+                location.reload();
+            },
+            error: function(request, status, error, textStatus){
+                console.log("code: " + request.status);
+                console.log("message: " + request.responseText);
+                console.log("error: " + error);
+                console.log("textStatus: "+textStatus);
+            }
+        });
     }
 });
 
@@ -215,6 +278,155 @@ $(function(){
             console.log("message: " + request.responseText);
             console.log("error: " + error);
             console.log("textStatus: "+textStatus);
+        },
+    });
+
+});
+
+// 추가 학력 생성
+$(function(){
+    $.ajax({
+        url: "/controller/resume/getEducation",
+        type: "post",
+        data: "id=" + $(".id").val(),
+        dataType: "json",
+        success: function(data){
+            data.forEach(function(index){
+                var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
+                var addCareerDiv = $("<div/>").addClass("add-career"); //2dep
+                //educationDate
+                var startWorkYearInput = $("<input/>").addClass("year").val(index.educationStartYear+" .")
+                var startWorkMonthInput = $("<input/>").addClass("month").val(index.educationStartMonth+" -")
+                var endWorkYearInput = $("<input/>").addClass("year").val(index.educationEndYear+" .")
+                var endWorkMonthInput = $("<input/>").addClass("month").val(index.educationEndMonth)
+                var addCareerDateDiv = $("<div/>").addClass("new-add-career__date").append(startWorkYearInput).append(startWorkMonthInput).append(endWorkYearInput).append(endWorkMonthInput); //2dep
+                //schoolName
+                var companyNameInput = $("<input/>").addClass("company-name__input").val(index.schoolName);
+                var companyNameDiv = $("<div/>").addClass("new-company-name").append(companyNameInput);
+                //majorName
+                var departmentNameInput = $("<input/>").addClass("department__input").val(index.major);
+                var departmentDiv = $("<div/>").addClass("new-department-name").append(departmentNameInput);
+                //contentName
+                var contentInput = $("<input/>").addClass("department__input").val(index.content);
+                var contentDiv = $("<div/>").addClass("new-department-name").append(contentInput);
+    
+                var border = $("<div/>").addClass("border");
+                var newForm = $(".education-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(addCareerDateDiv).append(companyNameDiv).append(departmentDiv).append(contentDiv)).append(border))
+                newForm
+            });
+        },
+        error: function(request, status, error, textStatus){
+            console.log("code: " + request.status);
+            console.log("message: " + request.responseText);
+            console.log("error: " + error);
+            console.log("textStatus: "+textStatus);
         }
+        
     });
 });
+
+// 추가 수상 생성
+$(function(){
+    $.ajax({
+        url: "/controller/resume/getAward",
+        type: "post",
+        data: "id=" + $(".id").val(),
+        dataType: "json",
+        success: function(data){
+            data.forEach(function(index){
+                var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
+                var addCareerDiv = $("<div/>").addClass("add-career"); //2dep
+                
+                //date
+                var activityYearInput = $("<input/>").addClass("year").val(index.activityYear+" .")
+                var activityMonthInput = $("<input/>").addClass("month").val(index.activityMonth+" ")
+                var activityDateDiv = $("<div/>").addClass("add-career__date").append(activityYearInput).append(activityMonthInput);
+
+                //activityName
+                var activityNameInput = $("<input/>").addClass("department__input").val(index.activityName);
+                var activityNameDiv = $("<div/>").addClass("new-department-name").append(activityNameInput);
+                
+                //detail
+                var detailInput = $("<input/>").addClass("department__input").val(index.detail);
+                var detailDiv = $("<div/>").addClass("new-department-name").append(detailInput);
+
+                var border = $("<div/>").addClass("border");
+                var newForm = $(".award-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(activityDateDiv).append(activityNameDiv).append(detailDiv)).append(border))
+                newForm
+            });
+        },
+        error: function(request, status, error, textStatus){
+            console.log("code: " + request.status);
+            console.log("message: " + request.responseText);
+            console.log("error: " + error);
+            console.log("textStatus: "+textStatus);
+        },
+    });
+
+});
+// 추가 언어 생성
+$(function(){
+    $.ajax({
+        url: "/controller/resume/getLanguage",
+        type: "post",
+        data: "id=" + $(".id").val(),
+        dataType: "json",
+        success: function(data){
+            data.forEach(function(index){
+                var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
+                var addCareerDiv = $("<div/>").addClass("add-career"); //2dep
+                
+                //languageName
+                var languageNameInput = $("<input/>").addClass("new-language-name").val(index.languageName)
+                var languageNameDiv = $("<div/>").addClass("new-company-name").append(languageNameInput);
+
+                //activityName
+                var standardInput = $("<input/>").addClass("new-language-standard").val(index.standard);
+                var standardDiv = $("<div/>").addClass("new-department-name").append(standardInput);
+                
+                var border = $("<div/>").addClass("border");
+                var newForm = $(".language-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append($("<div/>").addClass("add-career__date")).append(languageNameDiv).append(standardDiv)).append(border))
+                newForm
+            });
+        },
+        error: function(request, status, error, textStatus){
+            console.log("code: " + request.status);
+            console.log("message: " + request.responseText);
+            console.log("error: " + error);
+            console.log("textStatus: "+textStatus);
+        },
+    });
+
+});
+// 추가 링크 생성
+$(function(){
+    $.ajax({
+        url: "/controller/resume/getLink",
+        type: "post",
+        data: "id=" + $(".id").val(),
+        dataType: "json",
+        success: function(data){
+            data.forEach(function(index){
+                var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
+                var addCareerDiv = $("<div/>").addClass("add-link"); //2dep
+                
+                //link
+                var linkInput = $("<input/>").addClass("company-name__input").val(index.link)
+                var linkDiv = $("<div/>").addClass("new-company-name").append(linkInput);
+
+                var border = $("<div/>").addClass("border");
+                var newForm = $(".link-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(linkDiv)).append(border))
+                newForm
+            });
+        },
+        error: function(request, status, error, textStatus){
+            console.log("code: " + request.status);
+            console.log("message: " + request.responseText);
+            console.log("error: " + error);
+            console.log("textStatus: "+textStatus);
+        },
+    });
+
+});
+
+

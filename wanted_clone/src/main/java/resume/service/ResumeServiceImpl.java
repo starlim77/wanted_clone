@@ -11,8 +11,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import resume.bean.AwardDTO;
 import resume.bean.CareerDTO;
 import resume.bean.EducationDTO;
+import resume.bean.LanguageDTO;
+import resume.bean.LinkDTO;
 import resume.bean.ResumeDTO;
 
 @Controller
@@ -78,13 +81,43 @@ public class ResumeServiceImpl implements ResumeService{
 	}
 
 	@Override
-	public List<CareerDTO> getEducation(String id) {
+	public List<EducationDTO> getEducation(String id) {
 		return sqlSession.selectList("resumeSQL.getEducation", id);
 	}
 
 	@Override
 	public void educationSave(EducationDTO educationDTO) {
 		sqlSession.insert("resumeSQL.educationSave", educationDTO);
+	}
+
+	@Override
+	public void activitySave(AwardDTO awardDTO) {
+		sqlSession.insert("resumeSQL.activitySave", awardDTO);
+	}
+
+	@Override
+	public List<EducationDTO> getAward(String id) {
+		return sqlSession.selectList("resumeSQL.getAward" ,id);
+	}
+
+	@Override
+	public void languageSave(LanguageDTO languageDTO) {
+		sqlSession.insert("resumeSQL.languageSave", languageDTO);
+	}
+
+	@Override
+	public List<LanguageDTO> getLanguage(String id) {
+		return sqlSession.selectList("resumeSQL.getLanguage", id);
+	}
+
+	@Override
+	public void linkSave(LinkDTO linkDTO) {
+		sqlSession.insert("resumeSQL.linkSave", linkDTO);
+	}
+
+	@Override
+	public List<LanguageDTO> getLink(String id) {
+		return sqlSession.selectList("resumeSQL.getLink" ,id);
 	}
 
 }

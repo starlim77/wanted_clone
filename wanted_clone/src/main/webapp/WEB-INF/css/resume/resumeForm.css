@@ -184,6 +184,7 @@
 .add-career{
 	display: flex;
 	flex-flow: column;
+	align-content: flex-start;
 	flex-wrap: wrap;
 	width: 100%;
 	margin: 20px 0px;
@@ -339,6 +340,14 @@
 	border: 0;
 	background-color: #f8f8f8;
 	color: #36f; 
+	font-size: 20px;
+}
+.new-language-name, .new-language-standard{
+	display: flex;
+	width: 200px;
+	height: 30px;
+	border: 0;
+	background-color: #f8f8f8;
 	font-size: 20px;
 }
 .language-standard{

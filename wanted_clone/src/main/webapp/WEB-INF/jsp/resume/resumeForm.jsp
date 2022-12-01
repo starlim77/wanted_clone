@@ -68,7 +68,6 @@
                                 <li>• 커리어 조회 후 기업명이 실제와 다른 경우, 부서명/직책 란에 원하시는 기업명을 작성해주세요. </li>
                             </ul>
                         </div>
-                    <input type="text" class="career" name="career" value=${career} ><br>
                     
                         <!-- 경력 추가 버튼 -->
                         <div class="career-add-btn-wrapper">
@@ -150,7 +149,6 @@
                                 <li>• 최신순으로 작성해주세요.</li>
                             </ul>
                         </div>
-                        <input type="text" class="education" name="education" value=${education} ><br>
                         <!-- 학력 추가 버튼 -->
                         <div class="education-add-btn-wrapper">
                             <button type="button" class="add__btn">
@@ -164,13 +162,13 @@
                         <div class="add-form">
                             <div class="add-career">
                                 <div class="add-career__date">
-                                    <input type="text" name="startYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                    <input type="text" name="educationStartYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                     .
-                                    <input type="text" name="startMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                    <input type="text" name="educationStartMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                     -
-                                    <input type="text" name="endYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                    <input type="text" name="educationEndYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                     .
-                                    <input type="text" name="endMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                    <input type="text" name="educationEndMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                 </div>
 
                                 <div class="company-name">
@@ -217,22 +215,22 @@
                 <div class="add-form">
                     <div class="add-career">
                         <div class="add-career__date">
-                        <input type="text" name="startYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                        .
-                        <input type="text" name="startMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                    </div>
+                            <input type="text" name="activityYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                            .
+                            <input type="text" name="activityMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                        </div>
 
-                    <div class="company-name">
-                        <input type="text" name="activityName" class="company-name__input" placeholder="활동명">
-                        <button type="button" class="close-btn">
-                            X
-                        </button>
+                        <div class="company-name">
+                            <input type="text" name="activityName" class="company-name__input" placeholder="활동명">
+                            <button type="button" class="close-btn">
+                                X
+                            </button>
                         </div>
                         <div class="department-name">
-                            <input type="text" name="datail" class="department__input" placeholder="세부사항">
+                            <input type="text" name="detail" class="department__input" placeholder="세부사항">
                         </div>
                         <div class="add-career__submit">
-                            <button type="button" class="award-submit-btn">추가하기</button>
+                            <button type="button" class="submit-btn" value="2">추가하기</button>
                         </div>
                     </div>
                 </div>
@@ -247,7 +245,6 @@
                             <li>• 활용 가능한 외국어가 있다면, 어느정도 수준인지 레벨을 선택해주세요.</li>
                         </ul>
                     </div>
-                    <input type="text" class="language" name="language" value=${language} ><br>
                         <div class="language-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img alt="" src="/controller/img/resume/plus-solid.svg">
@@ -283,7 +280,7 @@
                                     </select>
                                 </div>
                                 <div class="add-career__submit">
-                                    <button type="button" class="submit-btn" value="2">추가하기</button>
+                                    <button type="button" class="submit-btn" value="3">추가하기</button>
                                 </div>
                             </div>
                         </div>
@@ -309,7 +306,7 @@
                         <div class="add-form">
                             <div class="add-link">
                                 <div class="company-name" style="padding-bottom: 30px;">
-                                    <input type="text" name="schoolName" class="company-name__input" placeholder="http://">
+                                    <input type="text" name="link" class="company-name__input" placeholder="http://">
                                 </div>
                                 <div class="link-close-btn">
                                     <button type="button" class="close-btn">
@@ -317,7 +314,7 @@
                                     </button>
                                 </div>
                                 <div class="add-link__submit">
-                                    <button type="button" class="submit-btn" value="3">추가하기</button>
+                                    <button type="button" class="submit-btn" value="4">추가하기</button>
                                 </div>
                             </div>
                         </div>

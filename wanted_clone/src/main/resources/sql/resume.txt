@@ -29,9 +29,10 @@ create sequence career_seq increment by 1 start with 1 nocycle nocache;
 
 create table award (award_seq number primary key,
 					id varchar2(40),
-					activityDate varchar2(50),
+					activityYear varchar2(50),
+                    activityMonth varchar2(50),
 					activityName varchar2(100),
-					datail varchar2(1000));
+					detail varchar2(1000));
 create sequence award_seq increment by 1 start with 1 nocycle nocache;
 
 

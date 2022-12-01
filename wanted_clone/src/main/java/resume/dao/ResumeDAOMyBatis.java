@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import resume.bean.AwardDTO;
 import resume.bean.CareerDTO;
 import resume.bean.EducationDTO;
+import resume.bean.LanguageDTO;
+import resume.bean.LinkDTO;
 import resume.bean.ResumeDTO;
 import resume.service.ResumeService;
 
@@ -60,12 +63,44 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 	}
 
 	@Override
-	public List<CareerDTO> getEducation(String id) {
+	public void educationSave(EducationDTO educationDTO) {
+		resumeService.educationSave(educationDTO);
+	}
+	
+	@Override
+	public List<EducationDTO> getEducation(String id) {
 		return resumeService.getEducation(id);
 	}
 
 	@Override
-	public void educationSave(EducationDTO educationDTO) {
-		resumeService.educationSave(educationDTO);
+	public void activitySave(AwardDTO awardDTO) {
+		resumeService.activitySave(awardDTO);
 	}
+
+	@Override
+	public List<EducationDTO> getAward(String id) {
+		return resumeService.getAward(id);
+	}
+
+	@Override
+	public void languageSave(LanguageDTO languageDTO) {
+		resumeService.languageSave(languageDTO);
+	}
+
+	@Override
+	public List<LanguageDTO> getLanguage(String id) {
+		return resumeService.getLanguage(id);
+	}
+
+	@Override
+	public void linkSave(LinkDTO linkDTO) {
+		resumeService.linkSave(linkDTO);
+	}
+
+	@Override
+	public List<LanguageDTO> getLink(String id) {
+		return resumeService.getLink(id);
+	}
+
+
 }
