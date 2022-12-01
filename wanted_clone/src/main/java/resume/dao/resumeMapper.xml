@@ -4,11 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="resumeSQL">
   
-  	<insert id="resumeWrite" parameterType="resume.bean.ResumeDTO">
-  		insert into resume (RESUME_SEQ,formName, id, name, tel, introduce, career, education, award, language, writing, logtime) values
+  	<insert id="newResumeSave" parameterType="resume.bean.ResumeDTO">
+  		insert into resume (RESUME_SEQ,formName, id, name, tel, introduce, writing, logtime) values
   		(resume_seq.nextval, #{formName}, #{id}, #{name},
-  		#{tel}, #{introduce}, #{career}, #{education}, #{award}, 
-  		#{language}, #{writing}, sysdate)
+  		#{tel}, #{introduce},
+  		#{writing}, sysdate)
   	</insert>
   	
   	<insert id="fileUpload" parameterType="java.util.Map">
@@ -17,10 +17,34 @@
   	</insert>
   	
   	<select id="getResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
-  		select formName, writing, to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id}
+  		select resume_seq, formName, writing, to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id} order by resume_seq
   	</select>
   	
   	<select id="getWritingResume" parameterType="String" resultType="resume.bean.ResumeDTO">
-  		select * from resume where formName = #{formName} 
+  		select * from resume where resume_seq = #{resumeSeq} 
+  	</select>
+  	
+  	<select id="getAllResumeList" parameterType="String" resultType="resume.bean.ResumeDTO">
+  		select resume_seq,formname,writing,filename,to_char(logtime, 'yyyy.mm.dd') as logtime from resume where id = #{id} order by logtime desc
+  	</select>
+  	
+  	<update id="writingResumeSave" parameterType="resume.bean.ResumeDTO">
+  		update resume 
+		        set formName = #{formName},
+		            id = #{id},
+		            name = #{name},
+		            tel = #{tel},
+		            introduce = #{introduce},
+		            writing = #{writing},
+		            logtime = sysdate
+		        where resume_seq = #{resume_seq}
+  	</update>
+  	
+  	<insert id="careerSave" parameterType="resume.bean.CareerDTO">
+  		insert into career values (career_seq.nextval, #{id}, #{startWorkYear}, #{startWorkMonth}, #{endWorkYear}, #{endWorkMonth}, #{companyName}, #{department}, #{outcome}, #{outcomeComment}, #{startOutcomeyear}, #{startOutcomeMonth}, #{endOutcomeYear}, #{endOutcomeMonth})
+  	</insert>
+  	
+  	<select id="getCareer" parameterType="String" resultType="resume.bean.CareerDTO">
+  		select * from career where id = #{id}
   	</select>
   </mapper>

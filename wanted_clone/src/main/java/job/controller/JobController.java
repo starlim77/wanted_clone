@@ -13,19 +13,33 @@ import org.springframework.web.servlet.ModelAndView;
 
 import job.bean.JobDTO;
 import job.service.JobService;
+import resume.bean.ResumeDTO;
+import resume.service.ResumeService;
 
 @RequestMapping(value = "job")
 @Controller
 public class JobController {
 	@Autowired
 	private JobService jobService;
+	@Autowired
+	private ResumeService resumeService;
 	
 	@RequestMapping(value = "jobList")
-	public ModelAndView jobList(){
-		List<JobDTO> jobList = jobService.getJobList();
-				
+	public ModelAndView jobList(@RequestParam(required = false) String jobsort ){
+		List<JobDTO> jobList = null;
+		
+		System.out.println(jobsort);
+		if(jobsort == null){
+			jobList = jobService.getJobList();
+		}else{
+			jobList = jobService.getJobSortList(jobsort);
+		}
+		
+		List<String> positionList = jobService.positionList();		
+		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("jobList",jobList);
+		mav.addObject("positionList",positionList);
 		mav.setViewName("job/jobList");
 		
 		return mav;		
@@ -33,22 +47,34 @@ public class JobController {
 	
 	@RequestMapping(value = "moreJobList")
 	@ResponseBody
-	public List<JobDTO> moreJobList(@RequestParam("scrollPg") String scrollPg){
-		System.out.println( "스크롤 " +scrollPg);
-		return jobService.moreJobList(scrollPg);
+	public List<JobDTO> moreJobList(@RequestParam String seq, @RequestParam(required = false) String jobsort ){
+		System.out.println(seq);
+		if(jobsort == null) {
+			return jobService.moreJobList(seq);
+		}else {
+			return jobService.moreJobList(seq, jobsort);
+		}
 	}
-	
 	
 	@RequestMapping(value = "jobBoard")
 	public ModelAndView jobBoard(@RequestParam String seq) {
+		
 		JobDTO jobDTO = jobService.jobBoard(seq);
+		List<ResumeDTO> list = resumeService.getAllResumeList();
+		List<JobDTO> jobList = jobService.jobBoardJobList(seq);
 		
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("list", list);
+		mav.addObject("jobList", jobList);
 		mav.addObject("jobDTO", jobDTO);
 		mav.setViewName("job/jobBoard");
 		
 		return mav;
 	}
+	
+	
+	
+	
 	
 	
 	

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import community.bean.CommentDTO;
 import community.bean.CommunityDTO;
 
 @Repository
@@ -44,6 +45,58 @@ public class CommunityMybatis implements CommunityDAO {
 	@Override
 	public void boardWrite(CommunityDTO communityDTO) {
 		sqlSession.insert("communitySQL.boardWrite",communityDTO);
+	}
+
+	@Override
+	public CommunityDTO getBoard(int seq) {
+		CommunityDTO communityDTO = sqlSession.selectOne("communitySQL.getBoard",seq);		
+		return communityDTO;
+		
+	}
+
+	@Override
+	public List<CommentDTO> getComment(int seq) {
+
+		return sqlSession.selectList("communitySQL.getComment",seq);
+
+	}
+
+	@Override
+	public void deleteBoard(int seq) {
+		sqlSession.delete("communitySQL.deleteBoardForm",seq);
+		sqlSession.delete("communitySQL.deleteBoardComment",seq);
+		
+	}
+
+	@Override
+	public void updateBoard(int seq, String title, String content) {
+		Map<String,String> map = new HashMap<String,String>();
+		map.put("seq", Integer.toString(seq));
+		map.put("title", title);
+		map.put("content_", content);
+		sqlSession.update("communitySQL.updateBoard",map);
+		
+		
+	}
+
+	@Override
+	public void commentWrite(CommentDTO commentDTO) {
+		sqlSession.insert("communitySQL.commentWrite",commentDTO);
+		String seq = commentDTO.getSeq();
+		sqlSession.update("communitySQL.commentUp",seq);
+		
+	}
+
+	@Override
+	public void likeBtn(String like,String seq) {
+		boolean check = Boolean.parseBoolean(like);
+		if(check) {
+			sqlSession.update("communitySQL.likeUp",seq);
+		}else {
+			sqlSession.update("communitySQL.likeDown",seq);
+		}
+		
+		
 	}
 
 }

@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     opacity: 0.3;
-    z-index: 1;
+    z-index: 3;
     display: none;
     top:0;
 
@@ -19,7 +19,7 @@
     position: absolute;
     margin-left: 30%;
     border: 1px solid #e2e2e2 ;
-    z-index: 3;
+    z-index: 5;
     display: none;
 }
 

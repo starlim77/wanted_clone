@@ -3,7 +3,7 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <meta charset="UTF-8" />
     <title>원티드 - 나다운 일의 시작</title>
     <link rel="icon" href="./img/favicon-192x192.png" />
@@ -18,10 +18,10 @@ pageEncoding="UTF-8"%>
     <jsp:include page="./component/header.jsp"></jsp:include>
     <article>
       <!-- <section>banner</section> -->
+	<jsp:include page="./component/banner.jsp"></jsp:include>
 
       <p>${id}</p>
       <!-- <section>   insight -->
-	<jsp:include page="./component/banner.jsp"></jsp:include>
 
       <jsp:include page="./component/insight.jsp"></jsp:include>
 
@@ -39,7 +39,7 @@ pageEncoding="UTF-8"%>
     <jsp:include page="./component/footer.jsp"></jsp:include>
 
     <%-- <%@ include file="./jsp/component/footer.jsp" %> --%>
-    <!-- 	<footer class="footer">
+    <%-- 	<footer class="footer">
   <hr />
   <div class="footer__clickevent">
     <div class="footer__clickevent__nav-bar">
@@ -114,7 +114,7 @@ pageEncoding="UTF-8"%>
       </select>
     </div>
   </div>
-</footer> -->
+</footer> --%>
 
     <script
       src="https://kit.fontawesome.com/1f61694686.js"

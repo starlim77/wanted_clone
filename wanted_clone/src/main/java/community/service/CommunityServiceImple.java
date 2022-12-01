@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import community.bean.CommentDTO;
 import community.bean.CommunityDTO;
 import community.dao.CommunityDAO;
 
@@ -20,15 +21,6 @@ public class CommunityServiceImple implements CommunityService {
 	@Autowired
 	private HttpSession session;
 	
-	@Override
-	public String checkId() {
-		
-		String name = (String) session.getAttribute("name");
-		if(name != null) {
-			return name;
-		}else
-			return "";
-	}
 
 	@Override
 	public List<CommunityDTO> bestBoard(String pg) {
@@ -47,6 +39,40 @@ public class CommunityServiceImple implements CommunityService {
 		communityDTO.setId_(id);
 		
 		communityDAO.boardWrite(communityDTO);
+	}
+
+	@Override
+	public CommunityDTO getBoard(int seq) {
+		return communityDAO.getBoard(seq);
+	}
+
+	@Override
+	public List<CommentDTO> getComment(int seq) {
+		return communityDAO.getComment(seq);
+	}
+
+	@Override
+	public void deleteBoard(int seq) {
+		communityDAO.deleteBoard(seq);
+		
+	}
+
+	@Override
+	public void updateBoard(int seq, String title, String content) {
+		communityDAO.updateBoard(seq,title,content);
+		
+	}
+
+	@Override
+	public void commentWrite(CommentDTO commentDTO) {
+		communityDAO.commentWrite(commentDTO);
+		
+	}
+
+	@Override
+	public void likeBtn(String like,String seq) {
+		communityDAO.likeBtn(like,seq);
+		
 	}
 
 }

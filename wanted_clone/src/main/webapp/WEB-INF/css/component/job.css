@@ -1,12 +1,113 @@
-.job {
-  margin: 200px auto;
-  width: 1065px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.job__sort-bar {
+    position: fixed;
+    top: 50px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0 0 0;
+    background-color: white;
+}
+.job__sort-bar__content {
+    position: relative;
+    display: flex;
+    width: 1065px;
+    margin: 0 auto;
+}
+.job__sort-bar__content__all-list {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+.job__sort-bar__content__all-list > hr {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    height: 20px;
+    margin: 0 10px;
+}
+.job__sort-bar__content__all-list__develop,
+.job__sort-bar__content__all-list__develop__job-list {
+    display: flex;
+    align-items: center;
+}
+.job__sort-bar__content__all-list__develop {
+    font-weight: 600;
+}
+.job__sort-bar__content__all-list__develop__job-list {
+    font-weight: 350;
+    color: #333;
+}
+.job__sort-bar__content__all-list__develop__job-list__icon {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+    cursor: pointer;
 }
 
+.job__sort-bar > hr {
+    height: 1px;
+    width: 100%;
+    align-self: flex-end;
+    border: none;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.job__sort-bar__content__sort-select {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 35px;
+    left: 0;
+    width: 900px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: #333;
+    background-color: white;
+    padding: 25px;
+}
+.job__sort-bar__content__sort-select__select-list {
+    color: #666;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.job__sort-bar__content__sort-select__select-list > p {
+    margin-bottom: 10px;
+}
+.job__sort-bar__content__sort-select__select-list > div {
+    width: 100%;
+}
+.job__sort-bar__content__sort-select__select-list__ul {
+    display: flex;
+}
+.job__sort-bar__content__sort-select__select-list__ul__button {
+    border: 1px solid #f2f5f7;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: #f2f5f7;
+    margin-right: 8px;
+    white-space: nowrap;
+    cursor:pointer;
+}
+.job__sort-bar__content__sort-select__select-list__ul__button-selected{
+	border :1px solid #36f;
+	color: #36f;
+	background-color:white;
+}
+/* 
+.job {
+    margin: 200px auto;
+    width: 1065px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .jobgroup__container {
 }
 .jobgroup__body {
@@ -22,157 +123,158 @@
 .jobgroup__category__button {
 }
 .job__nav-bar {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  position: relative;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    position: relative;
 }
 
 .job__nav-bar__all-category {
-  position: absolute;
-  box-sizing: border-box;
-  width: 1065px;
-  background-color: white;
-  z-index: 1;
-  top: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 10px 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    box-sizing: border-box;
+    width: 1065px;
+    background-color: white;
+    z-index: 1;
+    top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 .job__nav-bar__all-category > li {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
 .job__nav-bar__list {
-  display: flex;
-  overflow: scroll;
+    display: flex;
+    overflow: scroll;
 }
 .job__nav-bar__list::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 .job__nav-bar__scroll-left-icon {
-  position: absolute;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  padding: 11px;
-  color: rgba(0, 0, 0, 0.4);
-  background-color: white;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    padding: 11px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
 }
 .job__nav-bar__scroll-right-icon {
-  position: absolute;
-  left: 970px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  padding: 11px;
-  color: rgba(0, 0, 0, 0.4);
-  background-color: white;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
+    position: absolute;
+    left: 970px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    padding: 11px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
 }
 .job__nav-bar__scroll-right-icon:hover,
 .job__nav-bar__scroll-left-icon:hover {
-  background-color: #f8f8fa;
-  cursor: pointer;
+    background-color: #f8f8fa;
+    cursor: pointer;
 }
 
 .job__nav-bar__show-all-icon {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  width: 18px;
-  height: 18px;
-  padding: 11px 13px;
-  color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 18px;
+    height: 18px;
+    padding: 11px 13px;
+    color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    z-index: 1;
 }
 .job__nav-bar__show-all-icon:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 .job__nav-bar__list__button {
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  padding: 10px 15px;
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.6);
-  background-color: white;
-  margin-right: 8px;
-  white-space: nowrap;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: white;
+    margin-right: 8px;
+    white-space: nowrap;
 }
 .job__nav-bar__list__button:hover {
-  background-color: #f8f8fa;
-  cursor: pointer;
-}
+    background-color: #f8f8fa;
+    cursor: pointer;
+} */
 
 .job__content {
-  display: flex;
-  justify-content: center;
-  margin: 10px auto;
-  width: 1065px;
-  position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 100px auto 10px auto;
+    width: 1065px;
+    position: relative;
 }
 .job__content__list {
-  display: flex;
-  gap: 21.5px;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  width: 100%;
+    display: flex;
+    gap: 21.5px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .job__content__list > li {
-  display: block;
-  width: 250px;
+    display: block;
+    width: 250px;
 }
 .job__content__list__card {
-  display: block;
-  margin-top: 30px;
+    display: block;
+    margin-top: 30px;
 }
 .job__content__list__card__img {
-  width: 250px;
-  height: 190px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 10%);
+    width: 250px;
+    height: 190px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 10%);
 }
 .job__content__list__card__letter__position {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 130%;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
 }
 .job__content__list__card__letter__company {
-  margin-top: 10px;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 130%;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 130%;
 }
 .job__content__list__card__letter__response {
-  font-size: 11px;
-  color: #00adae;
-  border: 1px solid #00adae;
-  background-color: white;
-  width: 90px;
-  margin-top: 2px;
-  font-weight: 700;
-  text-align:center
+    font-size: 11px;
+    color: #00adae;
+    border: 1px solid #00adae;
+    background-color: white;
+    width: 90px;
+    margin-top: 2px;
+    font-weight: 700;
+    text-align: center;
 }
 .job__content__list__card__letter__location {
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
-  margin-top: 10px;
-  line-height: 130%;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    line-height: 130%;
 }
 .job__content__list__card__reward {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-weight: 400;
 }

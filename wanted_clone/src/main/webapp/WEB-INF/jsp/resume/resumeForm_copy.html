@@ -1,19 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset="UTF-8">
-    <title>Insert title here</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    </head>
-    <body>
-	<!--  header -->
-	<div>
-		<jsp:include page="../../jsp/component/header.jsp"></jsp:include>
-	</div>
-        
-        <div class="resume-form-wrapper">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+<!--  header -->
+<div>
+    <jsp:include page="../../jsp/component/header.jsp"></jsp:include>
+</div>
+    <div class="resume-form-wrapper">
         <div class="resume-form-cotainer">
             <div class="resumeForm-language-and-download">
                 <select class="resumeForm-language-select">
@@ -22,6 +19,7 @@
                      <option value="JP">日本語</option>
                      <option value="CH">繁體中文</option>
                 </select>
+                
                 <div class="resumeForm-download">
                 다운로드 로고
                     <i class="fa-sharp fa-solid fa-down-to-bracket"></i>
@@ -30,7 +28,6 @@
             
             <form name="resumeForm" class="resume-form">
                 <div class="resume-form__wrapper">
-                    <input type="text" class="resume_seq" name="resume_seq" value=${param.resumeSeq} >
                    <input type="text" class="formName" name="formName" value=${param.formName} ><br>
                    <input type="text" class="id" name="id" value=${id } ><br>
                    <input type="text" class="name" name="name" value=${name }><br>
@@ -49,7 +46,7 @@
                             </ul>
                         </div>
                         <div class="introduce-div">
-                               <textarea class="introduce" name="introduce" rows="13"></textarea><br>
+                               <textarea class="introduce" name="introduce" value=${param.introduce} rows="5"></textarea><br>
                           </div>
                     </div>
                     
@@ -109,31 +106,30 @@
                                             주요 성과 추가
                                         </div>
                                     </button>
-                                    <button type="button" class="close-btn">
+                                    <button type="button" class="close-detail-btn">
                                         X
                                     </button>
                                 </div>
                                 <!-- 주요 성과 폼 -->
                                 <div class="detail-form">
                                     <div class="detail-name">
-                                        <input type="text" name="outcome" class="detail-name__input detail-input" placeholder="중요 성과">
+                                        <input type="text" name="outcome" class="detail-name__input" placeholder="중요 성과">
                                     </div>
                                     <div class="detail-date">
-                                        <input type="text" name="startYear" class="year detail-input" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                        <input type="text" name="startYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                         .
-                                        <input type="text" name="startMonth" class="month detail-input" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                        <input type="text" name="startMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                         -
-                                        <input type="text" name="endYear" class="year detail-input" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                        <input type="text" name="endYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                         .
-                                        <input type="text" name="endMonth" class="month detail-input" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                                        <input type="text" name="endMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                     </div>
                                     <div class="detail-content">
-                                        <input type="text" name="outcomeContent" class="detail-content__input detail-input" placeholder="상세 업무 내용과 성과를 기입해주세요">
+                                        <input type="text" name="outcomeContent" class="detail-content__input" placeholder="상세 업무 내용과 성과를 기입해주세요">
                                     </div>
                                 </div>
-                                <!-- 주요성과 추가 완료 버튼 -->
                                 <div class="add-career__submit">
-                                    <button type="button" class="submit-btn" value="0">추가하기</button>
+                                    <button type="button" class="submit-btn" >추가하기</button>
                                 </div>
                             </div>
                         </div>
@@ -186,7 +182,7 @@
                                     <input type="text" name="content" class="department__input" placeholder="이수 과목 또는 연구 내용">
                                 </div>
                                 <div class="add-career__submit">
-                                    <button type="button" class="submit-btn" value="1">추가하기</button>
+                                    <button type="button" class="submit-btn" >추가하기</button>
                                 </div>
                             </div>
                         </div>
@@ -220,6 +216,10 @@
                         <input type="text" name="startYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                         .
                         <input type="text" name="startMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                        -
+                        <input type="text" name="endYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+                        .
+                        <input type="text" name="endMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                     </div>
 
                     <div class="company-name">
@@ -232,7 +232,7 @@
                             <input type="text" name="datail" class="department__input" placeholder="세부사항">
                         </div>
                         <div class="add-career__submit">
-                            <button type="button" class="award-submit-btn">추가하기</button>
+                            <button type="button" class="submit-btn" >추가하기</button>
                         </div>
                     </div>
                 </div>
@@ -283,7 +283,7 @@
                                     </select>
                                 </div>
                                 <div class="add-career__submit">
-                                    <button type="button" class="submit-btn" value="2">추가하기</button>
+                                    <button type="button" class="submit-btn" >추가하기</button>
                                 </div>
                             </div>
                         </div>
@@ -317,23 +317,25 @@
                                     </button>
                                 </div>
                                 <div class="add-link__submit">
-                                    <button type="button" class="submit-btn" value="3">추가하기</button>
+                                    <button type="button" class="submit-btn" >추가하기</button>
                                 </div>
                             </div>
                         </div>
 
+                   <input type="text" class="writing" name="writing" ><br>
+                   <input type="button" type="button" value="test" id="test">
                 </div>
             </form>
         </div>
     </div> <!-- resume-form-cotainer -->
     <footer class="resume-form-footer">
-        <button type="button" id="tempSave" class="writing" name="writing" value="0">임시 저장</button>
-        <button type="button" id="save" class="writing" name="writing" value="1">작성 완료</button>
+        <button type="button" class="tempSave" name="writing"value="0">임시 저장</button>
+        <button type="button" class="save" name="writing" value="1">작성 완료</button>
     </footer>
 
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://kit.fontawesome.com/1f61694686.js"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/resume/resumeForm.js"></script>
+    <script src="../../js/resume/resumeForm.js"></script>
 </body>
 </html>
