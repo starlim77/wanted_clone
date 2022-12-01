@@ -1,7 +1,0 @@
-create table usertable(
-    sortnum varchar2(4),
-    id varchar2(40),
-    name varchar2(10),
-    pwd varchar2(40),
-    tel varchar2(20)
-);

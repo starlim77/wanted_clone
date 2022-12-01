@@ -15,12 +15,13 @@
 @import "job/jobBoard.css";
 
 @import "community/community_container.css";
-@import "community/community_write.css";
+@import "community/community_write.css"; 
 @import "community/community_board.css";
 
 
 /* Resume */
 @import "resume/resumeMain.css";
+@import "resume/resumeForm.css";
 
 
 body {

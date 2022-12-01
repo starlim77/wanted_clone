@@ -27,7 +27,7 @@
                            <li><a href="#">안드로이드 개발자</a></li>
                            <li><a href="#">웹 개발자</a></li>
                            <li><a href="#">자바 개발자</a></li>
-                           <li><a href="#">파이썬 개발자</a></li>     
+                           <li><a href="#">파이썬 개발자</a></li>
                            <li><a href="#">풀스택 개발자</a></li>
                         </ul></li>
                      <li><a href="#">경영</a></li>
@@ -80,10 +80,10 @@
          	</li>
          </c:if>
            <c:if test="${id!=null}">
-              <a href="#"> 
+              <a href="#">
                  <img
                  class="nav-bar__menu-list__service__list__profile-img"
-                 src="/controller/img/profile_default.png" alt="profile_default" />    
+                 src="/controller/img/profile_default.png" alt="profile_default" />
                </a>
             <div class="nav-bar__menu-list__service__list__profile-popover__background"></div>
             <div class="nav-bar__menu-list__service__list__profile-popover">
@@ -104,7 +104,7 @@
          	</li>
          </c:if>
 
-         
+
          <li><a href="#">
                <div class="nav-bar__menu-list__service__list__corperation-service">기업서비스</div>
          </a></li>

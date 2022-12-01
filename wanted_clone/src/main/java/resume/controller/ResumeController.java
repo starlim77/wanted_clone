@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import resume.bean.CareerDTO;
 import resume.bean.ResumeDTO;
 import resume.dao.ResumeDAO;
 
@@ -37,13 +38,6 @@ public class ResumeController {
 	@GetMapping(value = "resumeForm")
 	public String resumeForm() {
 		return "resume/resumeForm";
-	}
-
-	@PostMapping(value = "resumeWrite")
-	@ResponseBody
-	public void resumeWrite(@ModelAttribute ResumeDTO resumeDTO) {
-		System.out.println(resumeDTO);
-		resumeDAO.resumeWrite(resumeDTO);
 	}
 
 	@PostMapping(value = "fileUpload")
@@ -72,4 +66,35 @@ public class ResumeController {
 	public List<ResumeDTO> getResumeList() {
 		return resumeDAO.getResumeList();
 	}
+	
+	@PostMapping(value = "getWritingResume")
+	@ResponseBody
+	public ResumeDTO getWritingResume(String resumeSeq) {
+		return resumeDAO.getWritingResume(resumeSeq);
+	}
+	
+	@PostMapping(value = "resumeSave")
+	@ResponseBody
+	public void resumeSave(@ModelAttribute ResumeDTO resumeDTO) {
+		if(resumeDTO.getResume_seq() == "") {
+			resumeDAO.newResumeSave(resumeDTO); // 새이력서 저장
+		} else {
+			resumeDAO.writingResumeSave(resumeDTO); //작성중 이력서 저장
+		}
+	}
+	
+	@PostMapping(value = "careerSave")
+	@ResponseBody
+	public void careerSave(@ModelAttribute CareerDTO careerDTO) {
+		resumeDAO.careerSave(careerDTO);
+	}
+	
+	@PostMapping(value = "getCareer")
+	@ResponseBody
+	public List<CareerDTO> getCareer(String id) {
+		return resumeDAO.getCareer(id);
+	}
+	
+	
+	
 }

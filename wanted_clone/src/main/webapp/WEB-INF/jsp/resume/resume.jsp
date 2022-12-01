@@ -57,10 +57,10 @@
 				</div>
 				
 				<!-- 등록된 이력서 -->		
-				<div class="old-resume">	
+				<!-- <div class="old-resume">	
 					<div class="resume-box-top">
 						<div class="resume-box-top__h3">
-							<h3>asdfasfdsfadfsdfsdaafd</h3>
+							asdfasfdsfa
 						</div>
 						<div class="resume-box-top__p">
 							<p>sdfgfdsfsfd</p>
@@ -69,8 +69,8 @@
 					<div class="resume-box-bottom">
 						작성중
 					</div>
-				</div>
-					<!-- --------- -->
+				</div> -->
+				<!-- --------- -->
 				<form action="" id="portfolio-form" >
 					<input type="file" class="file-upload" name="portfolio" id="portfolio">
 				</form>

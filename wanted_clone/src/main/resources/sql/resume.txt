@@ -4,11 +4,51 @@ create table resume (resume_seq number primary key,
                     name varchar2(10) not null,
                     tel varchar2(20) not null,
                     introduce varchar2(500),
-                    career varchar2(500),
-                    education varchar2(200),
-                    award varchar2(100),
-                    language varchar2(100),
                     writing number,
                     fileName varchar2(500),
                     filePath varchar2(500),
                     logtime date default sysdate);
+                    
+                    
+create table career (career_seq number primary key,
+					id varchar2(40),
+					startWorkYear varchar2(10),
+                    startWorkMonth varchar2(10),
+                    endWorkYear varchar2(10),
+                    endWorkMonth varchar2(10),
+					companyName varchar2(100),
+					department varchar2(100),
+					outcome varchar2(1000),
+                    outcomeContent varchar2 (1000),
+                    startOutcomeYear varchar2(10),
+                    startOutcomeMonth varchar2(10),
+                    endOutcomeYear varchar2(10),
+                    endOutcomeMonth varchar2(10));
+create sequence career_seq increment by 1 start with 1 nocycle nocache;
+
+
+create table award (award_seq number primary key,
+					id varchar2(40),
+					activityDate varchar2(50),
+					activityName varchar2(100),
+					datail varchar2(1000));
+create sequence award_seq increment by 1 start with 1 nocycle nocache;
+
+
+create table language (language_seq number primary key,
+					id varchar2(40),
+					languageName varchar2(100),
+					standard varchar2(50));
+create sequence language_seq increment by 1 start with 1 nocycle nocache;
+
+create table link (link_seq number primary key,
+					link varchar2(1000));
+create sequence link_seq increment by 1 start with 1 nocycle nocache;
+
+create table education (education_seq number primary key,
+						id varchar2(40),
+						educationDate varchar2(50),
+						schoolName varchar2(50),
+						major varchar2(100),
+						content varchar(50));
+create sequence education_seq increment by 1 start with 1 nocycle nocache;					 

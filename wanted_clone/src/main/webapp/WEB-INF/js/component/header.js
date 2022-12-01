@@ -10,7 +10,6 @@ function logout(){
 	});
 }
 
-
 $(function(){	
 	$('.nav-bar__menu-list__service__list__profile-img').click(function(){
 	     $(".nav-bar__menu-list__service__list__profile-popover").show();
@@ -23,3 +22,5 @@ $(function(){
 			$(".nav-bar__menu-list__service__list__profile-popover").hide();
 	});
 });
+
+

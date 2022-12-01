@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import resume.bean.CareerDTO;
 import resume.bean.ResumeDTO;
 
 @Controller
@@ -19,11 +20,6 @@ public class ResumeServiceImpl implements ResumeService{
 	HttpSession httpSession;
 	@Autowired
 	SqlSession sqlSession;
-	
-	@Override
-	public void resumeWrite(ResumeDTO resumeDTO) {
-		sqlSession.insert("resumeSQL.resumeWrite", resumeDTO);
-	}
 	
 	@Override
 	public void fileUpload(Map<String, String> map) {
@@ -45,7 +41,39 @@ public class ResumeServiceImpl implements ResumeService{
 	@Override
 	public List<ResumeDTO> getAllResumeList() {
 		String id = (String) httpSession.getAttribute("id");
-		return sqlSession.selectList("resumeSQL.getAllResumeList", id);
+		if(id!=null) {
+			return sqlSession.selectList("resumeSQL.getAllResumeList", id);
+		}else {
+			return null;
+		}
 	}
 	
+	@Override
+	public ResumeDTO getWritingResume(String resumeSeq) {
+		return sqlSession.selectOne("resumeSQL.getWritingResume", resumeSeq);
+	}
+
+	@Override
+	public void newResumeSave(ResumeDTO resumeDTO) {
+		sqlSession.insert("resumeSQL.newResumeSave", resumeDTO);
+		
+	}
+
+	@Override
+	public void writingResumeSave(ResumeDTO resumeDTO) {
+		sqlSession.update("resumeSQL.writingResumeSave", resumeDTO);
+		
+	}
+
+	@Override
+	public void careerSave(CareerDTO careerDTO) {
+		sqlSession.insert("resumeSQL.careerSave", careerDTO);
+	}
+
+	@Override
+	public List<CareerDTO> getCareer(String id) {
+		System.out.println(id);
+		return sqlSession.selectList("resumeSQL.getCareer",id);
+	}
+
 }

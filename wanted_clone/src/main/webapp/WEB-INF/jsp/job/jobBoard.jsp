@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../css/styles.css" />
@@ -8,7 +9,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <title>Insert title here</title>
   </head>
   <body>
+  	<jsp:include page="../component/header.jsp"></jsp:include>
+  
+  
     <section class="jobboard">
+      <input type="hidden" class="jobboard__seq" value="${param.seq}">
       <div class="jobboard__all-content">
         <div class="jobboard__all-content__information">
           <img src="../img/job/${jobDTO.img}" />
@@ -51,6 +56,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <p>${jobDTO.reward}원</p>
           </div>
         </div>
+        <input type="hidden" class="jobboard__apply__session-id" value="${id}">
         <input class="jobboard__apply__apply-btn" type="button" value="지원하기" />
       </div>
 
@@ -83,12 +89,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <h5 class="jobboard__submit__content__subject">첨부파일</h5>
           <div class="jobboard__submit__content__file">
           	
+        
           	<c:forEach var="resumeDTO" items="${list}">
           		<c:if test="${!empty resumeDTO.fileName}">
           			<div class="jobboard__submit__content__file__each">
 		              <div class="jobboard__submit__content__file__checkbox">
-		                <input id="file-checkbox1" type="checkbox">
-		                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox1"><i class="fa-solid fa-check"></i></label>
+		              	<input type="hidden" value="${resumeDTO.resume_seq}">
+		                <input id="file-checkbox${resumeDTO.resume_seq}" type="checkbox">
+		                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox${resumeDTO.resume_seq}"><i class="fa-solid fa-check"></i></label>
 		              </div>
 		              <div class="jobboard__submit__content__file__each__information">
 		                <span>${resumeDTO.fileName}</span>
@@ -102,8 +110,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           		<c:if test="${empty resumeDTO.fileName && resumeDTO.writing=='1'}">
           			<div class="jobboard__submit__content__file__each">
 		              <div class="jobboard__submit__content__file__checkbox">
-		                <input id="file-checkbox1" type="checkbox">
-		                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox1"><i class="fa-solid fa-check"></i></label>
+		              	<input type="hidden" value="${resumeDTO.resume_seq}">
+		                <input id="file-checkbox${resumeDTO.resume_seq}" type="checkbox">
+		                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox${resumeDTO.resume_seq}"><i class="fa-solid fa-check"></i></label>
 		              </div>
 		              <div class="jobboard__submit__content__file__each__information">
 		                <span>${resumeDTO.formName}</span>
@@ -117,8 +126,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           		<c:if test="${empty resumeDTO.fileName && resumeDTO.writing=='0'}">
           			<div class="jobboard__submit__content__file__each">
 		              <div class="jobboard__submit__content__file__checkbox">
-		                <input id="file-checkbox1" type="checkbox">
-		                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox1"><i class="fa-solid fa-check"></i></label>
+		              	<input type="hidden" value="${resumeDTO.resume_seq}">
+		                <input id="file-checkbox${resumeDTO.resume_seq}" type="checkbox">
+		                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox${resumeDTO.resume_seq}"><i class="fa-solid fa-check"></i></label>
 		              </div>
 		              <div class="jobboard__submit__content__file__each__information">
 		                <span>${resumeDTO.formName}</span>
@@ -145,22 +155,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 	            </div> -->
           	</c:forEach>
             
-            
-            <div class="jobboard__submit__content__file__each">
-              <div class="jobboard__submit__content__file__checkbox">
-                <input id="file-checkbox2" type="checkbox">
-                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox2"><i class="fa-solid fa-check"></i></label>
-              </div>
-              <div class="jobboard__submit__content__file__each__information">
-                <span>임윤환3</span>
-                <div>
-                  <span>2022.11.28</span>
-                  <span>작성완료</span>
-                </div>
-              </div>
-            </div>
           </div>
           <input class="jobboard__submit__content__upload" type="button" value="파일 업로드">
+          <form action="" id="portfolio-form" >
+		  	<input type="file" class="file-upload" name="portfolio" id="portfolio">
+		  </form>
           <input class="jobboard__submit__content__write" type="button" value="새 이력서 작성">
           <p class="jobboard__submit__content__last-tip">원티드 이력서로 지원하면 최종합격률이 40% 높아집니다.</p>
         </div>
@@ -168,6 +167,44 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
 
     </section>
+    
+    <div class="job__content">
+      <ul class="job__content__list">
+      	<c:forEach var="jobDTO" items="${jobList}">
+	        <li>
+	          <input type="hidden" value="${jobDTO.seq}">
+	          <a class="job__content__list__card" href="/controller/job/jobBoard?seq=${jobDTO.seq}">
+	            <div>
+	              <img
+	                class="job__content__list__card__img"
+	                src="../img/job/${jobDTO.img}"
+	                 />
+	            </div>
+	            <div class="job__content__list__card__letter">
+	              <div class="job__content__list__card__letter__position">
+	                ${jobDTO.subject}
+	              </div>
+	              <div class="job__content__list__card__letter__company">
+	                ${jobDTO.company}
+	              </div>
+	              <input type="button" class="job__content__list__card__letter__response" value="응답률 매우 높음 ">
+	                
+                </input>
+	              <div class="job__content__list__card__letter__location">
+	                ${jobDTO.location}
+	              </div>
+	              <div class="job__content__list__card__reward">
+	                채용보상금 
+	                <fmt:formatNumber value="${jobDTO.reward}" pattern="#,###" />
+	              	원
+	              </div>
+	            </div>
+	          </a>
+	        </li>
+      	</c:forEach>
+      </ul>
+    </div>
+    <jsp:include page="../component/footer.jsp"></jsp:include>
     <script
       src="https://code.jquery.com/jquery-3.6.1.js"
       integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
