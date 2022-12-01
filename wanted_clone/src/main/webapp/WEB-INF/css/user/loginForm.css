@@ -140,10 +140,17 @@
     color: rgba(0, 0, 0, 0.5);
 }
 .loginform-id__div__select-country {
-    padding: 10px 20px;
+    width: 135px;
+    height: 35px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     font-weight: 500;
     color: rgba(0, 0, 0, 0.8);
+    padding-left: 45px;
+    font-size: 13px;
+    font-weight: 600;
+    background: no-repeat url("../../img/kr_flag.svg");
+    background-size: 24px;
+    background-position: 10px 8px;
 }
 
 /*  */

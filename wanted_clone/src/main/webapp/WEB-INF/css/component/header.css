@@ -156,6 +156,7 @@
 .nav-bar__menu-list__service__list {
     margin: 0 10px;
     position: relative;
+    cursor: pointer;
 }
 
 .nav-bar__menu-list__service__list__profile-img {
@@ -198,6 +199,7 @@
     font-size: 14px;
     font-weight: 600;
     color: #333;
+    cursor: pointer;
 }
 
 .nav-bar__menu-list__category__link:hover {

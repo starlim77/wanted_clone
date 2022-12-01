@@ -12,6 +12,7 @@
   </head>
   </head>
   <body class="loginform">
+    <input type="hidden" id="jobBoardSeq" value="${param.jobBoardSeq}" />
     <section class="loginform-id">
         <img class="loginform-id__login-logo" src="../img/logo/login_logo.png" alt="">
         <div class="loginform-id__div">
@@ -32,7 +33,7 @@
                     <img src="" alt="kakao">
                     <span>Kakao</span>
                 </div>
-                <div>
+                <div id="naverIdLogin_loginButton">
                     <img src="" alt="naver">
                     <span>Naver</span>
                 </div>
@@ -115,7 +116,22 @@
         <div class="loginform-pwd__change-pwd">비밀번호 초기화/변경</div>
     </section>
 
+    
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js"></script>
+    <script>
+        var naverLogin = new naver.LoginWithNaverId({
+    clientId: "jTI17Eg735RLpdY6fa9_",
+    callbackUrl: "http://localhost:8080/controller/",
+    isPopup: false /* 팝업을 통한 연동처리 여부 */,
+    loginButton: {
+        color: "green",
+        type: 3,
+        height: 62,
+    } /* 로그인 버튼의 타입을 지정 */,
+}); /* 설정정보를 초기화하고 연동을 준비 */
+naverLogin.init();
 
+    </script>
     <script
     src="https://kit.fontawesome.com/1f61694686.js"
     crossorigin="anonymous"

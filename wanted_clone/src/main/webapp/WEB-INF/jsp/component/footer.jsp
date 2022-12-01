@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
             <div class="footer__clickevent__nav-bar">
                 <img
                     class="footer__clickevent__nav-bar__logo"
-                    src="img/logo/footer_logo.webp"
+                    src="/controller/img/logo/footer_logo.webp"
                     alt="footer_logo"
                 />
                 <ul>
@@ -21,46 +21,50 @@ pageEncoding="UTF-8"%>
                     href="https://www.instagram.com/wantedjobs.kr/"
                     target="_blank"
                     ><img
-                        src="img/sns_icon/instagram.webp"
+                        src="/controller/img/sns_icon/instagram.webp"
                         alt="instagram icon"
                 /></a>
                 <a
                     href="https://www.youtube.com/channel/UC0tGZ6MqieGG2m5lA5PeQsw"
                     target="_blank"
-                    ><img src="img/sns_icon/youtube.webp" alt="youtube icon"
+                    ><img
+                        src="/controller/img/sns_icon/youtube.webp"
+                        alt="youtube icon"
                 /></a>
                 <a href="https://www.facebook.com/wantedkr" target="_blank"
-                    ><img src="img/sns_icon/facebook.webp" alt="facebook icon"
+                    ><img
+                        src="/controller/img/sns_icon/facebook.webp"
+                        alt="facebook icon"
                 /></a>
                 <a href="https://blog.naver.com/wantedlab" target="_blank"
                     ><img
-                        src="img/sns_icon/naver_blog.webp"
+                        src="/controller/img/sns_icon/naver_blog.webp"
                         alt="naver_blog icon"
                 /></a>
                 <a href="https://pf.kakao.com/_XqCIxl" target="_blank"
                     ><img
-                        src="img/sns_icon/kakaotalk_channel.webp"
+                        src="/controller/img/sns_icon/kakaotalk_channel.webp"
                         alt="kakaotalk_channel icon"
                 /></a>
                 <a
                     href="https://post.naver.com/my.nhn?memberNo=18284175"
                     target="_blank"
                     ><img
-                        src="img/sns_icon/naver_post.webp"
+                        src="/controller/img/sns_icon/naver_post.webp"
                         alt="naver_post icon"
                 /></a>
                 <a
                     href="https://apps.apple.com/kr/app/id1074569961"
                     target="_blank"
                     ><img
-                        src="img/sns_icon/apple_appstore.webp"
+                        src="/controller/img/sns_icon/apple_appstore.webp"
                         alt="apple_appstore icon"
                 /></a>
                 <a
                     href="https://play.google.com/store/apps/details?id=com.wanted.android.wanted&pli=1"
                     target="_blank"
                     ><img
-                        src="img/sns_icon/android_playstore.webp"
+                        src="/controller/img/sns_icon/android_playstore.webp"
                         alt="android_playstore icon"
                 /></a>
             </div>
@@ -88,3 +92,7 @@ pageEncoding="UTF-8"%>
         </div>
     </div>
 </footer>
+<script
+    src="https://kit.fontawesome.com/1f61694686.js"
+    crossorigin="anonymous"
+></script>

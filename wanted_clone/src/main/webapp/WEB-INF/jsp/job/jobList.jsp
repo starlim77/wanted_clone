@@ -11,7 +11,7 @@ pageEncoding="UTF-8"%>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../img/favicon-192x192.png" />
-    <title>Wanted Job</title>
+    <title>개발 채용 정보 | 원티드</title>
   </head>
   <body>
 
@@ -149,7 +149,12 @@ pageEncoding="UTF-8"%>
 				</li>
 				<hr>
 				<li class="job__sort-bar__content__all-list__develop__job-list">
-					개발 전체
+					<c:if test="${empty param.jobsort}">
+            개발 전체
+          </c:if>
+					<c:if test="${!empty param.jobsort}">
+            ${param.jobsort}
+          </c:if>
 					<div class="job__sort-bar__content__all-list__develop__job-list__icon">
 						<i class="fa-solid fa-chevron-down"></i>
 					</div>
@@ -176,12 +181,12 @@ pageEncoding="UTF-8"%>
 						</ul>
 					</div>
 				</div>
-				<div>
-					<input class="job__sort-bar__content__sort-select__submit-btn" type="button" value="선택하기">
+        <hr>
+				<div class="job__sort-bar__content__sort-select__submit">
+					<input class="job__sort-bar__content__sort-select__submit-btn" type="button" value="선택 완료하기">
 				</div>
 			</div>
 		</div>
-		<hr>
 	</section>
 
 
