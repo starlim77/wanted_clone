@@ -194,6 +194,12 @@ $(window).scroll(function () {
 // 직무 선택 모달 창 토글
 $(".job__sort-bar__content__all-list__develop__job-list__icon").click(
     function () {
+        $(
+            ".job__sort-bar__content__all-list__develop__job-list__icon"
+        ).toggleClass(
+            "job__sort-bar__content__all-list__develop__job-list__icon-rotate"
+        );
+
         $(".job__sort-bar__content__sort-select").toggle();
     }
 );

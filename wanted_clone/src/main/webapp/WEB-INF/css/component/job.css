@@ -48,6 +48,15 @@
     color: rgba(0, 0, 0, 0.3);
     margin-left: 10px;
     cursor: pointer;
+    transition: 0.3s;
+}
+.job__sort-bar__content__all-list__develop__job-list__icon:hover {
+    border: 1px solid #767676;
+}
+.job__sort-bar__content__all-list__develop__job-list__icon-rotate {
+    border: 1px solid #767676;
+    transform: rotate(180deg);
+    transition: 0.3s;
 }
 
 .job__sort-bar__content__sort-select {
@@ -58,7 +67,7 @@
     left: 0;
     width: 900px;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
     background-color: white;
 }
 .job__sort-bar__content__sort-select__select-list {

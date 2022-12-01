@@ -35,21 +35,10 @@ geocoder.addressSearch($("#companylocation").text(), function (result, status) {
 
 $(function () {
     $(".jobboard__submit__content__file__checkbox > input").change(function () {
-        if (
-            $(".jobboard__submit__content__file__checkbox > input").is(
-                ":checked"
-            )
-        ) {
-            $(this)
-                .parent()
-                .parent()
-                .addClass("jobboard__submit__content__file__each-select");
-        } else {
-            $(this)
-                .parent()
-                .parent()
-                .removeClass("jobboard__submit__content__file__each-select");
-        }
+        $(this)
+            .parent()
+            .parent()
+            .toggleClass("jobboard__submit__content__file__each-select");
     });
 
     //이력서 제출 화면 숨김

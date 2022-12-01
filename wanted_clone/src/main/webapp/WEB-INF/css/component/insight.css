@@ -148,9 +148,16 @@
     display: flex;
     justify-content: center;
 }
+
+.insight_nav-bar__icon_wrap {
+    position: relative;
+    width: 145px;
+    background: linear-gradient(90deg, #fff 21.82%, hsla(0, 0%, 100%, 0));
+}
+
 .insight__nav-bar__scroll-right-icon {
     position: absolute;
-    left: 970px;
+    right: 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     width: 18px;
@@ -178,6 +185,7 @@
     display: flex;
     justify-content: center;
     z-index: 1;
+    margin-left: 10px;
 }
 .insight__nav-bar__show-all-icon:hover {
     cursor: pointer;
