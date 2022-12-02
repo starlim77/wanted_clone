@@ -1,7 +1,7 @@
 .insight {
-  margin: 70px auto;
-  width: 1065px;
-  /* display: flex;
+    margin: 70px auto;
+    width: 1065px;
+    /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; */
@@ -203,6 +203,10 @@
 .insight__nav-bar__list__button:hover {
     background-color: #f8f8fa;
     cursor: pointer;
+}
+.insight__nav-bar__list__button-selected {
+    border: 1px solid #36f;
+    color: #36f;
 }
 .insight__content__list {
     display: flex;

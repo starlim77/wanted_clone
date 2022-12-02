@@ -134,39 +134,35 @@ $("#portfolio").change(function () {
 });
 
 //제출하기 버튼
-$(".jobboard__submit__submit-btn").click(function(){
+$(".jobboard__submit__submit-btn").click(function () {
+    var jobsortList = new Array();
+    $(
+        ".jobboard__submit__content__file__each-select input[type='hidden']"
+    ).each(function () {
+        var data = $(this).val();
+        jobsortList.push(data);
+    });
+    var jobsort = jobsortList.join("/");
+    alert(jobsort);
 
-	  var jobsortList = new Array();
-	    $(
-	        ".jobboard__submit__content__file__each-select input[type='hidden']"
-	    ).each(function () {
-	        var data = $(this).val();
-	        jobsortList.push(data);
-	    });
-	    var jobsort = jobsortList.join("/");
-	    alert(jobsort);
-
-
-
-	$.ajax({
-		type: "post",
-		url: "/controller/job/profileApply",
-		data:{
-			"seq": jobsort,
-			"id" : $(".id").val(),
-			"position" : $(".position").val(),
-			"company": $("#company").text(),
-		},
-		success: function(){
-			alert("");
-			location.reload();
-		},
-		error: function(err){
-			console.log(err);
-		}
-	});
+    $.ajax({
+        type: "post",
+        url: "/controller/job/profileApply",
+        data: {
+            seq: jobsort,
+            id: $(".id").val(),
+            position: $(".position").val(),
+            company: $("#company").text(),
+        },
+        success: function () {
+            alert("");
+            location.reload();
+        },
+        error: function (err) {
+            console.log(err);
+        },
+    });
 });
-
 
 // 지원창 고정
 var submitSw = 0;
@@ -203,7 +199,6 @@ $(window).scroll(function () {
     }
 });
 
-
 var checkScroll1 = 0;
 var checkScroll2 = 0;
 // 채용 공고 리스트 무한스크롤
@@ -239,7 +234,10 @@ $(window).scroll(function () {
                     //전체
                     var card = $("<a>");
                     card.addClass("job__content__list__card");
-                    card.attr("href", "#");
+                    card.attr(
+                        "href",
+                        "/controller/job/jobBoard?seq=" + data[i].seq
+                    );
 
                     //img
                     var img = $("<img>");
