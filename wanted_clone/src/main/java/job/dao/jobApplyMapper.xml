@@ -12,8 +12,4 @@
     	insert into jobapply(id, position, company, logtime, apply, seq) values(
     	#{id}, #{position}, #{company}, sysdate, '지원완료' , #{seq} )
     </insert>
-    
-     <select id="getCount" parameterType="String" resultType="String">  		
-  		select count(apply) as count from jobapply where apply='지원완료' and id=#{id}
-  	</select>
   </mapper>

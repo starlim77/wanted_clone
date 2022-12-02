@@ -144,7 +144,7 @@ $(".jobboard__submit__submit-btn").click(function(){
 	        jobsortList.push(data);
 	    });
 	    var jobsort = jobsortList.join("/");
-	  
+	    alert(jobsort);
 
 
 
@@ -158,7 +158,8 @@ $(".jobboard__submit__submit-btn").click(function(){
 			"company": $("#company").text(),
 		},
 		success: function(){
-		location.href='http://localhost:8080/controller/job/profile?id='+$('.id').val() 
+			alert("");
+			location.reload();
 		},
 		error: function(err){
 			console.log(err);

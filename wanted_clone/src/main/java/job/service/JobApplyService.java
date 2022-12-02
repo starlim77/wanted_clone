@@ -11,7 +11,4 @@ public interface JobApplyService {
 
 	public void profileApply(JobApplyDTO jobApplyDTO);
 
-	public String getCount(String id);
-
-
 }

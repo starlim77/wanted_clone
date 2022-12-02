@@ -88,10 +88,7 @@ public class JobController {
 		ModelAndView mav = new ModelAndView();
 		if(id != null) {
 			List<JobApplyDTO> list = jobApplyService.getJobApply(id);
-			String count = jobApplyService.getCount(id);
-			
 			mav.addObject("list", list);
-			mav.addObject("count", count);
 		}
 		mav.setViewName("job/profile");
 		return mav;

@@ -39,7 +39,9 @@
                      <li><a href="#">HR</a></li>
                      <li><a href="#">미디어</a></li>
                      <li><a href="#">엔지니어링</a></li>
-                 
+                     <li><a href="#">금융</a></li>
+                     <li><a href="#">교육</a></li>
+                     <li><a href="#">의료</a></li>
                   </ul></li>
             </div>
             <div class="nav-bar__main-logo-container">
@@ -88,7 +90,7 @@
             <div class="nav-bar__menu-list__service__list__profile-popover">
          		<ul class="nav-bar__menu-list__service__list__profile-popover__menu">
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
-         			<a href="http://localhost:8080/controller/job/profile?id=${id}">MY 원티드</a>
+         			<a href="http://localhost:8080/controller/job/profile<%-- ?id=${id} --%>">MY 원티드</a>
          			</li>
          			<hr>
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">

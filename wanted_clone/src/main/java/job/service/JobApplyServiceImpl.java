@@ -28,12 +28,6 @@ public class JobApplyServiceImpl implements JobApplyService {
 		
 	}
 
-	@Override
-	public String getCount(String id) {
-		String count = jobApplyDAO.getCount(id);
-		return count;
-	}
-
 
 
 }
