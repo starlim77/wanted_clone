@@ -40,6 +40,11 @@
   width: 788px;
   height: 80px;
   margin-top: 110px;
+  
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 /* --------------------------------- */
 
@@ -347,3 +352,92 @@
     width: 30px;
     height: 30px;
 }
+
+/* 스크롤바 추가 */
+
+.container_main__body__theme_list__button{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: white;
+    white-space: nowrap;
+    margin-left: 5px;
+}
+.container_main__body__theme_list__button:hover{
+    cursor: pointer;
+}
+.container_main__body__theme_list > li {
+    list-style:none;
+    display: flex;
+}
+
+.container_main__body__theme_list {
+    display: flex;
+    overflow-x: scroll;
+  }
+.container_main__body__theme_list::-webkit-scrollbar{
+    display: none;
+}
+.container_main__body__theme__scroll-left-icon {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    padding: 11px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 15px;
+    display: none;
+}
+.container_main__body__theme__scroll-right-icon {
+    left: 660px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    padding: 11px;
+    color: rgba(0, 0, 0, 0.4);
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+.container_main__body__theme__scroll-left-icon,.container_main__body__theme__scroll-right-icon{
+    cursor: pointer;
+}
+
+.container_main__body__theme__show-all-icon {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 18px;
+    height: 18px;
+    padding: 11px 13px;
+    color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+    left: 720px;
+}
+.container_main__body__theme__show-all-icon:hover {
+    cursor: pointer;
+}
+
+.container_main__body__theme_body_action{
+    overflow: hidden;
+    width: 670px;
+    margin-left: 15px;
+}	
+
+.theme_list_style{
+    border: 1px solid #3366FF;
+    color: #3366FF;
+}
+
