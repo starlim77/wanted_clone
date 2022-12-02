@@ -1,141 +1,167 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="../css/styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <style>
-           * {
-            box-sizing: border-box;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .carousel-wrapper {
+                position: relative;
+                display: block;
+                overflow: hidden;
+                justify-content: center;
+            }
 
-        .carousel-wrapper {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            justify-content: center;
-        }
+            .carousel-wrapper__container {
+                display: flex;
+                justify-content: center;
+            }
 
-        .carousel-wrapper__container {
-            display: flex;
-            justify-content: center;
-        }
+            .carousel-wrapper__container__pic {
+                width: 7560px;
+            }
 
-        .carousel-wrapper__container__pic {
-            width: 7560px;
-        }
+            .carousel-wrapper__container__pic img {
+                float: left;
+                display: block;
+                width: 1060px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
 
-        .carousel-wrapper__container__pic img {
-            float: left;
-            display: block;
-            width: 1060px;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
+            .btn {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 120px;
+                width: 100%;
+            }
 
-        .btn {
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 120px;
-            width: 100%;
-        }
-
-        .btn-wrapper {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-        .left-span button {
-            cursor: pointer;
-            border: 0;
-            display: flex;
-            align-items: center;
-            position: absolute;
-            width: 30px;
-            height: 60px;
-            opacity: .5;
-            border-radius: 15px;
-            background-color: #fff;
-            left: calc((100% - 1200px)/2);
-        }
-        .left-span img {
-            display: inline-block;
-            fill: currentColor;
-            width: 1em;
-            height: 1em;
-        }
-        .right-span button {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            position: absolute;
-            width: 30px;
-            height: 60px;
-            border-radius: 15px;
-            background-color: #fff;
-            opacity: .5;
-            border: 0;
-            right: calc((100% - 1200px)/2);
-        }
-        .right-span img {
-            display: inline-block;
-            fill: currentColor;
-            width: 1em;
-            height: 1em;
-        }
-    </style>
-</head>
-<body>
-  <div class="carousel-wrapper">
-      <div class="carousel-wrapper__container">
-          <div class="carousel-wrapper__container__pic">
-              <img src="/controller/img/banner_img/banner.webp" alt="banner1">
-          </div>
-          <div class="carousel-wrapper__container__pic">
-              <img src="/controller/img/banner_img/banner2.webp" alt="banner2">
-          </div>
-          <div class="carousel-wrapper__container__pic">
-              <img src="/controller/img/banner_img/banner3.webp" alt="banner3">
-          </div>
-          <div class="carousel-wrapper__container__pic">
-              <img src="/controller/img/banner_img/banner4.webp" alt="banner4">
-          </div>
-          <div class="carousel-wrapper__container__pic">
-              <img src="/controller/img/banner_img/banner5.webp" alt="banner5">
-          </div>
-          <div class="carousel-wrapper__container__pic">
-              <img src="/controller/img/banner_img/banner6.webp" alt="banner6">
-          </div>
-          <div class="carousel-wrapper__container__pic">
-              <img src="/controller/img/banner_img/banner7.webp" alt="banner7">
-          </div>
-      </div>
-      <div class="btn">
-          <div class="btn-wrapper">
-              <span class="left-span">
-                  <button type="button" class="left-span__btn">
-                      <img src="/controller/img/banner_img/chevron-left-solid.svg" alt="">
-                  </button>
-              </span>
-              <span class="right-span">
-                  <button type="button" class="right-span__btn">
-                      <img src="/controller/img/banner_img/chevron-right-solid.svg" alt="">
-                  </button>
-              </span>
-          </div>
-      </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.1.js"
-      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/1f61694686.js" crossorigin="anonymous"></script>
-  <!-- <script>
+            .btn-wrapper {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .left-span button {
+                cursor: pointer;
+                border: 0;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                width: 30px;
+                height: 60px;
+                opacity: 0.5;
+                border-radius: 15px;
+                background-color: #fff;
+                left: calc((100% - 1200px) / 2);
+            }
+            .left-span img {
+                display: inline-block;
+                fill: currentColor;
+                width: 1em;
+                height: 1em;
+            }
+            .right-span button {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                width: 30px;
+                height: 60px;
+                border-radius: 15px;
+                background-color: #fff;
+                opacity: 0.5;
+                border: 0;
+                right: calc((100% - 1200px) / 2);
+            }
+            .right-span img {
+                display: inline-block;
+                fill: currentColor;
+                width: 1em;
+                height: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="carousel-wrapper">
+            <div class="carousel-wrapper__container">
+                <div class="carousel-wrapper__container__pic">
+                    <img
+                        src="/controller/img/banner_img/banner.webp"
+                        alt="banner1"
+                    />
+                </div>
+                <div class="carousel-wrapper__container__pic">
+                    <img
+                        src="/controller/img/banner_img/banner2.webp"
+                        alt="banner2"
+                    />
+                </div>
+                <div class="carousel-wrapper__container__pic">
+                    <img
+                        src="/controller/img/banner_img/banner3.webp"
+                        alt="banner3"
+                    />
+                </div>
+                <div class="carousel-wrapper__container__pic">
+                    <img
+                        src="/controller/img/banner_img/banner4.webp"
+                        alt="banner4"
+                    />
+                </div>
+                <div class="carousel-wrapper__container__pic">
+                    <img
+                        src="/controller/img/banner_img/banner5.webp"
+                        alt="banner5"
+                    />
+                </div>
+                <div class="carousel-wrapper__container__pic">
+                    <img
+                        src="/controller/img/banner_img/banner6.webp"
+                        alt="banner6"
+                    />
+                </div>
+                <div class="carousel-wrapper__container__pic">
+                    <img
+                        src="/controller/img/banner_img/banner7.webp"
+                        alt="banner7"
+                    />
+                </div>
+            </div>
+            <div class="btn">
+                <div class="btn-wrapper">
+                    <span class="left-span">
+                        <button type="button" class="left-span__btn">
+                            <img
+                                src="/controller/img/banner_img/chevron-left-solid.svg"
+                                alt=""
+                            />
+                        </button>
+                    </span>
+                    <span class="right-span">
+                        <button type="button" class="right-span__btn">
+                            <img
+                                src="/controller/img/banner_img/chevron-right-solid.svg"
+                                alt=""
+                            />
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://kit.fontawesome.com/1f61694686.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- <script>
       const rightBtn = document.querySelector(".right-span__btn");
       const leftBtn = document.querySelector(".left-span__btn");
 
@@ -152,8 +178,7 @@
       });
 
   </script> -->
-</body>
-
+    </body>
 </html>
 <!-- <body>
   <div class="window">
@@ -208,9 +233,6 @@
 </body>
 </html> -->
 
-
-
-
 <!-- <div id="banner-wrap">
   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -246,4 +268,3 @@
     </button>
   </div>
   </div> -->
-  

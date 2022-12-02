@@ -150,13 +150,24 @@
 }
 
 .insight_nav-bar__icon_wrap {
-    position: relative;
-    width: 145px;
-    background: linear-gradient(90deg, #fff 21.82%, hsla(0, 0%, 100%, 0));
+    position: absolute;
+    right: 42px;
+    display: flex;
+    justify-content: flex-end;
+    width: 84px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), white);
+}
+.insight_nav-bar__icon_wrap-left {
+    position: absolute;
+    left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    width: 84px;
+    height: 50px;
+    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.1));
 }
 
 .insight__nav-bar__scroll-right-icon {
-    position: absolute;
     right: 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
@@ -168,6 +179,7 @@
     z-index: 1;
     display: flex;
     justify-content: center;
+    margin-right: 8px;
 }
 .insight__nav-bar__scroll-right-icon:hover,
 .insight__nav-bar__scroll-left-icon:hover {

@@ -72,7 +72,7 @@ $(".jobboard__submit__content__file__checkbox__label-disable").click(
     function () {
         if (
             confirm(
-                "작성 중인 이력서는 선택할 수 없습니다. 지금 확인하고 완료하시겠습니까?"
+                "작성 중인 이력서는 선택할 수 없습니다. \n지금 확인하고 완료하시겠습니까?"
             )
         ) {
             location.href =
@@ -304,3 +304,24 @@ $(window).scroll(function () {
         });
     }
 });
+
+//채용 공고 삭제 기능
+$(".jobboard__all-content__information__subject__delete-btn").click(
+    function () {
+        var jobboard__seq = $(".jobboard__seq").val();
+        if (confirm("채용 공고를 정말로 삭제 하시겠습니까?")) {
+            $.ajax({
+                type: "get",
+                url: "/controller/job/jobBoardDelete",
+                data: "seq=" + jobboard__seq,
+                success: function () {
+                    alert("채용 공고 삭제 완료");
+                    location.href = "/controller/job/jobList";
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+            });
+        }
+    }
+);

@@ -81,6 +81,13 @@ public class JobController {
 
 		return mav;
 	}
+	
+	@RequestMapping(value = "jobBoardDelete")
+	@ResponseBody
+	public void jobBoardDelete(@RequestParam String seq) {
+		jobService.jobBoardDelete(seq);
+	}
+	
 
 	@RequestMapping(value = "profile")
 	public ModelAndView profile(@RequestParam(required =false) String id) {
@@ -98,5 +105,7 @@ public class JobController {
 		System.out.println(jobApplyDTO);
 		jobApplyDAO.profileApply(jobApplyDTO);
 	}
-
+	
+	
+	
 }

@@ -21,6 +21,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <img src="../img/job/${jobDTO.img}" />
           <div class="jobboard__all-content__information__subject">
             ${jobDTO.subject}
+            <c:if test="${sortnum=='0'}">
+              <input class="jobboard__all-content__information__subject__delete-btn" type="button" value="채용 공고 삭제">
+            </c:if>
           </div>
           <div class="jobboard__all-content__information__detail">
             <span id="company" >${jobDTO.company}</span>
