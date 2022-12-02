@@ -31,31 +31,13 @@ import resume.dao.ResumeDAO;
 @Controller
 @RequestMapping(value = "resume")
 public class ResumeController {
-	
-	@Autowired
-	private HttpSession httpSession;
+
 	@Autowired
 	private ResumeDAO resumeDAO;
 
-	@GetMapping(value = "resumeLoginCheck")
-	public String resumeLoginCheck() {
-		if(httpSession.getAttribute("id") == null) {
-			return "0";
-		} else {
-			return "1";
-		}
-		
-	}
-	
 	@GetMapping(value = "/")
 	public String resume() {
-		if(httpSession.getAttribute("id") == null) {
-			System.out.println(httpSession.getAttribute("id"));
-			return "user/loginForm";
-		} else {
-			System.out.println(httpSession.getAttribute("id"));
-			return "resume/resume";
-		}
+		return "resume/resume";
 	}
 
 	@GetMapping(value = "resumeForm")

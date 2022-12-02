@@ -1,175 +1,249 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    
-        <style>
-            .slide-body{
-                width: 100vw;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .slides li {
-                list-style-type: none;
-            }
-    
-            /* 보여줄 구간의 높이와 넓이 설정 */
-            #slideShow {
-                /*전체 컨테이너*/
-                height: 300px;
-                width: 100%;
-                position: relative;
-                overflow: hidden;
-                display: flex;
-                justify-content: center;
-            }
-    
-            .slides {
-                /*이미지들이 담겨있는 슬라이드 컨테이너*/
-                display: flex;
-                justify-content: center;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 1100px;
-                /* 슬라이드할 사진과 마진 총 넓이 */
-                transition: 0.5s ease-out;
-                /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
-            }
-    
-            /* 첫 번째 슬라이드 가운데에 정렬하기위해 첫번째 슬라이드만 margin-left조정 */
-            .slides li:first-child {
-                /* margin-left: 750px */
-                margin-left: 2.05%;
-            }
-    
-            .slides li:not(:last-child) {
-                float: left;
-            }
-    
-            .slide-img {
-                display: flex;
-                width: 1060px;
-                margin-left: 20px;
-                margin-right: 20px;
-            }
-    
-            .slides li {
-                display: flex;
-                justify-content: center;
-            }
-    
-    
-            /* 슬라이드들 옆으로 정렬 */
-            .slides li:not(:last-child) {
-                display: flex;
-            }
-    
-    
-            /* -------------------------------- */
-            /* 화살표 */
-            .controller-wrapper {
-                display: flex;
-                justify-content: center;
-                width: 1300px;
-            }
-    
-            .controller {
-                display: flex;
-                width: 1000px;
-            }
-    
-            .controller span {
-                position: absolute;
-                background-color: transparent;
-                color: black;
-                text-align: center;
-                border-radius: 50%;
-                padding: 10px 20px;
-                top: 50%;
-                font-size: 1.3em;
-                cursor: pointer;
-            }
-    
-            /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
-            .controller span:hover {
-                background-color: rgba(128, 128, 128, 0.11);
-            }
-    
-            .prev {
-                left: 10px;
-            }
-    
-            /* 이전 화살표에 마우스 커서가 올라가 있을때 이전 화살표가 살짝 왼쪽으로 이동하는 효과*/
-            .next {
-                right: 10px;
-            }
-    
-            /* 다음 화살표에 마우스 커서가 올라가 있을때 이전 화살표가 살짝 오른쪽으로 이동하는 효과*/
-        </style>
-    </head>
-    
-    <body class="slide-body">
-        <div id="slideShow">
-            <ul class="slides">
-                <li>
-                    <div class="slide-img">
-                        <img src="/controller/img/banner_img/banner.webp" alt="banner1">
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-img">
-                        <img src="/controller/img/banner_img/banner2.webp" alt="banner2">
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-img">
-                        <img src="/controller/img/banner_img/banner3.webp" alt="banner3">
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-img">
-                        <img src="/controller/img/banner_img/banner4.webp" alt="banner4">
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-img">
-                        <img src="/controller/img/banner_img/banner5.webp" alt="banner5">
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-img">
-                        <img src="/controller/img/banner_img/banner6.webp" alt="banner6">
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-img">
-                        <img src="/controller/img/banner_img/banner7.webp" alt="banner7">
-                    </div>
-                </li>
-            </ul>
-            <div class="controller-wrapper">
-                <p class="controller">
-                    <!-- &lang: 왼쪽 방향 화살표 &rang: 오른쪽 방향 화살표 -->
-                    <span class="prev">&lang;</span>
-                    <span class="next">&rang;</span>
-                </p>
-            </div>
-        </div>
-    
-        <script src="https://code.jquery.com/jquery-3.6.1.js"
-            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/1f61694686.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.1.js"
-            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-        <script src="/controller/js/component/banner.js"></script>
-    </body>
-    
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <style>
+           * {
+            box-sizing: border-box;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .carousel-wrapper__container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-wrapper__container__pic {
+            width: 7560px;
+        }
+
+        .carousel-wrapper__container__pic img {
+            float: left;
+            display: block;
+            width: 1060px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 120px;
+            width: 100%;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .left-span button {
+            cursor: pointer;
+            border: 0;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            opacity: .5;
+            border-radius: 15px;
+            background-color: #fff;
+            left: calc((100% - 1200px)/2);
+        }
+        .left-span img {
+            display: inline-block;
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+        .right-span button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            border-radius: 15px;
+            background-color: #fff;
+            opacity: .5;
+            border: 0;
+            right: calc((100% - 1200px)/2);
+        }
+        .right-span img {
+            display: inline-block;
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+    </style>
+</head>
+<body>
+  <div class="carousel-wrapper">
+      <div class="carousel-wrapper__container">
+          <div class="carousel-wrapper__container__pic">
+              <img src="/controller/img/banner_img/banner.webp" alt="banner1">
+          </div>
+          <div class="carousel-wrapper__container__pic">
+              <img src="/controller/img/banner_img/banner2.webp" alt="banner2">
+          </div>
+          <div class="carousel-wrapper__container__pic">
+              <img src="/controller/img/banner_img/banner3.webp" alt="banner3">
+          </div>
+          <div class="carousel-wrapper__container__pic">
+              <img src="/controller/img/banner_img/banner4.webp" alt="banner4">
+          </div>
+          <div class="carousel-wrapper__container__pic">
+              <img src="/controller/img/banner_img/banner5.webp" alt="banner5">
+          </div>
+          <div class="carousel-wrapper__container__pic">
+              <img src="/controller/img/banner_img/banner6.webp" alt="banner6">
+          </div>
+          <div class="carousel-wrapper__container__pic">
+              <img src="/controller/img/banner_img/banner7.webp" alt="banner7">
+          </div>
+      </div>
+      <div class="btn">
+          <div class="btn-wrapper">
+              <span class="left-span">
+                  <button type="button" class="left-span__btn">
+                      <img src="/controller/img/banner_img/chevron-left-solid.svg" alt="">
+                  </button>
+              </span>
+              <span class="right-span">
+                  <button type="button" class="right-span__btn">
+                      <img src="/controller/img/banner_img/chevron-right-solid.svg" alt="">
+                  </button>
+              </span>
+          </div>
+      </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/1f61694686.js" crossorigin="anonymous"></script>
+  <!-- <script>
+      const rightBtn = document.querySelector(".right-span__btn");
+      const leftBtn = document.querySelector(".left-span__btn");
+
+      var index = 0;
+
+      rightBtn.addEventListener("click", function(){
+          if(index === 0) return;
+          index -= 1;
+      });
+      leftBtn.addEventListener("click", function(){
+          if(index === 6) return;
+          index += 1;
+
+      });
+
+  </script> -->
+</body>
+
+</html>
+<!-- <body>
+  <div class="window">
+    <ul class="container">
+      <li class="cell">
+        <img src="/controller/img/banner_img/banner.webp" alt="banner1">
+      </li>
+      <li class="cell">
+        <img src="/controller/img/banner_img/banner2.webp" alt="banner2">
+      </li>
+      <li class="cell">
+        <img src="/controller/img/banner_img/banner3.webp" alt="banner3">
+      </li>
+      <li class="cell">
+        <img src="/controller/img/banner_img/banner4.webp" alt="banner4">
+      </li>
+      <li class="cell">
+        <img src="/controller/img/banner_img/banner5.webp" alt="banner5">
+      </li>
+      <li class="cell">
+        <img src="/controller/img/banner_img/banner6.webp" alt="banner6">
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <script>
+    const container = document.querySelector(".container");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+
+    (function addEvent() {
+      prevBtn.addEventListener('click', translateContainer.bind(this, 1));
+      nextBtn.addEventListener('click', translateContainer.bind(this, -1));
+    })();
+
+    function translateContainer(direction) {
+      const selectedBtn = (direction === 1) ? 'prev' : 'next';
+      container.style.transitionDuration = '500ms';
+      container.style.transform = `translateX(${direction * (100 / 5)}%)`;
+      container.ontransitionend = () => reorganizeEl(selectedBtn);
+    }
+
+    function reorganizeEl(selectedBtn) {
+      container.removeAttribute('style');
+      (selectedBtn === 'prev') ? container.insertBefore(container.lastElementChild, container.firstElementChild) : container.appendChild(container.firstElementChild);
+    }
+
+  </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <div id="banner-wrap">
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <img src="/controller/img/banner_img/banner.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/controller/img/banner_img/banner2.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/controller/img/banner_img/banner3.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/controller/img/banner_img/banner4.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/controller/img/banner_img/banner5.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/controller/img/banner_img/banner6.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="/controller/img/banner_img/banner7.webp" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </div> -->
+  
