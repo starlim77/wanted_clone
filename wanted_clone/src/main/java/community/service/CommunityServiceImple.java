@@ -29,8 +29,8 @@ public class CommunityServiceImple implements CommunityService {
 	}
 
 	@Override
-	public List<CommunityDTO> boardList(String scrollPg) {
-		return communityDAO.boardList(scrollPg);
+	public List<CommunityDTO> boardList(String scrollPg,String selected) {
+		return communityDAO.boardList(scrollPg,selected);
 	}
 
 	@Override
