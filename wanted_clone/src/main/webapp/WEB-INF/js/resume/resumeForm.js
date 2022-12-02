@@ -62,6 +62,7 @@ $(document).ready(function() {
 
   //이력서 저장
 $(".writing").click(function(){
+	var jobBoardSeq = $("#jobBoardSeq").val();
     $.ajax({
         type: "post",
         url: "/controller/resume/resumeSave",
@@ -76,8 +77,11 @@ $(".writing").click(function(){
             "writing": $(this).val()
         },
         success: function(){
-            alert("저장 성공")
-            location.href = "http://localhost:8080/controller/resume/"
+          	if (!jobBoardSeq) {
+                location.href = "http://localhost:8080/controller/resume/";
+            } else {
+                location.href = "/controller/job/jobBoard?seq=" + jobBoardSeq;
+            }
         },
         error: function(request, status, error, textStatus){
             console.log("code: " + request.status);
