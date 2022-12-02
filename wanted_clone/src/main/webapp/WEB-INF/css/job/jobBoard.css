@@ -20,22 +20,10 @@
     border-radius: 5px;
 }
 .jobboard__all-content__information__subject {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-size: 21px;
     font-weight: 600;
 }
-.jobboard__all-content__information__subject__delete-btn {
-    width: 130px;
-    height: 40px;
-    background-color: #3266fe;
-    color: white;
-    border: 1px solid #3266fe;
-    border-radius: 40px;
-    font-size: 14px;
-    cursor: pointer;
-}
+
 .jobboard__all-content__information__detail {
     margin-top: 12px;
     font-size: 15px;

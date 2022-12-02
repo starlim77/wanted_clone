@@ -23,10 +23,8 @@
        </div>
      </div>
      <div class="insight__nav-bar">
-       <div class="insight_nav-bar__icon_wrap-left">
-         <div class="insight__nav-bar__scroll-left-icon">
-           <i class="fa-solid fa-chevron-left"></i>
-         </div>
+       <div class="insight__nav-bar__scroll-left-icon">
+         <i class="fa-solid fa-chevron-left"></i>
        </div>
        <ul class="insight__nav-bar__list">
          <li>
@@ -162,7 +160,325 @@
 
      <div class="insight__content">
        <ul class="insight__content__list">
-        
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+         <li>
+           <a class="insight__content__list__card" href="#">
+             <div>
+               <img
+                 class="insight__content__list__card__thumnail"
+                 src="./img/thumnail.webp"
+                 alt="thumnail"
+               />
+             </div>
+             <div class="insight__content__list__card__letter">
+               <h3 class="insight__content__list__card__letter__subject">
+                 자신만의 길을 찾기 위해서는 무엇이 반드시 필요한가 | 장동선
+               </h3>
+               <p class="insight__content__list__card__letter__content">
+                 강의를 시작한것, 브런치에 글을 쓰는 것, 그리고 계속해서....
+               </p>
+               <div class="insight__content__list__card__source">
+                 <img
+                   class="insight__content__list__card__source__image"
+                   src="./img/sns_icon/youtube_color.webp"
+                   alt="youtube_color"
+                 />
+                 <span class="insight__content__list__card__source__name"
+                   >Channle 이름
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
       <!--    <li>
            <a class="insight__content__list__card" href="#">
              <div>

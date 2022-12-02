@@ -59,9 +59,5 @@
 		   <![CDATA[ where rn >= 1 and rn <= 16  ]]>
 
     </select>
-    
-    <delete id="jobBoardDelete" parameterType="String">
-    	delete from job where seq = #{seq}
-    </delete>
 
   </mapper>

@@ -55,7 +55,6 @@ public class SpringConfiguration {
 				                                 new ClassPathResource("job/dao/jobMapper.xml"),
 				                                 new ClassPathResource("job/dao/jobApplyMapper.xml"),
 												 new ClassPathResource("community/dao/communityMapper.xml"),
-												 new ClassPathResource("insight/dao/insightMapper.xml"),
 												new ClassPathResource("resume/dao/resumeMapper.xml"));
 
 		return sqlSessionFactoryBean.getObject();

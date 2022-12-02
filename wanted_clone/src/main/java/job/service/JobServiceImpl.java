@@ -71,11 +71,6 @@ public class JobServiceImpl implements JobService {
 		return jobDAO.moreJobList(seq, jobsort);
 	}
 
-	@Override
-	public void jobBoardDelete(String seq) {
-		jobDAO.jobBoardDelete(seq);
-	}
-
 
 
 

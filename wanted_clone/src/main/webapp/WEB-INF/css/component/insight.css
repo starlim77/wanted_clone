@@ -1,7 +1,7 @@
 .insight {
-    margin: 70px auto;
-    width: 1065px;
-    /* display: flex;
+  margin: 70px auto;
+  width: 1065px;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; */
@@ -150,24 +150,13 @@
 }
 
 .insight_nav-bar__icon_wrap {
-    position: absolute;
-    right: 42px;
-    display: flex;
-    justify-content: flex-end;
-    width: 84px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), white);
-}
-.insight_nav-bar__icon_wrap-left {
-    position: absolute;
-    left: 0px;
-    display: flex;
-    justify-content: flex-start;
-    width: 84px;
-    height: 50px;
-    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.1));
+    position: relative;
+    width: 145px;
+    background: linear-gradient(90deg, #fff 21.82%, hsla(0, 0%, 100%, 0));
 }
 
 .insight__nav-bar__scroll-right-icon {
+    position: absolute;
     right: 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
@@ -179,7 +168,6 @@
     z-index: 1;
     display: flex;
     justify-content: center;
-    margin-right: 8px;
 }
 .insight__nav-bar__scroll-right-icon:hover,
 .insight__nav-bar__scroll-left-icon:hover {
@@ -215,10 +203,6 @@
 .insight__nav-bar__list__button:hover {
     background-color: #f8f8fa;
     cursor: pointer;
-}
-.insight__nav-bar__list__button-selected {
-    border: 1px solid #36f;
-    color: #36f;
 }
 .insight__content__list {
     display: flex;

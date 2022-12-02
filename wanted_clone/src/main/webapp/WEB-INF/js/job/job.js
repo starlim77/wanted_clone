@@ -123,10 +123,7 @@ $(window).scroll(function () {
                     //전체
                     var card = $("<a>");
                     card.addClass("job__content__list__card");
-                    card.attr(
-                        "href",
-                        "/controller/job/jobBoard?seq=" + data[i].seq
-                    );
+                    card.attr("href", "#");
 
                     //img
                     var img = $("<img>");

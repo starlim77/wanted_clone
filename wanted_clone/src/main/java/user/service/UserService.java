@@ -13,8 +13,4 @@ public interface UserService {
 	public String smsCertify(String tel);
 
 	public void logout();
-
-	public String naverLoginUrl();
-
-	public String getNaverInformation(String code, String state);
 }

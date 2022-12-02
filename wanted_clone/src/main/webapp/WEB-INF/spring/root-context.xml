@@ -24,10 +24,5 @@
 	<context:component-scan base-package="resume.bean"></context:component-scan>
 	<context:component-scan base-package="resume.dao"></context:component-scan>
 	<context:component-scan base-package="resume.service"></context:component-scan>
-	
-	<context:component-scan base-package="insight.service"></context:component-scan>
-	<context:component-scan base-package="insight.dao"></context:component-scan>
-	
-	
 
 </beans>
