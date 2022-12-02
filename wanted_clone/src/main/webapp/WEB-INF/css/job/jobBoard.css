@@ -1,290 +1,332 @@
 .jobboard {
-  margin-top: 65px;
+    margin-top: 65px;
 }
 .jobboard__all-content {
-  display: flex;
-  flex-direction: row;
-  width: 1065px;
-  gap: 25px;
-  margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 1065px;
+    gap: 25px;
+    margin: 0 auto;
 }
 
 .jobboard__all-content__information {
-  width: 700px;
+    width: 700px;
 }
 .jobboard__all-content__information > img {
-  width: 100%;
-  height: 490px;
-  margin-bottom: 60px;
-  border-radius: 5px;
+    width: 100%;
+    height: 490px;
+    margin-bottom: 60px;
+    border-radius: 5px;
 }
 .jobboard__all-content__information__subject {
-  font-size: 21px;
-  font-weight: 600;
+    font-size: 21px;
+    font-weight: 600;
 }
 
 .jobboard__all-content__information__detail {
-  margin-top: 12px;
-  font-size: 15px;
-  font-weight: 500;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 500;
 }
 .jobboard__all-content__information__detail__location {
-  color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3);
 }
 .jobboard__all-content__content {
-  margin: 50px 0;
+    margin: 50px 0;
 }
 .jobboard__all-content__date-location {
-  display: flex;
-  margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 20px;
 }
 .jobboard__all-content__date-location > div:first-child {
-  width: 80px;
-  color: rgba(0, 0, 0, 0.6);
+    width: 80px;
+    color: rgba(0, 0, 0, 0.6);
 }
 .jobboard__all-content__map {
-  width: 100%;
-  height: 400px;
-  background-color: antiquewhite;
+    width: 100%;
+    height: 400px;
+    background-color: antiquewhite;
 }
 
 .jobboard__apply,
 .jobboard__submit {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-sizing: border-box;
-  width: 340px;
-  height: 200px;
-  padding: 20px;
-  border-radius:5px;
+    position: fixed;
+    right: calc((100% - 1065px) / 2);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    width: 340px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
 }
 .jobboard__apply > h4 {
-  font-weight: 500;
+    font-weight: 500;
 }
 .jobboard__apply__reward {
-  display: flex;
-  margin-top: 20px;
+    display: flex;
+    margin-top: 20px;
 }
 .jobboard__apply__reward span {
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 400;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
 }
 .jobboard__apply__reward p {
-  font-size: 15px;
-  margin-top: 12px;
+    font-size: 15px;
+    margin-top: 12px;
 }
 .jobboard__apply__reward > div:first-child {
-  margin-right: 80px;
+    margin-right: 80px;
 }
 .jobboard__apply > input {
-  border: 1px solid #3266fe;
-  border-radius: 60px;
-  width: 100%;
-  height: 50px;
-  font-size: 16px;
-  margin-top: 30px;
-  background-color: #3266fe;
-  color: white;
-  cursor: pointer;
+    border: 1px solid #3266fe;
+    border-radius: 60px;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    margin-top: 30px;
+    background-color: #3266fe;
+    color: white;
+    cursor: pointer;
 }
 
 .jobboard pre {
-  font-family: Pretendard, Pretendard JP, Pretendard Std, -apple-system,
-    system-ui, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial,
-    Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol, sans-serif;
-  white-space: pre-wrap;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.7);
-  line-height: 30px;
+    font-family: Pretendard, Pretendard JP, Pretendard Std, -apple-system,
+        system-ui, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial,
+        Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji,
+        Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+    white-space: pre-wrap;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 30px;
 }
 .jobboard__submit {
-  position: relative;
-  padding: 0px;
-  height: 770px;
+    position: fixed;
+    padding: 0px;
+    height: 770px;
+}
+.jobboard__apply-stop,
+.jobboard__submit-stop {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 .jobboard__submit__subject {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  align-items: center;
-  width: 100%;
-  height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    align-items: center;
+    width: 100%;
+    height: 50px;
 }
 .jobboard__submit__subject > h3 {
-  font-size: 17px;
-  font-weight: 400;
+    font-size: 17px;
+    font-weight: 400;
 }
 .jobboard__submit__subject > h4 {
-  position: absolute;
-  right: 20px;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 16px;
-  cursor: pointer;
+    position: absolute;
+    right: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    cursor: pointer;
 }
 .jobboard__submit__content {
-  margin-top: 50px;
-  height: 620px;
-  overflow: scroll;
-  overflow-x: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    margin-top: 50px;
+    height: 620px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 .jobboard__submit__content__tip {
-  display: flex;
-  gap: 5px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #eff0fa;
-  padding: 20px 0;
-  font-size: 13px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eff0fa;
+    padding: 20px 0;
+    font-size: 13px;
 }
 .jobboard__submit__content__tip > p:first-child {
-  font-weight: 600;
+    font-weight: 600;
 }
 .jobboard__submit__content__tip > p:last-child {
-  font-weight: 400;
+    font-weight: 400;
 }
 .jobboard__submit__content__subject {
-  display: flex;
-  align-items: center;
-  border-left: 2px solid #3266fe;
-  height: 21px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  font-size: 16px;
-  font-weight: 500;
+    display: flex;
+    align-items: center;
+    border-left: 2px solid #3266fe;
+    height: 21px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
 }
 .jobboard__submit__content__file {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 .jobboard__submit__content__file__each {
-  display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 7px;
-  box-sizing: border-box;
-  width: 280px;
-  height: 60px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-  padding: 10px 20px;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    box-sizing: border-box;
+    width: 280px;
+    height: 60px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
 }
+.jobboard__submit__content__file__each-disable {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 7px;
+    box-sizing: border-box;
+    width: 280px;
+    height: 60px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #f2f4f7;
+    border: 1px solid #f4f5f7;
+}
+
 .jobboard__submit__content__file__each-select {
-  border: 1px solid #3266fe;
+    border: 1px solid #3266fe;
 }
 .jobboard__submit__content__file__checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .jobboard__submit__content__file__checkbox__label {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
-  box-sizing: border-box;
-  width: 20px;
-  height: 20px;
-  color: white;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    color: white;
 }
-.jobboard__submit__content__file__checkbox > input {
-  display: none;
+.jobboard__submit__content__file__checkbox__label-disable {
+    background-color: #cdcccd;
+    border: 1px solid #cdcccd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    color: #cdcccd;
+}
+.jobboard__submit__content__file__checkbox > input,
+.jobboard__submit__content__file__checkbox-disable > input {
+    display: none;
 }
 .jobboard__submit__content__file__checkbox > input:checked + label {
-  display: flex;
-  justify-content: center;
-  background-color: #3266fe;
-  color: white;
-  border-radius: 3px;
-  box-sizing: border-box;
-  width: 20px;
-  height: 20px;
-  padding: 3px;
-  font-size: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: #3266fe;
+    color: white;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    font-size: 15px;
 }
 
 .jobboard__submit__content__file__each__information {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 3px;
-  margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    margin-left: 10px;
 }
 .jobboard__submit__content__file__each__information > span {
-  font-size: 15px;
-  font-weight: 500;
+    font-size: 15px;
+    font-weight: 500;
 }
 .jobboard__submit__content__file__each__information > div > span {
-  font-size: 11px;
+    font-size: 11px;
 }
 .jobboard__submit__content__form {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  padding-bottom: 10px;
-  margin: 0 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 10px;
+    margin: 0 20px 20px 20px;
 }
 
 .jobboard__submit__content__form > h4 {
-  display: block;
-  width: 90px;
-  font-weight: 500;
+    display: block;
+    width: 90px;
+    font-weight: 500;
 }
 .jobboard__submit__content__form > input {
-  border: none;
-  width: 170px;
-  height: 30px;
-  font-size: 17px;
+    border: none;
+    width: 170px;
+    height: 30px;
+    font-size: 17px;
 }
 .jobboard__submit__content__form__phone {
-  cursor: pointer;
+    cursor: pointer;
 }
 .jobboard__submit__content__form > i {
-  display: flex;
-  align-items: center;
-  width: 10px;
-  height: 30px;
-  font-size: 12px;
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    width: 10px;
+    height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.3);
 }
 .jobboard__submit__content__upload,
 .jobboard__submit__content__write {
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 60px;
-  width: 280px;
-  height: 50px;
-  margin: 0 20px 10px 20px;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.8);
-  background-color: white;
-  cursor:pointer;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 60px;
+    width: 280px;
+    height: 50px;
+    margin: 0 20px 10px 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: white;
+    cursor: pointer;
 }
 
 .jobboard__submit__content__last-tip {
-  margin: 30px 0;
-  padding: 0 20px;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.5);
+    margin: 30px 0;
+    padding: 0 20px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .jobboard__submit__submit-btn {
-  border: none;
-  border-radius: 60px;
-  width: 280px;
-  height: 50px;
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
-  margin-left: 30px;
+    border: none;
+    border-radius: 60px;
+    width: 280px;
+    height: 50px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    margin-left: 30px;
 }
 .jobboard__submit__submit-btn-enable {
-  background-color: #3266fe;
-  color: white;
-  cursor: pointer;
+    background-color: #3266fe;
+    color: white;
+    cursor: pointer;
+}
+
+.see-more {
+    width: 1065px;
+    margin: 60px auto -120px auto;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
 }

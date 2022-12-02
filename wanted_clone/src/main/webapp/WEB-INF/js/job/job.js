@@ -78,20 +78,24 @@ var checkScroll1 = 0;
 var checkScroll2 = 0;
 // 채용 공고 리스트 무한스크롤
 $(window).scroll(function () {
-	var jobsort = $("#jobsort").val();
-	var forData;
-	if(!jobsort){
-		forData = "seq=" +
-                $(
-                    '.job__content__list > li:last-child > input[type="hidden"]'
-                ).val();
-	}else{
-		forData = "seq=" +
-                $(
-                    '.job__content__list > li:last-child > input[type="hidden"]'
-                ).val()+"&jobsort="+jobsort;
-	}
-	
+    var jobsort = $("#jobsort").val();
+    var forData;
+    if (!jobsort) {
+        forData =
+            "seq=" +
+            $(
+                '.job__content__list > li:last-child > input[type="hidden"]'
+            ).val();
+    } else {
+        forData =
+            "seq=" +
+            $(
+                '.job__content__list > li:last-child > input[type="hidden"]'
+            ).val() +
+            "&jobsort=" +
+            jobsort;
+    }
+
     if (
         $(window).scrollTop() >=
             $(document).height() - $(window).height() - 100 &&
@@ -188,40 +192,129 @@ $(window).scroll(function () {
 });
 
 // 직무 선택 모달 창 토글
-$(".job__sort-bar__content__all-list__develop__job-list__icon").click(function(){
-	$(".job__sort-bar__content__sort-select").toggle();
-});
+$(".job__sort-bar__content__all-list__develop__job-list__icon").click(
+    function () {
+        $(
+            ".job__sort-bar__content__all-list__develop__job-list__icon"
+        ).toggleClass(
+            "job__sort-bar__content__all-list__develop__job-list__icon-rotate"
+        );
 
-var jobsortMax = 0;
+        $(".job__sort-bar__content__sort-select").toggle();
+    }
+);
+
+// 선택한 정렬 조건들에 selected 클래스 넣기
+for (
+    var i = 0;
+    i <=
+    $(".job__sort-bar__content__sort-select__select-list__ul__button").length;
+    i++
+) {
+    var jobsort = $(
+        ".job__sort-bar__content__all-list__develop__job-list"
+    ).text();
+    //조건이 없으면 개발 전체에 클래스 넣어줌
+    if (jobsort == "개발 전체") {
+        $(
+            ".job__sort-bar__content__sort-select__select-list__ul > li:nth-child(" +
+                0 +
+                ") > button"
+        ).addClass(
+            "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+        );
+    }
+    var span = $(
+        ".job__sort-bar__content__sort-select__select-list__ul > li:nth-child(" +
+            i +
+            ")  span"
+    ).text();
+    // console.log(span);
+    if (jobsort.includes(span)) {
+        $(
+            ".job__sort-bar__content__sort-select__select-list__ul > li:nth-child(" +
+                i +
+                ") > button"
+        ).addClass(
+            "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+        );
+    }
+}
+
+var jobsortMax = $(
+    ".job__sort-bar__content__sort-select__select-list__ul__button-selected"
+).length;
 // 버튼 클릭
-$(".job__sort-bar__content__sort-select__select-list__ul__button").click(function(){
-	
-	
-	if($(this).hasClass("job__sort-bar__content__sort-select__select-list__ul__button-selected")){
-		jobsortMax--;
-		$(this).removeClass("job__sort-bar__content__sort-select__select-list__ul__button-selected");
-	}else{
-		if(jobsortMax>=5){
-		alert("직무는 최대 5개까지 선택 가능합니다.");
-		return;
-		}
-		jobsortMax++;
-		$(this).addClass("job__sort-bar__content__sort-select__select-list__ul__button-selected");
-	}
-});
+$(".job__sort-bar__content__sort-select__select-list__ul__button").click(
+    function () {
+        //개발 전체 버튼 해제 기능
+        if (
+            $(
+                ".job__sort-bar__content__sort-select__select-list__ul > li:first-child > button"
+            ).hasClass(
+                "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+            )
+        ) {
+            $(
+                ".job__sort-bar__content__sort-select__select-list__ul > li:first-child > button"
+            ).removeClass(
+                "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+            );
+            jobsortMax--;
+        }
+        //개발 전체 버튼 누를 때 다른 버튼 해제 기능;
+        if ($(this).children().text() == "개발 전체") {
+            $(
+                ".job__sort-bar__content__sort-select__select-list__ul__button-selected"
+            ).removeClass(
+                "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+            );
+            jobsortMax = 0;
+        }
+        if (
+            $(this).hasClass(
+                "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+            )
+        ) {
+            jobsortMax--;
+            $(this).removeClass(
+                "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+            );
+        } else {
+            if (jobsortMax >= 5) {
+                alert("직무는 최대 5개까지 선택 가능합니다.");
+                return;
+            }
+            jobsortMax++;
+            $(this).addClass(
+                "job__sort-bar__content__sort-select__select-list__ul__button-selected"
+            );
+        }
+    }
+);
 
 // 직무 선택 sort 선택 버튼 클릭
-$(".job__sort-bar__content__sort-select__submit-btn").click(function(){
-	var jobsortList = new Array();
-	
-	$(".job__sort-bar__content__sort-select__select-list__ul__button-selected span").each(function(){
-		
-		var data = $(this).text();
-		jobsortList.push(data);
-	});
-	var jobsort = jobsortList.join("/");
-	
-	location.href="/controller/job/jobList?jobsort="+jobsort;
+$(".job__sort-bar__content__sort-select__submit-btn").click(function () {
+    var all = $(
+        ".job__sort-bar__content__sort-select__select-list__ul > li:first-child span"
+    ).text();
+
+    var select = $(
+        ".job__sort-bar__content__sort-select__select-list__ul__button-selected > span"
+    ).text();
+
+    if (all == select) {
+        location.href = "/controller/job/jobList";
+        return;
+    }
+    var jobsortList = new Array();
+    $(
+        ".job__sort-bar__content__sort-select__select-list__ul__button-selected span"
+    ).each(function () {
+        var data = $(this).text();
+        jobsortList.push(data);
+    });
+    var jobsort = jobsortList.join("/");
+
+    location.href = "/controller/job/jobList?jobsort=" + jobsort;
 });
-
-

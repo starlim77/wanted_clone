@@ -7,8 +7,9 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 20px 0 0 0;
+    padding: 20px 0 20px 0;
     background-color: white;
+    border-bottom: 1px solid #ececec;
 }
 .job__sort-bar__content {
     position: relative;
@@ -32,10 +33,11 @@
     align-items: center;
 }
 .job__sort-bar__content__all-list__develop {
-    font-weight: 600;
+    font-weight: 700;
+    color: #333;
 }
 .job__sort-bar__content__all-list__develop__job-list {
-    font-weight: 350;
+    font-weight: 400;
     color: #333;
 }
 .job__sort-bar__content__all-list__develop__job-list__icon {
@@ -46,16 +48,17 @@
     color: rgba(0, 0, 0, 0.3);
     margin-left: 10px;
     cursor: pointer;
+    transition: 0.3s;
+}
+.job__sort-bar__content__all-list__develop__job-list__icon:hover {
+    border: 1px solid #767676;
+}
+.job__sort-bar__content__all-list__develop__job-list__icon-rotate {
+    border: 1px solid #767676;
+    transform: rotate(180deg);
+    transition: 0.3s;
 }
 
-.job__sort-bar > hr {
-    height: 1px;
-    width: 100%;
-    align-self: flex-end;
-    border: none;
-    margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.15);
-}
 .job__sort-bar__content__sort-select {
     display: none;
     position: absolute;
@@ -64,15 +67,15 @@
     left: 0;
     width: 900px;
     border: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: #333;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
     background-color: white;
-    padding: 25px;
 }
 .job__sort-bar__content__sort-select__select-list {
     color: #666;
     font-weight: 400;
     font-size: 12px;
     margin-bottom: 10px;
+    padding: 25px 25px 5px 25px;
 }
 .job__sort-bar__content__sort-select__select-list > p {
     margin-bottom: 10px;
@@ -82,6 +85,8 @@
 }
 .job__sort-bar__content__sort-select__select-list__ul {
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 .job__sort-bar__content__sort-select__select-list__ul__button {
     border: 1px solid #f2f5f7;
@@ -90,14 +95,32 @@
     font-size: 13px;
     color: rgba(0, 0, 0, 0.6);
     background-color: #f2f5f7;
-    margin-right: 8px;
     white-space: nowrap;
-    cursor:pointer;
+    cursor: pointer;
 }
-.job__sort-bar__content__sort-select__select-list__ul__button-selected{
-	border :1px solid #36f;
-	color: #36f;
-	background-color:white;
+.job__sort-bar__content__sort-select__select-list__ul__button-selected {
+    border: 1px solid #36f;
+    color: #36f;
+    background-color: white;
+}
+.job__sort-bar__content__sort-select > hr {
+    border: 1px solid #ececec;
+    margin-bottom: 15px;
+}
+.job__sort-bar__content__sort-select__submit {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 25px 15px 25px;
+}
+.job__sort-bar__content__sort-select__submit-btn {
+    height: 40px;
+    width: 150px;
+    color: #fff;
+    background-color: #36f;
+    border: none;
+    border-radius: 60px;
+    font-size: 14px;
+    cursor: pointer;
 }
 /* 
 .job {

@@ -6,7 +6,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <link rel="stylesheet" href="../css/styles.css" />
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
+    <link rel="icon" href="../img/favicon-192x192.png" />
+    <title>${jobDTO.subject}</title>
   </head>
   <body>
   	<jsp:include page="../component/header.jsp"></jsp:include>
@@ -125,11 +126,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 		            </div>
           		</c:if>
           		<c:if test="${empty resumeDTO.fileName && resumeDTO.writing=='0'}">
-          			<div class="jobboard__submit__content__file__each">
-		              <div class="jobboard__submit__content__file__checkbox">
+          			<div class="jobboard__submit__content__file__each-disable">
+		              <div class="jobboard__submit__content__file__checkbox-disable">
 		              	<input type="hidden" value="${resumeDTO.resume_seq}">
 		                <input id="file-checkbox${resumeDTO.resume_seq}" type="checkbox">
-		                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox${resumeDTO.resume_seq}"><i class="fa-solid fa-check"></i></label>
+		                <label class="jobboard__submit__content__file__checkbox__label-disable" for="file-checkbox${resumeDTO.resume_seq}"><i class="fa-solid fa-check"></i></label>
 		              </div>
 		              <div class="jobboard__submit__content__file__each__information">
 		                <span>${resumeDTO.formName}</span>
@@ -140,20 +141,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 		              </div>
 		            </div>
           		</c:if>
-          		
-	        <!--     <div class="jobboard__submit__content__file__each">
-	              <div class="jobboard__submit__content__file__checkbox">
-	                <input id="file-checkbox1" type="checkbox">
-	                <label class="jobboard__submit__content__file__checkbox__label" for="file-checkbox1"><i class="fa-solid fa-check"></i></label>
-	              </div>
-	              <div class="jobboard__submit__content__file__each__information">
-	                <span>임윤환3</span>
-	                <div>
-	                  <span>2022.11.28</span>
-	                  <span>작성완료</span>
-	                </div>
-	              </div>
-	            </div> -->
           	</c:forEach>
             
           </div>
@@ -168,7 +155,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
 
     </section>
-    
+
+    <h2 class="see-more">채용 공고 더 보기</h2>
     <div class="job__content">
       <ul class="job__content__list">
       	<c:forEach var="jobDTO" items="${jobList}">

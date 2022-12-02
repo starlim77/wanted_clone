@@ -128,9 +128,12 @@
            </button>
          </li>
        </ul>
-       <div class="insight__nav-bar__scroll-right-icon">
-         <i class="fa-solid fa-chevron-right"></i>
-       </div>
+       <div class="insight_nav-bar__icon_wrap">
+        <div class="insight__nav-bar__scroll-right-icon">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+       
        <div class="insight__nav-bar__show-all-icon">
          <i class="fa-solid fa-ellipsis"></i>
        </div>
