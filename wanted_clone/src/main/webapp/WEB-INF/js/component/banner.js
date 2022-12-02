@@ -18,37 +18,56 @@ function initfunction() {
   slides.style.width = (slideWidth + slideMargin) * (slideCount + 2) + 'px';
   slides.style.left = -(slideWidth + slideMargin) + 'px';
 }
-next.addEventListener('click', function () {
-  //다음 버튼 눌렀을때
-  if (currentIdx <= slideCount - 1) {
-    //슬라이드이동
-    slides.style.left = -(currentIdx + 2) * (slideWidth + slideMargin) + 'px';
-    slides.style.transition = `${0.5}s ease-out`; //이동 속도
-  }
-  if (currentIdx === slideCount - 1) {
-    //마지막 슬라이드 일때
-    setTimeout(function () {
-      //0.5초동안 복사한 첫번째 이미지에서, 진짜 첫번째 위치로 이동
-      slides.style.left = -(slideWidth + slideMargin) + 'px';
-      slides.style.transition = `${0}s ease-out`;
-    }, 500);
-    currentIdx = -1;
-  }
-  currentIdx += 1;
-});
-prev.addEventListener('click', function () {
-  //이전 버튼 눌렀을때
-  console.log(currentIdx);
-  if (currentIdx >= 0) {
-    slides.style.left = -currentIdx * (slideWidth + slideMargin ) + 'px';
-    slides.style.transition = `${0.5}s ease-out`;
-  }
-  if (currentIdx === 0) {
-    setTimeout(function () {
-      slides.style.left = -slideCount * (slideWidth + slideMargin) + 'px';
-      slides.style.transition = `${0}s ease-out`;
-    }, 500);
-    currentIdx = slideCount;
-  }
-  currentIdx -= 1;
+  next.addEventListener('click', function () {
+   console.log("asd");
+   //다음 버튼 눌렀을때
+   if (currentIdx <= slideCount - 1) {
+     //슬라이드이동
+     slides.style.left = -(currentIdx + 2) * (slideWidth + slideMargin) + 'px';
+     slides.style.transition = `${0.5}s ease-out`; //이동 속도
+   }
+   if (currentIdx === slideCount - 1) {
+     //마지막 슬라이드 일때
+     setTimeout(function () {
+       //0.5초동안 복사한 첫번째 이미지에서, 진짜 첫번째 위치로 이동
+       slides.style.left = -(slideWidth + slideMargin) + 'px';
+       slides.style.transition = `${0}s ease-out`;
+     }, 500);
+     currentIdx = -1;
+   }
+   currentIdx += 1;
+ });
+ prev.addEventListener('click', function () {
+   //이전 버튼 눌렀을때
+   console.log(currentIdx);
+   if (currentIdx >= 0) {
+     slides.style.left = -currentIdx * (slideWidth + slideMargin ) + 'px';
+     slides.style.transition = `${0.5}s ease-out`;
+   }
+   if (currentIdx === 0) {
+     setTimeout(function () {
+       slides.style.left = -slideCount * (slideWidth + slideMargin) + 'px';
+       slides.style.transition = `${0}s ease-out`;
+     }, 500);
+     currentIdx = slideCount;
+   }
+   currentIdx -= 1;
+ });
+
+$(function(){
+  setInterval(function(){
+    console.log("asd");
+    if (currentIdx >= 0) {
+      slides.style.left = -currentIdx * (slideWidth + slideMargin ) + 'px';
+      slides.style.transition = `${0.5}s ease-out`;
+    }
+    if (currentIdx === 0) {
+      setTimeout(function () {
+        slides.style.left = -slideCount * (slideWidth + slideMargin) + 'px';
+        slides.style.transition = `${0}s ease-out`;
+      }, 500);
+      currentIdx = slideCount;
+    }
+    currentIdx -= 1;
+  }, 6000);
 });
