@@ -31,22 +31,15 @@ public class CommunityMybatis implements CommunityDAO {
 	}
 
 	@Override
-	public List<CommunityDTO> boardList(String scrollPg,String selected) {
+	public List<CommunityDTO> boardList(String scrollPg) {
 		int endNum = (Integer.parseInt(scrollPg)) * 10;
 		int startNum = endNum - 9;
 		
-		Map<String,Object> map = new HashMap<String,Object>();
+//		System.out.println("startNum = " + startNum + " endNum = " + endNum);
+		Map<String,Integer> map = new HashMap<String,Integer>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
-		
-		if(selected.equals("전체")) {
-			return sqlSession.selectList("communitySQL.boardList",map);
-		}else {
-			map.put("selected", selected);
-			return sqlSession.selectList("communitySQL.themeBoardList",map);
-		}
-		
-		
+		return sqlSession.selectList("communitySQL.boardList",map);
 	}
 
 	@Override

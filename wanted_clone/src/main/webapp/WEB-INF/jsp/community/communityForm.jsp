@@ -34,39 +34,7 @@
     <div class="container_main__body">
     
         <div class="container_main__body__theme_body">
-          <div class="container_main__body__theme">
-          
-	          <div class="container_main__body__theme__scroll-left-icon">
-	       		<i class="fa-solid fa-chevron-left"></i>
-	    	  </div>
-	   		  <div class = "container_main__body__theme_body_action">
-	      	    <section class="container_main__body__theme_body_section">
-	           		<ul class="container_main__body__theme_list">
-	              		<li>
-		                    <input type="button" class="container_main__body__theme_list__button theme_list_style" value="전체">
-		                    <input type="button" class="container_main__body__theme_list__button" value="커리어고민">
-		                    <input type="button" class="container_main__body__theme_list__button" value="취업/이직">
-		                    <input type="button" class="container_main__body__theme_list__button" value="회사생활">
-		                    <input type="button" class="container_main__body__theme_list__button" value="인간관계">
-		                    <input type="button" class="container_main__body__theme_list__button" value="개발">
-		                    <input type="button" class="container_main__body__theme_list__button" value="데이터">
-		                    <input type="button" class="container_main__body__theme_list__button" value="마케팅">
-		                    <input type="button" class="container_main__body__theme_list__button" value="컨텐츠 제작">
-		                    <input type="button" class="container_main__body__theme_list__button" value="IT/기술">
-		                    <input type="button" class="container_main__body__theme_list__button" value="리더쉽">
-		                    <input type="button" class="container_main__body__theme_list__button" value="조직문화">
-	               		</li>
-	           		</ul>
-	       		</section>  
-	   		 </div> 
-		     <div class="container_main__body__theme__scroll-right-icon">
-		         <i class="fa-solid fa-chevron-right"></i>
-		     </div>
-		     <div class="container_main__body__theme__show-all-icon">
-		         <i class="fa-solid fa-ellipsis"></i>
-		     </div>
-
-          </div>
+          <div class="container_main__body__theme"></div>
         </div>
         
         <div class="container_main__body__best_hit">
@@ -90,7 +58,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span class="container_main__body__best_hit__content__example__id_name"></span>
+               		<span></span>
            		</div>
             </div>
 
@@ -101,7 +69,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span class="container_main__body__best_hit__content__example__id_name"></span>
+               		<span></span>
            		</div>
             </div>
 
@@ -112,7 +80,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span class="container_main__body__best_hit__content__example__id_name"></span>
+               		<span></span>
            		</div>
            		
             </div>

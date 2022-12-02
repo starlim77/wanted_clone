@@ -9,7 +9,7 @@ public interface CommunityService {
 
 	public List<CommunityDTO> bestBoard(String pg);
 
-	public List<CommunityDTO> boardList(String scrollPg,String selected);
+	public List<CommunityDTO> boardList(String scrollPg);
 
 	public void boardWrite(CommunityDTO communityDTO);
 

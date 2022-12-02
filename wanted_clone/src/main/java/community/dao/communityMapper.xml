@@ -20,17 +20,6 @@
         where rn >= #{startNum} and rn <= #{endNum}]]>
 	
 	</select>
-	
-	<select id="themeBoardList" parameterType="java.util.Map" resultType="community.bean.CommunityDTO">
-		<![CDATA[select * from 
-            (select rownum rn,tt.* from
-            (select seq,id_,title,content_,theme,view_count,like_count,comment_ from community where theme like '%${selected}%' order by 1 desc)tt)
-        where rn >= #{startNum} and rn <= #{endNum}]]>
-	
-	</select>
-	
-	
-	
 
 	<insert id="boardWrite">
 		insert into community (seq,id_,title,content_,theme,view_count,like_count)

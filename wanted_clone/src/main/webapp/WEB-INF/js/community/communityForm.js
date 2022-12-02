@@ -13,9 +13,6 @@ $(function(){
 		$('.container_main__body__boardwrite__user_icon').css('display','flex');
 	}
 	
-	getScrollPosition();
-    $('.container_main__body__theme_list').on('scroll',getScrollPosition);
-	
 
 $('.container_main__body__boardlist__content__content').on("click", function(){
 	var haha = $(this).parent().find('input').val();
@@ -58,7 +55,7 @@ $('.container_main__body__boardlist__content__content').click(function(){
 			success: function(data){
 				for(var i=0; i < 3; i++){
 				$('.container_main__body__best_hit__content__example__content').eq(i-1).text(data[i].title);
-				$('.container_main__body__best_hit__content__example__id_name').eq(i-1).text(data[i].id_);
+				$('.container_main__body__best_hit__content__example__id > a > span').eq(i-1).text(data[i].id_);
 				$('.container_main__body__best_hit__content__example > a').eq(i-1).attr('href','/controller/community/communityBoard?seq='+data[i].seq);
 				}
 				
@@ -72,12 +69,10 @@ $('.container_main__body__boardlist__content__content').click(function(){
 	
 	//게시물 뿌리기
 	function boardList(){
-		var selected_theme = $('.theme_list_style').val();
-		//alert(selected_theme);
 		$.ajax({
 			type: 'post',
 			url: '/controller/community/boardList',
-			data: 'scrollPg=' + $('#scrollPg').val() + '&selected=' + selected_theme,
+			data: 'scrollPg=' + $('#scrollPg').val(),
 			dataType: 'json',
 			success: function(data){
 				//console.log(JSON.stringify(data));
@@ -193,50 +188,7 @@ $('.container_main__body__boardlist__content__content').click(function(){
 	});
 	
 	
-	//왼쪽 스크롤면 위치계산 후 버튼 숨김 표시
-function getScrollPosition(){
-    if($('.container_main__body__theme_list').scrollLeft() == 0){
-        $('.container_main__body__theme__scroll-left-icon').hide();
-    }else if($('.container_main__body__theme_list').scrollLeft() >= 300){
-        $('.container_main__body__theme__scroll-right-icon').hide();
-    }else{
-        $('.container_main__body__theme__scroll-left-icon').show();
-        $('.container_main__body__theme__scroll-right-icon').show();
-    }
-}
-
-
-
-
-//오른쪽 클릭시
-$('.container_main__body__theme__scroll-right-icon').click(function(){
-    var position = $('.container_main__body__theme_list').scrollLeft();
-    $('.container_main__body__theme_list').animate({ scrollLeft : position + 220},500);
-        
 });
-//왼쪽 클릭시
-$('.container_main__body__theme__scroll-left-icon').click(function(){
-    var position = $('.container_main__body__theme_list').scrollLeft();
-    $('.container_main__body__theme_list').animate({ scrollLeft : position - 220},500);
-    
-});
-
-//버튼 클릭시 효과활성 비활성
-$('.container_main__body__theme_list__button').click(function(){
-	$('.container_main__body__theme_list__button').removeClass('theme_list_style');
-	$(this).addClass('theme_list_style');
-	$('#scrollPg').val('1');
-	$('.container_main__body__boardlist__content').remove();
-	
-	boardList();
-});
-	
-	
-	
-	
-	
-});
-
 
 
 

@@ -29,7 +29,6 @@
     margin-left: 5px;
     font-size: 12pt;
     font-weight: 900;
-    color: #333333;
 }
 
 .community_board__title{
@@ -39,7 +38,6 @@
     display: flex;
     font-size: 20pt;
     font-weight: 900;
-    color: #333333;
 }
 .community_board__theme{
     margin-top: 70px;
@@ -107,7 +105,6 @@
     height: auto;
     word-break:break-word;
     line-height: 30px;
-    color: #333333;
 }
 .community_board__bottom__like,.community_board__bottom__coment{
     width : 80px;
@@ -167,7 +164,7 @@
     word-break:break-word;
     color: #7b7878;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13pt;
     line-height: 25px;
 }
 .comment_hr{
@@ -205,10 +202,9 @@
     width: 70px;
     border-radius: 50px;
     background-color: 2px solid #e2e2e2;
+    color: rgb(151, 151, 151);
     border: none;
     margin-right: 10px;
-    color: #CCCCCC;
-    font-weight: 700;
 }
 #community_comment__write__content_body__btn,.community_comment__bottom_button,.fa-thumbs-up,.fa-share-from-square,.fa-ellipsis:hover{
     cursor: pointer;
@@ -230,9 +226,9 @@
     width: 90px;
     border-radius: 50px;
     border: 2px solid #e2e2e2;
-    font-size: 14px;
+    font-size: 12pt;
     font-weight: 900;
-    color: #333333;
+    color: black;
     background: none;
 }
 
@@ -248,10 +244,4 @@
     font-size: 11pt;
     padding: 0 10px;
     margin-left: 7px;
-    color: #888888;
-    font-weight: 700;
-}
-
-.fa-thumbs-up,.fa-share-from-square,.fa-ellipsis,.fa-comment{
-	color:#333333;
 }
