@@ -40,7 +40,6 @@
 	<context:component-scan base-package="community.controller" />
 
 
-
 	<context:component-scan base-package="resume.controller" />
 
 

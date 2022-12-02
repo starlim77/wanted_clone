@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="jobApplySQL">
+  	
+ 	<select id="getJobApply" parameterType="String" resultType="job.bean.JobApplyDTO">  		
+  		select * from jobapply where id = #{id} order by logtime desc
+  	</select>
+  	    
+    <insert id="profileApply" parameterType="job.bean.JobApplyDTO">
+    	insert into jobapply(id, position, company, logtime, apply, seq) values(
+    	#{id}, #{position}, #{company}, sysdate, '지원완료' , #{seq} )
+    </insert>
+  </mapper>

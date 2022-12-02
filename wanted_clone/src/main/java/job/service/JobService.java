@@ -10,12 +10,10 @@ public interface JobService {
 
 	public List<JobDTO> moreJobList(String seq);
 
-	JobDTO jobBoard(String seq);
+	public JobDTO jobBoard(String seq);
 
 	public List<JobDTO> jobBoardJobList(String seq);
 
 	public List<String> positionList();
-
-	
 	
 }

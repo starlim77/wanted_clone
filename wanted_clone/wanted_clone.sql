@@ -32,3 +32,12 @@ drop table job;
 select*from job;
 
 
+create table jobapply(
+id varchar2(30),
+position varchar2(80),
+company varchar2(30),
+logtime date default sysdate,
+apply varchar2(30),
+seq number);
+
+

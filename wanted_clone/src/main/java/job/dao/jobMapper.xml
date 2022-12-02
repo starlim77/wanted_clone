@@ -36,4 +36,6 @@
     	select position from job group by position order by position
     </select>
     
+
+    
   </mapper>

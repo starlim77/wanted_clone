@@ -96,8 +96,6 @@ $(".jobboard__submit__content__write").click(function(){
 	location.href="/controller/resume/resumeForm?jobBoardSeq="+$(".jobboard__seq").val();
 });
 
-
-
 //파일 업로드 버튼
 $(".jobboard__submit__content__upload").click(function(){
 	$(".file-upload").trigger("click");
@@ -114,6 +112,40 @@ $("#portfolio").change(function(){
 		data:  formData,
 		success: function(){
 			alert("업로드 성공");
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+
+//제출하기 버튼
+$(".jobboard__submit__submit-btn").click(function(){
+	
+	  var jobsortList = new Array();
+	    $(
+	        ".jobboard__submit__content__file__each-select input[type='hidden']"
+	    ).each(function () {
+	        var data = $(this).val();
+	        jobsortList.push(data);
+	    });
+	    var jobsort = jobsortList.join("/");
+	    alert(jobsort);
+
+	
+	
+	$.ajax({
+		type: "post",
+		url: "/controller/job/profileApply",
+		data:{
+			"seq": jobsort,
+			"id" : $(".id").val(),
+			"position" : $(".position").val(),
+			"company": $("#company").text(),
+		},
+		success: function(){
+			alert("");
 			location.reload();
 		},
 		error: function(err){
