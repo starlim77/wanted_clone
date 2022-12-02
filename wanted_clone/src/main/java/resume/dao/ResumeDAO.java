@@ -45,5 +45,4 @@ public interface ResumeDAO {
 	List<LanguageDTO> getLink(String id);
 
 
-
 }
