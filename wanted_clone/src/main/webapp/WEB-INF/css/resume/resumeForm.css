@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+	background-color: #f8f8f8;
+}
+
 .resume-form-wrapper{
 	display: flex;
 	overflow: hidden;
