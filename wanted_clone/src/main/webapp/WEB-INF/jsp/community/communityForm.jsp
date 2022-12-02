@@ -43,7 +43,7 @@
 	      	    <section class="container_main__body__theme_body_section">
 	           		<ul class="container_main__body__theme_list">
 	              		<li>
-		                    <input type="button" class="container_main__body__theme_list__button theme_list_style" value="추천">
+		                    <input type="button" class="container_main__body__theme_list__button theme_list_style" value="전체">
 		                    <input type="button" class="container_main__body__theme_list__button" value="커리어고민">
 		                    <input type="button" class="container_main__body__theme_list__button" value="취업/이직">
 		                    <input type="button" class="container_main__body__theme_list__button" value="회사생활">

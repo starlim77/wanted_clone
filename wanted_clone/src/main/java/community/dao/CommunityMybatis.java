@@ -41,7 +41,7 @@ public class CommunityMybatis implements CommunityDAO {
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
 		
-		if(selected.equals("추천")) {
+		if(selected.equals("전체")) {
 			return sqlSession.selectList("communitySQL.boardList",map);
 		}else {
 			map.put("selected", selected);
