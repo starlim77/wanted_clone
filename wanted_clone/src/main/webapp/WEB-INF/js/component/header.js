@@ -26,8 +26,8 @@ $(function(){
 
 function resumeLoginCheck(){
 	$.ajax({
-		method : "get",
 		url : "/controller/resume/resumeLoginCheck" ,
+		method : "get",
 		dataType: "text",
 		success : function(data){
 			if(data == "0"){
@@ -36,8 +36,12 @@ function resumeLoginCheck(){
 			} else {
 				location.href ="http://localhost:8080/controller/resume/"
 			}
-		}, error : function(err){
-			console.log(err);
-		}
+		},
+		error: function(request, status, error, textStatus){
+            console.log("code: " + request.status);
+            console.log("message: " + request.responseText);
+            console.log("error: " + error);
+            console.log("textStatus: "+textStatus);
+        }
 	});
 }

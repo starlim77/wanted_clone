@@ -37,7 +37,14 @@ public class ResumeController {
 	@Autowired
 	private ResumeDAO resumeDAO;
 
+	
+	@GetMapping(value = "/")
+	public String resume() {
+		return "resume/resume";
+	}
+	
 	@GetMapping(value = "resumeLoginCheck")
+	@ResponseBody
 	public String resumeLoginCheck() {
 		if(httpSession.getAttribute("id") == null) {
 			return "0";
@@ -45,17 +52,6 @@ public class ResumeController {
 			return "1";
 		}
 		
-	}
-	
-	@GetMapping(value = "/")
-	public String resume() {
-		if(httpSession.getAttribute("id") == null) {
-			System.out.println(httpSession.getAttribute("id"));
-			return "user/loginForm";
-		} else {
-			System.out.println(httpSession.getAttribute("id"));
-			return "resume/resume";
-		}
 	}
 
 	@GetMapping(value = "resumeForm")
