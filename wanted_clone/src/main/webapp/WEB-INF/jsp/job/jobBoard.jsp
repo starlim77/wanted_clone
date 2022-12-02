@@ -14,6 +14,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
   
     <section class="jobboard">
       <input type="hidden" class="jobboard__seq" value="${param.seq}">
+       <input class="position" type="hidden" value="${jobDTO.position}">	 
       <div class="jobboard__all-content">
         <div class="jobboard__all-content__information">
           <img src="../img/job/${jobDTO.img}" />
@@ -21,7 +22,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             ${jobDTO.subject}
           </div>
           <div class="jobboard__all-content__information__detail">
-            <span>${jobDTO.company}</span>
+            <span id="company" >${jobDTO.company}</span>
             <span class="jobboard__all-content__information__detail__location"
               > ${jobDTO.location}</span
             >
@@ -79,7 +80,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
           <div class="jobboard__submit__content__form">
             <h4>이메일</h4>
-            <input type="text" readonly value="${id}">
+            <input class="id" type="text" readonly value="${id}">
           </div>
           <div class="jobboard__submit__content__form">
             <h4>휴대폰 번호</h4>
@@ -157,7 +158,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             
           </div>
           <input class="jobboard__submit__content__upload" type="button" value="파일 업로드">
-          <form action="" id="portfolio-form" >
+          <form  id="portfolio-form" >
 		  	<input type="file" class="file-upload" name="portfolio" id="portfolio">
 		  </form>
           <input class="jobboard__submit__content__write" type="button" value="새 이력서 작성">
@@ -172,7 +173,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <ul class="job__content__list">
       	<c:forEach var="jobDTO" items="${jobList}">
 	        <li>
-	          <input type="hidden" value="${jobDTO.seq}">
+	          <input type="hidden" value="${jobDTO.seq}">       
 	          <a class="job__content__list__card" href="/controller/job/jobBoard?seq=${jobDTO.seq}">
 	            <div>
 	              <img

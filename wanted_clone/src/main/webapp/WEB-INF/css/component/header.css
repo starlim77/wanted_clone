@@ -173,6 +173,7 @@
 	height: 100%;
 	z-index: 1;
 	background-color: transparent;
+	display: none;
 }
 
 .nav-bar__menu-list__service__list__profile-popover {

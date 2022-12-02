@@ -1,10 +1,10 @@
 package job.bean;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class JobDTO {
-	private String img, subject, company, location, reward, seq, logtime, content, companylocation;
+	private String img, subject, company, location, reward, seq, logtime, content, companylocation,position;
 }

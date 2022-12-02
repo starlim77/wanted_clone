@@ -4,17 +4,18 @@
 @import "component/header.css";
 @import "component/footer.css";
 @import "component/insight.css";
+@import "component/job.css";
 
 /* Screens */
 
 @import "user/loginForm.css";
 
 
-@import "component/job.css";
 @import "job/jobBoard.css";
+@import "job/profile.css";
 
 @import "community/community_container.css";
-@import "community/community_write.css";
+@import "community/community_write.css"; 
 @import "community/community_board.css";
 
 

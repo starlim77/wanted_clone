@@ -38,7 +38,7 @@ public class JobServiceImpl implements JobService {
 		return list;
 
 	}
-	
+
 	@Override
 	public JobDTO jobBoard(String seq) {
 		JobDTO jobDTOBoard = jobDAO.jobBoard(seq);
@@ -70,6 +70,8 @@ public class JobServiceImpl implements JobService {
 	public List<JobDTO> moreJobList(String seq, String jobsort) {
 		return jobDAO.moreJobList(seq, jobsort);
 	}
+
+
 
 
 }
