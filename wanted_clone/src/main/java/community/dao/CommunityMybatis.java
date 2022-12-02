@@ -49,7 +49,8 @@ public class CommunityMybatis implements CommunityDAO {
 
 	@Override
 	public CommunityDTO getBoard(int seq) {
-		CommunityDTO communityDTO = sqlSession.selectOne("communitySQL.getBoard",seq);		
+		CommunityDTO communityDTO = sqlSession.selectOne("communitySQL.getBoard",seq);	
+		sqlSession.update("communitySQL.viewCount",seq);
 		return communityDTO;
 		
 	}

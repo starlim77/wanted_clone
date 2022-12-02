@@ -23,12 +23,16 @@
 
 	<insert id="boardWrite">
 		insert into community (seq,id_,title,content_,theme,view_count,like_count)
-		 values (community_seq.NEXTVAL,#{id_},#{title},#{content_},'sad',0,0)
+		 values (community_seq.NEXTVAL,#{id_},#{title},#{content_},#{theme},0,0)
 	</insert>
 
 	<select id="getBoard" parameterType="int" resultType="community.bean.CommunityDTO">
 		select id_,title,content_,theme,like_count,comment_ from community where seq=#{seq}
 	</select>
+	
+	<update id="viewCount">
+		update community set view_count=view_count+1 where seq = #{seq}
+	</update>
 	
 	<select id="getComment" resultType="community.bean.CommentDTO">
 		select id_,comment_ from community_comment where seq=#{seq}
@@ -65,4 +69,6 @@
 	<select id="commentCount" resultType="java.lang.Integer">
 		select count(seq) from community_comment where seq = #{seq}
 	</select>
+	
+	
 </mapper>
