@@ -2,6 +2,7 @@
     margin-top: 65px;
 }
 .jobboard__all-content {
+    position: relative;
     display: flex;
     flex-direction: row;
     width: 1065px;
@@ -51,6 +52,7 @@
 .jobboard__apply,
 .jobboard__submit {
     position: fixed;
+    right: calc((100% - 1065px) / 2);
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-sizing: border-box;
     width: 340px;
@@ -100,9 +102,15 @@
     line-height: 30px;
 }
 .jobboard__submit {
-    position: relative;
+    position: fixed;
     padding: 0px;
     height: 770px;
+}
+.jobboard__apply-stop,
+.jobboard__submit-stop {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 .jobboard__submit__subject {
     position: absolute;

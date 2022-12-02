@@ -133,6 +133,41 @@ $("#portfolio").change(function () {
     });
 });
 
+// 지원창 고정
+var submitSw = 0;
+var applySw = 0;
+$(window).scroll(function () {
+    var submit = $(".jobboard__submit").height() + 300;
+    var apply = $(".jobboard__apply").height() + 300;
+    if (
+        $(window).scrollTop() > $(".jobboard__all-content").height() - submit &&
+        submitSw == 0
+    ) {
+        $(".jobboard__submit").toggleClass("jobboard__submit-stop");
+        submitSw = 1;
+    } else if (
+        $(window).scrollTop() < $(".jobboard__all-content").height() - submit &&
+        submitSw == 1
+    ) {
+        $(".jobboard__submit").toggleClass("jobboard__submit-stop");
+        submitSw = 0;
+    }
+
+    if (
+        $(window).scrollTop() > $(".jobboard__all-content").height() - apply &&
+        applySw == 0
+    ) {
+        $(".jobboard__apply").toggleClass("jobboard__apply-stop");
+        applySw = 1;
+    } else if (
+        $(window).scrollTop() < $(".jobboard__all-content").height() - apply &&
+        applySw == 1
+    ) {
+        $(".jobboard__apply").toggleClass("jobboard__apply-stop");
+        applySw = 0;
+    }
+});
+
 var checkScroll1 = 0;
 var checkScroll2 = 0;
 // 채용 공고 리스트 무한스크롤
@@ -152,7 +187,7 @@ $(window).scroll(function () {
                     '.job__content__list > li:last-child > input[type="hidden"]'
                 ).val(),
             success: function (data) {
-                console.log(JSON.stringify(data));
+                // console.log(JSON.stringify(data));
                 checkScroll2++;
 
                 for (let i in data) {
