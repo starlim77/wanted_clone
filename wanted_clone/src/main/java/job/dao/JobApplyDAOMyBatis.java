@@ -25,5 +25,10 @@ public class JobApplyDAOMyBatis implements JobApplyDAO {
 	public void profileApply(JobApplyDTO jobApplyDTO) {
 		sqlSession.insert("jobApplySQL.profileApply",jobApplyDTO);
 	}
+	
+	@Override
+	public String getCount(String id) {
+		return sqlSession.selectOne("jobApplySQL.getCount",id);
+	}
 
 }
