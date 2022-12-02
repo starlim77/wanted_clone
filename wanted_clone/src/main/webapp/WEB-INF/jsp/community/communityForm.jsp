@@ -58,7 +58,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span></span>
+               		<span class="container_main__body__best_hit__content__example__id_name"></span>
            		</div>
             </div>
 
@@ -69,7 +69,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span></span>
+               		<span class="container_main__body__best_hit__content__example__id_name"></span>
            		</div>
             </div>
 
@@ -80,7 +80,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span></span>
+               		<span class="container_main__body__best_hit__content__example__id_name"></span>
            		</div>
            		
             </div>
