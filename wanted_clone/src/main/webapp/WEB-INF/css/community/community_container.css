@@ -79,6 +79,7 @@
   border: 0.5px solid #e2e2e2;
   border-radius: 8px;
   padding: 20px;
+  color: #333333;
 }
 .container_main__body__boardwrite__user_icon {
   display: none;
@@ -115,6 +116,13 @@
 
 .container_main__body__best_hit__title_page_number {
   font-size: 6pt;
+      
+}
+
+#container_main__body__best_hit__title_page_number{
+	font-size: 10pt;
+    font-weight: 700;
+    color: #888888;
 }
 
 .container_main__body__best_hit__title_page {
@@ -168,6 +176,8 @@
 }
 .container_main__body__best_hit__content__example__id > span {
   margin-left: 10px;
+  font-size: 10pt;
+  font-weight: 600;
 }
 
 .container_sub__my_community__body__title {
@@ -294,9 +304,8 @@
     height: 80px;
     margin-left: 7%;
     margin-top: 7px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 11pt;
-    font-weight: 700;
+    font-size: 10pt;
+    font-weight: 600;
     word-break:break-word;
     overflow: hidden;
 	text-overflow: ellipsis;
@@ -304,6 +313,7 @@
 	display: -webkit-box;
 	width: 30rem;
 	line-height: 20px;
+	color: #666666;
 }
 
 .container_main__body__boardlist__content__tag {
@@ -345,6 +355,8 @@
     border:  0.5px solid #e2e2e2;
     height: 22px;
     margin-left: 7px;
+    font-size: 8pt;
+    color: #888888;
 }
 
 .container_main__body__best_hit__content__example__id_img{
@@ -359,11 +371,12 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     padding: 10px 15px;
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.6);
     background-color: white;
     white-space: nowrap;
     margin-left: 5px;
+    font-size: 10pt;
+    color: #888888;
+    font-weight: 700;
 }
 .container_main__body__theme_list__button:hover{
     cursor: pointer;

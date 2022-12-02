@@ -35,8 +35,6 @@ public class CommunityMybatis implements CommunityDAO {
 		int endNum = (Integer.parseInt(scrollPg)) * 10;
 		int startNum = endNum - 9;
 		
-//		System.out.println("startNum = " + startNum + " endNum = " + endNum);
-		System.out.println(selected);
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
