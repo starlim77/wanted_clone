@@ -35,6 +35,7 @@ body{
 .resume-form{
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: left;
 }
 .resume-form__wrapper{

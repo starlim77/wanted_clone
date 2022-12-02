@@ -34,7 +34,7 @@ pageEncoding="UTF-8"%>
                             type="text"
                             class="resume_seq"
                             name="resume_seq"
-                            value="${param.resumeSeq}"
+                            value="${param.resumeSeq}" style="visibility: hidden;"
                         />
                         <input
                             type="text"
