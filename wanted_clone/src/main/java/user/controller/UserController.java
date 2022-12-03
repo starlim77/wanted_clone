@@ -34,7 +34,6 @@ public class UserController {
 	@RequestMapping(value = "login")
 	@ResponseBody
 	public UserDTO login(@ModelAttribute UserDTO userDTO) {
-//		System.out.println(userDTO.getPwd());
 		return userService.login(userDTO);
 	}
 	
@@ -55,5 +54,4 @@ public class UserController {
 		userService.logout();
 		return "index";
 	}
-	
 }

@@ -54,6 +54,9 @@
     justify-content: center;
 }
 
+.slides li img{
+border-radius: 4px;
+}
 
 /* 슬라이드들 옆으로 정렬 */
 .slides li:not(:last-child) {
