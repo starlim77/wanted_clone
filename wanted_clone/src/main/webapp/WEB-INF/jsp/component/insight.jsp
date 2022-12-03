@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <a name="insight__header"></a>
+    <br>
 <section class="insight">
-     <div class="insight__header">
+     <div class="insight__header" id="insight__header">
        <span>나에게 필요한 커리어 인사이트</span>
        <a href="#" class="insight__header__popup-icon">
          <i class="fa-regular fa-circle-question"></i>
@@ -27,14 +29,14 @@
          <i class="fa-solid fa-chevron-left"></i>
        </div>
        <ul class="insight__nav-bar__list">
+        <li>
+          <button class="insight__nav-bar__list__button">
+            <span>회사생활</span>
+          </button>
+        </li>
          <li>
            <button class="insight__nav-bar__list__button">
              <span>취업/이직</span>
-           </button>
-         </li>
-         <li>
-           <button class="insight__nav-bar__list__button">
-             <span>회사생활</span>
            </button>
          </li>
          <li>
@@ -44,19 +46,14 @@
          </li>
          <li>
            <button class="insight__nav-bar__list__button">
-             <span>개발</span>
-           </button>
-         </li>
-         <li>
-           <button class="insight__nav-bar__list__button">
              <span>커리어고민</span>
            </button>
          </li>
          <li>
-           <button class="insight__nav-bar__list__button">
-             <span>UX/UI</span>
-           </button>
-         </li>
+          <button class="insight__nav-bar__list__button">
+            <span>개발</span>
+          </button>
+        </li>
          <li>
            <button class="insight__nav-bar__list__button">
              <span>브랜딩</span>
@@ -78,9 +75,9 @@
            </button>
          </li>
          <li>
-           <button class="insight__nav-bar__list__button">
-             <span>인간관계</span>
-           </button>
+          <button class="insight__nav-bar__list__button">
+            <span>UX/UI</span>
+          </button>
          </li>
          <li>
            <button class="insight__nav-bar__list__button">
