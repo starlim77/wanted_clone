@@ -25,4 +25,6 @@ public interface CommunityService {
 
 	public void likeBtn(String like, String seq);
 
+	public List<CommunityDTO> myCommunityBoard(String id);
+
 }

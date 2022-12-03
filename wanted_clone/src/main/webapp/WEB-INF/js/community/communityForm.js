@@ -10,6 +10,7 @@ $(function(){
 	//첫 시작화면 아이디 체크.
 	if(id != ""){
 		$('.container_sub__my_community__body__profile__login_condition > a').children('span').empty().text(id);
+		$('.container_sub__my_community__body__profile__login_condition > a').attr('href','/controller/community/myCommunity');
 		$('.container_main__body__boardwrite__user_icon').css('display','flex');
 	}
 	

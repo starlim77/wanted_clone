@@ -70,5 +70,8 @@
 		select count(seq) from community_comment where seq = #{seq}
 	</select>
 	
+	<select id="myCommunityBoard" resultType="community.bean.CommunityDTO">
+		select seq,title,content_,like_count,comment_ from community where id_ like #{id} order by seq desc
+	</select>
 	
 </mapper>

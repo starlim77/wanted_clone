@@ -96,6 +96,16 @@ public class CommunityController {
 		communityService.likeBtn(like,seq);
 	}
 	
+	@GetMapping("myCommunity")
+	public String myCommunity(){
+		return "/community/myCommunity";
+	}
+	
+	@PostMapping(value="myCommunityBoard")
+	@ResponseBody
+	public List<CommunityDTO> myCommunityBoard(@RequestParam String id) {
+		return communityService.myCommunityBoard(id);
+	}
 }
 
 
