@@ -72,7 +72,7 @@ $(".jobboard__submit__content__file__checkbox__label-disable").click(
     function () {
         if (
             confirm(
-                "작성 중인 이력서는 선택할 수 없습니다. 지금 확인하고 완료하시겠습니까?"
+                "작성 중인 이력서는 선택할 수 없습니다. \n지금 확인하고 완료하시겠습니까?"
             )
         ) {
             location.href =
@@ -134,7 +134,16 @@ $("#portfolio").change(function () {
 });
 
 //제출하기 버튼
-$(".jobboard__submit__submit-btn").click(function(){
+$(".jobboard__submit__submit-btn").click(function () {
+    var jobsortList = new Array();
+    $(
+        ".jobboard__submit__content__file__each-select input[type='hidden']"
+    ).each(function () {
+        var data = $(this).val();
+        jobsortList.push(data);
+    });
+    var jobsort = jobsortList.join("/");
+    alert(jobsort);
 
 	  var jobsortList = new Array();
 	    $(
@@ -144,7 +153,7 @@ $(".jobboard__submit__submit-btn").click(function(){
 	        jobsortList.push(data);
 	    });
 	    var jobsort = jobsortList.join("/");
-	  
+
 
 
 
@@ -158,14 +167,13 @@ $(".jobboard__submit__submit-btn").click(function(){
 			"company": $("#company").text(),
 		},
 		success: function(){
-		location.href='http://localhost:8080/controller/job/profile?id='+$('.id').val() 
+		location.href='http://localhost:8080/controller/job/profile?id='+$('.id').val()
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
 });
-
 
 // 지원창 고정
 var submitSw = 0;
@@ -202,7 +210,6 @@ $(window).scroll(function () {
     }
 });
 
-
 var checkScroll1 = 0;
 var checkScroll2 = 0;
 // 채용 공고 리스트 무한스크롤
@@ -238,7 +245,10 @@ $(window).scroll(function () {
                     //전체
                     var card = $("<a>");
                     card.addClass("job__content__list__card");
-                    card.attr("href", "#");
+                    card.attr(
+                        "href",
+                        "/controller/job/jobBoard?seq=" + data[i].seq
+                    );
 
                     //img
                     var img = $("<img>");
@@ -305,3 +315,24 @@ $(window).scroll(function () {
         });
     }
 });
+
+//채용 공고 삭제 기능
+$(".jobboard__all-content__information__subject__delete-btn").click(
+    function () {
+        var jobboard__seq = $(".jobboard__seq").val();
+        if (confirm("채용 공고를 정말로 삭제 하시겠습니까?")) {
+            $.ajax({
+                type: "get",
+                url: "/controller/job/jobBoardDelete",
+                data: "seq=" + jobboard__seq,
+                success: function () {
+                    alert("채용 공고 삭제 완료");
+                    location.href = "/controller/job/jobList";
+                },
+                error: function (err) {
+                    console.log(err);
+                },
+            });
+        }
+    }
+);

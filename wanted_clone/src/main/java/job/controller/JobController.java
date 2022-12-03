@@ -37,8 +37,7 @@ public class JobController {
 	@RequestMapping(value = "jobList")
 	public ModelAndView jobList(@RequestParam(required = false) String jobsort ){
 		List<JobDTO> jobList = null;
-
-		System.out.println(jobsort);
+		//System.out.println(jobsort);
 		if(jobsort == null){
 			jobList = jobService.getJobList();
 		}else{
@@ -58,7 +57,7 @@ public class JobController {
 	@RequestMapping(value = "moreJobList")
 	@ResponseBody
 	public List<JobDTO> moreJobList(@RequestParam String seq, @RequestParam(required = false) String jobsort ){
-		System.out.println(seq);
+		//System.out.println(seq);
 		if(jobsort == null) {
 			return jobService.moreJobList(seq);
 		}else {
@@ -70,7 +69,7 @@ public class JobController {
 	public ModelAndView jobBoard(@RequestParam String seq) {
 
 		JobDTO jobDTO = jobService.jobBoard(seq);
-		System.out.println(jobDTO);
+		//System.out.println(jobDTO);
 		List<ResumeDTO> list = resumeService.getAllResumeList();
 		List<JobDTO> jobList = jobService.jobBoardJobList(seq);
 
@@ -82,6 +81,13 @@ public class JobController {
 
 		return mav;
 	}
+	
+	@RequestMapping(value = "jobBoardDelete")
+	@ResponseBody
+	public void jobBoardDelete(@RequestParam String seq) {
+		jobService.jobBoardDelete(seq);
+	}
+	
 
 	@RequestMapping(value = "profile")
 	public ModelAndView profile(@RequestParam(required =false) String id) {
@@ -102,5 +108,7 @@ public class JobController {
 		System.out.println(jobApplyDTO);
 		jobApplyDAO.profileApply(jobApplyDTO);
 	}
-
+	
+	
+	
 }

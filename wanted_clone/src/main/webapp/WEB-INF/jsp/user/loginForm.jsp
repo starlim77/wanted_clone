@@ -29,14 +29,9 @@
             <input class="loginform-id__div__input-submit" type="button" value="이메일로 계속하기"></input>
             <p class="loginform-id__div__or">또는</p>
             <div class="loginform-id__div__sns-login">
-                <div class="loginform-id__div__sns-login__kakao">
-                    <img src="" alt="kakao">
-                    <span>Kakao</span>
-                </div>
-                <div id="naverIdLogin_loginButton">
-                    <img src="" alt="naver">
-                    <span>Naver</span>
-                </div>
+                <div id="naver_id_login" style="text-align:center"><a href="${url}">
+				<img width="223" src="https://developers.naver.com/doc/review_201802/CK_bEFnWMeEBjXpQ5o8N_20180202_7aot50.png"/></a></div>
+				
             </div>
             <hr class="loginform-id__div__hr">
             <div class="loginform-id__div__terms">
@@ -111,31 +106,11 @@
             이메일로 로그인
         </div>
         <div class="loginform-pwd__input-name">비밀번호</div>
-        <input class="loginform-pwd__input-pwd" type="text" placeholder="비밀번호를 입력해주세요.">
+        <input class="loginform-pwd__input-pwd" type="password" placeholder="비밀번호를 입력해주세요.">
         <input class="loginform-pwd__input-next" type="button" value="다음">
         <div class="loginform-pwd__change-pwd">비밀번호 초기화/변경</div>
     </section>
-
     
-    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js"></script>
-    <script>
-        
-
-
-
-        var naverLogin = new naver.LoginWithNaverId({
-    clientId: "jTI17Eg735RLpdY6fa9_",
-    callbackUrl: "http://localhost:8080/controller/",
-    isPopup: false /* 팝업을 통한 연동처리 여부 */,
-    loginButton: {
-        color: "green",
-        type: 3,
-        height: 62,
-    } /* 로그인 버튼의 타입을 지정 */,
-}); /* 설정정보를 초기화하고 연동을 준비 */
-naverLogin.init();
-
-    </script>
     <script
     src="https://kit.fontawesome.com/1f61694686.js"
     crossorigin="anonymous"
