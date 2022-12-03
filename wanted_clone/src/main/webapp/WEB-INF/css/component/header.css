@@ -68,7 +68,7 @@
 }
 
 .nav-bar__hamberger-icon-container > li a:hover {
-    background: #ddf8ff;
+    background: #f7ffff;
     color: blue;
     font-size: 18px;
 }
@@ -264,6 +264,7 @@ border-radius: 10px;
 
 .nav-bar__menu-list__service__list__profile-popover__menu__list:hover {
     background: #dcdcdc;
+    cursor: pointer;
 }
 
 .header hr {
