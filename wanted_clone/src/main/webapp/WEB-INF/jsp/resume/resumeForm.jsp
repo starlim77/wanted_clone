@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
         <div>
             <jsp:include page="../../jsp/component/header.jsp"></jsp:include>
         </div>
+        <div class="resume-body">
         <input type="hidden" id="jobBoardSeq" value="${param.jobBoardSeq}" />
         <div class="resume-form-wrapper">
             <div class="resume-form-cotainer">
@@ -444,7 +445,7 @@ pageEncoding="UTF-8"%>
                 작성 완료
             </button>
         </footer>
-
+    </div>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script
             src="https://kit.fontawesome.com/1f61694686.js"
