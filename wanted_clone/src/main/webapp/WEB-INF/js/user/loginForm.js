@@ -23,7 +23,7 @@ $(function () {
                 "loginform-id__div__input-submit-enable"
             );
         }
-    }, 1000);
+    }, 500);
 
     // 로그인 비밀번호 입력창 유효성 검사
     setInterval(function () {
@@ -39,7 +39,7 @@ $(function () {
                 "loginform-pwd__input-next-enable"
             );
         }
-    }, 1000);
+    }, 500);
 
     // 핸드폰번호 유효성 검사
     phoneNum = setInterval(function () {
@@ -61,7 +61,7 @@ $(function () {
                 "loginform-signup__tel__certify__get-certify-writing"
             );
         }
-    }, 1000);
+    }, 500);
 
     // 회원가입 버튼 비활성화
     $(".loginform-signup__signup-btn").attr("disabled", true);
@@ -91,11 +91,28 @@ $(function () {
             );
             $("#certify").addClass("certify-disable");
         }
-
-        if (pwd != repwd && pwd) {
-            $("#pwdDiv").text("비밀번호가 다릅니다.");
-        } else {
+        var pwdCheck =
+            /^.*(?=^.{8,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+        if (pwd && !pwdCheck.test(pwd)) {
+            $("#pwdDiv").text("올바르지 않은 비밀번호 입니다.");
+            $("#pwd").addClass("pwd-enable");
+        } else if (pwd && pwdCheck.test(pwd)) {
             $("#pwdDiv").text("");
+            $("#pwd").removeClass("pwd-enable");
+        }
+        if (pwd == repwd && repwd) {
+            $("#repwdDiv").text("사용 가능한 비밀번호입니다.");
+            $("#repwd").removeClass("pwd-enable");
+            $("#repwdDiv").css("color", "#08ba9c");
+        } else if (pwd != repwd && repwd) {
+            $("#repwdDiv").text("비밀번호가 서로 일치하지 않습니다.");
+            $("#repwd").addClass("pwd-enable");
+            $("#repwdDiv").removeClass("repwdDiv-enable");
+            $("#repwdDiv").css("color", "#fe415c");
+        } else if (pwd != repwd && !repwd) {
+            $("#repwdDiv").text("");
+            $("#repwdDiv").css("color", "#fe415c");
+            $("#repwd").removeClass("pwd-enable");
         }
         if (
             isName &&
@@ -104,7 +121,8 @@ $(function () {
             isCheck2 &&
             isCheck3 &&
             pwd == repwd &&
-            pwd
+            pwd &&
+            pwdCheck.test(pwd)
         ) {
             $(".loginform-signup__signup-btn").attr("disabled", false);
             $(".loginform-signup__signup-btn").addClass(
@@ -116,7 +134,7 @@ $(function () {
                 "loginform-signup__signup-btn-enable"
             );
         }
-    }, 1000);
+    }, 500);
 });
 
 var id;
@@ -211,7 +229,7 @@ $(".loginform-signup__tel__certify__get-certify").click(function () {
         url: "/controller/user/smsCertify",
         data: "tel=" + $(".loginform-signup__tel__certify__telnum").val(),
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             certifyNum = data;
         },
         error: function (err) {
@@ -243,11 +261,15 @@ function checkSignUpForm() {
 
 // 체크박스 전체 선택
 $(".loginform-signup__agree__all-agree").click(function () {
-    $(".loginform-signup__agree__each-agree > input").attr(
-        "checked",
-        $("#agree-all").is(":checked")
-    );
-    console.log("ha");
+    $(".loginform-signup__agree__each-agree > input").each(function () {
+        $(this).prop("checked", $("#agree-all").is(":checked"));
+    });
+});
+// 체크박스 해제시 전체 선택 체크박스도 해제
+$(".loginform-signup__agree__each-agree").on("click", function () {
+    if (!$(this).find("input").is(":checked")) {
+        $(".loginform-signup__agree__all-agree > input").prop("checked", false);
+    }
 });
 
 //

@@ -70,8 +70,9 @@
             </div>
             <div class="loginform-signup__input-name">비밀번호</div>
             <input class="loginform-signup__input" id="pwd" type="password" name="pwd" placeholder="비밀번호를 입력해주세요.">
-            <input class="loginform-signup__input" id="repwd" type="password" placeholder="비밀번호를 다시 한번 입력해주세요.">
             <div id="pwdDiv"></div>
+            <input class="loginform-signup__input" id="repwd" type="password" placeholder="비밀번호를 다시 한번 입력해주세요.">
+            <div id="repwdDiv"></div>
             <p class="loginform-signup__pwd-p">영문 대소문자, 숫자, 특수문자를 3가지 이상으로 조합해 8자 이상 <br>16자 이하로 입력해주세요.</p>
             <div class="loginform-signup__agree">
                 <ul>
