@@ -31,15 +31,22 @@ public class CommunityMybatis implements CommunityDAO {
 	}
 
 	@Override
-	public List<CommunityDTO> boardList(String scrollPg) {
+	public List<CommunityDTO> boardList(String scrollPg,String selected) {
 		int endNum = (Integer.parseInt(scrollPg)) * 10;
 		int startNum = endNum - 9;
 		
-//		System.out.println("startNum = " + startNum + " endNum = " + endNum);
-		Map<String,Integer> map = new HashMap<String,Integer>();
+		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
-		return sqlSession.selectList("communitySQL.boardList",map);
+		
+		if(selected.equals("전체")) {
+			return sqlSession.selectList("communitySQL.boardList",map);
+		}else {
+			map.put("selected", selected);
+			return sqlSession.selectList("communitySQL.themeBoardList",map);
+		}
+		
+		
 	}
 
 	@Override
@@ -97,7 +104,11 @@ public class CommunityMybatis implements CommunityDAO {
 			sqlSession.update("communitySQL.likeDown",seq);
 		}
 		
-		
+	}
+
+	@Override
+	public List<CommunityDTO> myCommunityBoard(String id) {
+		return sqlSession.selectList("communitySQL.myCommunityBoard",id);
 	}
 
 }

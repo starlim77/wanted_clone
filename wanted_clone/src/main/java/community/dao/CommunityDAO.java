@@ -9,7 +9,7 @@ public interface CommunityDAO {
 
 	public List<CommunityDTO> bestBoard(String pg);
 
-	public List<CommunityDTO> boardList(String scrollPg);
+	public List<CommunityDTO> boardList(String scrollPg,String selected);
 
 	public void boardWrite(CommunityDTO communityDTO);
 
@@ -24,5 +24,7 @@ public interface CommunityDAO {
 	public void commentWrite(CommentDTO commentDTO);
 
 	public void likeBtn(String like, String seq);
+
+	public List<CommunityDTO> myCommunityBoard(String id);
 
 }

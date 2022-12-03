@@ -29,8 +29,8 @@ public class CommunityServiceImple implements CommunityService {
 	}
 
 	@Override
-	public List<CommunityDTO> boardList(String scrollPg) {
-		return communityDAO.boardList(scrollPg);
+	public List<CommunityDTO> boardList(String scrollPg,String selected) {
+		return communityDAO.boardList(scrollPg,selected);
 	}
 
 	@Override
@@ -73,6 +73,11 @@ public class CommunityServiceImple implements CommunityService {
 	public void likeBtn(String like,String seq) {
 		communityDAO.likeBtn(like,seq);
 		
+	}
+
+	@Override
+	public List<CommunityDTO> myCommunityBoard(String id) {
+		return communityDAO.myCommunityBoard(id);
 	}
 
 }
