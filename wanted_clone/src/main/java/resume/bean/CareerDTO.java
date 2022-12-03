@@ -13,7 +13,7 @@ public class CareerDTO {
 	private String companyName;
 	private String department;
 	private String outcome;
-	private String outcomeContent;
+	private String outcomeComment;
 	private String startOutcomeyear;
 	private String startOutcomeMonth;
 	private String endOutcomeYear;

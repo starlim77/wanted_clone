@@ -43,7 +43,7 @@ $(".close-btn").click(function(){
 });
 //주요 성과 닫기 버튼
 $(".close-detail-btn").click(function(){
-    $(this).parent().nextAll(".detail-form").css("display", "none");
+    $(".detail-form").css("display", "none");
 });
 
 // 경력 주요 성과 폼 생성
@@ -98,10 +98,9 @@ $(".submit-btn").click(function(){
         var dateInput = $(this).parent().siblings(".add-career__date").find("input");
         var companyNameInput = $(this).parent().siblings(".company-name").find("input");
         var departmentNameInput = $(this).parent().siblings(".department-name").find("input");
-        var detailNameInput = $(this).parent().siblings("detail-form").find("div:eq(0)").find("input");
+        var detailNameInput = $(this).parent().siblings(".detail-form").find("div:eq(0)").find("input");
         var datailDateInput = $(this).parent().siblings(".detail-form").find("div:eq(1)").find("input");
         var datailContentInput = $(this).parent().siblings(".detail-form").find("div:eq(2)").find("input");
-        alert(dateInput.attr("class"))
         $.ajax({
             url: "/controller/resume/careerSave",
             type: "post",
@@ -419,7 +418,7 @@ $(function(){
         success: function(data){
             data.forEach(function(index){
                 var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
-                var addCareerDiv = $("<div/>").addClass("add-link"); //2dep
+                var addCareerDiv = $("<div/>").addClass("new-add-link"); //2dep
 
                 //link
                 var linkInput = $("<input/>").addClass("company-name__input").val(index.link)
@@ -441,23 +440,23 @@ $(function(){
 
 });
 
-$(document).on("click",".delete-add-btn",function(){
-    if(".delete-add-btn" === "0"){
-        $.ajax({
-        url: "/controller/resume/deleteCareer",
-        type: "post",
-        data: "career_seq=" + $(".career_seq").val(),
-        dataType: "json",
-        success: function(){
-            location.reload();
-        },
-        error: function(request, status, error, textStatus){
-            console.log("code: " + request.status);
-            console.log("message: " + request.responseText);
-            console.log("error: " + error);
-            console.log("textStatus: "+textStatus);
-        }
-        });
+// $(document).on("click",".delete-add-btn",function(){
+//     if(".delete-add-btn" === "0"){
+//         $.ajax({
+//         url: "/controller/resume/deleteCareer",
+//         type: "post",
+//         data: "career_seq=" + $(".career_seq").val(),
+//         dataType: "json",
+//         success: function(){
+//             location.reload();
+//         },
+//         error: function(request, status, error, textStatus){
+//             console.log("code: " + request.status);
+//             console.log("message: " + request.responseText);
+//             console.log("error: " + error);
+//             console.log("textStatus: "+textStatus);
+//         }
+//         });
 
-    }
-});
+//     }
+// });

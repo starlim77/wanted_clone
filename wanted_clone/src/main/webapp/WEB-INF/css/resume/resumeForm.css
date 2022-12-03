@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-.resumeForm_body {
-    background-color: #f8f8f8;
+.resume-body{
+	background-color: #f8f8f8;
 }
 
 .resume-form-wrapper {
@@ -32,11 +32,12 @@
     width: 120px;
     height: 30px;
 }
-.resume-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+.resume-form{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	margin-bottom: 150px;
 }
 .resume-form__wrapper {
     width: 100%;
@@ -73,11 +74,11 @@
     flex-wrap: wrap;
     float: left;
 }
-.intorduce__txt {
-    display: flex;
-    text-align: left;
-    width: 100%;
-    margin-top: 10px;
+.intorduce__txt{
+	display: flex;
+	text-align: left;
+	width: 100%;
+	margin-top: 20px;
 }
 .resume-form__introduce {
     display: flex;
@@ -139,7 +140,6 @@
 	width: 100%;
 	background: url(../../img/resume/bg_topnav.png) repeat-x 170px;
 	opacity: .3;
-	margin-bottom: 45px;
 }
 .career-add-btn-wrapper{
 	display: flex;
@@ -328,11 +328,12 @@
 .detail-content {
     display: flex;
 }
-.detail-content__input {
-    width: 80%;
-    background-color: #f8f8f8;
-    font-size: 15px;
-    border: 0;
+.detail-content__input{
+	width: 80%;
+	margin-top: 10px;
+	background-color: #f8f8f8;
+	font-size: 15px;
+	border: 0;
 }
 .education-wrapper {
     width: 100%;
@@ -433,20 +434,30 @@
     color: #36f;
     font-size: 15px;
 }
-.add-link__submit {
-    display: flex;
-    justify-content: flex-start;
-    width: 440px;
-    background-color: #f8f8f8;
+.link-form{
+	display: flex;
+}
+.add-link__submit{
+	display: flex;
+	justify-content: flex-start;
+	width: 440px;
+	background-color:  #f8f8f8;
 }
 .add-link{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
+	align-content: flex-start;
+	width: 100%;
+	height: 50px;
+}
+.new-add-link{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 	align-content: center;
 	width: 100%;
-	height: 90px;
-	padding-bottom: 30px;
+	height: 50px;
 }
 .add-link input{
 	display: flex;
@@ -454,4 +465,5 @@
 }
 .link_txt{
 	text-align: left;
+	margin-top: 20px;
 }

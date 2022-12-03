@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
         <div>
             <jsp:include page="../../jsp/component/header.jsp"></jsp:include>
         </div>
+        <div class="resume-body">
         <input type="hidden" id="jobBoardSeq" value="${param.jobBoardSeq}" />
         <div class="resume-form-wrapper">
             <div class="resume-form-cotainer">
@@ -142,149 +143,40 @@ pageEncoding="UTF-8"%>
                                             주요 성과 추가
                                         </div>
                                     </button>
-                                    <button type="button" class="close-btn">
-                                        X
-                                    </button>
                                 </div>
                                 <!-- 주요 성과 폼 -->
                                 <div class="detail-form">
                                     <div class="detail-name">
                                         <input type="text" name="outcome" class="detail-name__input detail-input" placeholder="중요 성과">
+                                        <button type="button" class="close-detail-btn">
+                                            X
+                                        </button>
                                     </div>
                                     <div class="detail-date">
                                         <input type="text" name="startYear" class="year detail-input" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                         .
                                         <input
-                                            type="text"
-                                            name="startMonth"
-                                            class="month"
-                                            maxlength="2"
-                                            placeholder="MM"
-                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                        />
+                                            type="text" name="startMonth"class="month"maxlength="2"placeholder="MM"
+                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"/>
                                         -
-                                        <input
-                                            type="text"
-                                            name="endYear"
-                                            class="year"
-                                            maxlength="4"
-                                            placeholder="YYYY"
-                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                        />
+                                        <input type="text"name="endYear"class="year"maxlength="4"placeholder="YYYY"
+                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"/>
                                         .
-                                        <input
-                                            type="text"
-                                            name="endMonth"
-                                            class="month"
-                                            maxlength="2"
-                                            placeholder="MM"
-                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                        />
+                                        <input type="text" name="endMonth"class="month"maxlength="2"placeholder="MM"
+                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"/>
                                     </div>
-
-                                    <div class="company-name">
-                                        <input
-                                            type="text"
-                                            name="companyName"
-                                            class="company-name__input"
-                                            placeholder="회사명"
-                                        />
-                                        <button type="button" class="close-btn">
-                                            X
-                                        </button>
+                                    <div class="detail-content">
+                                        <input type="text" class="detail-content__input" placeholder="상세 업무 내용과 성과를 기입해주세요">
                                     </div>
-                                    <div class="department-name">
-                                        <input
-                                            type="text"
-                                            name="department"
-                                            class="department__input"
-                                            placeholder="부서/직책"
-                                        />
-                                    </div>
-                                    <!-- 주요 성과 추가 버튼 -->
-                                    <div class="add-detail-btn-wrapper">
-                                        <button
-                                            type="button"
-                                            class="add-career__btn"
-                                        >
-                                            <img
-                                                alt=""
-                                                src="/controller/img/resume/plus-solid.svg"
-                                            />
-                                            <div class="add__btn__txt">
-                                                주요 성과 추가
-                                            </div>
-                                        </button>
-                                        <button type="button" class="close-btn">
-                                            X
-                                        </button>
-                                    </div>
-                                    <!-- 주요 성과 폼 -->
-                                    <div class="detail-form">
-                                        <div class="detail-name">
-                                            <input
-                                                type="text"
-                                                name="outcome"
-                                                class="detail-name__input detail-input"
-                                                placeholder="중요 성과"
-                                            />
-                                        </div>
-                                        <div class="detail-date">
-                                            <input
-                                                type="text"
-                                                name="startYear"
-                                                class="year detail-input"
-                                                maxlength="4"
-                                                placeholder="YYYY"
-                                                onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                            />
-                                            .
-                                            <input
-                                                type="text"
-                                                name="startMonth"
-                                                class="month detail-input"
-                                                maxlength="2"
-                                                placeholder="MM"
-                                                onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                            />
-                                            -
-                                            <input
-                                                type="text"
-                                                name="endYear"
-                                                class="year detail-input"
-                                                maxlength="4"
-                                                placeholder="YYYY"
-                                                onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                            />
-                                            .
-                                            <input
-                                                type="text"
-                                                name="endMonth"
-                                                class="month detail-input"
-                                                maxlength="2"
-                                                placeholder="MM"
-                                                onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                            />
-                                        </div>
-                                        <div class="detail-content">
-                                            <input
-                                                type="text"
-                                                name="outcomeContent"
-                                                class="detail-content__input detail-input"
-                                                placeholder="상세 업무 내용과 성과를 기입해주세요"
-                                            />
-                                        </div>
-                                    </div>
-                                    <!-- 주요성과 추가 완료 버튼 -->
-                                    <div class="add-career__submit">
-                                        <button
-                                            type="button"
-                                            class="submit-btn"
-                                            value="0"
-                                        >
-                                            추가하기
-                                        </button>
-                                    </div>
+                                    <!-- 경력 추가 완료 버튼 -->
+                                </div>
+                                <div class="add-career__submit">
+                                    <button
+                                        type="button"
+                                        class="submit-btn"
+                                        value="0">
+                                        추가하기
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -299,98 +191,55 @@ pageEncoding="UTF-8"%>
                                 </ul>
                             </div>
                             
+
+                            <!-- 학력 추가 버튼 -->
+                            <div class="education-add-btn-wrapper">
+                                <button type="button" class="add__btn">
+                                    <img
+                                    alt=""
+                                    src="/controller/img/resume/plus-solid.svg"
+                                    />
+                                    <div class="add__btn__txt">추가</div>
+                                </button>
+                            </div>
                             <!-- 학력 추가 폼-->
                             <div class="add-form">
                                 <div class="add-career">
                                     <div class="add-career__date">
-                                        <input
-                                            type="text"
-                                            name="startYear"
-                                            class="year"
-                                            maxlength="4"
-                                            placeholder="YYYY"
-                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                        />
+                                        <input type="text" name="startYear" class="year" maxlength="4" placeholder="YYYY"
+                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"/>
                                         .
-                                        <input
-                                            type="text"
-                                            name="startMonth"
-                                            class="month"
-                                            maxlength="2"
-                                            placeholder="MM"
-                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                        />
+                                        <input type="text" name="startMonth" class="month" maxlength="2" placeholder="MM"
+                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
                                         -
-                                        <input
-                                            type="text"
-                                            name="endYear"
-                                            class="year"
-                                            maxlength="4"
-                                            placeholder="YYYY"
-                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                        />
+                                        <input type="text" name="endYear" class="year" maxlength="4" placeholder="YYYY"
+                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
                                         .
-                                        <input
-                                            type="text"
-                                            name="endMonth"
-                                            class="month"
-                                            maxlength="2"
-                                            placeholder="MM"
-                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"
-                                        />
+                                        <input type="text" name="endMonth" class="month" maxlength="2" placeholder="MM"
+                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
                                     </div>
 
                                     <div class="company-name">
-                                        <input
-                                            type="text"
-                                            name="schoolName"
-                                            class="company-name__input"
-                                            placeholder="학교명"
-                                        />
+                                        <input type="text" name="schoolName" class="company-name__input" placeholder="학교명" />
                                         <button type="button" class="close-btn">
                                             X
                                         </button>
                                     </div>
                                     <div class="department-name">
-                                        <input
-                                            type="text"
-                                            name="major"
-                                            class="department__input"
-                                            placeholder="전공 및 학위 (ex: 경영학과 학사)"
-                                        />
+                                        <input type="text" name="major" class="department__input" placeholder="전공 및 학위 (ex: 경영학과 학사)"/>
                                     </div>
                                     <div class="department-name">
-                                        <input
-                                            type="text"
-                                            name="content"
-                                            class="department__input"
-                                            placeholder="이수 과목 또는 연구 내용"
-                                        />
+                                        <input type="text"name="content"class="department__input"placeholder="이수 과목 또는 연구 내용"/>
                                     </div>
                                     <div class="add-career__submit">
-                                        <button
-                                            type="button"
-                                            class="submit-btn"
-                                            value="1"
-                                        >
+                                        <button type="button"class="submit-btn"value="1">
                                             추가하기
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        
-                        <!-- 학력 추가 버튼 -->
-                        <div class="education-add-btn-wrapper">
-                            <button type="button" class="add__btn">
-                                <img
-                                    alt=""
-                                    src="/controller/img/resume/plus-solid.svg"
-                                />
-                                <div class="add__btn__txt">추가</div>
-                            </button>
-                        </div>
+                            
                         <!-- 수상 추가 폼-->
                         <div class="add-form">
                             <div class="add-career">
@@ -426,7 +275,8 @@ pageEncoding="UTF-8"%>
                                 <div class="add-career__submit">
                                     <button
                                         type="button"
-                                        class="award-submit-btn"
+                                        class="submit-btn"
+                                        value="2"
                                     >
                                         추가하기
                                     </button>
@@ -588,24 +438,14 @@ pageEncoding="UTF-8"%>
         </div>
         <!-- resume-form-footer -->
         <footer class="resume-form-footer">
-            <button
-                type="button"
-                id="tempSave"
-                class="writing"
-                name="writing"
-            >
+            <button type="button" id="tempSave" class="writing" name="writing" value = "0">
                 임시 저장
             </button>
-            <button
-                type="button"
-                id="save"
-                class="writing"
-                name="writing"
-            >
+            <button type="button" id="save" class="writing" name="writing"value = "1">
                 작성 완료
             </button>
         </footer>
-
+    </div>
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <script
             src="https://kit.fontawesome.com/1f61694686.js"
