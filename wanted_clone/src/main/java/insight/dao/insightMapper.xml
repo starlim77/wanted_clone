@@ -5,7 +5,11 @@
   <mapper namespace="insightSQL">
 	
 	<select id="insightList" parameterType="String" resultType="insight.dto.InsightDTO">
-		select * from insight where list = #{insightSort}
+		<![CDATA[
+		  	select * from (select rownum rn, b.*
+		                  from (select * from insight where list = #{insightSort} order by dbms_random.random) b )
+		    where rn >= 1 and rn <= 16
+	       ]]>
 	</select>
 	
   </mapper>

@@ -96,7 +96,7 @@ $(function () {
 
 // 더 많은 콘텐츠 보기 버튼 클릭
 $(".insight__content__more-content__open").click(function () {
-    for (i = 9; i <= 20; i++) {
+    for (i = 9; i <= 16; i++) {
         $(".insight__content__list > li:nth-child(" + i + ")").show();
     }
     $(".insight__content__more-content").hide();
@@ -107,9 +107,28 @@ $(".insight__content__more-content__open").click(function () {
 var insightSortName = ["개발", "IT/기술", "회사생활", "UX/UI"];
 var insightSortPicked =
     insightSortName[Math.floor(Math.random() * insightSortName.length)];
-console.log(insightSortPicked);
+//console.log(insightSortPicked);
 $(function () {
+    $(".insight__nav-bar__list__button > span").each(function () {
+        var span = $(this).text();
+        if (span == insightSortPicked) {
+            $(this)
+                .parent()
+                .addClass("insight__nav-bar__list__button-selected");
+        }
+    });
     getInsightData(insightSortPicked);
+
+    $(document).one("click", ".insight__content__list", function () {
+        for (i = 9; i <= 16; i++) {
+            $(this)
+                .children(":nth-child(" + i + ")")
+                .hide();
+        }
+    });
+    setTimeout(function () {
+        $(".insight__content__list").trigger("click");
+    }, 300);
 });
 
 // insight 데이터 넣기
@@ -120,7 +139,7 @@ function getInsightData(insightSort) {
         url: "/controller/insight/insightList",
         data: "insightSort=" + insightSort,
         success: function (data) {
-            console.log(JSON.stringify(data));
+            //console.log(JSON.stringify(data));
             for (let i in data) {
                 addInsightData(
                     data[i].link,
@@ -150,6 +169,7 @@ function addInsightData(
     var a = $("<a/>");
     a.addClass("insight__content__list__card");
     a.attr("href", link);
+    a.attr("target", "_blank");
     var div1 = $("<div/>");
     var img = $("<img/>");
     img.addClass("insight__content__list__card__thumnail");
@@ -168,8 +188,10 @@ function addInsightData(
     imgSmall.addClass("insight__content__list__card__source__image");
     if (channel == "youtube") {
         imgSmall.attr("src", "/controller/img/sns_icon/youtube_color.webp");
-    } else {
+    } else if (channel == "brunch") {
         imgSmall.attr("src", "/controller/img/sns_icon/branch.webp");
+    } else if (channel == "wanted") {
+        imgSmall.attr("src", "/controller/img/sns_icon/wanted.webp");
     }
     var span = $("<span/>");
     span.addClass("insight__content__list__card__source__name");
@@ -187,13 +209,40 @@ function addInsightData(
 }
 
 //인사이트 sort 버튼 클릭
-$(".insight__nav-bar__list__button").click(function () {
+// $(".insight__nav-bar__list__button").click(function () {
+//     $(".insight__nav-bar__all-category").hide();
+//     $(".insight__nav-bar__list__button").removeClass(
+//         "insight__nav-bar__list__button-selected"
+//     );
+//     $(this).addClass("insight__nav-bar__list__button-selected");
+
+//     var insightSort = $(this).children().text();
+//     console.log("asdf" + insightSort);
+//     getInsightData(insightSort);
+// });
+
+$(document).on("click", ".insight__nav-bar__list__button", function () {
     $(".insight__nav-bar__all-category").hide();
+    $(".insight__nav-bar__show-all-icon").css("background-color", "white");
+    $(".insight__nav-bar__show-all-icon").css("color", "rgba(0,0,0,0.4)");
     $(".insight__nav-bar__list__button").removeClass(
         "insight__nav-bar__list__button-selected"
     );
-    $(this).addClass("insight__nav-bar__list__button-selected");
-
     var insightSort = $(this).children().text();
+    $(".insight__nav-bar__list__button").each(function () {
+        if ($(this).children().text() == insightSort)
+            $(this).addClass("insight__nav-bar__list__button-selected");
+    });
+
     getInsightData(insightSort);
+});
+
+//더 많은 콘텐츠 보기 버튼
+$(document).on("click", ".insight__content__other-content", function () {
+    // var header = $(".insight__header").scrollTop();
+    // console.log(header);
+    $(document).scrollTop(380);
+
+    var sort = $(".insight__nav-bar__list__button-selected > span").text();
+    getInsightData(sort);
 });
