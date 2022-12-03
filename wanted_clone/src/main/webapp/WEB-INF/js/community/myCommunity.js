@@ -41,7 +41,6 @@ $(function(){
 						a.append(content);
 						
 						
-						
 						var bottom = $('<div>');
 						bottom.addClass('my_community_body__content_body__bottom');
 						
