@@ -44,6 +44,7 @@ public interface ResumeDAO {
 
 	List<LanguageDTO> getLink(String id);
 
+	void deleteCareer(String career_seq);
 
 
 }
