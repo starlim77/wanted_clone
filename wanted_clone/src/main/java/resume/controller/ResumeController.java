@@ -40,6 +40,17 @@ public class ResumeController {
 		return "resume/resume";
 	}
 
+	@GetMapping(value = "resumeLoginCheck")
+	@ResponseBody
+	public String resumeLoginCheck() {
+		if(httpSession.getAttribute("id") == null) {
+			return "0";
+		} else {
+			return "1";
+		}
+
+	}
+
 	@GetMapping(value = "resumeForm")
 	public String resumeForm() {
 		return "resume/resumeForm";
@@ -50,34 +61,34 @@ public class ResumeController {
 	public void fileUpload(@RequestParam MultipartFile portfolio, HttpSession session) {
 		String fileName = portfolio.getOriginalFilename();
 		String filePath = session.getServletContext().getRealPath("/WEB-INF/storage");
-		
+
 		File file = new File(filePath, fileName);
 		try {
 			portfolio.transferTo(file);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		Map<String, String> map = new HashedMap<String, String>();
 		map.put("formName", fileName);
 		map.put("fileName", fileName);
 		map.put("filePath", filePath);
-		
+
 		resumeDAO.fileUpload(map);
 	}
-	
+
 	@GetMapping(value = "getResumeList")
 	@ResponseBody
 	public List<ResumeDTO> getResumeList() {
 		return resumeDAO.getResumeList();
 	}
-	
+
 	@PostMapping(value = "getWritingResume")
 	@ResponseBody
 	public ResumeDTO getWritingResume(String resumeSeq) {
 		return resumeDAO.getWritingResume(resumeSeq);
 	}
-	
+
 	@PostMapping(value = "resumeSave")
 	@ResponseBody
 	public void resumeSave(@ModelAttribute ResumeDTO resumeDTO) {
@@ -87,65 +98,71 @@ public class ResumeController {
 			resumeDAO.writingResumeSave(resumeDTO); //작성중 이력서 저장
 		}
 	}
-	
+
 	@PostMapping(value = "careerSave")
 	@ResponseBody
 	public void careerSave(@ModelAttribute CareerDTO careerDTO) {
 		resumeDAO.careerSave(careerDTO);
 	}
-	
+
 	@PostMapping(value = "getCareer")
 	@ResponseBody
 	public List<CareerDTO> getCareer(String id) {
 		return resumeDAO.getCareer(id);
 	}
-	
+
 	@PostMapping(value = "educationSave")
 	@ResponseBody
 	public void educationSave(EducationDTO educationDTO) {
 		System.out.println(educationDTO.getId());
 		resumeDAO.educationSave(educationDTO);
 	}
-	
+
 	@PostMapping(value = "getEducation")
 	@ResponseBody
 	public List<EducationDTO> getEducation(String id) {
 		return resumeDAO.getEducation(id);
 	}
-	
+
 	@PostMapping(value = "activitySave")
 	@ResponseBody
 	public void activitySave(AwardDTO awardDTO) {
 		resumeDAO.activitySave(awardDTO);
 	}
-	
+
 	@PostMapping(value = "getAward")
 	@ResponseBody
 	public List<EducationDTO> getAward(String id) {
 		return resumeDAO.getAward(id);
 	}
-	
+
 	@PostMapping(value = "languageSave")
 	@ResponseBody
 	public void languageSave(LanguageDTO languageDTO) {
 		resumeDAO.languageSave(languageDTO);
 	}
-	
+
 	@PostMapping(value = "getLanguage")
 	@ResponseBody
 	public List<LanguageDTO> getLanguage(String id) {
 		return resumeDAO.getLanguage(id);
 	}
-	
+
 	@PostMapping(value = "linkSave")
 	@ResponseBody
 	public void linkSave(LinkDTO linkDTO) {
 		resumeDAO.linkSave(linkDTO);
 	}
-	
+
 	@PostMapping(value = "getLink")
 	@ResponseBody
 	public List<LanguageDTO> getLink(String id) {
 		return resumeDAO.getLink(id);
+	}
+
+	@PostMapping(value = "deleteCareer")
+	@ResponseBody
+	public void deleteCareer(String career_seq) {
+		resumeDAO.deleteCareer(career_seq);
 	}
 }

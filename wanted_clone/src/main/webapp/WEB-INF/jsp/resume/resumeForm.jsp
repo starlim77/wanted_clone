@@ -41,24 +41,28 @@ pageEncoding="UTF-8"%>
                             class="formName"
                             name="formName"
                             value="${param.formName}"
+                            placeholder="이력서 제목을 입력하세요"
                         /><br />
                         <input
                             type="text"
                             class="id"
                             name="id"
                             value="${id}"
+                            readonly
                         /><br />
                         <input
                             type="text"
                             class="name"
                             name="name"
                             value="${name}"
+                            placeholder="이름을 입력하세요"
                         /><br />
                         <input
                             type="text"
                             class="tel"
                             name="tel"
                             value="${tel}"
+                            placeholder="전화번호를 입력하세요"
                         /><br />
 
                         <!-- 간단 소개글 -->
@@ -81,13 +85,25 @@ pageEncoding="UTF-8"%>
                                 <textarea
                                     class="introduce"
                                     name="introduce"
-                                    rows="13"
+                                    rows="10"
+                                    placeholder="간단 소개글을 입력하세요"
                                 ></textarea
                                 ><br />
                             </div>
                         </div>
 
                         <!-- 경력 추가 버튼 -->
+                        <div class="intorduce__txt">경력</div>
+                        <div class="border"></div>
+                        <div class="resume-form__describe">
+                            <ul>
+                                <li>• 담당하신 업무 중 우선순위가 높은 업무를 선별하여 최신순으로 작성해주세요. </li>
+                                <li>• 신입의 경우, 직무와 관련된 대외활동, 인턴, 계약직 경력 등이 있다면 작성해주세요. </li>
+                                <li>• 업무 또는 활동 시 담당했던 역할과 과정, 성과에 대해 자세히 작성해주세요.</li>
+                                <li>• 업무 성과는 되도록 구체적인 숫자 혹은 [%]로 표현해주세요.</li>
+                                <li>• 커리어 조회 후 기업명이 실제와 다른 경우, 부서명/직책 란에 원하시는 기업명을 작성해주세요.</li>
+                            </ul>
+                        </div>
                         <div class="career-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img alt="" src="/controller/img/resume/plus-solid.svg">
@@ -282,22 +298,7 @@ pageEncoding="UTF-8"%>
                                     <li>• 최신순으로 작성해주세요.</li>
                                 </ul>
                             </div>
-                            <input
-                                type="text"
-                                class="education"
-                                name="education"
-                                value="${education}"
-                            /><br />
-                            <!-- 학력 추가 버튼 -->
-                            <div class="add-btn-wrapper">
-                                <button type="button" class="add__btn">
-                                    <img
-                                        alt=""
-                                        src="/controller/img/resume/plus-solid.svg"
-                                    />
-                                    <div class="add__btn__txt">추가</div>
-                                </button>
-                            </div>
+                            
                             <!-- 학력 추가 폼-->
                             <div class="add-form">
                                 <div class="add-career">
@@ -379,23 +380,7 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
 
-                        <!-- 수상 -->
-                        <div class="intorduce__txt">수상</div>
-                        <div class="border"></div>
-                        <div class="resume-form__describe">
-                            <ul>
-                                <li>
-                                    • 수상 이력, 직무 관련 자격증, 수료한
-                                    교육이나 참석한 외부활동 등이 있다면 간략히
-                                    작성해주세요.
-                                </li>
-                                <li>
-                                    • 지원하는 회사에서 요구하는 경우가 아니라면
-                                    운전면허증과 같은 자격증은 생략하는 것이
-                                    좋습니다!
-                                </li>
-                            </ul>
-                        </div>
+                        
                         <!-- 학력 추가 버튼 -->
                         <div class="education-add-btn-wrapper">
                             <button type="button" class="add__btn">
@@ -461,7 +446,6 @@ pageEncoding="UTF-8"%>
                             <li>• 지원하는 회사에서 요구하는 경우가 아니라면 운전면허증과 같은 자격증은 생략하는 것이 좋습니다!</li>
                         </ul>
                     </div>
-                   <input type="text" class="award" name="award" value=${award} ><br>
                    <!-- 수상 추가 버튼 -->
                    <div class="award-add-btn-wrapper">
                     <button type="button" class="add__btn">
@@ -602,14 +586,13 @@ pageEncoding="UTF-8"%>
                 </form>
             </div>
         </div>
-        <!-- resume-form-cotainer -->
+        <!-- resume-form-footer -->
         <footer class="resume-form-footer">
             <button
                 type="button"
                 id="tempSave"
                 class="writing"
                 name="writing"
-                value="0"
             >
                 임시 저장
             </button>
@@ -618,7 +601,6 @@ pageEncoding="UTF-8"%>
                 id="save"
                 class="writing"
                 name="writing"
-                value="1"
             >
                 작성 완료
             </button>

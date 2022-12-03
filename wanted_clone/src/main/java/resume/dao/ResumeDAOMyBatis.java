@@ -102,5 +102,10 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 		return resumeService.getLink(id);
 	}
 
+	@Override
+	public void deleteCareer(String career_seq) {
+		resumeService.deleteCareer(career_seq);
+	}
+
 
 }

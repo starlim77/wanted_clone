@@ -120,4 +120,9 @@ public class ResumeServiceImpl implements ResumeService{
 		return sqlSession.selectList("resumeSQL.getLink" ,id);
 	}
 
+	@Override
+	public void deleteCareer(String career_seq) {
+		sqlSession.delete("resumeSQL.deleteCareer",career_seq);
+	}
+
 }

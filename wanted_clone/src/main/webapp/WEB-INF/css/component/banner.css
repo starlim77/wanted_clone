@@ -1,0 +1,127 @@
+.slide-body{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.slides li {
+    list-style-type: none;
+}
+
+/* 보여줄 구간의 높이와 넓이 설정 */
+#slideShow {
+    /*전체 컨테이너*/
+    height: 300px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.slides {
+    /*이미지들이 담겨있는 슬라이드 컨테이너*/
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1100px;
+    /* 슬라이드할 사진과 마진 총 넓이 */
+    transition: 0.5s ease-out;
+    /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+}
+
+/* 첫 번째 슬라이드 가운데에 정렬하기위해 첫번째 슬라이드만 margin-left조정 */
+.slides li:first-child {
+    /* margin-left: 750px */
+    margin-left: 2.05%;
+}
+
+.slides li:not(:last-child) {
+    float: left;
+}
+
+.slide-img {
+    display: flex;
+    width: 1060px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.slides li {
+    display: flex;
+    justify-content: center;
+}
+
+.slides li img{
+border-radius: 4px;
+}
+
+/* 슬라이드들 옆으로 정렬 */
+.slides li:not(:last-child) {
+    display: flex;
+}
+
+
+/* -------------------------------- */
+/* 화살표 */
+.controller-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 1300px;
+    align-content: center;
+    align-items: center;
+}
+
+/* .controller span {
+    position: absolute;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px 20px;
+    top: 50%;
+    font-size: 1.3em;
+    cursor: pointer;
+} */
+.prev {
+    cursor: pointer;
+    left: 10px;
+    top: 102px;
+    width: 30px;
+    height: 60px;
+    background-color: #fff;
+    position: absolute;
+    opacity: .5;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prev img{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+}
+.next {
+    cursor: pointer;
+    right: 10px;
+    top: 102px;
+    width: 30px;
+    height: 60px;
+    background-color: #fff;
+    position: absolute;
+    opacity: .5;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.next img{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+}
+
+/* 다음 화살표에 마우스 커서가 올라가 있을때 이전 화살표가 살짝 오른쪽으로 이동하는 효과*/
