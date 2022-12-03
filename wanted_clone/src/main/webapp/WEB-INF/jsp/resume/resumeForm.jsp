@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
         <title>Insert title here</title>
         <link rel="stylesheet" href="../css/styles.css" />
     </head>
-    <body>
+    <body class="resumeForm_body">
         <!--  header -->
         <div>
             <jsp:include page="../../jsp/component/header.jsp"></jsp:include>

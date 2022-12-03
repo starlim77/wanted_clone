@@ -17,12 +17,9 @@
     <div class="container_sub__my_community__body">
       <div class="container_sub__my_community__body__title">MY 커뮤니티</div>
       <div class="container_sub__my_community__body__profile">
-
-          <img class="container_sub__my_community__body__profile__img" src="../img/profile_default.png">
-
-
         <div class="container_sub__my_community__body__profile__login_condition">
-          <a href = '/controller/user/loginForm'><span>로그인 해주세요.</span></a>
+          <img class="container_sub__my_community__body__profile__img" src="../img/profile_default.png">
+          <a href = '/controller/user/loginForm'><span>로그인 해주세요</span></a>
         </div>
         <i id="container_sub__my_community__body__profile__tag" class="fa-solid fa-angle-right fa-lg"></i>
       </div>
@@ -34,12 +31,44 @@
     <div class="container_main__body">
     
         <div class="container_main__body__theme_body">
-          <div class="container_main__body__theme"></div>
+          <div class="container_main__body__theme">
+          
+	          <div class="container_main__body__theme__scroll-left-icon">
+	       		<i class="fa-solid fa-chevron-left"></i>
+	    	  </div>
+	   		  <div class = "container_main__body__theme_body_action">
+	      	    <section class="container_main__body__theme_body_section">
+	           		<ul class="container_main__body__theme_list">
+	              		<li>
+		                    <input type="button" class="container_main__body__theme_list__button theme_list_style" value="전체">
+		                    <input type="button" class="container_main__body__theme_list__button" value="커리어고민">
+		                    <input type="button" class="container_main__body__theme_list__button" value="취업/이직">
+		                    <input type="button" class="container_main__body__theme_list__button" value="회사생활">
+		                    <input type="button" class="container_main__body__theme_list__button" value="인간관계">
+		                    <input type="button" class="container_main__body__theme_list__button" value="개발">
+		                    <input type="button" class="container_main__body__theme_list__button" value="데이터">
+		                    <input type="button" class="container_main__body__theme_list__button" value="마케팅">
+		                    <input type="button" class="container_main__body__theme_list__button" value="컨텐츠 제작">
+		                    <input type="button" class="container_main__body__theme_list__button" value="IT/기술">
+		                    <input type="button" class="container_main__body__theme_list__button" value="리더쉽">
+		                    <input type="button" class="container_main__body__theme_list__button" value="조직문화">
+	               		</li>
+	           		</ul>
+	       		</section>  
+	   		 </div> 
+		     <div class="container_main__body__theme__scroll-right-icon">
+		         <i class="fa-solid fa-chevron-right"></i>
+		     </div>
+		     <div class="container_main__body__theme__show-all-icon">
+		         <i class="fa-solid fa-ellipsis"></i>
+		     </div>
+
+          </div>
         </div>
         
         <div class="container_main__body__best_hit">
           <div class="container_main__body__best_hit__title">
-            <h2>이번주 많이 본 글&nbsp;<i class="fa-solid fa-trophy fa-lg"></i></h2>
+            <h2>이번주 많이 본 글&nbsp;🏆</h2>
             <div class="container_main__body__best_hit__title_page">
               <span id="container_main__body__best_hit__title_page_number"><span id="title_page_number">1</span> / 3</span>
               
@@ -58,7 +87,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span></span>
+               		<span class="container_main__body__best_hit__content__example__id_name"></span>
            		</div>
             </div>
 
@@ -69,7 +98,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span></span>
+               		<span class="container_main__body__best_hit__content__example__id_name"></span>
            		</div>
             </div>
 
@@ -80,7 +109,7 @@
                	</a>
                	<div class="container_main__body__best_hit__content__example__id">
                		<img class="container_main__body__best_hit__content__example__id_img" src="../img/profile_default.png">
-               		<span></span>
+               		<span class="container_main__body__best_hit__content__example__id_name"></span>
            		</div>
            		
             </div>
@@ -102,7 +131,7 @@
         <div class="container_main__body__boardlist">
         	<div class="container_main__body__boardlist__recommand">
 	        	<div class="container_main__body__boardlist__recommand__title">
-	                <span>추천 커뮤니티글 <i id="heart" class="fa-solid fa-heart"></i></span>
+	                <span>추천 커뮤니티글 💘</span>
 	            </div>
 	            <div class="container_main__body__boardlist__recommand__tag">
 	             	<span>#커리어고민</span>&nbsp;

@@ -20,4 +20,6 @@ public interface JobDAO {
 
 	public List<JobDTO> moreJobList(String seq, String jobsort);
 
+	public void jobBoardDelete(String seq);
+
 }

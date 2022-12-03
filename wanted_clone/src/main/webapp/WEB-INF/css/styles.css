@@ -15,9 +15,11 @@
 @import "job/jobBoard.css";
 @import "job/profile.css";
 
+/* Community */
 @import "community/community_container.css";
 @import "community/community_write.css"; 
 @import "community/community_board.css";
+@import "community/my_community.css";
 
 
 /* Resume */

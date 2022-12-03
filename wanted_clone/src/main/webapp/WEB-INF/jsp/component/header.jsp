@@ -16,20 +16,20 @@
                      alt="nav_bar_hamberger_icon" />
                   </a>
                   <ul class="nav-bar__hamberger__menu">
-                     <li><a href="#">직군전체</a></li>
-                     <li><a href="#">개발</a>
+                     <li><a href="/controller/job/jobList">직군전체</a></li>
+                     <li><a href="/controller/job/jobList">개발</a>
                         <ul class="nav-bar__hamberger__submenu">
-                           <li><a href="#">개발전체</a></li>
-                           <li><a href="#">C 개발자</a></li>
-                           <li><a href="#">ios 개발자</a></li>
-                           <li><a href="#">블록체인 엔지니어</a></li>
-                           <li><a href="#">서버 개발자</a></li>
-                           <li><a href="#">소프트웨어 개발자</a></li>
-                           <li><a href="#">안드로이드 개발자</a></li>
-                           <li><a href="#">웹 개발자</a></li>
-                           <li><a href="#">자바 개발자</a></li>
-                           <li><a href="#">파이썬 개발자</a></li>
-                           <li><a href="#">풀스택 개발자</a></li>
+                           <li><a href="/controller/job/jobList">개발전체</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=C 개발자">C 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=ios 개발자">ios 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=블록체인 엔지니어">블록체인 엔지니어</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=서버 개발자">서버 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=소프트웨어 개발자">소프트웨어 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=안드로이드 개발자">안드로이드 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=웹 개발자">웹 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=자바 개발자">자바 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=파이썬  개발자">파이썬 개발자</a></li>
+                           <li><a href="/controller/job/jobList?jobsort=풀스택 개발자">풀스택 개발자</a></li>
                         </ul></li>
                      <li><a href="#">경영</a></li>
                      <li><a href="#">디자인</a></li>
@@ -39,9 +39,7 @@
                      <li><a href="#">HR</a></li>
                      <li><a href="#">미디어</a></li>
                      <li><a href="#">엔지니어링</a></li>
-                     <li><a href="#">금융</a></li>
-                     <li><a href="#">교육</a></li>
-                     <li><a href="#">의료</a></li>
+                 
                   </ul></li>
             </div>
             <div class="nav-bar__main-logo-container">
@@ -90,7 +88,7 @@
             <div class="nav-bar__menu-list__service__list__profile-popover">
          		<ul class="nav-bar__menu-list__service__list__profile-popover__menu">
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
-         			<a href="http://localhost:8080/controller/job/profile<%-- ?id=${id} --%>">MY 원티드</a>
+         			<a href="http://localhost:8080/controller/job/profile?id=${id}">MY 원티드</a>
          			</li>
          			<hr>
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">

@@ -33,11 +33,30 @@ select*from job;
 
 
 create table jobapply(
-id varchar2(30),
+id varchar2(60),
 position varchar2(80),
 company varchar2(30),
 logtime date default sysdate,
 apply varchar2(30),
-seq number);
+seq varchar2(50));
+
+select*from jobapply;
+
+drop table jobapply;
+commit;
+--select count(apply) from jobapply where apply='지원완료' and id=#{id};
+select count(apply) from jobapply where apply='지원완료';
+
+create table insight(
+list varchar2(60),
+link varchar2(500),
+img varchar2(80),
+subject varchar2(80),
+content varchar2(500),
+channel varchar2(100),
+channelname varchar2(80)
+);
+commit;
+select*from insight;
 
 
