@@ -15,6 +15,13 @@
                      src="/controller/img/nav_bar_hamberger_icon.webp"
                      alt="nav_bar_hamberger_icon" />
                   </a>
+                  <h1 class="nav-bar__main-logo">
+                     <!-- 네비게이션바 메인 로고 -->
+                     <a href="http://localhost:8080/controller/"> <!-- 캡쳐도구로 잘라서 넣어 상하 정렬이 맞지 않는 상태 추후 수정 예정 -->
+                        <img class="nav-bar__main-logo__img"
+                        src="/controller/img/logo/nav_bar_logo.png" alt="nav_bar_logo" />
+                     </a>
+                  </h1>
                   <ul class="nav-bar__hamberger__menu">
                      <li><a href="/controller/job/jobList">직군전체</a></li>
                      <li><a href="/controller/job/jobList">개발</a>
@@ -43,13 +50,7 @@
                   </ul></li>
             </div>
             <div class="nav-bar__main-logo-container">
-               <h1 class="nav-bar__main-logo">
-                  <!-- 네비게이션바 메인 로고 -->
-                  <a href="http://localhost:8080/controller/"> <!-- 캡쳐도구로 잘라서 넣어 상하 정렬이 맞지 않는 상태 추후 수정 예정 -->
-                     <img class="nav-bar__main-logo__img"
-                     src="/controller/img/logo/nav_bar_logo.png" alt="nav_bar_logo" />
-                  </a>
-               </h1>
+              
          </ul>
       </div>
       <!--
