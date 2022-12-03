@@ -6,7 +6,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <head>
         <link rel="stylesheet" type="text/css" href="../css/styles.css" />
         <meta charset="UTF-8" />
-        <title>Insert title here</title>
+        <title>My 원티드 - 지원현황</title>
+        <link rel="icon" href="../img/favicon-192x192.png" />
     </head>
     <body>
         <jsp:include page="../component/header.jsp"></jsp:include>

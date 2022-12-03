@@ -4,7 +4,8 @@ pageEncoding="UTF-8"%>
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Insert title here</title>
+        <title>원티드 이력서</title>
+        <link rel="icon" href="../img/favicon-192x192.png" />
         <link rel="stylesheet" href="../css/styles.css" />
         <link
             rel="stylesheet"
