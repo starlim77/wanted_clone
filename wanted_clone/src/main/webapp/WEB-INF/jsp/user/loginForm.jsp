@@ -112,6 +112,30 @@
         <div class="loginform-pwd__change-pwd">비밀번호 초기화/변경</div>
     </section>
     
+    <section class="pwd-change">
+        <div class="loginform-pwd__header">
+            <i class="loginform-pwd__header__cancel-btn fa-solid fa-chevron-left"></i>
+            비밀번호 초기화/변경
+        </div>
+       
+        <input class="pwd-change__tel__input pwd-change__tel__input-readonly pwd-change__tel__input-readonly-margin type="text" value="South Korea +82" readonly>
+        <div class="pwd-change__tel__div">
+            <input class="pwd-change__tel__input pwd-change__tel__input-telnum" type="text" name="tel"  placeholder="(예시) 01013245768">
+            <input class="pwd-change__tel__input pwd-change__tel__input-certifynum" type="button" value="인증번호 받기">
+        </div>
+        <input class="pwd-change__tel__input" id="change-certify" type="text" placeholder="인증번호를 입력해주세요">
+        <div id="change-certifyDiv"></div>
+        
+        <div class="pwd-change-pwd">
+            <div class="pwd-change-pwd__header">비밀번호</div>
+            <input class="pwd-change__tel__input pwd-change__tel__input-readonly pwd-change__tel__input-pwd" type="password" placeholder="비밀번호를 입력해주세요">
+            <div id="change-pwd"></div>
+            <input class="pwd-change__tel__input pwd-change__tel__input-readonly pwd-change__tel__input-repwd" type="password" placeholder="비밀번호를 다시 한번 입력해주세요">
+            <div id="change-repwd"></div>
+        </div>
+        <input class="change-pwd-btn" type="button" value="비밀번호 변경">
+    </section>
+
     <script
     src="https://kit.fontawesome.com/1f61694686.js"
     crossorigin="anonymous"

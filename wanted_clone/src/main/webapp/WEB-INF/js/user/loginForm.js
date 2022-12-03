@@ -238,6 +238,146 @@ $(".loginform-signup__tel__certify__get-certify").click(function () {
     });
 });
 
+$(".pwd-change__tel__input-certifynum").attr("disabled", true);
+change_sendCertify = setInterval(function () {
+    var input_telnum = $(".pwd-change__tel__input-telnum").val();
+    if (input_telnum) {
+        $(".pwd-change__tel__input-certifynum").attr("disabled", false);
+        $(".pwd-change__tel__input-certifynum").addClass(
+            "pwd-change__tel__input-certifynum-enable"
+        );
+    } else {
+        $(".pwd-change__tel__input-certifynum").attr("disabled", true);
+        $(".pwd-change__tel__input-certifynum").removeClass(
+            "pwd-change__tel__input-certifynum-enable"
+        );
+    }
+}, 500);
+
+$(".pwd-change__tel__input-certifynum").click(function () {
+    clearInterval(change_sendCertify);
+    $(".pwd-change__tel__input-certifynum").attr("disabled", true);
+    $(".pwd-change__tel__input-certifynum").removeClass(
+        "pwd-change__tel__input-certifynum-enable"
+    );
+    $(".pwd-change__tel__input-telnum").attr("readonly", "readonly");
+    $(".pwd-change__tel__input-certifynum").attr("readonly", "readonly");
+    $(".pwd-change__tel__input-telnum").addClass(
+        "pwd-change__tel__input-readonly"
+    );
+    $(".pwd-change__tel__input-certifynum").addClass(
+        "pwd-change__tel__input-readonly"
+    );
+
+    $.ajax({
+        type: "post",
+        url: "/controller/user/smsCertify",
+        data: "tel=" + $(".pwd-change__tel__input-telnum").val(),
+        success: function (data) {
+            console.log(data);
+            certifyNum = data;
+        },
+        error: function (err) {
+            console.log(err);
+        },
+    });
+});
+
+setInterval(function () {
+    var change_certify = $("#change-certify").val();
+    if (change_certify == certifyNum) {
+        $("#change-certifyDiv").text("인증완료");
+        $("#change-certify").addClass("pwd-change__tel__input-readonly");
+        $("#change-certify").attr("readonly", "readonly");
+        $(".pwd-change__tel__input-pwd").attr("readonly", false);
+        $(".pwd-change__tel__input-repwd").attr("readonly", false);
+        $(".pwd-change__tel__input-pwd").removeClass(
+            "pwd-change__tel__input-readonly"
+        );
+        $(".pwd-change__tel__input-repwd").removeClass(
+            "pwd-change__tel__input-readonly"
+        );
+        clearInterval();
+    }
+}, 500);
+
+$(".pwd-change__tel__input-pwd").attr("readonly", "readonly");
+$(".pwd-change__tel__input-repwd").attr("readonly", "readonly");
+$(".change-pwd-btn").attr("disabled", true);
+
+setInterval(function () {
+    var pwd = $(".pwd-change__tel__input-pwd").val();
+    var repwd = $(".pwd-change__tel__input-repwd").val();
+
+    var pwdCheck = /^.*(?=^.{8,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+    if (pwd && !pwdCheck.test(pwd)) {
+        $("#change-pwd").text("올바르지 않은 비밀번호 입니다.");
+        $(".pwd-change__tel__input-pwd").removeClass(
+            "pwd-change__tel__input-enable"
+        );
+        $(".pwd-change__tel__input-pwd").addClass(
+            "pwd-change__tel__input-disable"
+        );
+        $(".change-pwd-btn").attr("disabled", true);
+        $(".change-pwd-btn").removeClass("change-pwd-btn-enable");
+    } else if (pwd && pwdCheck.test(pwd)) {
+        $("#change-pwd").text("");
+        $(".pwd-change__tel__input-pwd").addClass(
+            "pwd-change__tel__input-enable"
+        );
+        $(".change-pwd-btn").attr("disabled", true);
+        $(".change-pwd-btn").removeClass("change-pwd-btn-enable");
+    }
+    if (pwd == repwd && repwd) {
+        $("#change-repwd").text("사용 가능한 비밀번호입니다.");
+        $(".pwd-change__tel__input-repwd").addClass(
+            "pwd-change__tel__input-enable"
+        );
+        $("#change-repwd").css("color", "#08ba9c");
+        $(".change-pwd-btn").attr("disabled", false);
+        $(".change-pwd-btn").addClass("change-pwd-btn-enable");
+    } else if (pwd != repwd && repwd) {
+        $("#change-repwd").text("비밀번호가 서로 일치하지 않습니다.");
+        $(".pwd-change__tel__input-repwd").removeClass(
+            "pwd-change__tel__input-enable"
+        );
+        $(".pwd-change__tel__input-repwd").addClass(
+            "pwd-change__tel__input-disable"
+        );
+        $("#change-repwd").removeClass("repwdDiv-enable");
+        $("#change-repwd").css("color", "#fe415c");
+        $(".change-pwd-btn").attr("disabled", true);
+        $(".change-pwd-btn").removeClass("change-pwd-btn-enable");
+    } else if (pwd != repwd && !repwd) {
+        $("#change-repwd").text("");
+        $("#change-repwd").css("color", "#fe415c");
+        $("#pwd-change__tel__input-repwd").removeClass(
+            "pwd-change__tel__input-enable"
+        );
+        $(".change-pwd-btn").attr("disabled", true);
+        $(".change-pwd-btn").removeClass("change-pwd-btn-enable");
+    }
+}, 500);
+
+$(".change-pwd-btn").click(function () {
+    $.ajax({
+        type: "post",
+        url: "/controller/user/changePwd",
+        data:
+            "id=" +
+            $(".loginform-id__div__input-id").val() +
+            "&pwd=" +
+            $(".pwd-change__tel__input-pwd").val(),
+        success: function () {
+            alert("비밀번호 변경이 완료되었습니다.");
+            location.reload();
+        },
+        error: function (err) {
+            console.log(err);
+        },
+    });
+});
+
 function checkSignUpForm() {
     var sw = 0;
     if ($(".loginform-signup__input-name").val() == "") sw = 1;
@@ -259,6 +399,12 @@ function checkSignUpForm() {
     }
 }
 
+//
+$(".loginform-pwd__change-pwd").click(function () {
+    $(".loginform-pwd").hide();
+    $(".pwd-change").show();
+});
+
 // 체크박스 전체 선택
 $(".loginform-signup__agree__all-agree").click(function () {
     $(".loginform-signup__agree__each-agree > input").each(function () {
@@ -271,7 +417,6 @@ $(".loginform-signup__agree__each-agree").on("click", function () {
         $(".loginform-signup__agree__all-agree > input").prop("checked", false);
     }
 });
-
 //
 //
 //카카오 소셜 로그인

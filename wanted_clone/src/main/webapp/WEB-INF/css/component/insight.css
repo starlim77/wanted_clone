@@ -230,6 +230,7 @@
 .insight__content__list > li {
     display: block;
     width: 23.5%;
+    transition: 0.4s;
 }
 .insight__content__list__card {
     margin-top: 30px;
@@ -291,6 +292,7 @@
 
 .insight__content__list > li:hover {
     transform: translate(0, -5px);
+    transition: 0.4s;
 }
 .insight__content__list
     > li:hover

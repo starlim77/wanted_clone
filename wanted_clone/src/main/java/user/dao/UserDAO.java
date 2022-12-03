@@ -11,4 +11,6 @@ public interface UserDAO {
 
 	public void signUp(UserDTO userDTO);
 
+	public void changePwd(String id, String pwd);
+
 }

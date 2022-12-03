@@ -17,4 +17,6 @@ public interface UserService {
 	public String naverLoginUrl();
 
 	public String getNaverInformation(String code, String state);
+
+	public void changePwd(String id, String pwd);
 }
