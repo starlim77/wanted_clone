@@ -104,7 +104,11 @@ public class CommunityMybatis implements CommunityDAO {
 			sqlSession.update("communitySQL.likeDown",seq);
 		}
 		
-		
+	}
+
+	@Override
+	public List<CommunityDTO> myCommunityBoard(String id) {
+		return sqlSession.selectList("communitySQL.myCommunityBoard",id);
 	}
 
 }
