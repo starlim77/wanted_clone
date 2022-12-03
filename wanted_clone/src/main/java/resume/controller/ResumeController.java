@@ -162,4 +162,10 @@ public class ResumeController {
 	public List<LanguageDTO> getLink(String id) {
 		return resumeDAO.getLink(id);
 	}
+	
+	@PostMapping(value = "deleteCareer")
+	@ResponseBody
+	public void deleteCareer(String career_seq) {
+		resumeDAO.deleteCareer(career_seq);
+	}
 }

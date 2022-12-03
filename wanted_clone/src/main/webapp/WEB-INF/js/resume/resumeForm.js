@@ -251,8 +251,12 @@ $(function(){
                 var endWorkYearInput = $("<input/>").addClass("year").val(index.endWorkYear+" .")
                 var endWorkMonthInput = $("<input/>").addClass("month").val(index.endWorkMonth)
                 var addCareerDateDiv = $("<div/>").addClass("new-add-career__date").append(startWorkYearInput).append(startWorkMonthInput).append(endWorkYearInput).append(endWorkMonthInput); //2dep
+
+                //companyName
                 var companyNameInput = $("<div/>").addClass("company-name__input").html(index.companyName);
-                var companyNameDiv = $("<div/>").addClass("new-company-name").append(companyNameInput);
+                var deleteAddBtn = $("<button/>").addClass("delete-add-btn").html("X").val("0");
+                var career_seq = $("<input/>").addClass("career_seq").val(index.career_seq).css("display", "none");
+                var companyNameDiv = $("<div/>").addClass("new-company-name").append(companyNameInput).append(deleteAddBtn).append(career_seq);
                 //departmentName
                 var departmentNameInput = $("<input/>").addClass("department__input").val(index.department);
                 var departmentDiv = $("<div/>").addClass("new-department-name").append(departmentNameInput);
@@ -309,7 +313,8 @@ $(function(){
                 var addCareerDateDiv = $("<div/>").addClass("new-add-career__date").append(startWorkYearInput).append(startWorkMonthInput).append(endWorkYearInput).append(endWorkMonthInput); //2dep
                 //schoolName
                 var companyNameInput = $("<input/>").addClass("company-name__input").val(index.schoolName);
-                var companyNameDiv = $("<div/>").addClass("new-company-name").append(companyNameInput);
+                var deleteAddBtn = $("<button/>").addClass("delete-add-btn").html("X").val("1");
+                var companyNameDiv = $("<div/>").addClass("new-company-name").append(companyNameInput).append(deleteAddBtn);
                 //majorName
                 var departmentNameInput = $("<input/>").addClass("department__input").val(index.major);
                 var departmentDiv = $("<div/>").addClass("new-department-name").css("margin-bottom", "0").append(departmentNameInput);
@@ -351,11 +356,12 @@ $(function(){
 
                 //activityName
                 var activityNameInput = $("<input/>").addClass("department__input").val(index.activityName);
-                var activityNameDiv = $("<div/>").addClass("new-department-name").append(activityNameInput);
+                var deleteAddBtn = $("<button/>").addClass("delete-add-btn").css("margin-left", "650").html("X").val("2");
+                var activityNameDiv = $("<div/>").addClass("new-department-name").append(activityNameInput).append(deleteAddBtn);
                 
                 //detail
                 var detailInput = $("<input/>").addClass("department__input").val(index.detail);
-                var detailDiv = $("<div/>").addClass("new-department-name").append(detailInput).css("margin-bottom", "0");
+                var detailDiv = $("<div/>").addClass("new-department-name").append(detailInput).css("margin-bottom", "0").css("width", "90%");
 
                 var border = $("<div/>").addClass("new-border");
                 var newForm = $(".award-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(activityDateDiv).append(activityNameDiv).append(detailDiv)).append(border))
@@ -384,8 +390,9 @@ $(function(){
                 var addCareerDiv = $("<div/>").addClass("add-career"); //2dep
                 
                 //languageName
-                var languageNameInput = $("<input/>").addClass("new-language-name").val(index.languageName)
-                var languageNameDiv = $("<div/>").addClass("new-company-name").append(languageNameInput);
+                var languageNameInput = $("<input/>").addClass("new-language-name").val(index.languageName).css("width", "80%")
+                var deleteAddBtn = $("<button/>").addClass("delete-add-btn").css("margin-left", "650").html("X").val("3");
+                var languageNameDiv = $("<div/>").addClass("new-company-name").append(languageNameInput).append(deleteAddBtn);
 
                 //activityName
                 var standardInput = $("<input/>").addClass("new-language-standard").val(index.standard);
@@ -419,7 +426,8 @@ $(function(){
                 
                 //link
                 var linkInput = $("<input/>").addClass("company-name__input").val(index.link)
-                var linkDiv = $("<div/>").addClass("new-company-name").append(linkInput);
+                var deleteAddBtn = $("<button/>").addClass("delete-add-btn").html("X").val("4");
+                var linkDiv = $("<div/>").addClass("new-company-name").append(linkInput).append(deleteAddBtn);
 
                 var border = $("<div/>").addClass("new-border");
                 var newForm = $(".link-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(linkDiv)).append(border))
@@ -436,3 +444,23 @@ $(function(){
 
 });
 
+$(document).on("click",".delete-add-btn",function(){
+    if(".delete-add-btn" === "0"){
+        $.ajax({
+        url: "/controller/resume/deleteCareer",
+        type: "post",
+        data: "career_seq=" + $(".career_seq").val(),
+        dataType: "json",
+        success: function(){
+            location.reload();
+        },
+        error: function(request, status, error, textStatus){
+            console.log("code: " + request.status);
+            console.log("message: " + request.responseText);
+            console.log("error: " + error);
+            console.log("textStatus: "+textStatus);
+        }
+        });
+        
+    }
+});
