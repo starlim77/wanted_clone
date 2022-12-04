@@ -31,13 +31,27 @@ import resume.dao.ResumeDAO;
 @Controller
 @RequestMapping(value = "resume")
 public class ResumeController {
-
+	
+	@Autowired
+	private HttpSession httpSession;
 	@Autowired
 	private ResumeDAO resumeDAO;
 
+	
 	@GetMapping(value = "/")
 	public String resume() {
 		return "resume/resume";
+	}
+	
+	@GetMapping(value = "resumeLoginCheck")
+	@ResponseBody
+	public String resumeLoginCheck() {
+		if(httpSession.getAttribute("id") == null) {
+			return "0";
+		} else {
+			return "1";
+		}
+		
 	}
 
 	@GetMapping(value = "resumeForm")
@@ -147,5 +161,11 @@ public class ResumeController {
 	@ResponseBody
 	public List<LanguageDTO> getLink(String id) {
 		return resumeDAO.getLink(id);
+	}
+	
+	@PostMapping(value = "deleteCareer")
+	@ResponseBody
+	public void deleteCareer(String career_seq) {
+		resumeDAO.deleteCareer(career_seq);
 	}
 }

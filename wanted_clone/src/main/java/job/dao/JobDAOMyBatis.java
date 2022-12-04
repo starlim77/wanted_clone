@@ -89,5 +89,10 @@ public class JobDAOMyBatis implements JobDAO {
 		
 		return sqlSession.selectList("jobSQL.moreJobListWithSort", map);
 	}
+
+	@Override
+	public void jobBoardDelete(String seq) {
+		sqlSession.delete("jobSQL.jobBoardDelete", seq);
+	}
 	
 }

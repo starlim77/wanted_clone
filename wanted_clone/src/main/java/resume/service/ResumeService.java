@@ -46,5 +46,7 @@ public interface ResumeService {
 
 	List<LanguageDTO> getLink(String id);
 
+	void deleteCareer(String career_seq);
+
 
 }

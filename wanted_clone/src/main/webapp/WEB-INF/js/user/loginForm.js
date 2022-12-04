@@ -1,29 +1,29 @@
 $(function () {
-    // $(".loginform-id__div__input-submit").attr("disabled", true);
-    // // 이메일 유효성 검사
-    // setInterval(function () {
-    //   var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-    //   var email = $(".loginform-id__div__input-id").val();
-    //   if (exptext.test(email)) {
-    //     $("#idDiv").empty();
-    //     $(".loginform-id__div__input-id").removeClass(
-    //       "loginform-id__div__input-id-enable"
-    //     );
-    //     $(".loginform-id__div__input-submit").addClass(
-    //       "loginform-id__div__input-submit-enable"
-    //     );
-    //     $(".loginform-id__div__input-submit").attr("disabled", false);
-    //   } else if (!exptext.test(email) && email) {
-    //     $("#idDiv").html("올바른 이메일을 입력해주세요.");
-    //     $(".loginform-id__div__input-id").addClass(
-    //       "loginform-id__div__input-id-enable"
-    //     );
-    //     $(".loginform-id__div__input-submit").attr("disabled", true);
-    //     $(".loginform-id__div__input-submit").removeClass(
-    //       "loginform-id__div__input-submit-enable"
-    //     );
-    //   }
-    // }, 1000);
+    $(".loginform-id__div__input-submit").attr("disabled", true);
+    // 이메일 유효성 검사
+    setInterval(function () {
+        var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+        var email = $(".loginform-id__div__input-id").val();
+        if (exptext.test(email)) {
+            $("#idDiv").empty();
+            $(".loginform-id__div__input-id").removeClass(
+                "loginform-id__div__input-id-enable"
+            );
+            $(".loginform-id__div__input-submit").addClass(
+                "loginform-id__div__input-submit-enable"
+            );
+            $(".loginform-id__div__input-submit").attr("disabled", false);
+        } else if (!exptext.test(email) && email) {
+            $("#idDiv").html("올바른 이메일을 입력해주세요.");
+            $(".loginform-id__div__input-id").addClass(
+                "loginform-id__div__input-id-enable"
+            );
+            $(".loginform-id__div__input-submit").attr("disabled", true);
+            $(".loginform-id__div__input-submit").removeClass(
+                "loginform-id__div__input-submit-enable"
+            );
+        }
+    }, 1000);
 
     // 로그인 비밀번호 입력창 유효성 검사
     setInterval(function () {

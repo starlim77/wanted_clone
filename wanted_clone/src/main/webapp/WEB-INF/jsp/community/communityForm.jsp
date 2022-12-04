@@ -17,12 +17,9 @@
     <div class="container_sub__my_community__body">
       <div class="container_sub__my_community__body__title">MY 커뮤니티</div>
       <div class="container_sub__my_community__body__profile">
-
-          <img class="container_sub__my_community__body__profile__img" src="../img/profile_default.png">
-
-
         <div class="container_sub__my_community__body__profile__login_condition">
-          <a href = '/controller/user/loginForm'><span>로그인 해주세요.</span></a>
+          <img class="container_sub__my_community__body__profile__img" src="../img/profile_default.png">
+          <a href = '/controller/user/loginForm'><span>로그인 해주세요</span></a>
         </div>
         <i id="container_sub__my_community__body__profile__tag" class="fa-solid fa-angle-right fa-lg"></i>
       </div>

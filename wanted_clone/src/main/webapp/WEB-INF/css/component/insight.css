@@ -1,7 +1,7 @@
 .insight {
-  margin: 70px auto;
-  width: 1065px;
-  /* display: flex;
+    margin: 50px auto;
+    width: 1065px;
+    /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; */
@@ -150,13 +150,24 @@
 }
 
 .insight_nav-bar__icon_wrap {
-    position: relative;
-    width: 145px;
-    background: linear-gradient(90deg, #fff 21.82%, hsla(0, 0%, 100%, 0));
+    position: absolute;
+    right: 42px;
+    display: flex;
+    justify-content: flex-end;
+    width: 84px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), white);
+}
+.insight_nav-bar__icon_wrap-left {
+    position: absolute;
+    left: 0px;
+    display: flex;
+    justify-content: flex-start;
+    width: 84px;
+    height: 50px;
+    background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.1));
 }
 
 .insight__nav-bar__scroll-right-icon {
-    position: absolute;
     right: 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
@@ -168,6 +179,7 @@
     z-index: 1;
     display: flex;
     justify-content: center;
+    margin-right: 8px;
 }
 .insight__nav-bar__scroll-right-icon:hover,
 .insight__nav-bar__scroll-left-icon:hover {
@@ -204,6 +216,10 @@
     background-color: #f8f8fa;
     cursor: pointer;
 }
+.insight__nav-bar__list__button-selected {
+    border: 1px solid #36f;
+    color: #36f;
+}
 .insight__content__list {
     display: flex;
     justify-content: flex-start;
@@ -221,10 +237,11 @@
     width: 100%;
 }
 .insight__content__list__card__thumnail {
-    width: 250px;
-    /* height: 190px; */
+    width: 248px;
+    height: 175px;
     border-radius: 5px;
     margin-bottom: 15px;
+    object-fit: cover;
 }
 .insight__content__list__card__letter__subject {
     font-size: 17px;
@@ -232,6 +249,11 @@
     line-height: 130%;
 }
 .insight__content__list__card__letter__content {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
     font-size: 13px;
     color: rgba(0, 0, 0, 0.4);
     margin-top: 10px;
@@ -265,4 +287,16 @@
     border-radius: 20px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.insight__content__list > li:hover {
+    transform: translate(0, -5px);
+}
+.insight__content__list
+    > li:hover
+    .insight__content__list__card__letter__content {
+    color: rgba(0, 0, 0, 0.6);
+}
+.insight__content__list > li:hover .insight__content__list__card__source__name {
+    color: rgba(0, 0, 0, 0.6);
 }

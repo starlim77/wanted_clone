@@ -79,4 +79,8 @@
   	<select id="getLink" parameterType="String" resultType="resume.bean.LinkDTO">
   		select * from link where id = #{id}
   	</select>
+  	
+  	<delete id="deleteCareer" parameterType="String">
+  		delete career where career_seq = #{career_seq}
+  	</delete>
   </mapper>
