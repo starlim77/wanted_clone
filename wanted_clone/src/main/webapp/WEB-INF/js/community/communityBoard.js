@@ -130,7 +130,8 @@ $(function(){
 			$.ajax({
 				type: 'post',
 				url: '/controller/community/commentWrite',
-				data: 'seq=' + seq + '&id_=' + id + '&comment_=' + $('.community_comment__write__content').val(),
+				data: 'seq=' + seq + '&id_=' + id + '&comment_=' + $('.community_comment__write__content').val() 
+						+  '&title=' + $('.community_board__title').text(),
 				success: function(){
 					location.reload();
 				},

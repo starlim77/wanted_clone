@@ -7,6 +7,8 @@ $(function(){
 	$('.my_community_body__my_action_kind > li').click(function(){
 		if($(this).text() == '작성글'){
 			
+			$('.contentDTO').remove();
+			
 			$.ajax({
 				type: 'post',
 				url: '/controller/community/myCommunityBoard',
@@ -79,7 +81,59 @@ $(function(){
 			});
 			
 		}else if($(this).text() == '작성댓글'){
-			alert('아직 미구현');
+			
+			$('.contentDTO').remove();
+					
+			$.ajax({
+				type: 'post',
+				url: '/controller/community/myCommunityComment',
+				data: 'id='+ id,
+				dataType: 'json',
+				success: function(data){
+					
+					
+					for(var i in data){
+						
+						var DTO = $('<div>');
+						DTO.addClass('contentDTO');
+						
+						var title = $('<div>');
+						title.addClass('my_community_body__content_body__title');
+						var title_span = $('<span>');
+						title_span.addClass('my_community_body__content_body__title_span');
+						title_span.text(data[i].title);
+						
+						title.append(title_span);
+						
+						var content = $('<div>');
+						content.addClass('my_community_body__content_body__content');
+						var content_span = $('<span>');
+						content_span.addClass('my_community_body__content_body__content_span');
+						content_span.text(data[i].comment_);
+						
+						var a = $('<a>');
+						a.attr('href','/controller/community/communityBoard?seq='+data[i].seq);
+						
+						content.append(content_span);
+						a.append(content);
+						
+						
+						var hr = $('<hr>');
+						hr.addClass('content_body_hr');
+						
+						
+						DTO.append(title,a,hr);
+						$('.my_community_body__content_body').append(DTO);
+					
+					}
+					
+				},
+				error: function(err){
+					console.log(err);
+				}
+			
+			});
+			
 		}
 	});
 });

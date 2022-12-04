@@ -297,15 +297,15 @@
 }
 
 .container_main__body__boardlist__content__profile {
-    width: 90%;
-    height: 30px;
-    margin-left: 30px;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-size: 10pt;
-    font-weight: 900;
-    display: flex;
-    align-items: flex-start;
-    margin-top: 15px;
+  width: 90%;
+  height: 30px;
+  margin-left: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 .container_main__body__boardlist__content__profile_img {
     border-radius: 100%;

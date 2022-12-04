@@ -62,7 +62,7 @@
 	</delete>
 	
 	<insert id="commentWrite" parameterType="community.bean.CommentDTO">
-		insert into community_comment values(#{seq},#{id_},#{comment_})
+		insert into community_comment values(#{seq},#{id_},#{comment_},#{title})
 	</insert>
 	
 	<update id="commentUp">
@@ -83,6 +83,10 @@
 	
 	<select id="myCommunityBoard" resultType="community.bean.CommunityDTO">
 		select seq,title,content_,like_count,comment_ from community where id_ like #{id} order by seq desc
+	</select>
+	
+	<select id="myCommunityComment" resultType="community.bean.CommentDTO">
+		select * from community_comment where id_ = #{id}
 	</select>
 	
 </mapper>
