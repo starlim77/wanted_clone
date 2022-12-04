@@ -71,7 +71,7 @@
         
         <div class="container_main__body__best_hit">
           <div class="container_main__body__best_hit__title">
-            <h2>이번주 많이 본 글&nbsp;<i class="fa-solid fa-trophy fa-lg"></i></h2>
+            <h2>이번주 많이 본 글&nbsp;🏆</h2>
             <div class="container_main__body__best_hit__title_page">
               <span id="container_main__body__best_hit__title_page_number"><span id="title_page_number">1</span> / 3</span>
               
@@ -134,7 +134,7 @@
         <div class="container_main__body__boardlist">
         	<div class="container_main__body__boardlist__recommand">
 	        	<div class="container_main__body__boardlist__recommand__title">
-	                <span>추천 커뮤니티글 <i id="heart" class="fa-solid fa-heart"></i></span>
+	                <span>추천 커뮤니티글 💘</span>
 	            </div>
 	            <div class="container_main__body__boardlist__recommand__tag">
 	             	<span>#커리어고민</span>&nbsp;
