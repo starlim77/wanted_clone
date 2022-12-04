@@ -80,4 +80,9 @@ public class CommunityServiceImple implements CommunityService {
 		return communityDAO.myCommunityBoard(id);
 	}
 
+	@Override
+	public List<CommentDTO> myCommunityComment(String id) {
+		return communityDAO.myCommunityComment(id);
+	}
+
 }

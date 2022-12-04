@@ -106,6 +106,12 @@ public class CommunityController {
 	public List<CommunityDTO> myCommunityBoard(@RequestParam String id) {
 		return communityService.myCommunityBoard(id);
 	}
+	
+	@PostMapping(value="myCommunityComment")
+	@ResponseBody
+	public List<CommentDTO> myCommunityComment(@RequestParam String id) {
+		return communityService.myCommunityComment(id);
+	}
 }
 
 

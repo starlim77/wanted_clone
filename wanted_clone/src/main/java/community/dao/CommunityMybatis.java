@@ -111,4 +111,9 @@ public class CommunityMybatis implements CommunityDAO {
 		return sqlSession.selectList("communitySQL.myCommunityBoard",id);
 	}
 
+	@Override
+	public List<CommentDTO> myCommunityComment(String id) {
+		return sqlSession.selectList("communitySQL.myCommunityComment",id);
+	}
+
 }

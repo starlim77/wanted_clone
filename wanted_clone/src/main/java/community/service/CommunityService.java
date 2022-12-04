@@ -27,4 +27,6 @@ public interface CommunityService {
 
 	public List<CommunityDTO> myCommunityBoard(String id);
 
+	public List<CommentDTO> myCommunityComment(String id);
+
 }
