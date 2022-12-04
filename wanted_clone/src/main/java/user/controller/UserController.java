@@ -61,4 +61,11 @@ public class UserController {
 		userService.logout();
 		return "index";
 	}
+	
+	@RequestMapping(value = "changePwd")
+	@ResponseBody
+	public void changePwd(@RequestParam String id, @RequestParam String pwd) {
+		userService.changePwd(id, pwd);
+	};
+	
 }

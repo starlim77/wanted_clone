@@ -6,7 +6,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/styles.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>원티드 커뮤니티</title>
+<link rel="icon" href="../img/favicon-192x192.png" />
 </head>
 <body id="communityBody">
 <jsp:include page="../component/header.jsp"></jsp:include>

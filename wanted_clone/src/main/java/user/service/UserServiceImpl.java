@@ -256,4 +256,9 @@ public class UserServiceImpl implements UserService {
   
 	}
 
+	@Override
+	public void changePwd(String id, String pwd) {
+		userDAO.changePwd(id,pwd);
+	}
+
 }

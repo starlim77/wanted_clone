@@ -16,5 +16,9 @@
   		insert into usertable values('1',#{id},#{name},#{pwd},#{tel})
   	</insert>
   	
+  	<update id="changePwd" parameterType="java.util.Map">
+  		update usertable set pwd = #{pwd} where id = #{id}
+  	</update>
+  	
   </mapper>
 
