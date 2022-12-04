@@ -107,7 +107,7 @@ $(window).scroll(function () {
             url: "/controller/job/moreJobList",
             data: forData,
             success: function (data) {
-                console.log(JSON.stringify(data));
+                //console.log(JSON.stringify(data));
                 checkScroll2++;
 
                 for (let i in data) {

@@ -35,7 +35,7 @@ public class CommunityServiceImple implements CommunityService {
 
 	@Override
 	public void boardWrite(CommunityDTO communityDTO) {
-		String id = (String) session.getAttribute("id");
+		String id = (String) session.getAttribute("name");
 		communityDTO.setId_(id);
 		
 		communityDAO.boardWrite(communityDTO);

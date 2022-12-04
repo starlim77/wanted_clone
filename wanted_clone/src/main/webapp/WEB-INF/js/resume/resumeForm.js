@@ -184,7 +184,7 @@ $(".submit-btn").click(function () {
                 "content": contentNameInput.val()
             },
             success: function () {
-                location.reload();
+                //location.reload();
             },
             error: function (request, status, error, textStatus) {
                 console.log("code: " + request.status);
@@ -209,7 +209,7 @@ $(".submit-btn").click(function () {
                 "detail": detailInput.val(),
             },
             success: function () {
-                location.reload();
+                //location.reload();
             },
             error: function (request, status, error, textStatus) {
                 console.log("code: " + request.status);
@@ -231,7 +231,7 @@ $(".submit-btn").click(function () {
                 "id": $(".id").val(),
             },
             success: function () {
-                location.reload();
+                //location.reload();
             },
             error: function (request, status, error, textStatus) {
                 console.log("code: " + request.status);
@@ -251,7 +251,7 @@ $(".submit-btn").click(function () {
                 "id": $(".id").val()
             },
             success: function () {
-                location.reload();
+                //location.reload();
             },
             error: function (request, status, error, textStatus) {
                 console.log("code: " + request.status);

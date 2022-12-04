@@ -79,7 +79,7 @@
       </div>
     </container>
     
-    <input type="hidden" id="session_id" value="${id }">
+    <input type="hidden" id="session_id" value="${name}">
     <input type="hidden" id="sortnum" value="${sortnum }">
 <script src="https://kit.fontawesome.com/1f61694686.js" crossorigin="anonymous"></script>
 

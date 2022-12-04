@@ -143,7 +143,8 @@ $(".jobboard__submit__submit-btn").click(function () {
         jobsortList.push(data);
     });
     var jobsort = jobsortList.join("/");
-    alert(jobsort);
+    	alert("지원 완료 되었습니다.");
+    //alert(jobsort);
 
 	  var jobsortList = new Array();
 	    $(
