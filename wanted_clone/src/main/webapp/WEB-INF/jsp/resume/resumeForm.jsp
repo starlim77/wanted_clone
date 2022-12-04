@@ -25,8 +25,7 @@ pageEncoding="UTF-8"%>
                         <option value="CH">繁體中文</option>
                     </select>
                     <div class="resumeForm-download">
-                        다운로드 로고
-                        <i class="fa-sharp fa-solid fa-down-to-bracket"></i>
+                        <i class="fa-solid fa-download fa-2x"></i>
                     </div>
                 </div>
 

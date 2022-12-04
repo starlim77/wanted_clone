@@ -32,7 +32,7 @@ public class CommunityServiceImple implements CommunityService {
 	public List<CommunityDTO> boardList(String scrollPg,String selected) {
 		return communityDAO.boardList(scrollPg,selected);
 	}
-
+	
 	@Override
 	public void boardWrite(CommunityDTO communityDTO) {
 		String id = (String) session.getAttribute("name");
