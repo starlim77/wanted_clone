@@ -8,7 +8,7 @@
 <title>My 커뮤니티</title>
 <link rel="icon" href="../img/favicon-192x192.png" />
 </head>
-<body>
+<body class="myboard">
 
 <jsp:include page="../component/header.jsp"></jsp:include>
 

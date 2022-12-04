@@ -153,6 +153,26 @@
 	/* margin-bottom: 30px; */
 	border-bottom: 1px solid #dfdede;
 }
+.award-wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.education-wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.language-wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.link-wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
 .award-add-btn-wrapper{
 	display: flex;
 	width: 100%;

@@ -25,7 +25,8 @@ pageEncoding="UTF-8"%>
                         <option value="CH">繁體中文</option>
                     </select>
                     <div class="resumeForm-download">
-                        <i class="fa-solid fa-download fa-2x"></i>
+                        다운로드 로고
+                        <i class="fa-sharp fa-solid fa-down-to-bracket"></i>
                     </div>
                 </div>
 
@@ -240,50 +241,7 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                             
-                        <!-- 수상 추가 폼-->
-                        <div class="add-form">
-                            <div class="add-career">
-                                <div class="add-career__date">
-                                    <input type="text" name="educationStartYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                    .
-                                    <input type="text" name="educationStartMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                    -
-                                    <input type="text" name="educationEndYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                    .
-                                    <input type="text" name="educationEndMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                </div>
-
-                                <div class="company-name">
-                                    <input
-                                        type="text"
-                                        name="activityName"
-                                        class="company-name__input"
-                                        placeholder="활동명"
-                                    />
-                                    <button type="button" class="close-btn">
-                                        X
-                                    </button>
-                                </div>
-                                <div class="department-name">
-                                    <input
-                                        type="text"
-                                        name="datail"
-                                        class="department__input"
-                                        placeholder="세부사항"
-                                    />
-                                </div>
-                                <div class="add-career__submit">
-                                    <button
-                                        type="button"
-                                        class="submit-btn"
-                                        value="2"
-                                    >
-                                        추가하기
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        
 
                    <!-- 수상 -->
                     <div class="intorduce__txt">
@@ -297,6 +255,7 @@ pageEncoding="UTF-8"%>
                         </ul>
                     </div>
                    <!-- 수상 추가 버튼 -->
+                   <div class="award-wrapper">
                    <div class="award-add-btn-wrapper">
                     <button type="button" class="add__btn">
                         <img alt="" src="/controller/img/resume/plus-solid.svg">
@@ -328,7 +287,9 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
                 </div>
+            </div>
                     <!-- 외국어 -->
+                    
                     <div class="intorduce__txt">
                         외국어
                     </div>
@@ -339,6 +300,7 @@ pageEncoding="UTF-8"%>
                             <li>• 활용 가능한 외국어가 있다면, 어느정도 수준인지 레벨을 선택해주세요.</li>
                         </ul>
                     </div>
+                    <div class="language-wrapper">
                         <div class="language-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img
@@ -358,13 +320,13 @@ pageEncoding="UTF-8"%>
                                         name="languageName"
                                         class="language-name"
                                     >
-                                        <option value="Korean">한국어</option>
-                                        <option value="English">영어</option>
-                                        <option value="German">독일어</option>
-                                        <option value="Spanish">
+                                        <option value="한국어">한국어</option>
+                                        <option value="영어">영어</option>
+                                        <option value="독일어">독일어</option>
+                                        <option value="스페인어">
                                             스페인어
                                         </option>
-                                        <option value="French">프랑스어</option>
+                                        <option value="프랑스어">프랑스어</option>
                                     </select>
                                     <button
                                         type="button"
@@ -381,11 +343,11 @@ pageEncoding="UTF-8"%>
                                         class="language-standard"
                                     >
                                         <option value="">수준</option>
-                                        <option value="fluent">유창함</option>
-                                        <option value="businessConversation">
+                                        <option value="유창함">유창함</option>
+                                        <option value="비즈니스 회화">
                                             비즈니스 회화
                                         </option>
-                                        <option value="dailyConversation">
+                                        <option value="일상회화">
                                             일상 회화
                                         </option>
                                     </select>
@@ -395,6 +357,7 @@ pageEncoding="UTF-8"%>
                                 </div>
                             </div>
                         </div>
+                    </div>
                         <div class="link_txt">링크</div>
                         <div class="border"></div>
                         <div class="resume-form__describe">
@@ -407,6 +370,7 @@ pageEncoding="UTF-8"%>
                             </ul>
                         </div>
                         <!-- 링크 추가 버튼 -->
+                        <div class="link-wrapper">
                         <div class="link-add-btn-wrapper">
                             <button type="button" class="add__btn">
                                 <img
@@ -433,10 +397,11 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                     </div>
+                    </div>
                 </form>
             </div>
         </div>
-        <!-- resume-form-footer -->
+        <!— resume-form-footer —>
         <footer class="resume-form-footer">
             <button type="button" id="tempSave" class="writing" name="writing" value = "0">
                 임시 저장
