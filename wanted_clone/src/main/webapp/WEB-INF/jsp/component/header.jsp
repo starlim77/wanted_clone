@@ -17,7 +17,7 @@
                   </a>
                   <h1 class="nav-bar__main-logo">
                      <!-- 네비게이션바 메인 로고 -->
-                     <a href="http://localhost:8080/controller/"> <!-- 캡쳐도구로 잘라서 넣어 상하 정렬이 맞지 않는 상태 추후 수정 예정 -->
+                     <a href="/controller/"> <!-- 캡쳐도구로 잘라서 넣어 상하 정렬이 맞지 않는 상태 추후 수정 예정 -->
                         <img class="nav-bar__main-logo__img"
                         src="/controller/img/logo/nav_bar_logo.png" alt="nav_bar_logo" />
                      </a>
@@ -57,12 +57,12 @@
           nav-bar__menu-list
         -->
       <ul class="nav-bar__menu-list__category">
-         <li><a class="nav-bar__menu-list__category__link" href="http://localhost:8080/controller/job/jobList">채용
+         <li><a class="nav-bar__menu-list__category__link" href="/controller/job/jobList">채용
          </a></li>
          <li><a class="nav-bar__menu-list__category__link" href="#">직군별 연봉</a></li>
              <li><a class="nav-bar__menu-list__category__link" onclick="resumeLoginCheck()">이력서</a>
          </li>
-         <li><a class="nav-bar__menu-list__category__link" href="http://localhost:8080/controller/community/communityForm">커뮤니티</a>
+         <li><a class="nav-bar__menu-list__category__link" href="/controller/community/communityForm">커뮤니티</a>
          </li>
       </ul>
       <!--
@@ -89,7 +89,7 @@
             <div class="nav-bar__menu-list__service__list__profile-popover">
          		<ul class="nav-bar__menu-list__service__list__profile-popover__menu">
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">
-         			<a href="http://localhost:8080/controller/job/profile?id=${id}">MY 원티드</a>
+         			<a href="/controller/job/profile?id=${id}">MY 원티드</a>
          			</li>
          			<hr>
          			<li class="nav-bar__menu-list__service__list__profile-popover__menu__list">

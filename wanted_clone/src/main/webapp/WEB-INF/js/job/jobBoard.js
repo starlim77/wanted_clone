@@ -143,37 +143,34 @@ $(".jobboard__submit__submit-btn").click(function () {
         jobsortList.push(data);
     });
     var jobsort = jobsortList.join("/");
-    	alert("지원 완료 되었습니다.");
+    alert("지원 완료 되었습니다.");
     //alert(jobsort);
 
-	  var jobsortList = new Array();
-	    $(
-	        ".jobboard__submit__content__file__each-select input[type='hidden']"
-	    ).each(function () {
-	        var data = $(this).val();
-	        jobsortList.push(data);
-	    });
-	    var jobsort = jobsortList.join("/");
+    var jobsortList = new Array();
+    $(
+        ".jobboard__submit__content__file__each-select input[type='hidden']"
+    ).each(function () {
+        var data = $(this).val();
+        jobsortList.push(data);
+    });
+    var jobsort = jobsortList.join("/");
 
-
-
-
-	$.ajax({
-		type: "post",
-		url: "/controller/job/profileApply",
-		data:{
-			"seq": jobsort,
-			"id" : $(".id").val(),
-			"position" : $(".position").val(),
-			"company": $("#company").text(),
-		},
-		success: function(){
-		location.href='http://localhost:8080/controller/job/profile?id='+$('.id').val()
-		},
-		error: function(err){
-			console.log(err);
-		}
-	});
+    $.ajax({
+        type: "post",
+        url: "/controller/job/profileApply",
+        data: {
+            seq: jobsort,
+            id: $(".id").val(),
+            position: $(".position").val(),
+            company: $("#company").text(),
+        },
+        success: function () {
+            location.href = "/controller/job/profile?id=" + $(".id").val();
+        },
+        error: function (err) {
+            console.log(err);
+        },
+    });
 });
 
 // 지원창 고정
