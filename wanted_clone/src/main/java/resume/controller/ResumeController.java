@@ -86,6 +86,12 @@ public class ResumeController {
 		return resumeDAO.getResumeList();
 	}
 	
+	@PostMapping(value = "writingResumeSave")
+	@ResponseBody
+	public void writingResumeSave(ResumeDTO resumeDTO) {
+		resumeDAO.writingResumeSave(resumeDTO);
+	}
+	
 	@PostMapping(value = "getWritingResume")
 	@ResponseBody
 	public ResumeDTO getWritingResume(String resumeSeq) {
