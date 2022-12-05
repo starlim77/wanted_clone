@@ -108,6 +108,7 @@
     word-break:break-word;
     line-height: 30px;
     color: #333333;
+    white-space: break-spaces;
 }
 .community_board__bottom__like,.community_board__bottom__coment{
     width : 80px;
@@ -169,6 +170,8 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 25px;
+    white-space: break-spaces;
+    
 }
 .comment_hr{
     width: 90%;

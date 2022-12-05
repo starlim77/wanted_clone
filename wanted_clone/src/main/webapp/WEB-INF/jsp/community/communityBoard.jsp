@@ -22,9 +22,9 @@
 	            
 	          </div>
 	
-	          <div class="community_board__content">
+	          <pre class="community_board__content">
 	            
-	          </div>
+	          </pre>
 		  </div>
           <div class="community_board__theme">
               <div class="community_board__theme_tag"></div>
@@ -55,7 +55,7 @@
                 <div class="community_comment__profile__name"><img class="profile_img" src="../img/profile_default.png" /><span>${commentDTO.id_ }</span></div>
                 <i class="fa-solid fa-ellipsis fa-2x"></i>
               </div>
-              <div class="community_comment__content">${commentDTO.comment_ }</div>
+              <pre class="community_comment__content">${commentDTO.comment_ }</pre>
             </div>
             <hr class="comment_hr">
             

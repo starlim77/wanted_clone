@@ -13,6 +13,8 @@ $(function(){
 		data: 'seq=' + seq,
 		dataType: 'json',
 		success : function(data){
+		
+			
 			$('.profile_id').text(data.id_);
 			$('.community_board__title').text(data.title);
 			$('.community_board__content').text(data.content_);
@@ -91,6 +93,11 @@ $(function(){
 		
 		$('.community_board__title').val(title_item);
 		$('.community_board__content').text(content_item);
+		
+		//추가
+		var height = $('.community_board__content').prop('scrollHeight');
+		$('.community_board__content').css('height',height);
+		
 	});
 	
 	$('#community_board__update_complete_btn').click(function(){
