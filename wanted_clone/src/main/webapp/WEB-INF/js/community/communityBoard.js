@@ -172,5 +172,7 @@ $(function(){
 		});
 	});
 	
-
+	$('.community_comment__bottom_button').click(function(){
+		location.href = '/controller/community/communityForm';
+	});
 });
