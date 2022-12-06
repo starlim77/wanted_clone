@@ -18,7 +18,7 @@ public class InsightDAOMyBatis implements InsightDAO {
 	
 	@Override
 	public List<InsightDTO> insightList(String insightSort) {
-		System.out.println(insightSort);
+		//System.out.println(insightSort);
 		return sqlSession.selectList("insightSQL.insightList", insightSort);
 	}
 

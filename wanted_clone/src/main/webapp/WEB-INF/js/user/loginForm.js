@@ -274,7 +274,7 @@ $(".pwd-change__tel__input-certifynum").click(function () {
         url: "/controller/user/smsCertify",
         data: "tel=" + $(".pwd-change__tel__input-telnum").val(),
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             certifyNum = data;
         },
         error: function (err) {

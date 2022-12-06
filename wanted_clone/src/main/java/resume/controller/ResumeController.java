@@ -139,7 +139,7 @@ public class ResumeController {
 	@PostMapping(value = "educationSave")
 	@ResponseBody
 	public void educationSave(EducationDTO educationDTO) {
-		System.out.println(educationDTO.getId());
+		//System.out.println(educationDTO.getId());
 		resumeDAO.educationSave(educationDTO);
 	}
 	

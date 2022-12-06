@@ -184,6 +184,7 @@ $(".submit-btn").click(function () {
                 "content": contentNameInput.val()
             },
             success: function () {
+            	alert("학력 등록 성공");
                 //location.reload();
             },
             error: function (request, status, error, textStatus) {
@@ -209,6 +210,7 @@ $(".submit-btn").click(function () {
                 "detail": detailInput.val(),
             },
             success: function () {
+            	alert("수상 등록 성공");
                 //location.reload();
             },
             error: function (request, status, error, textStatus) {
@@ -231,6 +233,7 @@ $(".submit-btn").click(function () {
                 "id": $(".id").val(),
             },
             success: function () {
+            	alert("외국어 등록 성공");
                 //location.reload();
             },
             error: function (request, status, error, textStatus) {
@@ -251,6 +254,7 @@ $(".submit-btn").click(function () {
                 "id": $(".id").val()
             },
             success: function () {
+            	alert("링크 등록 성공");
                 //location.reload();
             },
             error: function (request, status, error, textStatus) {
@@ -452,6 +456,7 @@ $(function () {
         dataType: "json",
         success: function (data) {
             data.forEach(function (index) {
+            	
                 var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
                 var addCareerDiv = $("<div/>").addClass("new-add-link"); //2dep
 
