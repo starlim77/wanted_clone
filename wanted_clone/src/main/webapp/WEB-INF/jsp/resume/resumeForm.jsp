@@ -144,6 +144,7 @@ pageEncoding="UTF-8"%>
                                 </div>
                             </div>
                         </div>
+
                         <!-- 작성된 커리어 리스트 -->
                         <c:forEach var="careerDTO" items="${careerList}">
 	                  	    <div class="new-add-form">
@@ -251,37 +252,45 @@ pageEncoding="UTF-8"%>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- 작성된 학력 -->
+                           	<c:forEach var="educationDTO" items="${educationList }">
+                           		<div class="new-add-form">
+	                                <div class="add-career">
+	                                    <div class="add-career__date">
+	                                        <input type="text" name="startYear" class="year" maxlength="4" placeholder="YYYY" value=${educationDTO.educationStartYear }
+	                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');"/>
+	                                        .
+	                                        <input type="text" name="startMonth" class="month" maxlength="2" placeholder="MM" value=${educationDTO.educationStartMonth }
+	                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
+	                                        -
+	                                        <input type="text" name="endYear" class="year" maxlength="4" placeholder="YYYY" value="${educationDTO.educationEndYear }"
+	                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
+	                                        .
+	                                        <input type="text" name="endMonth" class="month" maxlength="2" placeholder="MM" value="${educationDTO.educationEndMonth }"
+	                                            onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');" />
+	                                    </div>
+	
+	                                    <div class="company-name">
+	                                        <input type="text" name="schoolName" value="${educationDTO.schoolName }" class="company-name__input" placeholder="학교명" />
+	                                        <button type="button" class="delete-add-btn">
+	                                            삭제
+	                                        </button>
+	                                    </div>
+	                                    <div class="department-name">
+	                                        <input type="text" name="major" class="department__input" value="${educationDTO.major }" placeholder="전공 및 학위 (ex: 경영학과 학사)"/>
+	                                    </div>
+	                                    <div class="department-name">
+	                                        <input type="text"name="content"class="department__input" value="${educationDTO.content }" placeholder="이수 과목 또는 연구 내용"/>
+	                                    </div>
+	                                </div>
+	                                <div class="new-border"></div>
+                            	</div>
+                           	</c:forEach>
                         </div>
 
                         <!-- 수상 추가 폼-->
-                        <div class="add-form">
-                            <div class="add-career">
-                                <div class="add-career__date">
-                                    <input type="text" name="educationStartYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                    .
-                                    <input type="text" name="educationStartMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                    -
-                                    <input type="text" name="educationEndYear" class="year" maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                    .
-                                    <input type="text" name="educationEndMonth" class="month" maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
-                                </div>
-
-                                <div class="company-name">
-                                    <input type="text" name="activityName" class="company-name__input" placeholder="활동명" />
-                                    <button type="button" class="close-btn">
-                                        X
-                                    </button>
-                                </div>
-                                <div class="department-name">
-                                    <input type="text" name="datail" class="department__input" placeholder="세부사항" />
-                                </div>
-                                <div class="add-career__submit">
-                                    <button type="button" class="submit-btn" value="2">
-                                        추가하기
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
 
                    <!-- 수상 -->
@@ -328,6 +337,29 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
                 </div>
+                
+                <!-- 작성된 수상 -->
+                <c:forEach var="awardDTO" items="${awardList }">
+	                <div class="new-add-form">
+	                    <div class="new-add-career">
+	                        <div class="add-career__date">
+	                            <input type="text" name="activityYear" class="year" value=${awardDTO.activityYear } maxlength="4" placeholder="YYYY" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+	                            .
+	                            <input type="text" name="activityMonth" class="month" value=${awardDTO.activityMonth } maxlength="2" placeholder="MM" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
+	                        </div>
+	
+	                        <div class="company-name">
+	                            <input type="text" name="activityName" class="company-name__input" value="${awardDTO.activityName }" placeholder="활동명">
+	                            <button type="button" class="close-btn">
+	                                삭제
+	                            </button>
+	                        </div>
+	                        <div class="department-name">
+	                            <input type="text" name="detail" class="department__input" value=${awardDTO.detail } placeholder="세부사항">
+	                        </div>
+	                    </div>
+	                </div>
+                </c:forEach>
             </div>
                     <!-- 외국어 -->
 
@@ -386,6 +418,26 @@ pageEncoding="UTF-8"%>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- 작성된 외국어-->
+                        <c:forEach var="languageDTO" items="${languageList }">
+	                        <div class="new-add-form">
+	                            <div class="new-add-career">
+	                                <div class="add-career__date"></div>
+	
+	                                <div class="company-name">
+	                                    <input class="new-language-name" value="${languageDTO.languageName }">
+	                                    <button type="button" class="close-btn" style="margin-left: 600px">
+	                                        삭제
+	                                    </button>
+	                                </div>
+	
+	                                <div class="department-name">
+	                                    <input class="new-language-standard" value="${languageDTO.standard }">
+	                                </div>
+	                            </div>
+	                        </div>
+                        </c:forEach>
                     </div>
                         <div class="link_txt">링크</div>
                         <div class="border"></div>
@@ -422,6 +474,23 @@ pageEncoding="UTF-8"%>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- 추가된 링크 -->
+                       	<c:forEach var="linkDTO" items="${linkList }">
+                       		<div class="new-add-form">
+	                            <div class="new-add-link">
+	                                <div class="company-name" style="padding-bottom: 30px;">
+	                                    <input type="text" name="link" class="company-name__input" value="${linkDTO.link }" placeholder="http://">
+	                                </div>
+	                                <div class="link-close-btn">
+	                                    <button type="button" class="close-btn">
+	                                        삭제
+	                                    </button>
+	                                </div>
+	                            </div>
+	                            <div class="new-border"></div>
+                      		</div>
+                       	</c:forEach>
                     </div>
                     </div>
                 </form>

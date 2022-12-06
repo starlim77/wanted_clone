@@ -68,8 +68,17 @@ public class ResumeController {
 		if(resumeSeq != null) {
 			ResumeDTO resumeDTO = resumeDAO.getWritingResume(resumeSeq);
 			List<CareerDTO> careerList = resumeDAO.getCareer(id);
+			List<EducationDTO> educationList = resumeDAO.getEducation(id);
+			List<AwardDTO> awardList = resumeDAO.getAward(id);
+			List<LanguageDTO> languageList = resumeDAO.getLanguage(id);
+			List<LinkDTO> linkList = resumeDAO.getLink(id);
 			mv.addObject("writingResume", resumeDTO);
 			mv.addObject("careerList",careerList);
+			mv.addObject("educationList", educationList);
+			mv.addObject("awardList", awardList);
+			mv.addObject("languageList", languageList);
+			mv.addObject("linkList", linkList);
+			
 		}
 		mv.setViewName("resume/resumeForm");
 		return mv;
@@ -157,7 +166,7 @@ public class ResumeController {
 	
 	@PostMapping(value = "getAward")
 	@ResponseBody
-	public List<EducationDTO> getAward(String id) {
+	public List<AwardDTO> getAward(String id) {
 		return resumeDAO.getAward(id);
 	}
 	
@@ -181,7 +190,7 @@ public class ResumeController {
 	
 	@PostMapping(value = "getLink")
 	@ResponseBody
-	public List<LanguageDTO> getLink(String id) {
+	public List<LinkDTO> getLink(String id) {
 		return resumeDAO.getLink(id);
 	}
 	
