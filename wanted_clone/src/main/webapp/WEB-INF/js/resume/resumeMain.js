@@ -2,7 +2,22 @@
 $(".resume__file-upload").click(function(){
 	$(".file-upload").trigger("click");
 });
-
+$(function(){
+	$.ajax({
+		url: "/controller/resume/getId",
+		type: "post",
+		dataType: "text",
+		success: function(id){
+			$("#idDiv").val(id);
+		},
+		error: function(request, status, error, textStatus){
+			console.log("code: " + request.status)
+			console.log("message: " + request.responseText)
+			console.log("error: " + error);
+			console.log("textStatus: "+textStatus);
+		}
+	});
+});
 //포트폴리오 업로드
 $("#portfolio").change(function(){
 	var formData = new FormData($("#portfolio-form")[0]);
@@ -69,5 +84,11 @@ $(function() {
 
 //작성중 이력서 페이지 접속
 $(document).on("click", ".old-resume", function(){
-	location.href="resumeForm?resumeSeq="+$(this).children(".resume_seqDiv").text();
+	var resumeSeq = $(this).children(".resume_seqDiv").text();
+	var id = $("#idDiv").val()
+	if(resumeSeq === ""){
+		location.href = "resumeForm"
+	} else {
+		location.href="resumeForm?resumeSeq="+resumeSeq+"&id="+id;
+	}
 });

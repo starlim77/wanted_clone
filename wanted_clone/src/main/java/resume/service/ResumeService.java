@@ -48,5 +48,7 @@ public interface ResumeService {
 
 	void deleteCareer(String career_seq);
 
+	String getId();
+
 
 }

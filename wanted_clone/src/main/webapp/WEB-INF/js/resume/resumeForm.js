@@ -1,23 +1,23 @@
-//작성중인 이력서 불러오기
-$(function () {
-    $.ajax({
-        url: "/controller/resume/getWritingResume",
-        type: "post",
-        data: "resumeSeq=" + $(".resume_seq").val(),
-        dataType: "json",
-        success: function (data) {
-            $(".formName").val(data.formName);
-            $(".introduce").val(data.introduce);
-            $(".resume_seq").val(data.resume_seq);
-        },
-        error: function (request, status, error, textStatus) {
-            console.log("code: " + request.status);
-            console.log("message: " + request.responseText);
-            console.log("error: " + error);
-            console.log("textStatus: " + textStatus);
-        }
-    });
-});
+// //작성중인 이력서 불러오기
+// $(function () {
+//     $.ajax({
+//         url: "/controller/resume/getWritingResume",
+//         type: "post",
+//         data: "resumeSeq=" + $(".resume_seq").val(),
+//         dataType: "json",
+//         success: function (data) {
+//             $(".formName").val(data.formName);
+//             $(".introduce").val(data.introduce);
+//             $(".resume_seq").val(data.resume_seq);
+//         },
+//         error: function (request, status, error, textStatus) {
+//             console.log("code: " + request.status);
+//             console.log("message: " + request.responseText);
+//             console.log("error: " + error);
+//             console.log("textStatus: " + textStatus);
+//         }
+//     });
+// });
 
 //날짜 입력에 숫자만 입력 강제
 function checkNumber(event) {
@@ -148,7 +148,7 @@ $(".submit-btn").click(function () {
                 "companyName": companyNameInput.val(),
                 "department": departmentNameInput.val(),
                 "outcome": detailNameInput.val(),
-                "outcomeComment": datailContentInput.val(),
+                "outcomeContent": datailContentInput.val(),
                 "startOutcomeyear": datailDateInput.eq(0).val(),
                 "startOutcomeMonth": datailDateInput.eq(1).val(),
                 "endOutcomeYear": datailDateInput.eq(2).val(),
@@ -264,66 +264,66 @@ $(".submit-btn").click(function () {
 });
 
 // 추가 커리어 생성
-$(function () {
-    $.ajax({
-        url: "/controller/resume/getCareer",
-        type: "post",
-        data: "id=" + $(".id").val(),
-        dataType: "json",
-        success: function (data) {
-            data.forEach(function (index) {
-                // $(".add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(detailNameDiv).append(addCareerDateDiv).append(companyNameDiv).append(departmentDiv).append(detailNameDiv).append(detailFormDiv).append($("<div/>").addClass("border"))));
-                var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
-                var addCareerDiv = $("<div/>").addClass("add-career"); //2dep
+// $(function () {
+//     $.ajax({
+//         url: "/controller/resume/getCareer",
+//         type: "post",
+//         data: "id=" + $(".id").val(),
+//         dataType: "json",
+//         success: function (data) {
+//             data.forEach(function (index) {
+//                 // $(".add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(detailNameDiv).append(addCareerDateDiv).append(companyNameDiv).append(departmentDiv).append(detailNameDiv).append(detailFormDiv).append($("<div/>").addClass("border"))));
+//                 var newAddFormDiv = $("<div/>").addClass("new-add-form"); // 1dep
+//                 var addCareerDiv = $("<div/>").addClass("add-career"); //2dep
 
-                //date
-                var startWorkYearInput = $("<input/>").addClass("year").val(index.startWorkYear + " .")
-                var startWorkMonthInput = $("<input/>").addClass("month").val(index.startWorkMonth + " -")
-                var endWorkYearInput = $("<input/>").addClass("year").val(index.endWorkYear + " .")
-                var endWorkMonthInput = $("<input/>").addClass("month").val(index.endWorkMonth)
-                var addCareerDateDiv = $("<div/>").addClass("new-add-career__date").append(startWorkYearInput).append(startWorkMonthInput).append(endWorkYearInput).append(endWorkMonthInput); //2dep
+//                 //date
+//                 var startWorkYearInput = $("<input/>").addClass("year").val(index.startWorkYear + " .")
+//                 var startWorkMonthInput = $("<input/>").addClass("month").val(index.startWorkMonth + " -")
+//                 var endWorkYearInput = $("<input/>").addClass("year").val(index.endWorkYear + " .")
+//                 var endWorkMonthInput = $("<input/>").addClass("month").val(index.endWorkMonth)
+//                 var addCareerDateDiv = $("<div/>").addClass("new-add-career__date").append(startWorkYearInput).append(startWorkMonthInput).append(endWorkYearInput).append(endWorkMonthInput); //2dep
 
-                //companyName
-                var companyNameInput = $("<div/>").addClass("company-name__input").html(index.companyName);
-                var deleteAddBtn = $("<button/>").addClass("delete-add-btn").html("X").val("0");
-                var career_seq = $("<input/>").addClass("career_seq").val(index.career_seq).css("display", "none");
-                var companyNameDiv = $("<div/>").addClass("new-company-name").append(companyNameInput).append(deleteAddBtn).append(career_seq);
-                //departmentName
-                var departmentNameInput = $("<input/>").addClass("department__input").val(index.department);
-                var departmentDiv = $("<div/>").addClass("new-department-name").append(departmentNameInput);
+//                 //companyName
+//                 var companyNameInput = $("<div/>").addClass("company-name__input").html(index.companyName);
+//                 var deleteAddBtn = $("<button/>").addClass("delete-add-btn").html("X").val("0");
+//                 var career_seq = $("<input/>").addClass("career_seq").val(index.career_seq).css("display", "none");
+//                 var companyNameDiv = $("<div/>").addClass("new-company-name").append(companyNameInput).append(deleteAddBtn).append(career_seq);
+//                 //departmentName
+//                 var departmentNameInput = $("<input/>").addClass("department__input").val(index.department);
+//                 var departmentDiv = $("<div/>").addClass("new-department-name").append(departmentNameInput);
 
-                if (index.outcome !== null) {
-                    //detailForm - detailName
-                    var detailNameInput = $("<input/>").addClass("detail-name__input").val(index.outcome);
-                    var detailNameDiv = $("<div/>").addClass("detail-name").append(detailNameInput);
+//                 if (index.outcome !== null) {
+//                     //detailForm - detailName
+//                     var detailNameInput = $("<input/>").addClass("detail-name__input").val(index.outcome);
+//                     var detailNameDiv = $("<div/>").addClass("detail-name").append(detailNameInput);
 
-                    //detailForm - detailDate
-                    var startOutcomeyearInput = $("<input/>").addClass("year").val(index.startOutcomeyear + " .");
-                    var startOutcomeMonthInput = $("<input/>").addClass("month").val(index.startOutcomeMonth + " -");
-                    var endOutcomeYearInput = $("<input/>").addClass("year").val(index.endOutcomeYear + " .");
-                    var endOutcomeMonthInput = $("<input/>").addClass("month").val(index.endOutcomeMonth);
-                    var detailDateDiv = $("<div/>").addClass("detail-date").append(startOutcomeyearInput).append(startOutcomeMonthInput).append(endOutcomeYearInput).append(endOutcomeMonthInput)
+//                     //detailForm - detailDate
+//                     var startOutcomeyearInput = $("<input/>").addClass("year").val(index.startOutcomeyear + " .");
+//                     var startOutcomeMonthInput = $("<input/>").addClass("month").val(index.startOutcomeMonth + " -");
+//                     var endOutcomeYearInput = $("<input/>").addClass("year").val(index.endOutcomeYear + " .");
+//                     var endOutcomeMonthInput = $("<input/>").addClass("month").val(index.endOutcomeMonth);
+//                     var detailDateDiv = $("<div/>").addClass("detail-date").append(startOutcomeyearInput).append(startOutcomeMonthInput).append(endOutcomeYearInput).append(endOutcomeMonthInput)
 
-                    //detailForm - detailDetailContent
-                    var detailContentInput = $("<input/>").addClass("detail-content__input").val(index.outcomeContent);
-                    var detailContentDiv = $("<div/>").addClass("detail-content").append(detailContentInput);
+//                     //detailForm - detailDetailContent
+//                     var detailContentInput = $("<input/>").addClass("detail-content__input").val(index.outcomeContent);
+//                     var detailContentDiv = $("<div/>").addClass("detail-content").append(detailContentInput);
 
-                    var detailFormDiv = $("<div/>").addClass("new-detail-form").append(detailNameDiv).append(detailDateDiv).append(detailContentDiv);
-                }
-                var border = $("<div/>").addClass("new-border");
-                var newForm = $(".career-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(addCareerDateDiv).append(companyNameDiv).append(departmentDiv).append(detailFormDiv)).append(border))
-                newForm
-            });
-        },
-        error: function (request, status, error, textStatus) {
-            console.log("code: " + request.status);
-            console.log("message: " + request.responseText);
-            console.log("error: " + error);
-            console.log("textStatus: " + textStatus);
-        },
-    });
+//                     var detailFormDiv = $("<div/>").addClass("new-detail-form").append(detailNameDiv).append(detailDateDiv).append(detailContentDiv);
+//                 }
+//                 var border = $("<div/>").addClass("new-border");
+//                 var newForm = $(".career-add-btn-wrapper").after(newAddFormDiv.append(addCareerDiv.append(addCareerDateDiv).append(companyNameDiv).append(departmentDiv).append(detailFormDiv)).append(border))
+//                 newForm
+//             });
+//         },
+//         error: function (request, status, error, textStatus) {
+//             console.log("code: " + request.status);
+//             console.log("message: " + request.responseText);
+//             console.log("error: " + error);
+//             console.log("textStatus: " + textStatus);
+//         },
+//     });
 
-});
+// });
 
 // 추가 학력 생성
 $(function () {

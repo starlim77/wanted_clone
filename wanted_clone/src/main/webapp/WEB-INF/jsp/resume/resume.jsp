@@ -18,6 +18,7 @@ pageEncoding="UTF-8"%>
             <jsp:include page="../../jsp/component/header.jsp"></jsp:include>
         </div>
         <div id="resume-container">
+            <input type="text" id="idDiv" style="visibility:hidden ;">
             <!-- banner -->
             <div id="resume-wrap">
                 <div id="banner">

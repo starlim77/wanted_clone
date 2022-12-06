@@ -125,4 +125,9 @@ public class ResumeServiceImpl implements ResumeService{
 		sqlSession.delete("resumeSQL.deleteCareer",career_seq);
 	}
 
+	@Override
+	public String getId() {
+		return (String) httpSession.getAttribute("id");
+	}
+
 }

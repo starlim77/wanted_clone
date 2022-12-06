@@ -41,7 +41,7 @@
   	</update>
   	
   	<insert id="careerSave" parameterType="resume.bean.CareerDTO">
-  		insert into career values (career_seq.nextval, #{id}, #{startWorkYear}, #{startWorkMonth}, #{endWorkYear}, #{endWorkMonth}, #{companyName}, #{department}, #{outcome}, #{outcomeComment}, #{startOutcomeyear}, #{startOutcomeMonth}, #{endOutcomeYear}, #{endOutcomeMonth})
+  		insert into career values (career_seq.nextval, #{id}, #{startWorkYear}, #{startWorkMonth}, #{endWorkYear}, #{endWorkMonth}, #{companyName}, #{department}, #{outcome}, #{outcomeContent}, #{startOutcomeyear}, #{startOutcomeMonth}, #{endOutcomeYear}, #{endOutcomeMonth})
   	</insert>
   	
   	<select id="getCareer" parameterType="String" resultType="resume.bean.CareerDTO">

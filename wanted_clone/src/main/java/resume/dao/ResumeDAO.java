@@ -46,4 +46,6 @@ public interface ResumeDAO {
 
 	void deleteCareer(String career_seq);
 
+	String getId();
+
 }
