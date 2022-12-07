@@ -15,10 +15,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import resume.bean.AwardDTO;
 import resume.bean.CareerDTO;
@@ -53,10 +55,33 @@ public class ResumeController {
 		}
 		
 	}
-
+	
+	@PostMapping(value = "getId")
+	@ResponseBody
+	public String getId() {
+		return resumeDAO.getId();
+	}
+	
 	@GetMapping(value = "resumeForm")
-	public String resumeForm() {
-		return "resume/resumeForm";
+	public ModelAndView resumeForm(String resumeSeq, String id) {
+		ModelAndView mv = new ModelAndView();
+		if(resumeSeq != null) {
+			ResumeDTO resumeDTO = resumeDAO.getWritingResume(resumeSeq);
+			List<CareerDTO> careerList = resumeDAO.getCareer(id);
+			List<EducationDTO> educationList = resumeDAO.getEducation(id);
+			List<AwardDTO> awardList = resumeDAO.getAward(id);
+			List<LanguageDTO> languageList = resumeDAO.getLanguage(id);
+			List<LinkDTO> linkList = resumeDAO.getLink(id);
+			mv.addObject("writingResume", resumeDTO);
+			mv.addObject("careerList",careerList);
+			mv.addObject("educationList", educationList);
+			mv.addObject("awardList", awardList);
+			mv.addObject("languageList", languageList);
+			mv.addObject("linkList", linkList);
+			
+		}
+		mv.setViewName("resume/resumeForm");
+		return mv;
 	}
 
 	@PostMapping(value = "fileUpload")
@@ -141,7 +166,7 @@ public class ResumeController {
 	
 	@PostMapping(value = "getAward")
 	@ResponseBody
-	public List<EducationDTO> getAward(String id) {
+	public List<AwardDTO> getAward(String id) {
 		return resumeDAO.getAward(id);
 	}
 	
@@ -165,7 +190,7 @@ public class ResumeController {
 	
 	@PostMapping(value = "getLink")
 	@ResponseBody
-	public List<LanguageDTO> getLink(String id) {
+	public List<LinkDTO> getLink(String id) {
 		return resumeDAO.getLink(id);
 	}
 	

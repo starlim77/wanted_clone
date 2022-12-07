@@ -96,7 +96,7 @@ public class ResumeServiceImpl implements ResumeService{
 	}
 
 	@Override
-	public List<EducationDTO> getAward(String id) {
+	public List<AwardDTO> getAward(String id) {
 		return sqlSession.selectList("resumeSQL.getAward" ,id);
 	}
 
@@ -116,13 +116,18 @@ public class ResumeServiceImpl implements ResumeService{
 	}
 
 	@Override
-	public List<LanguageDTO> getLink(String id) {
+	public List<LinkDTO> getLink(String id) {
 		return sqlSession.selectList("resumeSQL.getLink" ,id);
 	}
 
 	@Override
 	public void deleteCareer(String career_seq) {
 		sqlSession.delete("resumeSQL.deleteCareer",career_seq);
+	}
+
+	@Override
+	public String getId() {
+		return (String) httpSession.getAttribute("id");
 	}
 
 }

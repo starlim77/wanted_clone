@@ -36,7 +36,7 @@ public interface ResumeService {
 
 	void activitySave(AwardDTO awardDTO);
 
-	List<EducationDTO> getAward(String id);
+	List<AwardDTO> getAward(String id);
 
 	void languageSave(LanguageDTO languageDTO);
 
@@ -44,9 +44,11 @@ public interface ResumeService {
 
 	void linkSave(LinkDTO linkDTO);
 
-	List<LanguageDTO> getLink(String id);
+	List<LinkDTO> getLink(String id);
 
 	void deleteCareer(String career_seq);
+
+	String getId();
 
 
 }

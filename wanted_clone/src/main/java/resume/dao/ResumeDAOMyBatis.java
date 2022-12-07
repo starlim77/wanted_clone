@@ -78,7 +78,7 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 	}
 
 	@Override
-	public List<EducationDTO> getAward(String id) {
+	public List<AwardDTO> getAward(String id) {
 		return resumeService.getAward(id);
 	}
 
@@ -98,13 +98,18 @@ public class ResumeDAOMyBatis implements ResumeDAO{
 	}
 
 	@Override
-	public List<LanguageDTO> getLink(String id) {
+	public List<LinkDTO> getLink(String id) {
 		return resumeService.getLink(id);
 	}
 
 	@Override
 	public void deleteCareer(String career_seq) {
 		resumeService.deleteCareer(career_seq);
+	}
+
+	@Override
+	public String getId() {
+		return resumeService.getId();
 	}
 
 
