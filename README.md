@@ -4,6 +4,10 @@
 
 http://3.36.116.6:8080/controller/
 
+
+시연 영상  
+https://www.youtube.com/watch?v=9CzNzCX6rzk
+
 ## 👨 구성원
 - 팀장 - [김찬영](https://github.com/Romano1994)  
 - 팀원 - [김진영](https://github.com/jinkimjin), [이호일](https://github.com/hoilic), [임윤환](https://github.com/starlim77)
